@@ -115,16 +115,21 @@ export default function Header() {
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                       >
-                        <div className="flex items-center justify-between space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                          <div className="flex items-center space-x-2">
-                            <Bed className="h-5 w-5 text-primary" />
-                            <div>
-                              <div className="font-medium">Medical Linens</div>
-                              <div className="text-sm text-gray-600">Hospital-grade linens and textiles</div>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            href="/healthcare/medical-linens"
+                            className="flex items-center justify-between space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          >
+                            <div className="flex items-center space-x-2">
+                              <Bed className="h-5 w-5 text-primary" />
+                              <div>
+                                <div className="font-medium">Medical Linens</div>
+                                <div className="text-sm text-gray-600">Hospital-grade linens and textiles</div>
+                              </div>
                             </div>
-                          </div>
-                          <ChevronRight className="h-4 w-4 text-gray-400" />
-                        </div>
+                            <ChevronRight className="h-4 w-4 text-gray-400" />
+                          </Link>
+                        </NavigationMenuLink>
                         
                         {/* Nested submenu */}
                         {showMedicalLinensSubmenu && (
