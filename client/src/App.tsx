@@ -13,6 +13,7 @@ import GutCare from "@/pages/gut-care";
 import Filtration from "@/pages/filtration";
 import RapidTests from "@/pages/rapid-tests";
 import Chromatography from "@/pages/chromatography";
+import Bioanalysis from "@/pages/bioanalysis";
 import About from "@/pages/about";
 import News from "@/pages/news";
 import Contact from "@/pages/contact";
@@ -34,6 +35,7 @@ function Router() {
           <Route path="/filtration" component={Filtration} />
           <Route path="/rapid-tests" component={RapidTests} />
           <Route path="/chromatography" component={Chromatography} />
+          <Route path="/bioanalysis" component={Bioanalysis} />
           <Route path="/about" component={About} />
           <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />

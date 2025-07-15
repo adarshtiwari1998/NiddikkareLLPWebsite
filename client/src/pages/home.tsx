@@ -598,7 +598,7 @@ export default function Home() {
             </Link>
             
             {/* Bioanalysis */}
-            <Link href="/life-sciences/dna-rna-extraction">
+            <Link href="/bioanalysis">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
