@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { 
@@ -15,21 +15,7 @@ import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart
 export default function Header() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [showMedicalLinensSubmenu, setShowMedicalLinensSubmenu] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setShowMedicalLinensSubmenu(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setShowMedicalLinensSubmenu(false);
-    }, 300);
-  };
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -110,11 +96,7 @@ export default function Header() {
                         </Link>
                       </NavigationMenuLink>
                       
-                      <div 
-                        className="relative group"
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                      >
+                      <div>
                         <NavigationMenuLink asChild>
                           <Link 
                             href="/healthcare/medical-linens"
@@ -131,10 +113,8 @@ export default function Header() {
                           </Link>
                         </NavigationMenuLink>
                         
-                        {/* Nested submenu */}
-                        <div 
-                          className="absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-[280px] z-[60] opacity-100 visible transition-all duration-200"
-                        >
+                        {/* Nested submenu below Medical Linens */}
+                        <div className="ml-4 mt-2 space-y-1 border-l-2 border-gray-200 pl-4">
                           <div className="space-y-2">
                             <NavigationMenuLink asChild>
                               <Link 
