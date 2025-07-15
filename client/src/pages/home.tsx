@@ -16,7 +16,8 @@ import {
   Award,
   Globe,
   Users,
-  CheckCircle
+  CheckCircle,
+  Droplet
 } from "lucide-react";
 
 export default function Home() {
@@ -353,6 +354,188 @@ export default function Home() {
                   Turnaround time (TAT) is 30-45 minutes with streamlined workflows
                 </p>
               </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Digital Solutions & Tools Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-gray-800 section-header mb-4">
+              Digital Solutions & Tools
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Advanced digital tools and platforms to streamline your research and diagnostic workflows
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* E-Training */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
+                  <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">E-Training</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Comprehensive online training programs for laboratory professionals</p>
+              </CardContent>
+            </Card>
+            
+            {/* Sample Request */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
+                  <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">Sample Request</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Streamlined sample request and tracking system for laboratories</p>
+              </CardContent>
+            </Card>
+            
+            {/* Application Database Chromatography */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                  <svg className="h-8 w-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">Application Database Chromatography</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Comprehensive chromatography application database and analysis tools</p>
+              </CardContent>
+            </Card>
+            
+            {/* FilterFinder */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-200 transition-colors">
+                  <svg className="h-8 w-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-lg">FilterFinder</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Advanced filtration solution finder for laboratory applications</p>
+              </CardContent>
+            </Card>
+            
+            {/* StripFinder */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
+                  <TestTube className="h-8 w-8 text-orange-600" />
+                </div>
+                <CardTitle className="text-lg">StripFinder</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Test strip selection and optimization tool for rapid diagnostics</p>
+              </CardContent>
+            </Card>
+            
+            {/* NANOCOLOR Finder */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-pink-200 transition-colors">
+                  <Droplet className="h-8 w-8 text-pink-600" />
+                </div>
+                <CardTitle className="text-lg">NANOCOLOR Finder</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm">Colorimetric analysis tools for precise water and environmental testing</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Testing Solutions with Bubble Animation */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
+        {/* Floating Bubble Animation */}
+        <div className="absolute inset-0">
+          <div className="floating-element absolute top-10 left-10 w-4 h-4 bg-white/20 rounded-full" style={{animationDelay: '0s'}}></div>
+          <div className="floating-element absolute top-20 left-1/4 w-6 h-6 bg-white/15 rounded-full" style={{animationDelay: '1s'}}></div>
+          <div className="floating-element absolute top-32 right-1/3 w-3 h-3 bg-white/25 rounded-full" style={{animationDelay: '2s'}}></div>
+          <div className="floating-element absolute top-40 right-20 w-5 h-5 bg-white/20 rounded-full" style={{animationDelay: '3s'}}></div>
+          <div className="floating-element absolute bottom-20 left-20 w-4 h-4 bg-white/15 rounded-full" style={{animationDelay: '4s'}}></div>
+          <div className="floating-element absolute bottom-32 right-1/4 w-6 h-6 bg-white/20 rounded-full" style={{animationDelay: '5s'}}></div>
+          <div className="floating-element absolute top-60 left-1/3 w-3 h-3 bg-white/25 rounded-full" style={{animationDelay: '6s'}}></div>
+          <div className="floating-element absolute bottom-40 right-10 w-5 h-5 bg-white/15 rounded-full" style={{animationDelay: '7s'}}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white section-header mb-4">
+              Advanced Testing Solutions
+            </h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Cutting-edge analytical tools for comprehensive laboratory testing and research
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {/* Filtration */}
+            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-white text-lg">Filtration</CardTitle>
+              </CardHeader>
+            </Card>
+            
+            {/* Rapid Tests */}
+            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TestTube className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-white text-lg">Rapid Tests</CardTitle>
+              </CardHeader>
+            </Card>
+            
+            {/* Water Analysis */}
+            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Droplet className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-white text-lg">Water Analysis</CardTitle>
+              </CardHeader>
+            </Card>
+            
+            {/* Chromatography */}
+            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Activity className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-white text-lg">Chromatography</CardTitle>
+              </CardHeader>
+            </Card>
+            
+            {/* Bioanalysis */}
+            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Dna className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-white text-lg">Bioanalysis</CardTitle>
+              </CardHeader>
             </Card>
           </div>
         </div>
