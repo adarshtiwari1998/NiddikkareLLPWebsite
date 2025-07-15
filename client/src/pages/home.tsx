@@ -461,82 +461,162 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Advanced Testing Solutions with Bubble Animation */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
-        {/* Floating Bubble Animation */}
-        <div className="absolute inset-0">
-          <div className="floating-element absolute top-10 left-10 w-4 h-4 bg-white/20 rounded-full" style={{animationDelay: '0s'}}></div>
-          <div className="floating-element absolute top-20 left-1/4 w-6 h-6 bg-white/15 rounded-full" style={{animationDelay: '1s'}}></div>
-          <div className="floating-element absolute top-32 right-1/3 w-3 h-3 bg-white/25 rounded-full" style={{animationDelay: '2s'}}></div>
-          <div className="floating-element absolute top-40 right-20 w-5 h-5 bg-white/20 rounded-full" style={{animationDelay: '3s'}}></div>
-          <div className="floating-element absolute bottom-20 left-20 w-4 h-4 bg-white/15 rounded-full" style={{animationDelay: '4s'}}></div>
-          <div className="floating-element absolute bottom-32 right-1/4 w-6 h-6 bg-white/20 rounded-full" style={{animationDelay: '5s'}}></div>
-          <div className="floating-element absolute top-60 left-1/3 w-3 h-3 bg-white/25 rounded-full" style={{animationDelay: '6s'}}></div>
-          <div className="floating-element absolute bottom-40 right-10 w-5 h-5 bg-white/15 rounded-full" style={{animationDelay: '7s'}}></div>
+      {/* Advanced Testing Solutions with Lab-like Bubble Animation */}
+      <section className="py-20 bg-gradient-to-b from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
+        {/* Enhanced Floating Bubble Animation - Lab Environment */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Small bubbles continuously floating upward */}
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className="lab-bubble absolute w-2 h-2 bg-white/20 rounded-full animate-bounce-up"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 8}s`,
+                animationDuration: `${4 + Math.random() * 4}s`
+              }}
+            />
+          ))}
+          
+          {/* Medium bubbles */}
+          {Array.from({ length: 15 }).map((_, i) => (
+            <div
+              key={`medium-${i}`}
+              className="lab-bubble absolute w-3 h-3 bg-white/15 rounded-full animate-bounce-up"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${5 + Math.random() * 3}s`
+              }}
+            />
+          ))}
+          
+          {/* Large bubbles */}
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div
+              key={`large-${i}`}
+              className="lab-bubble absolute w-4 h-4 bg-white/10 rounded-full animate-bounce-up"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${6 + Math.random() * 4}s`
+              }}
+            />
+          ))}
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white section-header mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white section-header mb-4">
               Advanced Testing Solutions
             </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
               Cutting-edge analytical tools for comprehensive laboratory testing and research
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
             {/* Filtration */}
-            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                  </svg>
-                </div>
-                <CardTitle className="text-white text-lg">Filtration</CardTitle>
-              </CardHeader>
-            </Card>
+            <Link href="/life-sciences/molecular-diagnostics">
+              <div className="group cursor-pointer">
+                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                  {/* Card-specific bubbles */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '20%', animationDelay: '0s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '50%', animationDelay: '1s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '80%', animationDelay: '2s'}} />
+                  </div>
+                  <CardContent className="pt-8 pb-6 relative z-10">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                      <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                    </div>
+                    <h3 className="text-white text-lg font-semibold">Filtration</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </Link>
             
             {/* Rapid Tests */}
-            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TestTube className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-white text-lg">Rapid Tests</CardTitle>
-              </CardHeader>
-            </Card>
+            <Link href="/life-sciences/molecular-diagnostics">
+              <div className="group cursor-pointer">
+                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                  {/* Card-specific bubbles */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '25%', animationDelay: '0.5s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '60%', animationDelay: '1.5s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '85%', animationDelay: '2.5s'}} />
+                  </div>
+                  <CardContent className="pt-8 pb-6 relative z-10">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                      <TestTube className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-white text-lg font-semibold">Rapid Tests</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </Link>
             
             {/* Water Analysis */}
-            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Droplet className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-white text-lg">Water Analysis</CardTitle>
-              </CardHeader>
-            </Card>
+            <Link href="/gut-care">
+              <div className="group cursor-pointer">
+                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                  {/* Card-specific bubbles */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '30%', animationDelay: '1s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '70%', animationDelay: '2s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '90%', animationDelay: '3s'}} />
+                  </div>
+                  <CardContent className="pt-8 pb-6 relative z-10">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                      <Droplet className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-white text-lg font-semibold">Water Analysis</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </Link>
             
             {/* Chromatography */}
-            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Activity className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-white text-lg">Chromatography</CardTitle>
-              </CardHeader>
-            </Card>
+            <Link href="/life-sciences/molecular-diagnostics">
+              <div className="group cursor-pointer">
+                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                  {/* Card-specific bubbles */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '15%', animationDelay: '1.5s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '55%', animationDelay: '2.5s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '75%', animationDelay: '3.5s'}} />
+                  </div>
+                  <CardContent className="pt-8 pb-6 relative z-10">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                      <Activity className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-white text-lg font-semibold">Chromatography</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </Link>
             
             {/* Bioanalysis */}
-            <Card className="bg-white/10 backdrop-blur-lg border border-white/20 text-center group hover:bg-white/20 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Dna className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-white text-lg">Bioanalysis</CardTitle>
-              </CardHeader>
-            </Card>
+            <Link href="/life-sciences/dna-rna-extraction">
+              <div className="group cursor-pointer">
+                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                  {/* Card-specific bubbles */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '35%', animationDelay: '2s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '65%', animationDelay: '3s'}} />
+                    <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '85%', animationDelay: '4s'}} />
+                  </div>
+                  <CardContent className="pt-8 pb-6 relative z-10">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                      <Dna className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-white text-lg font-semibold">Bioanalysis</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
