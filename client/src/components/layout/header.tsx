@@ -80,7 +80,9 @@ export default function Header() {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white">Healthcare</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
+                    location.startsWith('/healthcare') ? 'bg-primary text-white' : ''
+                  }`}>Healthcare</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[500px]">
                       <NavigationMenuLink asChild>
@@ -100,7 +102,11 @@ export default function Header() {
                         <NavigationMenuLink asChild>
                           <Link 
                             href="/healthcare/medical-linens"
-                            className="flex items-center justify-between space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            className={`flex items-center justify-between space-x-2 p-3 rounded-lg transition-colors ${
+                              location.startsWith('/healthcare/medical-linens') 
+                                ? 'bg-primary/10 text-primary' 
+                                : 'hover:bg-gray-50'
+                            }`}
                           >
                             <div className="flex items-center space-x-2">
                               <Bed className="h-5 w-5 text-primary" />
@@ -119,7 +125,11 @@ export default function Header() {
                             <NavigationMenuLink asChild>
                               <Link 
                                 href="/healthcare/medical-linens/woven" 
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm block"
+                                className={`flex items-center space-x-2 p-2 rounded-lg transition-colors text-sm block ${
+                                  location === '/healthcare/medical-linens/woven'
+                                    ? 'bg-green-50 text-green-700 border-l-2 border-green-500'
+                                    : 'hover:bg-gray-50'
+                                }`}
                               >
                                 <Shirt className="h-4 w-4 text-green-500" />
                                 <div>
@@ -131,7 +141,11 @@ export default function Header() {
                             <NavigationMenuLink asChild>
                               <Link 
                                 href="/healthcare/medical-linens/non-woven" 
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm block"
+                                className={`flex items-center space-x-2 p-2 rounded-lg transition-colors text-sm block ${
+                                  location === '/healthcare/medical-linens/non-woven'
+                                    ? 'bg-blue-50 text-blue-700 border-l-2 border-blue-500'
+                                    : 'hover:bg-gray-50'
+                                }`}
                               >
                                 <Shield className="h-4 w-4 text-blue-500" />
                                 <div>
@@ -143,7 +157,11 @@ export default function Header() {
                             <NavigationMenuLink asChild>
                               <Link 
                                 href="/healthcare/medical-linens/blended" 
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm block"
+                                className={`flex items-center space-x-2 p-2 rounded-lg transition-colors text-sm block ${
+                                  location === '/healthcare/medical-linens/blended'
+                                    ? 'bg-purple-50 text-purple-700 border-l-2 border-purple-500'
+                                    : 'hover:bg-gray-50'
+                                }`}
                               >
                                 <Layers className="h-4 w-4 text-purple-500" />
                                 <div>
