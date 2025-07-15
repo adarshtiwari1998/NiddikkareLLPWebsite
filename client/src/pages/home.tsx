@@ -476,7 +476,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
             {/* Filtration */}
-            <Link href="/life-sciences/molecular-diagnostics">
+            <Link href="/filtration">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
@@ -508,7 +508,7 @@ export default function Home() {
             </Link>
             
             {/* Rapid Tests */}
-            <Link href="/life-sciences/molecular-diagnostics">
+            <Link href="/rapid-tests">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
@@ -568,7 +568,7 @@ export default function Home() {
             </Link>
             
             {/* Chromatography */}
-            <Link href="/life-sciences/molecular-diagnostics">
+            <Link href="/chromatography">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
