@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger 
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers } from "lucide-react";
+import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight } from "lucide-react";
 
 export default function Header() {
   const [location] = useLocation();
@@ -79,7 +79,7 @@ export default function Header() {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Healthcare</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:bg-primary hover:text-white transition-colors">Healthcare</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[400px]">
                       <NavigationMenuLink asChild>
@@ -97,13 +97,16 @@ export default function Header() {
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/healthcare/medical-linens" 
-                          className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          className="flex items-center justify-between space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors"
                         >
-                          <Bed className="h-5 w-5 text-primary" />
-                          <div>
-                            <div className="font-medium">Medical Linens</div>
-                            <div className="text-sm text-gray-600">Hospital-grade linens and textiles</div>
+                          <div className="flex items-center space-x-2">
+                            <Bed className="h-5 w-5 text-primary" />
+                            <div>
+                              <div className="font-medium">Medical Linens</div>
+                              <div className="text-sm text-gray-600">Hospital-grade linens and textiles</div>
+                            </div>
                           </div>
+                          <ChevronRight className="h-4 w-4 text-gray-400" />
                         </Link>
                       </NavigationMenuLink>
                       <div className="ml-4 space-y-1">
@@ -149,7 +152,7 @@ export default function Header() {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Life Sciences</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:bg-primary hover:text-white transition-colors">Life Sciences</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[400px]">
                       <NavigationMenuLink asChild>
@@ -253,9 +256,12 @@ export default function Header() {
                         <Baby className="h-4 w-4" />
                         <span>Neonatal Care</span>
                       </Link>
-                      <Link href="/healthcare/medical-linens" className="flex items-center space-x-2 text-gray-600 hover:text-primary">
-                        <Bed className="h-4 w-4" />
-                        <span>Medical Linens</span>
+                      <Link href="/healthcare/medical-linens" className="flex items-center justify-between text-gray-600 hover:text-primary">
+                        <div className="flex items-center space-x-2">
+                          <Bed className="h-4 w-4" />
+                          <span>Medical Linens</span>
+                        </div>
+                        <ChevronRight className="h-3 w-3 text-gray-400" />
                       </Link>
                       <div className="ml-6 space-y-1">
                         <Link href="/healthcare/medical-linens/woven" className="flex items-center space-x-2 text-gray-500 hover:text-primary text-sm">
