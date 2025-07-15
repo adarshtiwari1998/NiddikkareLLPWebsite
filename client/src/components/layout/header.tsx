@@ -16,8 +16,7 @@ export default function Header() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   
-  // Debug: log the current location
-  console.log('Current location:', location);
+
 
 
   return (
@@ -74,7 +73,7 @@ export default function Header() {
                     <Link 
                       href="/" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
+                        location === '/' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       Home
@@ -231,7 +230,7 @@ export default function Header() {
                     <Link 
                       href="/gut-care" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/gut-care' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
+                        location === '/gut-care' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       GUT Care
@@ -244,7 +243,7 @@ export default function Header() {
                     <Link 
                       href="/about" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/about' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
+                        location === '/about' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       About
@@ -257,7 +256,7 @@ export default function Header() {
                     <Link 
                       href="/news" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/news' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
+                        location === '/news' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       News
@@ -270,7 +269,7 @@ export default function Header() {
                     <Link 
                       href="/contact" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/contact' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
+                        location === '/contact' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       Contact
