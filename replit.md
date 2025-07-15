@@ -34,9 +34,10 @@ Preferred communication style: Simple, everyday language.
 ## Key Components
 
 ### Frontend Structure
-- **Pages**: Home, About, Contact, News, and specialized product pages (Neonatal Care, Medical Linens, DNA/RNA Extraction, Molecular Diagnostics, Gut Care)
+- **Pages**: Home, About, Contact, News, and specialized product pages (Neonatal Care, Medical Linens with subcategories, DNA/RNA Extraction, Molecular Diagnostics, Gut Care)
+- **Medical Linens Subcategories**: Woven, Non-woven, and Blended medical linens with individual pages
 - **Components**: Reusable UI components including hero slider, product cards, news cards, stats counter
-- **Layout**: Header with navigation menu and footer
+- **Layout**: Header with navigation menu featuring dropdown for Medical Linens subcategories and footer
 - **Hooks**: Custom hooks for mobile detection and toast notifications
 
 ### Backend Structure

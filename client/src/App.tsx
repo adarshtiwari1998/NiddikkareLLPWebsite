@@ -7,6 +7,9 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import NeonatalCare from "@/pages/healthcare/neonatal-care";
 import MedicalLinens from "@/pages/healthcare/medical-linens";
+import WovenMedicalLinens from "@/pages/healthcare/medical-linens/woven";
+import NonWovenMedicalLinens from "@/pages/healthcare/medical-linens/non-woven";
+import BlendedMedicalLinens from "@/pages/healthcare/medical-linens/blended";
 import DnaRnaExtraction from "@/pages/life-sciences/dna-rna-extraction";
 import MolecularDiagnostics from "@/pages/life-sciences/molecular-diagnostics";
 import GutCare from "@/pages/gut-care";
@@ -38,6 +41,9 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/healthcare/neonatal-care" component={NeonatalCare} />
           <Route path="/healthcare/medical-linens" component={MedicalLinens} />
+          <Route path="/healthcare/medical-linens/woven" component={WovenMedicalLinens} />
+          <Route path="/healthcare/medical-linens/non-woven" component={NonWovenMedicalLinens} />
+          <Route path="/healthcare/medical-linens/blended" component={BlendedMedicalLinens} />
           <Route path="/life-sciences/dna-rna-extraction" component={DnaRnaExtraction} />
           <Route path="/life-sciences/molecular-diagnostics" component={MolecularDiagnostics} />
           <Route path="/gut-care" component={GutCare} />

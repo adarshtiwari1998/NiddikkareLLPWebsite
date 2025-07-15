@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger 
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart } from "lucide-react";
+import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers } from "lucide-react";
 
 export default function Header() {
   const [location] = useLocation();
@@ -106,6 +106,44 @@ export default function Header() {
                           </div>
                         </Link>
                       </NavigationMenuLink>
+                      <div className="ml-4 space-y-1">
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            href="/healthcare/medical-linens/woven" 
+                            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm"
+                          >
+                            <Shirt className="h-4 w-4 text-green-500" />
+                            <div>
+                              <div className="font-medium">Woven</div>
+                              <div className="text-xs text-gray-600">100% cotton comfort</div>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            href="/healthcare/medical-linens/non-woven" 
+                            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm"
+                          >
+                            <Shield className="h-4 w-4 text-blue-500" />
+                            <div>
+                              <div className="font-medium">Non-woven</div>
+                              <div className="text-xs text-gray-600">Superior barrier protection</div>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            href="/healthcare/medical-linens/blended" 
+                            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm"
+                          >
+                            <Layers className="h-4 w-4 text-purple-500" />
+                            <div>
+                              <div className="font-medium">Blended</div>
+                              <div className="text-xs text-gray-600">Combined properties</div>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -219,6 +257,20 @@ export default function Header() {
                         <Bed className="h-4 w-4" />
                         <span>Medical Linens</span>
                       </Link>
+                      <div className="ml-6 space-y-1">
+                        <Link href="/healthcare/medical-linens/woven" className="flex items-center space-x-2 text-gray-500 hover:text-primary text-sm">
+                          <Shirt className="h-3 w-3" />
+                          <span>Woven</span>
+                        </Link>
+                        <Link href="/healthcare/medical-linens/non-woven" className="flex items-center space-x-2 text-gray-500 hover:text-primary text-sm">
+                          <Shield className="h-3 w-3" />
+                          <span>Non-woven</span>
+                        </Link>
+                        <Link href="/healthcare/medical-linens/blended" className="flex items-center space-x-2 text-gray-500 hover:text-primary text-sm">
+                          <Layers className="h-3 w-3" />
+                          <span>Blended</span>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                   <div className="space-y-2">
