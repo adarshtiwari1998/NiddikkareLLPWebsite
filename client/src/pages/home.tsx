@@ -364,7 +364,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Digital Solutions & <span className="text-blue-600 border-b-2 border-blue-600">Tools</span>
+              Digital Solutions & <span className="text-primary border-b-2 border-primary">Tools</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Advanced digital tools and platforms to streamline your research and diagnostic workflows
@@ -376,14 +376,14 @@ export default function Home() {
             <Link href="/tools/e-training">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">E-Training</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">E-Training</h3>
                     <p className="text-sm text-gray-600">Comprehensive online training programs for laboratory professionals</p>
                   </div>
                 </CardContent>
@@ -394,13 +394,13 @@ export default function Home() {
             <Link href="/tools/sample-request">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">Sample request</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">Sample request</h3>
                     <p className="text-sm text-gray-600">Streamlined sample request and tracking system for laboratories</p>
                   </div>
                 </CardContent>
@@ -411,13 +411,13 @@ export default function Home() {
             <Link href="/tools/application-database-chromatography">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">Application database chromatography</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">Application database chromatography</h3>
                     <p className="text-sm text-gray-600">Comprehensive chromatography application database and analysis tools</p>
                   </div>
                 </CardContent>
@@ -428,13 +428,13 @@ export default function Home() {
             <Link href="/tools/filter-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">FilterFinder</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">FilterFinder</h3>
                     <p className="text-sm text-gray-600">Advanced filtration solution finder for laboratory applications</p>
                   </div>
                 </CardContent>
@@ -445,11 +445,11 @@ export default function Home() {
             <Link href="/tools/strip-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <TestTube className="h-6 w-6 text-blue-600" />
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <TestTube className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">StripFinder</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">StripFinder</h3>
                     <p className="text-sm text-gray-600">Test strip selection and optimization tool for rapid diagnostics</p>
                   </div>
                 </CardContent>
@@ -460,11 +460,11 @@ export default function Home() {
             <Link href="/tools/nanocolor-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <Droplet className="h-6 w-6 text-blue-600" />
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <Droplet className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">NANOCOLOR Finder</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">NANOCOLOR Finder</h3>
                     <p className="text-sm text-gray-600">Colorimetric analysis tools for precise water and environmental testing</p>
                   </div>
                 </CardContent>
@@ -475,13 +475,13 @@ export default function Home() {
             <Link href="/tools/chromafil-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">CHROMAFIL Finder</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">CHROMAFIL Finder</h3>
                     <p className="text-sm text-gray-600">Chromatography filtration and sample preparation solutions</p>
                   </div>
                 </CardContent>
@@ -492,11 +492,11 @@ export default function Home() {
             <Link href="/tools/vial-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <FlaskConical className="h-6 w-6 text-blue-600" />
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <FlaskConical className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">VialFinder</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">VialFinder</h3>
                     <p className="text-sm text-gray-600">Laboratory vial and container selection tool</p>
                   </div>
                 </CardContent>
@@ -507,13 +507,13 @@ export default function Home() {
             <Link href="/tools/bioanalysis-kitfinder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
-                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-1">Bioanalysis KitFinder</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-1">Bioanalysis KitFinder</h3>
                     <p className="text-sm text-gray-600">Comprehensive bioanalysis kit selection and optimization tool</p>
                   </div>
                 </CardContent>
