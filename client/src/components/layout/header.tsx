@@ -132,12 +132,13 @@ export default function Header() {
                         </NavigationMenuLink>
                         
                         {/* Nested submenu */}
-                        {showMedicalLinensSubmenu && (
-                          <div 
-                            className="absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-[280px] z-[60]"
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                          >
+                        <div 
+                          className={`absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-[280px] z-[60] transition-all duration-200 ${
+                            showMedicalLinensSubmenu ? 'opacity-100 visible' : 'opacity-0 invisible'
+                          }`}
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
                           <div className="space-y-2">
                             <NavigationMenuLink asChild>
                               <Link 
@@ -176,8 +177,7 @@ export default function Header() {
                               </Link>
                             </NavigationMenuLink>
                           </div>
-                          </div>
-                        )}
+                        </div>
                       </div>
                     </div>
                   </NavigationMenuContent>
