@@ -1,244 +1,289 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Bed, Shield, Droplet, Recycle, Check, ArrowRight } from "lucide-react";
+import { Stethoscope, Shield, Bed, Users, CheckCircle, Droplet, Recycle, ArrowRight, Heart } from "lucide-react";
 
 export default function MedicalLinens() {
   return (
     <div className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Hero Section */}
-        <section className="text-center mb-16">
+        <section className="text-center mb-16 animate-fade-in">
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
-              <Bed className="h-12 w-12 text-primary" />
+            <div className="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center">
+              <Stethoscope className="h-12 w-12 text-secondary" />
             </div>
           </div>
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            Medical <span className="text-secondary">Linens</span>
+          <h1 className="text-6xl font-bold text-gray-800 mb-6 section-header">
+            Hospital Linens
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Hospital-grade linens designed for safety, comfort, and durability. Our comprehensive range 
-            includes woven, non-woven, and blended fabric solutions for all healthcare environments.
+          <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Exceptional hospital linen solutions that elevate patient care through superior quality, 
+            comfort, and infection control design
           </p>
+        </section>
+
+        {/* Introduction Section */}
+        <section className="mb-16">
+          <div className="glass-card p-8 rounded-2xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="bg-primary text-white px-4 py-2 rounded-lg inline-block mb-4">
+                  <span className="font-semibold">Health Care</span>
+                </div>
+                <div className="bg-secondary text-white px-4 py-2 rounded-lg inline-block ml-2 mb-6">
+                  <span className="font-semibold">Hospital Linens</span>
+                </div>
+                
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Medical Linen/Hospital linen, such as bed sheets, gowns, drapes and towels, play a critical role in 
+                  ensuring doctor and patient safety, comfort and infection control. These linens serve as a barrier against 
+                  germ transmission, reduce skin irritation and maintain a hygienic environment.
+                </p>
+                
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                  Clean, sanitized linens minimize the risk of hospital-acquired infections, protecting patients and healthcare 
+                  workers. Effective linen management is vital for creating a safe and clean environment, which aids in patient 
+                  recovery and satisfaction. Moreover, eco-friendly and durable linens can reduce environmental impact and help 
+                  hospitals optimize resources while controlling costs.
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="glass-card p-6 rounded-xl">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Shield className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-800">Infection Control</h3>
+                  </div>
+                  <p className="text-gray-600">Advanced barrier protection against germ transmission and HAIs</p>
+                </div>
+                
+                <div className="glass-card p-6 rounded-xl">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                      <Heart className="h-6 w-6 text-secondary" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-800">Patient Comfort</h3>
+                  </div>
+                  <p className="text-gray-600">Superior softness and comfort for enhanced patient satisfaction</p>
+                </div>
+                
+                <div className="glass-card p-6 rounded-xl">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                      <Recycle className="h-6 w-6 text-accent" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-800">Eco-Friendly</h3>
+                  </div>
+                  <p className="text-gray-600">Sustainable materials and processes for environmental responsibility</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Product Categories */}
         <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Our <span className="text-secondary">Product Range</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
+              About Products
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <strong>NiDDikKare</strong> manufactures a wide range of medical linen products and drape kits using 
+              <strong> woven, non-woven and blended fabric.</strong>
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
+          <div className="modern-grid">
+            {/* Woven Medical Linens */}
+            <Card className="glass-card border-0">
+              <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Bed className="h-8 w-8 text-blue-600" />
                 </div>
-                <CardTitle>Woven Medical Linens</CardTitle>
-                <CardDescription>
-                  Traditional woven fabrics for durability and comfort
-                </CardDescription>
+                <CardTitle className="text-xl text-secondary">Woven Medical Linens</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 100% Cotton construction</li>
-                  <li>• High thread count for softness</li>
-                  <li>• Reinforced edges for durability</li>
-                  <li>• Machine washable up to 160°C</li>
-                </ul>
+                <p className="text-gray-700 mb-4 font-semibold">
+                  are made from 100% cotton. Cotton linens benefits include high absorbency, 
+                  ease of sterilization, and softness, making it ideal for surgical drapes, gowns, and bed sheets.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    100% Cotton construction
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    High thread count for softness
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    Reinforced edges for durability
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-blue-600 mr-2" />
+                    Machine washable up to 160°C
+                  </div>
+                </div>
               </CardContent>
             </Card>
             
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
+            {/* Non-woven Medical Linens */}
+            <Card className="glass-card border-0">
+              <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-8 w-8 text-green-600" />
                 </div>
-                <CardTitle>Non-woven Solutions</CardTitle>
-                <CardDescription>
-                  Disposable options for enhanced infection control
-                </CardDescription>
+                <CardTitle className="text-xl text-secondary">Non-woven Medical Linens</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Single-use infection prevention</li>
-                  <li>• Fluid-resistant barriers</li>
-                  <li>• Lightweight and breathable</li>
-                  <li>• Environmentally conscious disposal</li>
-                </ul>
+                <p className="text-gray-700 mb-4 font-semibold">
+                  are made from polypropylene or polyester, they offer superior barrier protection against bacteria and viruses, 
+                  minimizing infection risk.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                    Single-use infection prevention
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                    Fluid-resistant barriers
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                    Lightweight and breathable
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                    Environmentally conscious disposal
+                  </div>
+                </div>
+                <p className="text-gray-600 text-sm mt-4">
+                  Their single-use design ensures simplified sterilization and reduced cross-contamination. Additionally, 
+                  many non-woven materials are also lightweight and breathable, enhancing comfort for prolonged use.
+                </p>
               </CardContent>
             </Card>
             
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
+            {/* Blended Medical Linens */}
+            <Card className="glass-card border-0">
+              <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Recycle className="h-8 w-8 text-purple-600" />
                 </div>
-                <CardTitle>Blended Fabric Options</CardTitle>
-                <CardDescription>
-                  Innovative blends for optimal performance
-                </CardDescription>
+                <CardTitle className="text-xl text-secondary">Blended Medical Linens</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Cotton-polyester blends</li>
-                  <li>• Enhanced strength and durability</li>
-                  <li>• Improved moisture management</li>
-                  <li>• Reduced shrinkage and wrinkles</li>
-                </ul>
+                <p className="text-gray-700 mb-4 font-semibold">
+                  are prepared with both woven and non-woven fabrics or materials to combine their properties.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-purple-600 mr-2" />
+                    Cotton-polyester blends
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-purple-600 mr-2" />
+                    Enhanced strength and durability
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-purple-600 mr-2" />
+                    Improved moisture management
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <CheckCircle className="h-4 w-4 text-purple-600 mr-2" />
+                    Reduced shrinkage and wrinkles
+                  </div>
+                </div>
+                <p className="text-gray-600 text-sm mt-4">
+                  Blending enhances characteristics like lightweight, durability, comfort, and functionality, 
+                  allowing for tailored performance in various applications as medical linens.
+                </p>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        {/* Features & Benefits */}
+        {/* Product Portfolio */}
         <section className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Advanced <span className="text-secondary">Features</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Our medical linens are engineered to meet the demanding requirements of healthcare 
-                environments while providing superior comfort for patients and ease of use for staff.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800 mb-2">Infection Control</h3>
-                    <p className="text-gray-600">
-                      Advanced antimicrobial treatments and barrier properties to prevent healthcare-associated infections.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Droplet className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800 mb-2">Fluid Management</h3>
-                    <p className="text-gray-600">
-                      Superior absorbency and fluid-resistant properties for various clinical applications.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Recycle className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800 mb-2">Sustainability</h3>
-                    <p className="text-gray-600">
-                      Eco-friendly materials and manufacturing processes with recyclable options available.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Medical linens in hospital environment" 
-                className="rounded-xl shadow-lg w-full h-auto"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Product Specifications */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Product <span className="text-secondary">Specifications</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
+              Our Extensive Portfolio
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Premium products including soft bed sheets with pillow covers, surgical draw sheets, 
+              surgical gowns, rubber sheets, and receiving blankets
+            </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-primary">Bed Sheets</CardTitle>
+            {/* Bed Sheets & Pillow Covers */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <Bed className="h-12 w-12 text-primary mx-auto mb-4" />
+                <CardTitle className="text-lg">Bed Sheets & Pillow Covers</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Material:</span>
-                    <span className="font-medium">100% Cotton</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Thread Count:</span>
-                    <span className="font-medium">200-300</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Sizes:</span>
-                    <span className="font-medium">Twin to King</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Colors:</span>
-                    <span className="font-medium">White, Blue, Green</span>
-                  </div>
-                </div>
+                <Badge className="w-full justify-center bg-primary/10 text-primary">Premium Quality</Badge>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-primary">Pillowcases</CardTitle>
+            {/* Surgical Drapes */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <Shield className="h-12 w-12 text-secondary mx-auto mb-4" />
+                <CardTitle className="text-lg">Surgical Draw Sheets</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Material:</span>
-                    <span className="font-medium">Cotton Blend</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Closure:</span>
-                    <span className="font-medium">Envelope Style</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Size:</span>
-                    <span className="font-medium">20" x 30"</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Pack Size:</span>
-                    <span className="font-medium">12-24 pieces</span>
-                  </div>
-                </div>
+                <Badge className="w-full justify-center bg-secondary/10 text-secondary">Sterile Grade</Badge>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-primary">Blankets</CardTitle>
+            {/* Surgical Gowns */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <Users className="h-12 w-12 text-accent mx-auto mb-4" />
+                <CardTitle className="text-lg">Surgical Gowns</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Material:</span>
-                    <span className="font-medium">Cotton/Polyester</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Weight:</span>
-                    <span className="font-medium">2.5-3.5 lbs</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Size:</span>
-                    <span className="font-medium">60" x 80"</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Thermal Rating:</span>
-                    <span className="font-medium">3.5 TOG</span>
-                  </div>
-                </div>
+                <Badge className="w-full justify-center bg-accent/10 text-accent">Protective Wear</Badge>
+              </CardContent>
+            </Card>
+            
+            {/* Rubber Sheets */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <Droplet className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <CardTitle className="text-lg">Rubber Sheets</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Badge className="w-full justify-center bg-blue-100 text-blue-600">Waterproof</Badge>
+              </CardContent>
+            </Card>
+            
+            {/* Receiving Blankets */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <Heart className="h-12 w-12 text-pink-600 mx-auto mb-4" />
+                <CardTitle className="text-lg">Receiving Blankets</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Badge className="w-full justify-center bg-pink-100 text-pink-600">Comfort Care</Badge>
+              </CardContent>
+            </Card>
+            
+            {/* Patient Gowns */}
+            <Card className="glass-card border-0 group hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <Stethoscope className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                <CardTitle className="text-lg">Patient Gowns</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Badge className="w-full justify-center bg-green-100 text-green-600">Patient Care</Badge>
               </CardContent>
             </Card>
           </div>
@@ -246,128 +291,88 @@ export default function MedicalLinens() {
 
         {/* Quality Standards */}
         <section className="mb-16">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Quality <span className="text-secondary">Standards</span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our medical linens meet and exceed international healthcare standards for safety and quality.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Check className="h-8 w-8 text-green-600" />
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">ISO 13485</h3>
-                <p className="text-sm text-gray-600">Medical Device Quality Management</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Check className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">OEKO-TEX</h3>
-                <p className="text-sm text-gray-600">Textile Safety Certification</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Check className="h-8 w-8 text-purple-600" />
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">FDA Approved</h3>
-                <p className="text-sm text-gray-600">Food and Drug Administration</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Check className="h-8 w-8 text-orange-600" />
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">CE Marked</h3>
-                <p className="text-sm text-gray-600">European Conformity</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Applications */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Healthcare <span className="text-secondary">Applications</span>
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-3xl font-bold text-gray-800 section-header mb-8 text-center">
+              Quality & Compliance
             </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-lg">Acute Care Units</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  High-performance linens for intensive care and critical patient environments.
-                </p>
-                <div className="space-y-2">
-                  <Badge variant="outline" className="mr-2">ICU</Badge>
-                  <Badge variant="outline" className="mr-2">CCU</Badge>
-                  <Badge variant="outline">Emergency</Badge>
-                </div>
-              </CardContent>
-            </Card>
             
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-lg">Surgical Departments</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Specialized linens for operating rooms and surgical recovery areas.
-                </p>
-                <div className="space-y-2">
-                  <Badge variant="outline" className="mr-2">OR</Badge>
-                  <Badge variant="outline" className="mr-2">Recovery</Badge>
-                  <Badge variant="outline">Pre-Op</Badge>
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Sterilization Guidelines</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <strong className="text-gray-800">CSSD Compliance:</strong>
+                      <p className="text-gray-600">We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <strong className="text-gray-800">MHFW Guidelines:</strong>
+                      <p className="text-gray-600">Ministry of Health and Family Welfare (GoI) approved sterilization protocols</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <strong className="text-gray-800">Hospital Standards:</strong>
+                      <p className="text-gray-600">Meets stringent hospital linen sterilization requirements for 100% infection control</p>
+                    </div>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-lg">General Wards</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Comfortable, durable linens for patient rooms and general care areas.
-                </p>
-                <div className="space-y-2">
-                  <Badge variant="outline" className="mr-2">Medical</Badge>
-                  <Badge variant="outline" className="mr-2">Pediatric</Badge>
-                  <Badge variant="outline">Maternity</Badge>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Safety Features</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-secondary mt-1" />
+                    <div>
+                      <strong className="text-gray-800">Barrier Protection:</strong>
+                      <p className="text-gray-600">Superior protection against bacterial and viral transmission</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-secondary mt-1" />
+                    <div>
+                      <strong className="text-gray-800">Hygienic Environment:</strong>
+                      <p className="text-gray-600">Maintains clean, sanitized conditions to minimize HAI risks</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-secondary mt-1" />
+                    <div>
+                      <strong className="text-gray-800">Quality Assurance:</strong>
+                      <p className="text-gray-600">Rigorous testing ensures consistent quality and performance standards</p>
+                    </div>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Call to Action */}
-        <section className="text-center bg-white rounded-xl shadow-lg p-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Upgrade Your Healthcare Linens Today
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Contact our team to discuss your specific requirements and discover how our medical linens 
-            can enhance patient comfort and operational efficiency.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Get Custom Quote
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Button>
-            <Button size="lg" variant="outline">
-              Download Catalog
-            </Button>
+        <section className="text-center">
+          <div className="glass-card p-12 rounded-2xl">
+            <h2 className="text-4xl font-bold text-gray-800 section-header mb-6">
+              Partner with Us for Excellence
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Experience the difference with our premium hospital linens designed for comfort, 
+              hygiene, and quality that healthcare professionals trust.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="btn-modern">
+                Request Product Catalog
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Button>
+              <Button size="lg" variant="outline">
+                Contact Our Sales Team
+              </Button>
+            </div>
           </div>
         </section>
       </div>

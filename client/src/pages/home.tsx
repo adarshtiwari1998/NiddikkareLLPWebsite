@@ -1,335 +1,384 @@
-import HeroSlider from "@/components/ui/hero-slider";
-import ProductCard from "@/components/ui/product-card";
-import StatsCounter from "@/components/ui/stats-counter";
-import NewsCard from "@/components/ui/news-card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Baby, Bed, Dna, Microscope, Heart, FlaskConical, Check } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
+import { 
+  Baby, 
+  Microscope, 
+  TestTube, 
+  Stethoscope, 
+  ArrowRight, 
+  Shield, 
+  Heart,
+  Dna,
+  FlaskConical,
+  Activity,
+  Award,
+  Globe,
+  Users,
+  CheckCircle
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <div>
-      {/* Hero Slider */}
-      <HeroSlider />
-
-      {/* Company Stats */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatsCounter value="25" label="Years of Excellence" suffix="+" />
-            <StatsCounter value="500" label="Healthcare Partners" suffix="+" />
-            <StatsCounter value="50" label="Countries Served" suffix="+" />
-            <StatsCounter value="1000" label="Products & Solutions" suffix="+" />
-          </div>
+    <div className="min-h-screen">
+      {/* Modern Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background with modern gradient */}
+        <div className="absolute inset-0 hero-gradient"></div>
+        
+        {/* Floating background elements */}
+        <div className="absolute inset-0">
+          <div className="floating-element absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full"></div>
+          <div className="floating-element absolute top-40 right-20 w-32 h-32 bg-secondary/10 rounded-full" style={{animationDelay: '2s'}}></div>
+          <div className="floating-element absolute bottom-20 left-1/4 w-16 h-16 bg-white/10 rounded-full" style={{animationDelay: '4s'}}></div>
         </div>
-      </section>
-
-      {/* Product Categories */}
-      <section className="py-20 bg-gray-50 scientific-pattern">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Our Product <span className="text-secondary">Categories</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive solutions across healthcare and life sciences, designed to advance research and improve patient care.
+        
+        <div className="container mx-auto px-4 z-10 text-center">
+          <div className="max-w-4xl mx-auto">
+            {/* Company Logo/Name */}
+            <div className="mb-8">
+              <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
+                NiDDikKare
+              </h1>
+              <div className="text-2xl md:text-3xl text-secondary font-semibold">
+                Healthcare & IT Solutions
+              </div>
+            </div>
+            
+            {/* Main tagline */}
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+              Harnesses the power of talent and technology to unlock limitless possibilities for its clients and customers
             </p>
+            
+            {/* Key value propositions */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="glass-card p-6 rounded-2xl">
+                <Baby className="h-12 w-12 text-secondary mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Baby's First Touch</h3>
+                <p className="text-gray-600 text-sm">Providing world's safest receiving blankets for newborns</p>
+              </div>
+              
+              <div className="glass-card p-6 rounded-2xl">
+                <Stethoscope className="h-12 w-12 text-secondary mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Hospital Linens</h3>
+                <p className="text-gray-600 text-sm">Exceptional hospital linen solutions for patient care</p>
+              </div>
+              
+              <div className="glass-card p-6 rounded-2xl">
+                <Dna className="h-12 w-12 text-secondary mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Life Sciences</h3>
+                <p className="text-gray-600 text-sm">Advanced molecular biology and diagnostic solutions</p>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/about">
+                <Button size="lg" className="btn-modern">
+                  Learn More About Us
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
+                  Get In Touch
+                </Button>
+              </Link>
+            </div>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ProductCard
-              title="Neonatal Care"
-              description="Specialized products for newborn care and comfort"
-              features={[
-                "Kouvér Receiving Blankets",
-                "Womb-like Environment",
-                "Infection Control"
-              ]}
-              icon={Baby}
-              color="primary"
-            />
-            
-            <ProductCard
-              title="Medical Linens"
-              description="Hospital-grade linens for safety and comfort"
-              features={[
-                "Woven Medical Linens",
-                "Non-woven Solutions",
-                "Blended Fabric Options"
-              ]}
-              icon={Bed}
-              color="primary"
-            />
-            
-            <ProductCard
-              title="DNA/RNA Extraction"
-              description="Advanced extraction kits for molecular biology"
-              features={[
-                "Plant DNA Extraction",
-                "Blood & Cell Culture",
-                "Viral Nucleic Acids"
-              ]}
-              icon={Dna}
-              color="accent"
-            />
-            
-            <ProductCard
-              title="Molecular Diagnostics"
-              description="Precision diagnostics for disease detection"
-              features={[
-                "COVID-19 Testing",
-                "Hepatitis Diagnostics",
-                "Infectious Disease"
-              ]}
-              icon={Microscope}
-              color="accent"
-            />
-            
-            <ProductCard
-              title="GUT Care"
-              description="Specialized gastrointestinal care solutions"
-              features={[
-                "Digestive Health",
-                "Microbiome Analysis",
-                "Therapeutic Solutions"
-              ]}
-              icon={Heart}
-              color="success"
-            />
-            
-            <ProductCard
-              title="Research Solutions"
-              description="Comprehensive research and development support"
-              features={[
-                "Custom Development",
-                "Expert Consultation",
-                "Quality Assurance"
-              ]}
-              icon={FlaskConical}
-              color="secondary"
-            />
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                About <span className="text-secondary">NIDDIKKARE LLP</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                At NIDDIKKARE LLP, our team of experts empowers researchers and clinicians to transform human health. 
-                We provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics.
-              </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                High-quality DNA and RNA extraction is crucial for molecular biology applications. Our comprehensive 
-                solutions cater to diverse sample sources, streamlining research workflows and driving breakthroughs.
-              </p>
-              
-              {/* Key Features */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Key Features</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <span className="text-gray-700">Yields highly concentrated nucleic acids for greater sensitivity</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <span className="text-gray-700">Highly pure nucleic acid, ready for downstream applications</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <span className="text-gray-700">Turnaround time (TAT) is 30 – 45 minutes</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
-                alt="Advanced scientific research laboratory with modern equipment" 
-                className="rounded-xl shadow-lg w-full h-auto"
-              />
-              
-              {/* Statistics Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <Card className="bg-primary/5 border-primary/20">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">99.9%</div>
-                    <div className="text-sm text-gray-600">Purity Rate</div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-secondary/5 border-secondary/20">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-secondary mb-2">30min</div>
-                    <div className="text-sm text-gray-600">Fast Processing</div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Showcase */}
+      {/* Company Stats - Modern Cards */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Featured <span className="text-secondary">Products</span>
+            <h2 className="text-4xl font-bold text-gray-800 section-header">
+              Our Impact in Numbers
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our premium product line designed to optimize your research workflow with precision and reliability.
-            </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Plant DNA Extraction Kit */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <FlaskConical className="h-12 w-12 mx-auto mb-4" />
-                  <h3 className="font-bold text-xl">Plant DNA Extraction</h3>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h4 className="text-lg font-bold text-gray-800 mb-2">Plant DNA Extraction Kit</h4>
-                <p className="text-gray-600 mb-4">Optimized for leaf, stem, flower, and seed samples with high yield extraction.</p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Sample Volume:</span>
-                    <span className="font-medium">100mg</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Yield:</span>
-                    <span className="font-medium">up to 25 μg</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">A260/280 ratio:</span>
-                    <span className="font-medium">1.8-2.0</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  View Details
-                </Button>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <Card className="text-center glass-card border-0">
+              <CardContent className="pt-6">
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">25+</div>
+                <p className="text-gray-600">Years of Excellence</p>
               </CardContent>
             </Card>
             
-            {/* Blood DNA Extraction Kit */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <Dna className="h-12 w-12 mx-auto mb-4" />
-                  <h3 className="font-bold text-xl">Blood DNA Extraction</h3>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h4 className="text-lg font-bold text-gray-800 mb-2">Blood DNA Extraction Kit</h4>
-                <p className="text-gray-600 mb-4">Efficient extraction from whole blood and EDTA/Heparin treated samples.</p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Sample Volume:</span>
-                    <span className="font-medium">200 μl</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Yield:</span>
-                    <span className="font-medium">up to 6 μg</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">A260/280 ratio:</span>
-                    <span className="font-medium">1.8-2.0</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  View Details
-                </Button>
+            <Card className="text-center glass-card border-0">
+              <CardContent className="pt-6">
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">500+</div>
+                <p className="text-gray-600">Healthcare Partners</p>
               </CardContent>
             </Card>
             
-            {/* Viral Nucleic Acid Extraction Kit */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <Microscope className="h-12 w-12 mx-auto mb-4" />
-                  <h3 className="font-bold text-xl">Viral Nucleic Acid</h3>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h4 className="text-lg font-bold text-gray-800 mb-2">Viral Nucleic Acid Extraction Kit</h4>
-                <p className="text-gray-600 mb-4">Specialized for serum, plasma, urine, and other viral samples.</p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Sample Volume:</span>
-                    <span className="font-medium">200 μl</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Yield:</span>
-                    <span className="font-medium">up to 90%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Elution Volume:</span>
-                    <span className="font-medium">30-100 μl</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  View Details
-                </Button>
+            <Card className="text-center glass-card border-0">
+              <CardContent className="pt-6">
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">50+</div>
+                <p className="text-gray-600">Countries Served</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="text-center glass-card border-0">
+              <CardContent className="pt-6">
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">1000+</div>
+                <p className="text-gray-600">Products & Solutions</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Latest News */}
+      {/* Main Product Categories - Modern Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Latest <span className="text-secondary">News</span>
+            <h2 className="text-5xl font-bold text-gray-800 section-header mb-4">
+              Our Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with our latest innovations, research breakthroughs, and industry developments.
+              Comprehensive healthcare and life sciences solutions designed for innovation and excellence
+            </p>
+          </div>
+          
+          <div className="modern-grid">
+            {/* Neonatal Care */}
+            <Link href="/healthcare/neonatal-care">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Baby className="h-10 w-10 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">Neonatal Care</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Specialized solutions for newborn care during their first 28 days of life
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      Kouvér Receiving Blankets
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      100% Breathable Cotton
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      Mimics the Womb Environment
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      Reduces Startle Reflex
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-primary/10 text-primary hover:bg-primary/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* Hospital Linens */}
+            <Link href="/healthcare/medical-linens">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/20 transition-colors">
+                    <Stethoscope className="h-10 w-10 text-secondary" />
+                  </div>
+                  <CardTitle className="text-2xl">Hospital Linens</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Exceptional hospital linen solutions that elevate patient care
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Premium Bed Sheets & Pillow Covers
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Surgical Gowns & Drapes
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Rubber Sheets & Receiving Blankets
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Infection Control Design
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-secondary/10 text-secondary hover:bg-secondary/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* DNA/RNA Extraction */}
+            <Link href="/life-sciences/dna-rna-extraction">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Dna className="h-10 w-10 text-accent" />
+                  </div>
+                  <CardTitle className="text-2xl">DNA/RNA Extraction</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    High-quality DNA and RNA extraction for molecular biology applications
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Plant & Animal DNA Extraction
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Blood & Cell Culture Extraction
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Viral Nucleic Acid Extraction
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Gel & PCR Purification
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-accent/10 text-accent hover:bg-accent/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* Molecular Diagnostics */}
+            <Link href="/life-sciences/molecular-diagnostics">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-success/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-success/20 transition-colors">
+                    <Microscope className="h-10 w-10 text-success" />
+                  </div>
+                  <CardTitle className="text-2xl">Molecular Diagnostics</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Advanced diagnostic solutions for genetic material analysis
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      SARS-CoV-2 (COVID-19) Testing
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      Hepatitis Virus Detection
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      HIV & Tuberculosis Testing
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      Monkey Pox Detection
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-success/10 text-success hover:bg-success/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-gray-800 section-header mb-4">
+              Why Choose NiDDikKare
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              With decades of experience in healthcare and IT solutions, we deliver excellence across all domains
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <NewsCard
-              title="Breakthrough in Neonatal DNA Extraction"
-              description="Our latest research demonstrates significant improvements in DNA extraction efficiency for neonatal samples, enabling better diagnostic outcomes."
-              category="Research"
-              date="March 15, 2024"
-              image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
-              categoryColor="primary"
-            />
+            <Card className="glass-card border-0 text-center">
+              <CardHeader>
+                <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
+                <CardTitle className="text-xl">High Sensitivity</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Yields highly concentrated nucleic acids for greater sensitivity in downstream applications
+                </p>
+              </CardContent>
+            </Card>
             
-            <NewsCard
-              title="New Automated Extraction System"
-              description="Introducing our next-generation automated nucleic acid extraction system that reduces processing time by 40% while maintaining high purity."
-              category="Innovation"
-              date="March 10, 2024"
-              image="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
-              categoryColor="accent"
-            />
+            <Card className="glass-card border-0 text-center">
+              <CardHeader>
+                <Award className="h-16 w-16 text-primary mx-auto mb-4" />
+                <CardTitle className="text-xl">Superior Purity</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Highly pure nucleic acid, ready for PCR, sequencing, and other molecular applications
+                </p>
+              </CardContent>
+            </Card>
             
-            <NewsCard
-              title="Strategic Partnership with Leading Hospitals"
-              description="NIDDIKKARE LLP announces new partnerships with major healthcare institutions to expand access to advanced diagnostic solutions."
-              category="Partnership"
-              date="March 5, 2024"
-              image="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
-              categoryColor="secondary"
-            />
+            <Card className="glass-card border-0 text-center">
+              <CardHeader>
+                <Activity className="h-16 w-16 text-primary mx-auto mb-4" />
+                <CardTitle className="text-xl">Rapid Processing</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Turnaround time (TAT) is 30-45 minutes with streamlined workflows
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-primary text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-4">
+            Ready to Transform Your Healthcare Solutions?
+          </h2>
+          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+            Contact our team of experts today and discover how we can help you achieve your goals with our innovative products and services.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" className="bg-secondary text-black hover:bg-secondary/90">
+                Get Started Today
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
