@@ -23,44 +23,24 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
               <h2 className="text-4xl font-bold text-gray-800 mb-8 section-header">
-                Our Mission
+                About Us
               </h2>
               <div className="glass-card p-8 rounded-2xl">
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  At NiDDikKare LLP, our team of experts empowers researchers and clinicians to transform human health. We 
-                  provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics.
+                  At NIDDIKKARE LLP, our team of experts empowers researchers and clinicians to transform human health. We 
+                  provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics. High-quality 
+                  DNA and RNA extraction is crucial for molecular biology applications. Our comprehensive solutions cater to diverse 
+                  sample sources, streamlining research workflows and driving breakthroughs.
                 </p>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  High-quality DNA and RNA extraction is crucial for molecular biology applications. Our comprehensive solutions 
-                  cater to diverse sample sources, streamlining research workflows and driving breakthroughs.
+                  The Extraction Kit follows an optimised chaotropic salt chemistry with a novel reversible binding of silica with nucleic acids 
+                  under optimised salt & pH concentration of buffer. It allows very small elution volume (starting from 30μl) resulting in high 
+                  concentration of DNA for downstream applications. The key benefit of using this Extraction Kit is to prevent the use resins, 
+                  organic solvent based precipitation, and hazardous compounds such as phenol, chloroform etc. which interfere during 
+                  downstream application in PCR/Sequencing. The DNA/RNA Extraction Kit work on the principle of <strong>"LYSE, BIND & ELUTE"</strong>.
+                  The unique chemistry and buffer conditions gives Contaminants & Inhibitors Free High Quality DNA/RNA by following 
+                  Silica Based Solid-Phase Extraction Method using either Spin-Column or Magnetic Bead Particles.
                 </p>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <p className="text-gray-700">
-                      <strong>High Sensitivity:</strong> Yields highly concentrated nucleic acids for greater sensitivity
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <p className="text-gray-700">
-                      <strong>Superior Purity:</strong> Ready for PCR, sequencing, and other molecular applications
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <p className="text-gray-700">
-                      <strong>Rapid Processing:</strong> Turnaround time (TAT) is 30-45 minutes
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
             
@@ -78,104 +58,191 @@ export default function About() {
           </div>
         </section>
 
-        {/* Key Features from Brochure */}
+        {/* Key Features Section */}
         <section className="mb-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
-              Our Extraction Technology
+              Key Features
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The Extraction Kit follows an optimised chaotropic salt chemistry with a novel reversible binding 
-              of silica with nucleic acids under optimised salt & pH conditions
-            </p>
-          </div>
-          
-          <div className="glass-card p-8 rounded-2xl mb-12">
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="mb-6">
-                The Extraction Kit follows an optimised chaotropic salt chemistry with a novel reversible binding of silica with nucleic acids 
-                under optimised salt & pH conditions of buffer. It allows very high elution volume (starting from 30μl) resulting in high 
-                concentration of DNA for downstream applications. The key benefit of using this Extraction Kit is to prevent the use resins, 
-                organic solvent based precipitation, and hazardous compounds such as phenol, chloroform etc. which interfere during 
-                downstream application in PCR/Sequencing.
-              </p>
-              <p className="mb-6">
-                The DNA/RNA Extraction Kit work on the principle of <strong>"LYSE, BIND & ELUTE"</strong>. 
-                The unique chemistry and buffer conditions gives Contaminants & Inhibitors Free High Quality DNA/RNA by following 
-                Silica Based Solid-Phase Extraction Method using either Spin-Column or Magnetic Bead Particles.
-              </p>
+            <div className="space-y-4 text-lg text-gray-700 max-w-4xl mx-auto">
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2.5"></div>
+                <p>Yields highly concentrated nucleic acids for greater sensitivity.</p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2.5"></div>
+                <p>Highly Pure nucleic acid, ready for downstream applications like real-time PCR, endpoint analysis, Sequencing etc.</p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2.5"></div>
+                <p>Turned around time (TAT) is 30 – 45 minutes.</p>
+              </div>
             </div>
           </div>
           
-          <div className="modern-grid">
-            <Card className="glass-card border-0">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Microscope className="h-8 w-8 text-green-600" />
+          {/* Feature Cards Grid */}
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {/* Plant DNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Microscope className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-xl">Plant DNA Extraction</CardTitle>
-              </CardHeader>
-              <CardContent>
+                <h3 className="text-xl font-bold mb-2">Plant DNA <span className="text-green-100">EXTRACTION</span></h3>
                 <div className="space-y-3 text-sm">
-                  <div><strong>Components:</strong></div>
-                  <ul className="space-y-1 text-gray-600">
-                    <li>• Lysis Buffer, Inhibitors Removal Buffer</li>
-                    <li>• Binding Buffer, Wash Buffer (3), Elution Buffer</li>
-                    <li>• Silica Spin Column, Collection Tube, Elution Tube</li>
-                  </ul>
-                  <div className="mt-4">
-                    <Badge className="bg-green-100 text-green-800">Sample: 100mg</Badge>
-                    <Badge className="bg-green-100 text-green-800 ml-2">Yield: up to 25 μg</Badge>
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-green-100">Lysis Buffer, Inhibitors Removal Buffer, Binding Buffer, Wash Buffer (3), Elution Buffer, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-green-100">Leaf, Stem, Flower, Seed etc.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-green-100">Silica Spin Column<br />Sample: 100mg<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 25 μg<br />Elution Volume: 30-100 μl</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="glass-card border-0">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-orange-600" />
+              </div>
+            </div>
+
+            {/* Animal DNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Heart className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-xl">Animal DNA Extraction</CardTitle>
-              </CardHeader>
-              <CardContent>
+                <h3 className="text-xl font-bold mb-2">Animal DNA <span className="text-orange-100">EXTRACTION</span></h3>
                 <div className="space-y-3 text-sm">
-                  <div><strong>Components:</strong></div>
-                  <ul className="space-y-1 text-gray-600">
-                    <li>• Lysis Buffer, Inhibitors Removal Buffer</li>
-                    <li>• Binding Buffer, Wash Buffer (3), Proteinase-K</li>
-                    <li>• Silica Spin Column, Collection Tube, Elution Tube</li>
-                  </ul>
-                  <div className="mt-4">
-                    <Badge className="bg-orange-100 text-orange-800">Sample: 50mg</Badge>
-                    <Badge className="bg-orange-100 text-orange-800 ml-2">Yield: up to 30 μg</Badge>
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-orange-100">Lysis Buffer, Inhibitors Removal Buffer, Binding Buffer, Wash Buffer (3), Elution Buffer, Proteinase-K, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-orange-100">Tissue of Liver, Spleen, Kidney, Brain, Heart, Muscle, Mouse Tail, Biopsy etc.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-orange-100">Silica Spin Column<br />Sample: 50mg<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 30 μg<br />Elution Volume: 30-100 μl</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="glass-card border-0">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="h-8 w-8 text-blue-600" />
+              </div>
+            </div>
+
+            {/* Blood DNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-500 to-gray-700"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Globe className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-xl">Blood DNA Extraction</CardTitle>
-              </CardHeader>
-              <CardContent>
+                <h3 className="text-xl font-bold mb-2">Blood DNA <span className="text-gray-100">EXTRACTION</span></h3>
                 <div className="space-y-3 text-sm">
-                  <div><strong>Components:</strong></div>
-                  <ul className="space-y-1 text-gray-600">
-                    <li>• Lysis Buffer, Inhibitors Removal Buffer</li>
-                    <li>• Binding Buffer, Wash Buffer, Proteinase-K</li>
-                    <li>• Silica Spin Column, Collection Tube, Elution Tube</li>
-                  </ul>
-                  <div className="mt-4">
-                    <Badge className="bg-blue-100 text-blue-800">Sample: 200 μl</Badge>
-                    <Badge className="bg-blue-100 text-blue-800 ml-2">Yield: up to 6 μg</Badge>
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-gray-100">Lysis Buffer, Inhibitors Removal Buffer, Binding Buffer, Wash Buffer, Elution Buffer, Proteinase-K, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-gray-100">EDTA/Heparin treated Whole Blood</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-gray-100">Silica Spin Column<br />Sample: 200 μl<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 6 μg<br />Elution Volume: 30-100 μl</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+
+            {/* Cell Culture DNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-orange-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Microscope className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Cell Culture DNA <span className="text-yellow-100">EXTRACTION</span></h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-yellow-100">Lysis Buffer, Inhibitors Removal Buffer, Binding Buffer, Wash Buffer, Elution Buffer, Proteinase-K, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-yellow-100">Tissue Culture Cells</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-yellow-100">Silica Spin Column<br />Sample: 5 × 10⁶ Cells<br />A260/280 ratio ~1.8-2.0<br />Yield: up to 15 μg<br />Elution Volume: 30-100 μl</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Viral Nucleic Acid Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Target className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Viral Nucleic Acid <span className="text-teal-100">EXTRACTION</span></h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-teal-100">Lysis Buffer, Stabilization Buffer, Binding Buffer, Wash Buffer, Elution Buffer, Proteinase-K, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-teal-100">Serum, Plasma, Urine, CSF, VTM, UTM etc.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-teal-100">Silica Spin Column<br />Sample: 200μl<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 90%<br />Elution Volume: 30-100 μl</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Gel Extraction & PCR Purification */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-blue-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Award className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Gel <span className="text-purple-100">EXTRACTION</span> & PCR Purification</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-purple-100">Gel Extraction Buffer-1, Gel Extraction Buffer-2, PCR Clean-up Buffer, Binding Buffer, Wash Buffer, Elution Buffer, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-purple-100">Low Melting Agarose Gel</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-purple-100">Silica Spin Column<br />Sample: 200mg gel slice<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 90%<br />Elution Volume: 30-100 μl</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -215,56 +282,114 @@ export default function About() {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="glass-card border-0">
-              <CardHeader>
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                  <Microscope className="h-8 w-8 text-purple-600" />
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {/* Plant RNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Microscope className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-2xl">Plant RNA Extraction</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
+                <h3 className="text-xl font-bold mb-2">Plant RNA <span className="text-purple-100">EXTRACTION</span></h3>
+                <div className="space-y-3 text-sm">
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">Components:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Lysis Buffer-1, Lysis Buffer-2, RNA Stabilization Buffer</li>
-                      <li>• Binding Buffer, Wash Buffer, DNase-1, Elution Buffer</li>
-                      <li>• Silica Spin Column, Collection Tube, Elution Tube</li>
-                    </ul>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-purple-100">Lysis Buffer-1, Lysis Buffer-2, RNA Stabilization Buffer, Binding Buffer, Wash Buffer, DNase-1, Elution Buffer, Silica Spin Column, Collection Tube, Elution Tube</p>
                   </div>
-                  <div className="flex gap-2">
-                    <Badge className="bg-purple-100 text-purple-800">Sample: 100mg</Badge>
-                    <Badge className="bg-purple-100 text-purple-800">Yield: up to 30 μg</Badge>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="glass-card border-0">
-              <CardHeader>
-                <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-4">
-                  <Heart className="h-8 w-8 text-pink-600" />
-                </div>
-                <CardTitle className="text-2xl">Animal Tissue RNA</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">Components:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Lysis Buffer-1, Lysis Buffer-2, RNA Stabilization Buffer</li>
-                      <li>• Binding Buffer, Wash Buffer, Proteinase-K, DNase-1</li>
-                      <li>• Silica Spin Column, Collection Tube, Elution Tube</li>
-                    </ul>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-purple-100">Leaf, Stem, Flower, Seed etc.</p>
                   </div>
-                  <div className="flex gap-2">
-                    <Badge className="bg-pink-100 text-pink-800">Sample: 50mg</Badge>
-                    <Badge className="bg-pink-100 text-pink-800">Yield: up to 25 μg</Badge>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-purple-100">Silica Spin Column<br />Sample: 100mg<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 30 μg<br />Elution Volume: 30-100 μl</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+
+            {/* Animal Tissue RNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-400 to-pink-600"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Heart className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Animal Tissue RNA <span className="text-pink-100">EXTRACTION</span></h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-pink-100">Lysis Buffer-1, Lysis Buffer-2, RNA Stabilization Buffer, Binding Buffer, Wash Buffer, Proteinase-K, DNase-1, Elution Buffer, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-pink-100">Tissue of Liver, Spleen, Kidney, Brain, Heart, Muscle, Mouse Tail, Biopsy etc.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-pink-100">Silica Spin Column<br />Sample: 50mg<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 25 μg<br />Elution Volume: 30-100 μl</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Cell Culture RNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Microscope className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Cell Culture RNA <span className="text-blue-100">EXTRACTION</span></h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-blue-100">Lysis Buffer-1, Lysis Buffer-2, RNA Stabilization Buffer, Binding Buffer, Wash Buffer, Proteinase-K, DNase-1, Elution Buffer, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-blue-100">Tissue Culture Cells</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-blue-100">Silica Spin Column<br />Sample: 5 × 10⁶ Cells<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 20 μg<br />Elution Volume: 30-100 μl</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Plasmid DNA Extraction */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-orange-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="relative p-6 text-white">
+                <div className="bg-white/20 rounded-lg p-3 inline-block mb-4">
+                  <Target className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Plasmid DNA <span className="text-yellow-100">EXTRACTION</span></h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <h4 className="font-semibold mb-1">Components:</h4>
+                    <p className="text-yellow-100">Resuspension Buffer, Lysis Buffer, Binding Buffer, Neutralization Buffer, Wash Buffer, Elution Buffer, RNase A, Silica Spin Column, Collection Tube, Elution Tube</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Sample:</h4>
+                    <p className="text-yellow-100">Bacterial cells from ~2ml of overnight grown culture</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Features:</h4>
+                    <p className="text-yellow-100">Silica Spin Column<br />Sample: in 200μl of buffer<br />A260/280 ratio ~1.8-2.0<br />Yield: upto 20 μg<br />Elution Volume: 30-100 μl</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
