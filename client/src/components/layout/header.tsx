@@ -133,11 +133,7 @@ export default function Header() {
                         
                         {/* Nested submenu */}
                         <div 
-                          className={`absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-[280px] z-[60] transition-all duration-200 ${
-                            showMedicalLinensSubmenu ? 'opacity-100 visible' : 'opacity-0 invisible'
-                          }`}
-                          onMouseEnter={handleMouseEnter}
-                          onMouseLeave={handleMouseLeave}
+                          className="absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-[280px] z-[60] opacity-100 visible transition-all duration-200"
                         >
                           <div className="space-y-2">
                             <NavigationMenuLink asChild>
