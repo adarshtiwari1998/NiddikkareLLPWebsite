@@ -17,6 +17,15 @@ import Bioanalysis from "@/pages/bioanalysis";
 import About from "@/pages/about";
 import News from "@/pages/news";
 import Contact from "@/pages/contact";
+import ETraining from "@/pages/tools/e-training";
+import SampleRequest from "@/pages/tools/sample-request";
+import ApplicationDatabaseChromatography from "@/pages/tools/application-database-chromatography";
+import FilterFinder from "@/pages/tools/filter-finder";
+import StripFinder from "@/pages/tools/strip-finder";
+import NanocolorFinder from "@/pages/tools/nanocolor-finder";
+import ChromafilFinder from "@/pages/tools/chromafil-finder";
+import VialFinder from "@/pages/tools/vial-finder";
+import BioanalysisKitFinder from "@/pages/tools/bioanalysis-kitfinder";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 
@@ -39,6 +48,15 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />
+          <Route path="/tools/e-training" component={ETraining} />
+          <Route path="/tools/sample-request" component={SampleRequest} />
+          <Route path="/tools/application-database-chromatography" component={ApplicationDatabaseChromatography} />
+          <Route path="/tools/filter-finder" component={FilterFinder} />
+          <Route path="/tools/strip-finder" component={StripFinder} />
+          <Route path="/tools/nanocolor-finder" component={NanocolorFinder} />
+          <Route path="/tools/chromafil-finder" component={ChromafilFinder} />
+          <Route path="/tools/vial-finder" component={VialFinder} />
+          <Route path="/tools/bioanalysis-kitfinder" component={BioanalysisKitFinder} />
           <Route component={NotFound} />
         </Switch>
       </main>

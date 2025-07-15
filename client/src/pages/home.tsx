@@ -363,100 +363,162 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-800 section-header mb-4">
-              Digital Solutions & Tools
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Digital Solutions & <span className="text-blue-600 border-b-2 border-blue-600">Tools</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Advanced digital tools and platforms to streamline your research and diagnostic workflows
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* E-Training */}
-            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
-                  <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg">E-Training</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">Comprehensive online training programs for laboratory professionals</p>
-              </CardContent>
-            </Card>
+            <Link href="/tools/e-training">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">E-Training</h3>
+                    <p className="text-sm text-gray-600">Comprehensive online training programs for laboratory professionals</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
             
             {/* Sample Request */}
-            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
-                  <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg">Sample Request</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">Streamlined sample request and tracking system for laboratories</p>
-              </CardContent>
-            </Card>
+            <Link href="/tools/sample-request">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">Sample request</h3>
+                    <p className="text-sm text-gray-600">Streamlined sample request and tracking system for laboratories</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
             
             {/* Application Database Chromatography */}
-            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
-                  <svg className="h-8 w-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg">Application Database Chromatography</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">Comprehensive chromatography application database and analysis tools</p>
-              </CardContent>
-            </Card>
+            <Link href="/tools/application-database-chromatography">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">Application database chromatography</h3>
+                    <p className="text-sm text-gray-600">Comprehensive chromatography application database and analysis tools</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
             
             {/* FilterFinder */}
-            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-200 transition-colors">
-                  <svg className="h-8 w-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg">FilterFinder</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">Advanced filtration solution finder for laboratory applications</p>
-              </CardContent>
-            </Card>
+            <Link href="/tools/filter-finder">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">FilterFinder</h3>
+                    <p className="text-sm text-gray-600">Advanced filtration solution finder for laboratory applications</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
             
             {/* StripFinder */}
-            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
-                  <TestTube className="h-8 w-8 text-orange-600" />
-                </div>
-                <CardTitle className="text-lg">StripFinder</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">Test strip selection and optimization tool for rapid diagnostics</p>
-              </CardContent>
-            </Card>
+            <Link href="/tools/strip-finder">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <TestTube className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">StripFinder</h3>
+                    <p className="text-sm text-gray-600">Test strip selection and optimization tool for rapid diagnostics</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
             
             {/* NANOCOLOR Finder */}
-            <Card className="glass-card border-0 group hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-pink-200 transition-colors">
-                  <Droplet className="h-8 w-8 text-pink-600" />
-                </div>
-                <CardTitle className="text-lg">NANOCOLOR Finder</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">Colorimetric analysis tools for precise water and environmental testing</p>
-              </CardContent>
-            </Card>
+            <Link href="/tools/nanocolor-finder">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <Droplet className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">NANOCOLOR Finder</h3>
+                    <p className="text-sm text-gray-600">Colorimetric analysis tools for precise water and environmental testing</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* CHROMAFIL Finder */}
+            <Link href="/tools/chromafil-finder">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">CHROMAFIL Finder</h3>
+                    <p className="text-sm text-gray-600">Chromatography filtration and sample preparation solutions</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* VialFinder */}
+            <Link href="/tools/vial-finder">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <FlaskConical className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">VialFinder</h3>
+                    <p className="text-sm text-gray-600">Laboratory vial and container selection tool</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* Bioanalysis KitFinder */}
+            <Link href="/tools/bioanalysis-kitfinder">
+              <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
+                <CardContent className="p-6 flex items-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors">
+                    <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-600 mb-1">Bioanalysis KitFinder</h3>
+                    <p className="text-sm text-gray-600">Comprehensive bioanalysis kit selection and optimization tool</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
