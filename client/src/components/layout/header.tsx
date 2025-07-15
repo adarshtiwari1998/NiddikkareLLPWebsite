@@ -178,13 +178,19 @@ export default function Header() {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white">Life Sciences</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
+                    location.startsWith('/life-sciences') ? 'bg-primary text-white' : ''
+                  }`}>Life Sciences</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[500px]">
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/life-sciences/dna-rna-extraction" 
-                          className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/life-sciences/dna-rna-extraction'
+                              ? 'bg-accent/10 text-accent border-l-4 border-accent'
+                              : 'hover:bg-gray-50'
+                          }`}
                         >
                           <Dna className="h-5 w-5 text-accent" />
                           <div>
@@ -196,7 +202,11 @@ export default function Header() {
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/life-sciences/molecular-diagnostics" 
-                          className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/life-sciences/molecular-diagnostics'
+                              ? 'bg-accent/10 text-accent border-l-4 border-accent'
+                              : 'hover:bg-gray-50'
+                          }`}
                         >
                           <Microscope className="h-5 w-5 text-accent" />
                           <div>
