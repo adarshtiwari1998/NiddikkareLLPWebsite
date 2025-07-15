@@ -71,7 +71,7 @@ export default function Header() {
                     <Link 
                       href="/" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+                        location === '/' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       Home
@@ -88,7 +88,11 @@ export default function Header() {
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/healthcare/neonatal-care" 
-                          className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/healthcare/neonatal-care'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
                         >
                           <Baby className="h-5 w-5 text-primary" />
                           <div>
@@ -224,7 +228,7 @@ export default function Header() {
                     <Link 
                       href="/gut-care" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/gut-care' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+                        location === '/gut-care' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       GUT Care
@@ -237,7 +241,7 @@ export default function Header() {
                     <Link 
                       href="/about" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/about' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+                        location === '/about' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       About
@@ -250,7 +254,7 @@ export default function Header() {
                     <Link 
                       href="/news" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/news' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+                        location === '/news' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       News
@@ -263,7 +267,7 @@ export default function Header() {
                     <Link 
                       href="/contact" 
                       className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/contact' ? 'text-primary' : 'text-gray-700 hover:text-primary'
+                        location === '/contact' ? 'text-primary bg-primary/10 rounded-md' : 'text-gray-700 hover:text-primary'
                       }`}
                     >
                       Contact
