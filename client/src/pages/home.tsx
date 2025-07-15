@@ -519,7 +519,7 @@ export default function Home() {
             {/* Filtration */}
             <Link href="/life-sciences/molecular-diagnostics">
               <div className="group cursor-pointer">
-                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                <Card className="bg-gradient-to-b from-blue-500/20 to-blue-600/30 backdrop-blur-lg border border-blue-300/30 text-center group-hover:from-blue-400/30 group-hover:to-blue-500/40 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden shadow-lg">
                   {/* Card-specific bubbles */}
                   <div className="absolute inset-0 pointer-events-none">
                     <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '20%', animationDelay: '0s'}} />
@@ -541,7 +541,7 @@ export default function Home() {
             {/* Rapid Tests */}
             <Link href="/life-sciences/molecular-diagnostics">
               <div className="group cursor-pointer">
-                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                <Card className="bg-gradient-to-b from-blue-500/20 to-blue-600/30 backdrop-blur-lg border border-blue-300/30 text-center group-hover:from-blue-400/30 group-hover:to-blue-500/40 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden shadow-lg">
                   {/* Card-specific bubbles */}
                   <div className="absolute inset-0 pointer-events-none">
                     <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '25%', animationDelay: '0.5s'}} />
@@ -561,7 +561,7 @@ export default function Home() {
             {/* Water Analysis */}
             <Link href="/gut-care">
               <div className="group cursor-pointer">
-                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                <Card className="bg-gradient-to-b from-blue-500/20 to-blue-600/30 backdrop-blur-lg border border-blue-300/30 text-center group-hover:from-blue-400/30 group-hover:to-blue-500/40 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden shadow-lg">
                   {/* Card-specific bubbles */}
                   <div className="absolute inset-0 pointer-events-none">
                     <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '30%', animationDelay: '1s'}} />
@@ -581,7 +581,7 @@ export default function Home() {
             {/* Chromatography */}
             <Link href="/life-sciences/molecular-diagnostics">
               <div className="group cursor-pointer">
-                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                <Card className="bg-gradient-to-b from-blue-500/20 to-blue-600/30 backdrop-blur-lg border border-blue-300/30 text-center group-hover:from-blue-400/30 group-hover:to-blue-500/40 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden shadow-lg">
                   {/* Card-specific bubbles */}
                   <div className="absolute inset-0 pointer-events-none">
                     <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '15%', animationDelay: '1.5s'}} />
@@ -601,7 +601,7 @@ export default function Home() {
             {/* Bioanalysis */}
             <Link href="/life-sciences/dna-rna-extraction">
               <div className="group cursor-pointer">
-                <Card className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg border border-white/20 text-center group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden">
+                <Card className="bg-gradient-to-b from-blue-500/20 to-blue-600/30 backdrop-blur-lg border border-blue-300/30 text-center group-hover:from-blue-400/30 group-hover:to-blue-500/40 transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden shadow-lg">
                   {/* Card-specific bubbles */}
                   <div className="absolute inset-0 pointer-events-none">
                     <div className="lab-bubble absolute w-1 h-1 bg-white/30 rounded-full animate-bounce-up" style={{left: '35%', animationDelay: '2s'}} />
