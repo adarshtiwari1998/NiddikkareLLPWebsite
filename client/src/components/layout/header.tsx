@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { 
@@ -15,6 +15,21 @@ import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart
 export default function Header() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [showMedicalLinensSubmenu, setShowMedicalLinensSubmenu] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setShowMedicalLinensSubmenu(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setShowMedicalLinensSubmenu(false);
+    }, 200);
+  };
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -95,7 +110,11 @@ export default function Header() {
                         </Link>
                       </NavigationMenuLink>
                       
-                      <div className="relative group">
+                      <div 
+                        className="relative"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
                         <NavigationMenuLink asChild>
                           <Link 
                             href="/healthcare/medical-linens" 
@@ -113,46 +132,52 @@ export default function Header() {
                         </NavigationMenuLink>
                         
                         {/* Nested submenu */}
-                        <div className="absolute left-full top-0 ml-2 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                          <div className="space-y-2">
-                            <NavigationMenuLink asChild>
-                              <Link 
-                                href="/healthcare/medical-linens/woven" 
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm"
-                              >
-                                <Shirt className="h-4 w-4 text-green-500" />
-                                <div>
-                                  <div className="font-medium">Woven</div>
-                                  <div className="text-xs text-gray-600">100% cotton comfort</div>
-                                </div>
-                              </Link>
-                            </NavigationMenuLink>
-                            <NavigationMenuLink asChild>
-                              <Link 
-                                href="/healthcare/medical-linens/non-woven" 
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm"
-                              >
-                                <Shield className="h-4 w-4 text-blue-500" />
-                                <div>
-                                  <div className="font-medium">Non-woven</div>
-                                  <div className="text-xs text-gray-600">Superior barrier protection</div>
-                                </div>
-                              </Link>
-                            </NavigationMenuLink>
-                            <NavigationMenuLink asChild>
-                              <Link 
-                                href="/healthcare/medical-linens/blended" 
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm"
-                              >
-                                <Layers className="h-4 w-4 text-purple-500" />
-                                <div>
-                                  <div className="font-medium">Blended</div>
-                                  <div className="text-xs text-gray-600">Combined properties</div>
-                                </div>
-                              </Link>
-                            </NavigationMenuLink>
+                        {showMedicalLinensSubmenu && (
+                          <div 
+                            className="absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-lg shadow-lg p-3 w-[280px] z-[60]"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                          >
+                            <div className="space-y-2">
+                              <NavigationMenuLink asChild>
+                                <Link 
+                                  href="/healthcare/medical-linens/woven" 
+                                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm block"
+                                >
+                                  <Shirt className="h-4 w-4 text-green-500" />
+                                  <div>
+                                    <div className="font-medium">Woven</div>
+                                    <div className="text-xs text-gray-600">100% cotton comfort</div>
+                                  </div>
+                                </Link>
+                              </NavigationMenuLink>
+                              <NavigationMenuLink asChild>
+                                <Link 
+                                  href="/healthcare/medical-linens/non-woven" 
+                                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm block"
+                                >
+                                  <Shield className="h-4 w-4 text-blue-500" />
+                                  <div>
+                                    <div className="font-medium">Non-woven</div>
+                                    <div className="text-xs text-gray-600">Superior barrier protection</div>
+                                  </div>
+                                </Link>
+                              </NavigationMenuLink>
+                              <NavigationMenuLink asChild>
+                                <Link 
+                                  href="/healthcare/medical-linens/blended" 
+                                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-colors text-sm block"
+                                >
+                                  <Layers className="h-4 w-4 text-purple-500" />
+                                  <div>
+                                    <div className="font-medium">Blended</div>
+                                    <div className="text-xs text-gray-600">Combined properties</div>
+                                  </div>
+                                </Link>
+                              </NavigationMenuLink>
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </NavigationMenuContent>
