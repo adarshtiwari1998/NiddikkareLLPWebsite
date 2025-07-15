@@ -15,6 +15,9 @@ import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart
 export default function Header() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  
+  // Debug: log the current location
+  console.log('Current location:', location);
 
 
   return (
