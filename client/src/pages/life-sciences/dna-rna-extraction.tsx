@@ -499,6 +499,209 @@ export default function DnaRnaExtraction() {
           </div>
         </section>
 
+        {/* Product Cards Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Extraction Kit <span className="text-secondary">Portfolio</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive DNA and RNA extraction solutions with professional-grade performance
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Plant DNA Extraction Kit",
+                description: "High-purity DNA extraction from plant tissues",
+                icon: Leaf,
+                purity: "≥99%",
+                yield: "High",
+                time: "45 min",
+                samples: ["Leaves", "Stems", "Flowers", "Seeds"],
+                applications: ["PCR", "Sequencing", "Genotyping", "Breeding"]
+              },
+              {
+                title: "Tissue DNA Extraction Kit",
+                description: "Optimized for animal tissue samples",
+                icon: TestTube,
+                purity: "≥98%",
+                yield: "Excellent",
+                time: "30 min",
+                samples: ["Muscle", "Liver", "Kidney", "Brain"],
+                applications: ["PCR", "Sequencing", "Cloning", "Genotyping"]
+              },
+              {
+                title: "Blood DNA Extraction Kit",
+                description: "Efficient DNA extraction from blood samples",
+                icon: Droplet,
+                purity: "≥97%",
+                yield: "Very High",
+                time: "30 min",
+                samples: ["Whole blood", "EDTA blood", "Buffy coat"],
+                applications: ["PCR", "Sequencing", "Diagnostics", "Research"]
+              },
+              {
+                title: "Blood & Cell Culture DNA Extraction Kit",
+                description: "Dual-purpose kit for blood and cultured cells",
+                icon: Dna,
+                purity: "≥98%",
+                yield: "High",
+                time: "25 min",
+                samples: ["Blood", "Cultured cells", "Suspension cells"],
+                applications: ["PCR", "Sequencing", "Cloning", "Transfection"]
+              },
+              {
+                title: "Gel & PCR Product Purification Kit",
+                description: "Purification of DNA from gels and PCR reactions",
+                icon: Dna,
+                purity: "≥95%",
+                yield: "Good",
+                time: "15 min",
+                samples: ["Agarose gel", "PCR products", "Enzymatic reactions"],
+                applications: ["Cloning", "Sequencing", "Ligation", "Transformation"]
+              },
+              {
+                title: "Plant RNA Extraction Kit",
+                description: "Specialized RNA extraction from plant tissues",
+                icon: Leaf,
+                purity: "≥98%",
+                yield: "Excellent",
+                time: "40 min",
+                samples: ["Leaves", "Roots", "Fruits", "Seeds"],
+                applications: ["RT-PCR", "RNA-seq", "Gene expression", "qPCR"]
+              },
+              {
+                title: "Tissue RNA Extraction Kit",
+                description: "High-quality RNA from animal tissues",
+                icon: TestTube,
+                purity: "≥97%",
+                yield: "High",
+                time: "35 min",
+                samples: ["Muscle", "Liver", "Brain", "Heart"],
+                applications: ["RT-PCR", "RNA-seq", "Gene expression", "Microarray"]
+              },
+              {
+                title: "Viral Nucleic Acid Extraction Kit",
+                description: "Extraction of viral DNA and RNA",
+                icon: Worm,
+                purity: "≥96%",
+                yield: "Good",
+                time: "25 min",
+                samples: ["Serum", "Plasma", "Swabs", "Viral cultures"],
+                applications: ["Viral load", "Diagnostics", "Surveillance", "Research"]
+              },
+              {
+                title: "Blood & Cell Culture RNA Extraction Kit",
+                description: "RNA extraction from blood and cultured cells",
+                icon: Droplet,
+                purity: "≥97%",
+                yield: "High",
+                time: "30 min",
+                samples: ["Blood", "Cultured cells", "Primary cells"],
+                applications: ["RT-PCR", "RNA-seq", "Gene expression", "Biomarkers"]
+              },
+              {
+                title: "Plasmid DNA Extraction Kit",
+                description: "Efficient plasmid DNA purification",
+                icon: TestTube,
+                purity: "≥95%",
+                yield: "Very High",
+                time: "15 min",
+                samples: ["E. coli", "Bacterial cultures", "Transformed cells"],
+                applications: ["Cloning", "Transfection", "Sequencing", "Mutagenesis"]
+              }
+            ].map((kit, index) => {
+              const getGradientColor = (idx: number) => {
+                const colors = [
+                  'from-green-100 to-green-50 border-l-4 border-l-green-500',
+                  'from-blue-100 to-blue-50 border-l-4 border-l-blue-500',
+                  'from-yellow-100 to-yellow-50 border-l-4 border-l-yellow-500',
+                  'from-purple-100 to-purple-50 border-l-4 border-l-purple-500',
+                  'from-red-100 to-red-50 border-l-4 border-l-red-500',
+                  'from-indigo-100 to-indigo-50 border-l-4 border-l-indigo-500',
+                  'from-pink-100 to-pink-50 border-l-4 border-l-pink-500',
+                  'from-teal-100 to-teal-50 border-l-4 border-l-teal-500',
+                  'from-orange-100 to-orange-50 border-l-4 border-l-orange-500',
+                  'from-cyan-100 to-cyan-50 border-l-4 border-l-cyan-500'
+                ];
+                return colors[idx % colors.length];
+              };
+
+              const getIconColor = (idx: number) => {
+                const colors = [
+                  'text-green-600',
+                  'text-blue-600',
+                  'text-yellow-600',
+                  'text-purple-600',
+                  'text-red-600',
+                  'text-indigo-600',
+                  'text-pink-600',
+                  'text-teal-600',
+                  'text-orange-600',
+                  'text-cyan-600'
+                ];
+                return colors[index % colors.length];
+              };
+
+              return (
+                <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br ${getGradientColor(index)} border-r-4 border-r-gray-200 overflow-hidden relative`}>
+                  {/* Background Shape */}
+                  <div className="absolute bottom-0 right-0 opacity-10 transform rotate-12 translate-x-4 translate-y-4">
+                    <kit.icon className="w-32 h-32 text-gray-600" />
+                  </div>
+                  
+                  <CardHeader className="text-center pb-4">
+                    <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-white/40 to-transparent rounded-t-lg"></div>
+                    <div className="relative z-10">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 bg-white/60 rounded-full mb-4 shadow-sm backdrop-blur-sm`}>
+                        <kit.icon className={`w-8 h-8 ${getIconColor(index)}`} />
+                      </div>
+                      <CardTitle className="text-lg font-bold text-gray-800">{kit.title}</CardTitle>
+                      <CardDescription className="text-gray-600 text-sm">{kit.description}</CardDescription>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-3 gap-2 text-sm">
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">{kit.purity}</div>
+                          <div className="text-xs text-gray-600">Purity</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">{kit.yield}</div>
+                          <div className="text-xs text-gray-600">Yield</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">{kit.time}</div>
+                          <div className="text-xs text-gray-600">Time</div>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm mb-2 text-gray-800">Sample Types:</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {kit.samples.map((sample, idx) => (
+                            <Badge key={idx} variant="outline" className="text-xs bg-white/50 border-gray-400">{sample}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm mb-2 text-gray-800">Applications:</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {kit.applications.map((app, idx) => (
+                            <Badge key={idx} className="text-xs bg-orange-400 hover:bg-orange-500 text-white">{app}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="text-center bg-white rounded-xl shadow-lg p-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
