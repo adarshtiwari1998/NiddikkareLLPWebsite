@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -16,6 +16,15 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (leaveTimeout) {
+        clearTimeout(leaveTimeout);
+      }
+    };
+  }, [leaveTimeout]);
 
   const servicesItems: DropdownItem[] = [
     {
@@ -121,48 +130,59 @@ export default function Header() {
       clearTimeout(leaveTimeout);
       setLeaveTimeout(null);
     }
+    // Force immediate update to prevent timing issues
     setActiveDropdown(menuKey);
   };
 
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
       setActiveDropdown(null);
-    }, 150);
+    }, 200);
     setLeaveTimeout(timeout);
   };
 
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => (
-    <div 
-      className={`absolute top-full left-0 mt-2 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-200 z-50 ${
-        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}
-      onMouseEnter={() => handleMouseEnter(menuKey)}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="grid gap-3 p-4">
-        {items.map((item) => {
-          const Icon = item.icon;
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
-                location === item.href
-                  ? 'bg-primary/10 text-primary border-l-4 border-primary'
-                  : 'hover:bg-gray-50'
-              }`}
-              onClick={() => setActiveDropdown(null)}
-            >
-              <Icon className="h-5 w-5 text-primary" />
-              <div>
-                <div className="font-medium">{item.label}</div>
-                <div className="text-sm text-gray-600">{item.description}</div>
-              </div>
-            </Link>
-          );
-        })}
+    <>
+      {/* Bridge area to prevent dropdown closing when moving mouse */}
+      <div 
+        className={`absolute top-full left-0 w-[500px] h-2 ${
+          isOpen ? 'block' : 'hidden'
+        }`}
+        onMouseEnter={() => handleMouseEnter(menuKey)}
+        onMouseLeave={handleMouseLeave}
+      />
+      <div 
+        className={`absolute top-full left-0 mt-2 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-200 z-50 ${
+          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        onMouseEnter={() => handleMouseEnter(menuKey)}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="grid gap-3 p-4">
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                  location === item.href
+                    ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                    : 'hover:bg-gray-50'
+                }`}
+                onClick={() => setActiveDropdown(null)}
+              >
+                <Icon className="h-5 w-5 text-primary" />
+                <div>
+                  <div className="font-medium">{item.label}</div>
+                  <div className="text-sm text-gray-600">{item.description}</div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 
   return (
