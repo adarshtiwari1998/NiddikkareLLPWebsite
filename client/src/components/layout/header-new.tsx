@@ -140,18 +140,29 @@ export default function Header() {
     if (!leaveTimeout) {
       const timeout = setTimeout(() => {
         setActiveDropdown(null);
-      }, 200);
+      }, 100); // Reduced from 200ms to 100ms for faster response
       setLeaveTimeout(timeout);
     }
   };
 
+  const handleNonDropdownHover = () => {
+    // Clear any existing timeout
+    if (leaveTimeout) {
+      clearTimeout(leaveTimeout);
+      setLeaveTimeout(null);
+    }
+    // Immediately close any open dropdown
+    setActiveDropdown(null);
+  };
+
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => (
     <div 
-      className={`absolute top-full left-0 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-200 z-50 ${
+      className={`absolute top-full left-0 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-150 z-50 ${
         isOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
       }`}
       style={{ marginTop: '8px' }}
       onMouseEnter={() => handleMouseEnter(menuKey)}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="grid gap-3 p-4">
         {items.map((item) => {
@@ -225,9 +236,9 @@ export default function Header() {
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex">
-            <ul className="flex items-center space-x-2" onMouseLeave={handleMouseLeave}>
-              <li>
+          <nav className="hidden lg:flex" onMouseLeave={handleMouseLeave}>
+            <ul className="flex items-center space-x-2">
+              <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/" 
                   className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
@@ -308,7 +319,7 @@ export default function Header() {
                 <DropdownMenu items={lifeSciencesItems} isOpen={activeDropdown === 'life-sciences'} menuKey="life-sciences" />
               </li>
 
-              <li>
+              <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/gut-care" 
                   className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
@@ -319,7 +330,7 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li>
+              <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/about" 
                   className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
@@ -330,7 +341,7 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li>
+              <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/news" 
                   className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
@@ -341,7 +352,7 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li>
+              <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/contact" 
                   className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
