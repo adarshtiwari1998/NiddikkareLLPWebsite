@@ -15,6 +15,7 @@ export default function Header() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const servicesItems: DropdownItem[] = [
     {
@@ -115,10 +116,29 @@ export default function Header() {
     }
   ];
 
+  const handleMouseEnter = (menuKey: string) => {
+    if (leaveTimeout) {
+      clearTimeout(leaveTimeout);
+      setLeaveTimeout(null);
+    }
+    setActiveDropdown(menuKey);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+    setLeaveTimeout(timeout);
+  };
+
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => (
-    <div className={`absolute top-full left-0 mt-2 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-200 z-50 ${
-      isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-    }`}>
+    <div 
+      className={`absolute top-full left-0 mt-2 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-200 z-50 ${
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}
+      onMouseEnter={() => handleMouseEnter(menuKey)}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="grid gap-3 p-4">
         {items.map((item) => {
           const Icon = item.icon;
@@ -205,8 +225,8 @@ export default function Header() {
               </li>
 
               <li className="relative"
-                onMouseEnter={() => setActiveDropdown('services')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('services')}
+                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -220,8 +240,8 @@ export default function Header() {
               </li>
 
               <li className="relative"
-                onMouseEnter={() => setActiveDropdown('products')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('products')}
+                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -235,8 +255,8 @@ export default function Header() {
               </li>
 
               <li className="relative"
-                onMouseEnter={() => setActiveDropdown('it-solutions')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('it-solutions')}
+                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -250,8 +270,8 @@ export default function Header() {
               </li>
 
               <li className="relative"
-                onMouseEnter={() => setActiveDropdown('healthcare')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('healthcare')}
+                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -265,8 +285,8 @@ export default function Header() {
               </li>
 
               <li className="relative"
-                onMouseEnter={() => setActiveDropdown('life-sciences')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('life-sciences')}
+                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
