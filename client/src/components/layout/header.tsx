@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger 
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight } from "lucide-react";
+import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe } from "lucide-react";
 
 export default function Header() {
   const [location] = useLocation();
@@ -79,6 +79,196 @@ export default function Header() {
                       Home
                     </Link>
                   </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
+                    location.startsWith('/services') ? 'bg-primary text-white' : ''
+                  }`}>Services</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[500px]">
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/services/consultancy-ivd" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/services/consultancy-ivd'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Settings className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Consultancy for IVD-Medical Device</div>
+                            <div className="text-sm text-gray-600">Expert consulting for medical devices</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/services/contract-research" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/services/contract-research'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <FileText className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Contract Research</div>
+                            <div className="text-sm text-gray-600">Specialized research services</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/services/oem-products" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/services/oem-products'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <ShoppingCart className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">OEM Products</div>
+                            <div className="text-sm text-gray-600">Original equipment manufacturing</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
+                    location.startsWith('/products') ? 'bg-primary text-white' : ''
+                  }`}>Products</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[500px]">
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/products/neonatal-care" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/products/neonatal-care'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Baby className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Neonatal Care</div>
+                            <div className="text-sm text-gray-600">Advanced newborn care products</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/products/medical-linens" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/products/medical-linens'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Bed className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Medical Linens</div>
+                            <div className="text-sm text-gray-600">Professional grade medical textiles</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/products/dna-rna-extraction" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/products/dna-rna-extraction'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Dna className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">DNA/RNA Extraction</div>
+                            <div className="text-sm text-gray-600">Molecular extraction solutions</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/products/molecular-diagnostics" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/products/molecular-diagnostics'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Microscope className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Molecular Diagnostics</div>
+                            <div className="text-sm text-gray-600">Advanced diagnostic tools</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
+                    location.startsWith('/it-solutions') ? 'bg-primary text-white' : ''
+                  }`}>IT Solutions</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[500px]">
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/it-solutions/rpo" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/it-solutions/rpo'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Users className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">RPO</div>
+                            <div className="text-sm text-gray-600">Recruitment Process Outsourcing</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/it-solutions/contingent" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/it-solutions/contingent'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Users className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Contingent</div>
+                            <div className="text-sm text-gray-600">Flexible workforce solutions</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          href="/it-solutions/web-app-solutions" 
+                          className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                            location === '/it-solutions/web-app-solutions'
+                              ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                              : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <Globe className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Web App Solutions</div>
+                            <div className="text-sm text-gray-600">Custom web applications</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>

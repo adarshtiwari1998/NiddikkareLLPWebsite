@@ -29,6 +29,23 @@ import NanocolorFinder from "@/pages/tools/nanocolor-finder";
 import ChromafilFinder from "@/pages/tools/chromafil-finder";
 import VialFinder from "@/pages/tools/vial-finder";
 import BioanalysisKitFinder from "@/pages/tools/bioanalysis-kitfinder";
+
+// New Services pages
+import ConsultancyIVD from "@/pages/services/consultancy-ivd";
+import ContractResearch from "@/pages/services/contract-research";
+import OEMProducts from "@/pages/services/oem-products";
+
+// New Products pages
+import ProductsNeonatalCare from "@/pages/products/neonatal-care";
+import ProductsMedicalLinens from "@/pages/products/medical-linens";
+import ProductsDnaRnaExtraction from "@/pages/products/dna-rna-extraction";
+import ProductsMolecularDiagnostics from "@/pages/products/molecular-diagnostics";
+
+// New IT Solutions pages
+import RPO from "@/pages/it-solutions/rpo";
+import Contingent from "@/pages/it-solutions/contingent";
+import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
+
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 
@@ -39,13 +56,35 @@ function Router() {
       <main>
         <Switch>
           <Route path="/" component={Home} />
+          
+          {/* Services Routes */}
+          <Route path="/services/consultancy-ivd" component={ConsultancyIVD} />
+          <Route path="/services/contract-research" component={ContractResearch} />
+          <Route path="/services/oem-products" component={OEMProducts} />
+          
+          {/* Products Routes */}
+          <Route path="/products/neonatal-care" component={ProductsNeonatalCare} />
+          <Route path="/products/medical-linens" component={ProductsMedicalLinens} />
+          <Route path="/products/dna-rna-extraction" component={ProductsDnaRnaExtraction} />
+          <Route path="/products/molecular-diagnostics" component={ProductsMolecularDiagnostics} />
+          
+          {/* IT Solutions Routes */}
+          <Route path="/it-solutions/rpo" component={RPO} />
+          <Route path="/it-solutions/contingent" component={Contingent} />
+          <Route path="/it-solutions/web-app-solutions" component={WebAppSolutions} />
+          
+          {/* Existing Healthcare Routes */}
           <Route path="/healthcare/neonatal-care" component={NeonatalCare} />
           <Route path="/healthcare/medical-linens" component={MedicalLinens} />
           <Route path="/healthcare/medical-linens/woven" component={WovenMedicalLinens} />
           <Route path="/healthcare/medical-linens/non-woven" component={NonWovenMedicalLinens} />
           <Route path="/healthcare/medical-linens/blended" component={BlendedMedicalLinens} />
+          
+          {/* Existing Life Sciences Routes */}
           <Route path="/life-sciences/dna-rna-extraction" component={DnaRnaExtraction} />
           <Route path="/life-sciences/molecular-diagnostics" component={MolecularDiagnostics} />
+          
+          {/* Other Routes */}
           <Route path="/gut-care" component={GutCare} />
           <Route path="/filtration" component={Filtration} />
           <Route path="/rapid-tests" component={RapidTests} />
@@ -54,6 +93,8 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />
+          
+          {/* Tools Routes */}
           <Route path="/tools/e-training" component={ETraining} />
           <Route path="/tools/sample-request" component={SampleRequest} />
           <Route path="/tools/application-database-chromatography" component={ApplicationDatabaseChromatography} />
@@ -63,6 +104,7 @@ function Router() {
           <Route path="/tools/chromafil-finder" component={ChromafilFinder} />
           <Route path="/tools/vial-finder" component={VialFinder} />
           <Route path="/tools/bioanalysis-kitfinder" component={BioanalysisKitFinder} />
+          
           <Route component={NotFound} />
         </Switch>
       </main>
