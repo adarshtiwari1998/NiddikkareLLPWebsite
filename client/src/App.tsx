@@ -46,7 +46,7 @@ import RPO from "@/pages/it-solutions/rpo";
 import Contingent from "@/pages/it-solutions/contingent";
 import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
 
-import Header from "@/components/layout/header";
+import Header from "@/components/layout/header-new";
 import Footer from "@/components/layout/footer";
 
 function Router() {

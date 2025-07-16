@@ -1,21 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { 
-  NavigationMenu, 
-  NavigationMenuContent, 
-  NavigationMenuItem, 
-  NavigationMenuLink, 
-  NavigationMenuList, 
-  NavigationMenuTrigger,
-  NavigationMenuViewport
-} from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe } from "lucide-react";
 
 export default function Header() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   
 
 
@@ -67,20 +59,18 @@ export default function Header() {
             </Link>
             
             {/* Desktop Navigation */}
-            <NavigationMenu className="hidden lg:flex">
-              <NavigationMenuList className="flex space-x-2">
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link 
-                      href="/" 
-                      className={`px-4 py-2 font-medium transition-colors ${
-                        location === '/' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
-                      }`}
-                    >
-                      Home
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
+            <nav className="hidden lg:flex">
+              <ul className="flex space-x-2">
+                <li>
+                  <Link 
+                    href="/" 
+                    className={`px-4 py-2 font-medium transition-colors ${
+                      location === '/' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
+                    }`}
+                  >
+                    Home
+                  </Link>
+                </li>
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
