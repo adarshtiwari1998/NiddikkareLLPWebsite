@@ -126,19 +126,23 @@ export default function Header() {
   ];
 
   const handleMouseEnter = (menuKey: string) => {
+    // Always clear any existing timeout
     if (leaveTimeout) {
       clearTimeout(leaveTimeout);
       setLeaveTimeout(null);
     }
-    // Force immediate update to prevent timing issues
+    // Immediately set the new dropdown - this ensures instant switching
     setActiveDropdown(menuKey);
   };
 
   const handleMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 300);
-    setLeaveTimeout(timeout);
+    // Only set timeout if there's no existing one
+    if (!leaveTimeout) {
+      const timeout = setTimeout(() => {
+        setActiveDropdown(null);
+      }, 200);
+      setLeaveTimeout(timeout);
+    }
   };
 
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => (
@@ -148,7 +152,6 @@ export default function Header() {
       }`}
       style={{ marginTop: '8px' }}
       onMouseEnter={() => handleMouseEnter(menuKey)}
-      onMouseLeave={handleMouseLeave}
     >
       <div className="grid gap-3 p-4">
         {items.map((item) => {
@@ -223,7 +226,7 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex">
-            <ul className="flex items-center space-x-2">
+            <ul className="flex items-center space-x-2" onMouseLeave={handleMouseLeave}>
               <li>
                 <Link 
                   href="/" 
@@ -237,7 +240,6 @@ export default function Header() {
 
               <li className="relative group"
                 onMouseEnter={() => handleMouseEnter('services')}
-                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -252,7 +254,6 @@ export default function Header() {
 
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('products')}
-                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -267,7 +268,6 @@ export default function Header() {
 
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('it-solutions')}
-                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -282,7 +282,6 @@ export default function Header() {
 
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('healthcare')}
-                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
@@ -297,7 +296,6 @@ export default function Header() {
 
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('life-sciences')}
-                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
