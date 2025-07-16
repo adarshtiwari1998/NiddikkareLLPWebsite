@@ -133,7 +133,7 @@ export default function DnaRnaExtraction() {
                 
                 <div>
                   <img 
-                    src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                    src="/attached_assets/image_1752676114030.png" 
                     alt="Plant DNA extraction laboratory setup" 
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
@@ -367,6 +367,74 @@ export default function DnaRnaExtraction() {
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">Elution</h3>
                 <p className="text-sm text-gray-600">Pure DNA recovered in low-salt buffer</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Complete Product List */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Complete Product <span className="text-secondary">Portfolio</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive DNA and RNA extraction solutions for all your research needs
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* DNA Extraction Products */}
+            <div className="space-y-6">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-blue-600 mb-4">DNA Extraction Kits</h3>
+              </div>
+              <div className="space-y-4">
+                {[
+                  "Plant DNA Extraction Kit",
+                  "Tissue DNA Extraction Kit", 
+                  "Blood DNA Extraction Kit",
+                  "Blood & Cell Culture DNA Extraction Kit",
+                  "Gel & PCR Product Purification Kit"
+                ].map((product, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                          <Dna className="h-4 w-4 text-blue-600" />
+                        </div>
+                        <span className="font-medium text-gray-800">{product}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            {/* RNA Extraction Products */}
+            <div className="space-y-6">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-green-600 mb-4">RNA Extraction Kits</h3>
+              </div>
+              <div className="space-y-4">
+                {[
+                  "Plant RNA Extraction Kit",
+                  "Tissue RNA Extraction Kit",
+                  "Viral Nucleic Acid Extraction Kit",
+                  "Blood & Cell Culture RNA Extraction Kit",
+                  "Plasmid DNA Extraction Kit"
+                ].map((product, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                          <TestTube className="h-4 w-4 text-green-600" />
+                        </div>
+                        <span className="font-medium text-gray-800">{product}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
