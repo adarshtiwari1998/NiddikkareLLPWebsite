@@ -139,7 +139,305 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Main Product Categories - Modern Grid */}
+      {/* Products Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-gray-800 section-header mb-4">
+              Our Products
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive product portfolio for healthcare and life sciences applications
+            </p>
+          </div>
+          
+          <div className="modern-grid">
+            {/* Neonatal Care Products */}
+            <Link href="/products/neonatal-care">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Baby className="h-10 w-10 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">Neonatal Care Products</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Specialized products for newborn care during their first 28 days of life
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      Kouvér Receiving Blankets
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      100% Breathable Cotton
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      Mimics the Womb Environment
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                      Reduces Startle Reflex
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-primary/10 text-primary hover:bg-primary/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* Medical Linens Products */}
+            <Link href="/products/medical-linens">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/20 transition-colors">
+                    <Stethoscope className="h-10 w-10 text-secondary" />
+                  </div>
+                  <CardTitle className="text-2xl">Medical Linens Products</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Exceptional hospital linen products that elevate patient care
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Premium Bed Sheets & Pillow Covers
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Surgical Gowns & Drapes
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Rubber Sheets & Receiving Blankets
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-secondary mr-2" />
+                      Infection Control Design
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-secondary/10 text-secondary hover:bg-secondary/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* DNA/RNA Extraction Products */}
+            <Link href="/products/dna-rna-extraction">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Dna className="h-10 w-10 text-accent" />
+                  </div>
+                  <CardTitle className="text-2xl">DNA/RNA Extraction Products</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    High-quality DNA and RNA extraction products for molecular biology
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Plant & Animal DNA Extraction
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Blood & Cell Culture Extraction
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Viral Nucleic Acid Extraction
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-accent mr-2" />
+                      Gel & PCR Purification
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-accent/10 text-accent hover:bg-accent/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* Molecular Diagnostics Products */}
+            <Link href="/products/molecular-diagnostics">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-success/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-success/20 transition-colors">
+                    <Microscope className="h-10 w-10 text-success" />
+                  </div>
+                  <CardTitle className="text-2xl">Molecular Diagnostics Products</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Advanced diagnostic products for genetic material analysis
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      SARS-CoV-2 (COVID-19) Testing
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      Hepatitis Virus Detection
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      HIV & Tuberculosis Testing
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
+                      Monkey Pox Detection
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-success/10 text-success hover:bg-success/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-gray-800 section-header mb-4">
+              Our Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Professional services to support your healthcare and life sciences operations
+            </p>
+          </div>
+          
+          <div className="modern-grid">
+            {/* Consultancy IVD */}
+            <Link href="/services/consultancy-ivd">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/20 transition-colors">
+                    <Users className="h-10 w-10 text-blue-500" />
+                  </div>
+                  <CardTitle className="text-2xl">Consultancy IVD</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Expert consultancy services for in-vitro diagnostics development
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-blue-500 mr-2" />
+                      Regulatory Compliance
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-blue-500 mr-2" />
+                      Product Development
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-blue-500 mr-2" />
+                      Quality Assurance
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-blue-500 mr-2" />
+                      Market Analysis
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-blue-500/10 text-blue-500 hover:bg-blue-500/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* Contract Research */}
+            <Link href="/services/contract-research">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500/20 transition-colors">
+                    <FlaskConical className="h-10 w-10 text-purple-500" />
+                  </div>
+                  <CardTitle className="text-2xl">Contract Research</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Comprehensive contract research services for life sciences
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-purple-500 mr-2" />
+                      Laboratory Testing
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-purple-500 mr-2" />
+                      Clinical Trials
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-purple-500 mr-2" />
+                      Data Analysis
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-purple-500 mr-2" />
+                      Research Documentation
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-purple-500/10 text-purple-500 hover:bg-purple-500/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            {/* OEM Products */}
+            <Link href="/services/oem-products">
+              <Card className="group cursor-pointer product-card h-full">
+                <CardHeader className="text-center">
+                  <div className="w-20 h-20 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/20 transition-colors">
+                    <Award className="h-10 w-10 text-orange-500" />
+                  </div>
+                  <CardTitle className="text-2xl">OEM Products</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Custom OEM solutions for healthcare and diagnostic equipment
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-orange-500 mr-2" />
+                      Custom Manufacturing
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-orange-500 mr-2" />
+                      Private Labeling
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-orange-500 mr-2" />
+                      Quality Control
+                    </div>
+                    <div className="flex items-center text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-orange-500 mr-2" />
+                      Technical Support
+                    </div>
+                  </div>
+                  <Badge className="w-full justify-center bg-orange-500/10 text-orange-500 hover:bg-orange-500/20">
+                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Solutions Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
