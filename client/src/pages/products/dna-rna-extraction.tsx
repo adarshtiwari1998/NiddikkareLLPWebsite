@@ -214,7 +214,7 @@ export default function DnaRnaExtractionProducts() {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/attached_assets/image_1752676114030.png" 
+                src="attached_assets/image_1752676114030.png" 
                 alt="DNA/RNA Extraction Solutions" 
                 className="rounded-xl shadow-xl max-w-full h-auto"
               />
@@ -228,51 +228,88 @@ export default function DnaRnaExtractionProducts() {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Extraction Kit Portfolio</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {extractionKits.map((kit, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardHeader className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                    <kit.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{kit.title}</CardTitle>
-                  <CardDescription>{kit.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      <div className="text-center">
-                        <div className="font-semibold text-primary">{kit.purity}</div>
-                        <div className="text-xs text-gray-600">Purity</div>
+            {extractionKits.map((kit, index) => {
+              const getGradientColor = (idx: number) => {
+                const colors = [
+                  'from-green-100 to-green-50 border-l-4 border-l-green-500',
+                  'from-blue-100 to-blue-50 border-l-4 border-l-blue-500',
+                  'from-yellow-100 to-yellow-50 border-l-4 border-l-yellow-500',
+                  'from-purple-100 to-purple-50 border-l-4 border-l-purple-500',
+                  'from-red-100 to-red-50 border-l-4 border-l-red-500',
+                  'from-indigo-100 to-indigo-50 border-l-4 border-l-indigo-500',
+                  'from-pink-100 to-pink-50 border-l-4 border-l-pink-500',
+                  'from-teal-100 to-teal-50 border-l-4 border-l-teal-500',
+                  'from-orange-100 to-orange-50 border-l-4 border-l-orange-500',
+                  'from-cyan-100 to-cyan-50 border-l-4 border-l-cyan-500'
+                ];
+                return colors[idx % colors.length];
+              };
+
+              const getIconColor = (idx: number) => {
+                const colors = [
+                  'text-green-600',
+                  'text-blue-600',
+                  'text-yellow-600',
+                  'text-purple-600',
+                  'text-red-600',
+                  'text-indigo-600',
+                  'text-pink-600',
+                  'text-teal-600',
+                  'text-orange-600',
+                  'text-cyan-600'
+                ];
+                return colors[index % colors.length];
+              };
+
+              return (
+                <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br ${getGradientColor(index)} border-r-4 border-r-gray-200 overflow-hidden relative`}>
+                  <CardHeader className="text-center pb-4">
+                    <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-white/40 to-transparent rounded-t-lg"></div>
+                    <div className="relative">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 bg-white/60 rounded-full mb-4 shadow-sm backdrop-blur-sm`}>
+                        <kit.icon className={`w-8 h-8 ${getIconColor(index)}`} />
                       </div>
-                      <div className="text-center">
-                        <div className="font-semibold text-primary">{kit.yield}</div>
-                        <div className="text-xs text-gray-600">Yield</div>
+                      <CardTitle className="text-lg font-bold text-gray-800">{kit.title}</CardTitle>
+                      <CardDescription className="text-gray-600 text-sm">{kit.description}</CardDescription>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="relative">
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-3 gap-2 text-sm">
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">{kit.purity}</div>
+                          <div className="text-xs text-gray-600">Purity</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">{kit.yield}</div>
+                          <div className="text-xs text-gray-600">Yield</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">{kit.time}</div>
+                          <div className="text-xs text-gray-600">Time</div>
+                        </div>
                       </div>
-                      <div className="text-center">
-                        <div className="font-semibold text-primary">{kit.time}</div>
-                        <div className="text-xs text-gray-600">Time</div>
+                      <div>
+                        <h4 className="font-semibold text-sm mb-2 text-gray-800">Sample Types:</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {kit.samples.map((sample, idx) => (
+                            <Badge key={idx} variant="outline" className="text-xs bg-white/50 border-gray-400">{sample}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm mb-2 text-gray-800">Applications:</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {kit.applications.map((app, idx) => (
+                            <Badge key={idx} className="text-xs bg-orange-400 hover:bg-orange-500 text-white">{app}</Badge>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-sm mb-2">Sample Types:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {kit.samples.map((sample, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs">{sample}</Badge>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm mb-2">Applications:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {kit.applications.map((app, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs">{app}</Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

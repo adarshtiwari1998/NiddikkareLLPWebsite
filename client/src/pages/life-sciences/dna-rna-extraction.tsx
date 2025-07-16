@@ -133,7 +133,7 @@ export default function DnaRnaExtraction() {
                 
                 <div>
                   <img 
-                    src="/attached_assets/image_1752676114030.png" 
+                    src="attached_assets/image_1752676114030.png" 
                     alt="Plant DNA extraction laboratory setup" 
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
