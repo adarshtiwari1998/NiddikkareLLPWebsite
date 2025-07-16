@@ -454,7 +454,7 @@ export default function DnaRnaExtractionProducts() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm text-gray-600">DNA Integrity</span>
-                    <span className="font-semibold">>98%</span>
+                    <span className="font-semibold">{'>'}98%</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm text-gray-600">RIN Score</span>
