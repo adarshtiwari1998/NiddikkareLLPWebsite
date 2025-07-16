@@ -402,6 +402,100 @@ export default function DnaRnaExtractionProducts() {
         </div>
       </section>
 
+      {/* Technical Specifications */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Technical Specifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <BarChart3 className="w-5 h-5 mr-2 text-primary" />
+                  Yield Performance
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">DNA Recovery</span>
+                    <span className="font-semibold">85-95%</span>
+                  </div>
+                  <Progress value={90} className="h-2" />
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">RNA Recovery</span>
+                    <span className="font-semibold">80-90%</span>
+                  </div>
+                  <Progress value={85} className="h-2" />
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Plasmid Recovery</span>
+                    <span className="font-semibold">90-98%</span>
+                  </div>
+                  <Progress value={94} className="h-2" />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Shield className="w-5 h-5 mr-2 text-primary" />
+                  Quality Metrics
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">A260/A280 Ratio</span>
+                    <span className="font-semibold">1.8-2.0</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">A260/A230 Ratio</span>
+                    <span className="font-semibold">2.0-2.2</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">DNA Integrity</span>
+                    <span className="font-semibold">>98%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">RIN Score</span>
+                    <span className="font-semibold">8.5-10</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Clock className="w-5 h-5 mr-2 text-primary" />
+                  Processing Time
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Blood DNA</span>
+                    <span className="font-semibold">30 min</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Tissue DNA</span>
+                    <span className="font-semibold">45 min</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Plant RNA</span>
+                    <span className="font-semibold">40 min</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Plasmid DNA</span>
+                    <span className="font-semibold">15 min</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Applications */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
