@@ -67,7 +67,7 @@ export default function Header() {
             
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden lg:flex">
-              <NavigationMenuList>
+              <NavigationMenuList className="flex space-x-2">
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
                     <Link 
@@ -81,12 +81,12 @@ export default function Header() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
                     location.startsWith('/services') ? 'bg-primary text-white' : ''
                   }`}>Services</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-4 w-[500px]">
+                  <NavigationMenuContent className="absolute left-0 top-full mt-2 z-50">
+                    <div className="grid gap-3 p-4 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg">
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/services/consultancy-ivd" 
@@ -139,12 +139,12 @@ export default function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
                     location.startsWith('/products') ? 'bg-primary text-white' : ''
                   }`}>Products</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-4 w-[500px]">
+                  <NavigationMenuContent className="absolute left-0 top-full mt-2 z-50">
+                    <div className="grid gap-3 p-4 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg">
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/products/neonatal-care" 
@@ -213,12 +213,12 @@ export default function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
                     location.startsWith('/it-solutions') ? 'bg-primary text-white' : ''
                   }`}>IT Solutions</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-4 w-[500px]">
+                  <NavigationMenuContent className="absolute left-0 top-full mt-2 z-50">
+                    <div className="grid gap-3 p-4 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg">
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/it-solutions/rpo" 
@@ -271,12 +271,12 @@ export default function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
                     location.startsWith('/healthcare') ? 'bg-primary text-white' : ''
                   }`}>Healthcare</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-4 w-[500px]">
+                  <NavigationMenuContent className="absolute left-0 top-full mt-2 z-50">
+                    <div className="grid gap-3 p-4 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg">
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/healthcare/neonatal-care" 
@@ -373,12 +373,12 @@ export default function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger className={`hover:bg-primary hover:text-white transition-colors data-[state=open]:bg-primary data-[state=open]:text-white ${
                     location.startsWith('/life-sciences') ? 'bg-primary text-white' : ''
                   }`}>Life Sciences</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-4 w-[500px]">
+                  <NavigationMenuContent className="absolute left-0 top-full mt-2 z-50">
+                    <div className="grid gap-3 p-4 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg">
                       <NavigationMenuLink asChild>
                         <Link 
                           href="/life-sciences/dna-rna-extraction" 
