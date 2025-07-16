@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Dna, FlaskConical, Zap, Shield, CheckCircle, BarChart3, Clock, Award } from "lucide-react";
+import extractionImage from "@assets/image_1752676114030.png";
 
 export default function DnaRnaExtractionProducts() {
   const extractionKits = [
@@ -214,7 +215,7 @@ export default function DnaRnaExtractionProducts() {
             </div>
             <div className="flex justify-center">
               <img 
-                src="attached_assets/image_1752676114030.png" 
+                src={extractionImage} 
                 alt="DNA/RNA Extraction Solutions" 
                 className="rounded-xl shadow-xl max-w-full h-auto"
               />
@@ -263,9 +264,14 @@ export default function DnaRnaExtractionProducts() {
 
               return (
                 <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br ${getGradientColor(index)} border-r-4 border-r-gray-200 overflow-hidden relative`}>
+                  {/* Background Shape */}
+                  <div className="absolute bottom-0 right-0 opacity-10 transform rotate-12 translate-x-4 translate-y-4">
+                    <kit.icon className="w-32 h-32 text-gray-600" />
+                  </div>
+                  
                   <CardHeader className="text-center pb-4">
                     <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-white/40 to-transparent rounded-t-lg"></div>
-                    <div className="relative">
+                    <div className="relative z-10">
                       <div className={`inline-flex items-center justify-center w-16 h-16 bg-white/60 rounded-full mb-4 shadow-sm backdrop-blur-sm`}>
                         <kit.icon className={`w-8 h-8 ${getIconColor(index)}`} />
                       </div>
@@ -273,7 +279,7 @@ export default function DnaRnaExtractionProducts() {
                       <CardDescription className="text-gray-600 text-sm">{kit.description}</CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent className="relative">
+                  <CardContent className="relative z-10">
                     <div className="space-y-4">
                       <div className="grid grid-cols-3 gap-2 text-sm">
                         <div className="text-center">
