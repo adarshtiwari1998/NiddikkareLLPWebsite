@@ -192,11 +192,11 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex">
-            <ul className="flex space-x-2">
+            <ul className="flex items-center space-x-2">
               <li>
                 <Link 
                   href="/" 
-                  className={`px-4 py-2 font-medium transition-colors ${
+                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
                     location === '/' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -209,7 +209,7 @@ export default function Header() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors ${
+                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
                     location.startsWith('/services') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -224,7 +224,7 @@ export default function Header() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors ${
+                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
                     location.startsWith('/products') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -239,7 +239,7 @@ export default function Header() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors ${
+                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
                     location.startsWith('/it-solutions') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -254,7 +254,7 @@ export default function Header() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors ${
+                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
                     location.startsWith('/healthcare') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -269,7 +269,7 @@ export default function Header() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors ${
+                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
                     location.startsWith('/life-sciences') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -282,7 +282,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/gut-care" 
-                  className={`px-4 py-2 font-medium transition-colors ${
+                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
                     location === '/gut-care' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -293,7 +293,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/about" 
-                  className={`px-4 py-2 font-medium transition-colors ${
+                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
                     location === '/about' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -304,7 +304,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/news" 
-                  className={`px-4 py-2 font-medium transition-colors ${
+                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
                     location === '/news' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -315,7 +315,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/contact" 
-                  className={`px-4 py-2 font-medium transition-colors ${
+                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
                     location === '/contact' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
