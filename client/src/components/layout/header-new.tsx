@@ -377,10 +377,10 @@ export default function Header() {
                         // Position submenu to the right of the parent item (matching arrow direction)
                         left: '100%',
                         marginLeft: '8px',
-                        // Responsive width that prevents overflow
-                        width: 'min(280px, 25vw)',
-                        maxWidth: '280px',
-                        minWidth: '220px',
+                        // Responsive width that accommodates descriptions
+                        width: 'min(320px, 30vw)',
+                        maxWidth: '320px',
+                        minWidth: '280px',
                         // Enable horizontal scrolling when content overflows
                         maxHeight: '400px'
                       }}
@@ -394,7 +394,7 @@ export default function Header() {
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className={`flex items-center space-x-2 p-2 rounded-md text-sm transition-colors ${
+                              className={`flex items-start space-x-3 p-3 rounded-md transition-colors ${
                                 location === subItem.href
                                   ? 'bg-primary/10 text-primary'
                                   : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
@@ -404,10 +404,10 @@ export default function Header() {
                                 setActiveSubmenu(null);
                               }}
                             >
-                              <SubIcon className="h-4 w-4" />
-                              <div>
-                                <div className="font-medium">{subItem.label}</div>
-                                <div className="text-xs text-gray-500">{subItem.description}</div>
+                              <SubIcon className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                              <div className="flex-1 min-w-0">
+                                <div className="font-medium text-sm mb-1">{subItem.label}</div>
+                                <div className="text-xs text-gray-500 leading-relaxed">{subItem.description}</div>
                               </div>
                             </Link>
                           );
