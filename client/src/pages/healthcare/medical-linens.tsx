@@ -12,6 +12,7 @@ import scrubSuitImg from "@/assets/medical-linens/scrub-suit-nkr-501.png";
 import patientGownImg from "@/assets/medical-linens/patient-gown-nkr-602.png";
 import surgicalOTGownImg from "@/assets/medical-linens/surgical-ot-gown-nkr-401-402.png";
 import surgicalCutSheetsImg from "@/assets/medical-linens/surgical-cut-sheets-nkr-302.png";
+import receivingBlanketsImg from "@/assets/medical-linens/receiving-blankets-swaddle-nkr-101.png";
 
 export default function MedicalLinens() {
   return (
@@ -236,6 +237,91 @@ export default function MedicalLinens() {
                 <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical Cut Sheets</h3>
                 <p className="text-secondary font-semibold">with holes</p>
                 <p className="text-secondary font-semibold">NKR-302</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Product - Receiving Blankets */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
+                Featured Product
+              </h2>
+              <p className="text-xl text-gray-600">Specially designed for newborn care and comfort</p>
+            </div>
+            
+            <div className="glass-card rounded-2xl overflow-hidden max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="relative">
+                  <div className="aspect-square lg:aspect-auto lg:h-full overflow-hidden">
+                    <img 
+                      src={receivingBlanketsImg} 
+                      alt="Receiving Blankets/Swaddle NKR-101"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                    <h3 className="font-bold text-lg text-gray-800">Receiving Blankets/Swaddle</h3>
+                    <p className="text-secondary font-semibold">NKR-101</p>
+                  </div>
+                </div>
+
+                {/* Features Section */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-8">Key Benefits & Features</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4 p-3 bg-red-50 rounded-lg">
+                      <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                        <span className="text-red-600 text-sm">▶</span>
+                      </div>
+                      <span className="font-semibold text-gray-800">Breathable, 100% cotton</span>
+                    </div>
+
+                    <div className="flex items-center space-x-4 p-3 bg-green-50 rounded-lg">
+                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <span className="text-green-600 text-sm">▶</span>
+                      </div>
+                      <span className="font-semibold text-gray-800">Germ free</span>
+                    </div>
+
+                    <div className="flex items-center space-x-4 p-3 bg-purple-50 rounded-lg">
+                      <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                        <span className="text-purple-600 text-sm">▶</span>
+                      </div>
+                      <span className="font-semibold text-gray-800">Mimics the womb</span>
+                    </div>
+
+                    <div className="flex items-center space-x-4 p-3 bg-yellow-50 rounded-lg">
+                      <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <span className="text-yellow-600 text-sm">▶</span>
+                      </div>
+                      <span className="font-semibold text-gray-800">Reduces startle reflex</span>
+                    </div>
+
+                    <div className="flex items-center space-x-4 p-3 bg-green-50 rounded-lg">
+                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <span className="text-green-600 text-sm">▶</span>
+                      </div>
+                      <span className="font-semibold text-gray-800">Soothes colicky babies</span>
+                    </div>
+
+                    <div className="flex items-center space-x-4 p-3 bg-orange-50 rounded-lg">
+                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                        <span className="text-orange-600 text-sm">▶</span>
+                      </div>
+                      <span className="font-semibold text-gray-800">Improves sleep</span>
+                    </div>
+
+                    <div className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg">
+                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                        <span className="text-blue-600 text-sm">▶</span>
+                      </div>
+                      <span className="font-semibold text-gray-800">Hygiene & Comfort</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
