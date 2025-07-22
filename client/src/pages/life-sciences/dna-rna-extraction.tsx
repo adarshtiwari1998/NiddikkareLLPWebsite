@@ -77,11 +77,27 @@ export default function DnaRnaExtraction() {
 
           {/* Portfolio Overview Cards */}
           <div className="mb-16">
-            <img 
-              src="@assets/image_1753167797181.png" 
-              alt="Complete Extraction Kit Portfolio showing Plant DNA, Tissue DNA, Blood DNA, and Blood & Cell Culture DNA extraction kits" 
-              className="rounded-xl shadow-lg w-full h-auto mx-auto"
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <img 
+                src="@assets/image_1753168792740.png" 
+                alt="DNA Extraction Kits - Plant, Tissue, Blood, and Blood & Cell Culture" 
+                className="rounded-xl shadow-lg w-full h-auto"
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <img 
+                src="@assets/image_1753168807313.png" 
+                alt="Additional DNA/RNA Extraction Kits - Gel & PCR, Plant RNA, Tissue RNA, and Viral Nucleic Acid" 
+                className="rounded-xl shadow-lg w-full h-auto"
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img 
+                src="@assets/image_1753168818159.png" 
+                alt="Blood & Cell Culture RNA and Plasmid DNA Extraction Kits" 
+                className="rounded-xl shadow-lg w-full h-auto"
+              />
+            </div>
           </div>
 
           {/* Z-Pattern Layout for Individual Kits */}
@@ -198,7 +214,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="@assets/image_1753167765565.png" 
+                  src="@assets/image_1753168850882.png" 
                   alt="Viral RNA extraction laboratory" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -316,8 +332,362 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Cell culture DNA extraction" 
+                  src="@assets/image_1753168879710.png" 
+                  alt="Cell culture DNA extraction laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Kit 5: Gel & PCR Product Purification - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Gel and PCR product purification setup" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Dna className="h-8 w-8 text-pink-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Gel & PCR Product Purification</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Purification of DNA from gels and PCR reactions with high recovery rates 
+                  and removal of primers, enzymes, and other contaminants.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>Rapid gel dissolution and DNA recovery</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>Removes primers and enzyme contaminants</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>Compatible with downstream applications</span>
+                  </div>
+                </div>
+                
+                <div className="bg-pink-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Purity:</span>
+                      <span className="font-medium ml-2">≥95%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Yield:</span>
+                      <span className="font-medium ml-2">Good</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">15 min</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Fragment size:</span>
+                      <span className="font-medium ml-2">100bp-10kb</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Kit 6: Plant RNA Extraction - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Leaf className="h-8 w-8 text-blue-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Plant RNA Extraction</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Specialized RNA extraction from plant tissues with effective removal of 
+                  polysaccharides, polyphenols, and other plant-specific inhibitors.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-blue-600" />
+                    <span>Preserves RNA integrity during isolation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-blue-600" />
+                    <span>Removes plant-specific contaminants</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-blue-600" />
+                    <span>Compatible with RT-PCR and gene expression</span>
+                  </div>
+                </div>
+                
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Purity:</span>
+                      <span className="font-medium ml-2">≥98%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Yield:</span>
+                      <span className="font-medium ml-2">Excellent</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">40 min</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">50-100mg</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Plant RNA extraction from leaves" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Kit 7: Tissue RNA Extraction - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Tissue RNA extraction laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <TestTube className="h-8 w-8 text-pink-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Tissue RNA Extraction</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  High-quality RNA from animal tissues including muscle, liver, brain, 
+                  and heart with preserved RNA integrity for gene expression studies.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>Rapid tissue homogenization protocols</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>RNase-free environment maintenance</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>High RNA integrity numbers (RIN)</span>
+                  </div>
+                </div>
+                
+                <div className="bg-pink-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Purity:</span>
+                      <span className="font-medium ml-2">≥97%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Yield:</span>
+                      <span className="font-medium ml-2">High</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">35 min</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">20-30mg</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Kit 8: Viral Nucleic Acid Extraction - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Worm className="h-8 w-8 text-cyan-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Viral Nucleic Acid Extraction</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Extraction of viral DNA and RNA from serum, plasma, swabs, and 
+                  viral cultures with high sensitivity for diagnostic applications.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-cyan-600" />
+                    <span>Broad spectrum viral nucleic acid capture</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-cyan-600" />
+                    <span>High sensitivity detection protocols</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-cyan-600" />
+                    <span>Compatible with qPCR diagnostics</span>
+                  </div>
+                </div>
+                
+                <div className="bg-cyan-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Purity:</span>
+                      <span className="font-medium ml-2">≥96%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Yield:</span>
+                      <span className="font-medium ml-2">Good</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">25 min</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">140-200μl</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Viral nucleic acid extraction laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Kit 9: Blood & Cell Culture RNA Extraction - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Blood and cell culture RNA extraction" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Droplet className="h-8 w-8 text-orange-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Blood & Cell Culture RNA Extraction</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  RNA extraction from blood and cultured cells with optimized protocols 
+                  for preserving RNA integrity and high yield recovery.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-orange-600" />
+                    <span>Efficient red blood cell lysis</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-orange-600" />
+                    <span>RNA stabilization during processing</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-orange-600" />
+                    <span>Compatible with biomarker studies</span>
+                  </div>
+                </div>
+                
+                <div className="bg-orange-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Purity:</span>
+                      <span className="font-medium ml-2">≥97%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Yield:</span>
+                      <span className="font-medium ml-2">High</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">30 min</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">200μl-1ml</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Kit 10: Plasmid DNA Extraction - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <TestTube className="h-8 w-8 text-teal-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Plasmid DNA Extraction</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Efficient plasmid DNA purification from bacterial cultures with high purity 
+                  and supercoiled topology preservation for cloning and transfection.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-teal-600" />
+                    <span>Preserves supercoiled topology</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-teal-600" />
+                    <span>Removes endotoxins and proteins</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-teal-600" />
+                    <span>Ready for downstream applications</span>
+                  </div>
+                </div>
+                
+                <div className="bg-teal-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Purity:</span>
+                      <span className="font-medium ml-2">≥95%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Yield:</span>
+                      <span className="font-medium ml-2">Very High</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">15 min</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Culture:</span>
+                      <span className="font-medium ml-2">1-5ml</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Plasmid DNA extraction from bacterial culture" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
