@@ -24,6 +24,7 @@ Preferred communication style: Simple, everyday language.
 - Removed certification trademarks from Contract Research page: Eliminated GCP, FDA, ISO 14155, CFR Part 11 references
 - Updated OEM Products page statistics: Changed to 4+ Years of Excellence, 10+ Healthcare Partners, 5+ Countries Served, kept 99.8% Quality Rate
 - Added CTA button to RPO page: "Get Started" button now links to https://niddik.com in new tab
+- Added enhanced CTA buttons to Contingent page: Multiple "Get Started with Our Contingent Services" buttons with gradient effects added to all major sections, linking to https://niddik.com
 - Fixed dropdown menu clickability issue: parent items with submenus (e.g., Medical Linens) are now clickable while still showing submenus on hover
 
 ## System Architecture
