@@ -244,22 +244,7 @@ export default function Contact() {
                   </CardContent>
                 </Card>
                 
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg flex items-center">
-                      <Mail className="h-5 w-5 mr-2 text-secondary" />
-                      Media & Press
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-2">For media inquiries and press relations</p>
-                    <div className="space-y-1 text-sm">
-                      <p>Email: media@niddikkare.com</p>
-                      <p>Phone: +1 (555) 123-4571</p>
-                      <p>Contact: Sarah Johnson, PR Manager</p>
-                    </div>
-                  </CardContent>
-                </Card>
+
               </div>
               
               {/* QR Code */}
