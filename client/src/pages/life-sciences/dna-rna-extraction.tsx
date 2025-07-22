@@ -38,7 +38,7 @@ export default function DnaRnaExtraction() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -50,7 +50,7 @@ export default function DnaRnaExtraction() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -72,7 +72,7 @@ export default function DnaRnaExtraction() {
               Extraction <span className="text-secondary">Solutions</span>
             </h2>
           </div>
-          
+
           <Tabs defaultValue="plant" className="w-full">
             <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="plant">Plant DNA</TabsTrigger>
@@ -80,7 +80,7 @@ export default function DnaRnaExtraction() {
               <TabsTrigger value="viral">Viral RNA</TabsTrigger>
               <TabsTrigger value="cell">Cell Culture</TabsTrigger>
             </TabsList>
-            
+
             <TabsContent value="plant" className="mt-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -92,7 +92,7 @@ export default function DnaRnaExtraction() {
                     Specialized protocols for extracting high-quality DNA from various plant tissues 
                     including leaves, stems, flowers, and seeds.
                   </p>
-                  
+
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
                       <Check className="h-5 w-5 text-green-600" />
@@ -107,7 +107,7 @@ export default function DnaRnaExtraction() {
                       <span>Suitable for downstream PCR and sequencing</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-green-50 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
@@ -130,17 +130,17 @@ export default function DnaRnaExtraction() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
                   <img 
-                    src="@assets/image_1753167745564.png" 
+                    src="attached_assets/image_1752676114030.png" 
                     alt="Plant DNA extraction laboratory setup" 
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
                 </div>
               </div>
             </TabsContent>
-            
+
             <TabsContent value="blood" className="mt-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -150,7 +150,7 @@ export default function DnaRnaExtraction() {
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
                 </div>
-                
+
                 <div>
                   <div className="flex items-center space-x-2 mb-4">
                     <Droplet className="h-8 w-8 text-red-600" />
@@ -160,7 +160,7 @@ export default function DnaRnaExtraction() {
                     Efficient extraction from whole blood, EDTA-treated samples, and buffy coats 
                     with minimal contamination and maximum yield.
                   </p>
-                  
+
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
                       <Check className="h-5 w-5 text-red-600" />
@@ -175,7 +175,7 @@ export default function DnaRnaExtraction() {
                       <span>High molecular weight DNA recovery</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-red-50 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
@@ -200,7 +200,7 @@ export default function DnaRnaExtraction() {
                 </div>
               </div>
             </TabsContent>
-            
+
             <TabsContent value="viral" className="mt-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -212,7 +212,7 @@ export default function DnaRnaExtraction() {
                     Specialized protocols for isolating viral RNA from serum, plasma, urine, 
                     and other clinical samples with high sensitivity and specificity.
                   </p>
-                  
+
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
                       <Check className="h-5 w-5 text-blue-600" />
@@ -227,7 +227,7 @@ export default function DnaRnaExtraction() {
                       <span>Broad spectrum viral detection</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-blue-50 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
@@ -250,17 +250,17 @@ export default function DnaRnaExtraction() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
                   <img 
-                    src="@assets/image_1753167765565.png" 
+                    src="https://images.unsplash.com/photo-1583912267550-a1d8b882eef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                     alt="Viral RNA extraction laboratory" 
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
                 </div>
               </div>
             </TabsContent>
-            
+
             <TabsContent value="cell" className="mt-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -270,7 +270,7 @@ export default function DnaRnaExtraction() {
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
                 </div>
-                
+
                 <div>
                   <div className="flex items-center space-x-2 mb-4">
                     <TestTube className="h-8 w-8 text-purple-600" />
@@ -280,7 +280,7 @@ export default function DnaRnaExtraction() {
                     Optimized extraction protocols for cultured cells including adherent and 
                     suspension cultures with high DNA quality and yield.
                   </p>
-                  
+
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
                       <Check className="h-5 w-5 text-purple-600" />
@@ -295,7 +295,7 @@ export default function DnaRnaExtraction() {
                       <span>Compatible with various cell types</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-purple-50 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
@@ -335,7 +335,7 @@ export default function DnaRnaExtraction() {
                 reproducible results with minimal cross-contamination risk.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -344,7 +344,7 @@ export default function DnaRnaExtraction() {
                 <h3 className="font-semibold text-gray-800 mb-2">Lysis</h3>
                 <p className="text-sm text-gray-600">Optimized buffer system disrupts cell membranes</p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-green-600 font-bold text-lg">2</span>
@@ -352,7 +352,7 @@ export default function DnaRnaExtraction() {
                 <h3 className="font-semibold text-gray-800 mb-2">Binding</h3>
                 <p className="text-sm text-gray-600">DNA selectively binds to silica matrix</p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-yellow-600 font-bold text-lg">3</span>
@@ -360,7 +360,7 @@ export default function DnaRnaExtraction() {
                 <h3 className="font-semibold text-gray-800 mb-2">Washing</h3>
                 <p className="text-sm text-gray-600">Removes contaminants and inhibitors</p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-purple-600 font-bold text-lg">4</span>
@@ -381,7 +381,7 @@ export default function DnaRnaExtraction() {
               Research <span className="text-secondary">Applications</span>
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -398,7 +398,7 @@ export default function DnaRnaExtraction() {
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Next-Gen Sequencing</CardTitle>
@@ -414,7 +414,7 @@ export default function DnaRnaExtraction() {
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Cloning & Transfection</CardTitle>
@@ -433,7 +433,7 @@ export default function DnaRnaExtraction() {
           </div>
         </section>
 
-        {/* Extraction Kit Portfolio Section */}
+        {/* Product Cards Section */}
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
@@ -443,16 +443,7 @@ export default function DnaRnaExtraction() {
               Comprehensive DNA and RNA extraction solutions with professional-grade performance
             </p>
           </div>
-          
-          {/* Full Portfolio Image */}
-          <div className="mb-12">
-            <img 
-              src="@assets/image_1753167797181.png" 
-              alt="Complete Extraction Kit Portfolio showing Plant DNA, Tissue DNA, Blood DNA, and Blood & Cell Culture DNA extraction kits" 
-              className="rounded-xl shadow-lg w-full h-auto mx-auto"
-            />
-          </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {[
               {
@@ -594,7 +585,7 @@ export default function DnaRnaExtraction() {
                   <div className="absolute bottom-0 right-0 opacity-10 transform rotate-12 translate-x-4 translate-y-4">
                     <kit.icon className="w-32 h-32 text-gray-600" />
                   </div>
-                  
+
                   <CardHeader className="text-center pb-4">
                     <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-white/40 to-transparent rounded-t-lg"></div>
                     <div className="relative z-10">
