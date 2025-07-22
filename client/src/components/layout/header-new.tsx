@@ -327,7 +327,8 @@ export default function Header() {
           className={getDropdownClasses()}
           style={{ 
             marginTop: '8px',
-            width: activeSubmenu ? '240px' : '350px'
+            width: '350px',
+            minWidth: '350px'
           }}
           onMouseEnter={() => handleMouseEnter(menuKey)}
           onMouseLeave={handleMouseLeave}
@@ -336,7 +337,7 @@ export default function Header() {
             {items.map((item) => {
               const Icon = item.icon;
               const isSubmenuActive = activeSubmenu === item.label.toLowerCase();
-              const shouldShowCompact = activeSubmenu !== null && !isSubmenuActive;
+              const shouldShowCompact = false; // Keep all items full size in Healthcare dropdown
               
               return (
                 <div key={item.href} className="relative group">
@@ -363,9 +364,11 @@ export default function Header() {
                         <div className="text-sm text-gray-600">{item.description}</div>
                       )}
                     </div>
-                    <ChevronRight className={`text-gray-400 transition-all duration-200 ${
-                      shouldShowCompact ? 'h-3 w-3' : 'h-4 w-4'
-                    }`} />
+                    {item.submenu && (
+                      <ChevronRight className={`text-gray-400 transition-all duration-200 ${
+                        shouldShowCompact ? 'h-3 w-3' : 'h-4 w-4'
+                      }`} />
+                    )}
                   </div>
                   
                   {/* Third-level submenu */}
