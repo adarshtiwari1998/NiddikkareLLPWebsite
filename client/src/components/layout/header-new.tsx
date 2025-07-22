@@ -77,7 +77,15 @@ export default function Header() {
       href: "/products/medical-linens",
       label: "Medical Linens",
       description: "Hospital-grade linens and textiles",
-      icon: Bed
+      icon: Bed,
+      submenu: [
+        {
+          href: "/products/medical-linens/baby-first-touch",
+          label: "Baby First Touch",
+          description: "100% cotton construction",
+          icon: Layers
+        },
+      ]
     },
     {
       href: "/products/dna-rna-extraction",
