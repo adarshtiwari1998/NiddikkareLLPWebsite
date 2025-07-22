@@ -295,6 +295,36 @@ export default function RPO() {
               </div>
             ))}
           </div>
+          
+          {/* Enhanced CTA Button */}
+          <div className="flex flex-col items-center mt-16">
+            <button 
+              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent mb-4"
+              style={{
+                background: 'linear-gradient(45deg, #22c55e, #16a34a, #15803d, #22c55e)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                border: '4px solid transparent',
+                backgroundClip: 'padding-box',
+                position: 'relative',
+              }}
+              onClick={() => window.open('https://niddik.com', '_blank')}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <span className="relative z-10">Get Started with Our RPO Services</span>
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(45deg, #10b981, #059669, #047857, #10b981)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite reverse',
+                  opacity: '0.3',
+                }}
+              ></div>
+            </button>
+            <p className="text-sm text-gray-600">Check out Niddik.com for the services</p>
+          </div>
         </div>
       </section>
 
@@ -324,6 +354,36 @@ export default function RPO() {
               </Card>
             ))}
           </div>
+          
+          {/* Enhanced CTA Button */}
+          <div className="flex flex-col items-center mt-16">
+            <button 
+              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent mb-4"
+              style={{
+                background: 'linear-gradient(45deg, #22c55e, #16a34a, #15803d, #22c55e)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                border: '4px solid transparent',
+                backgroundClip: 'padding-box',
+                position: 'relative',
+              }}
+              onClick={() => window.open('https://niddik.com', '_blank')}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <span className="relative z-10">Get Started with Our RPO Services</span>
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(45deg, #10b981, #059669, #047857, #10b981)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite reverse',
+                  opacity: '0.3',
+                }}
+              ></div>
+            </button>
+            <p className="text-sm text-gray-600">Check out Niddik.com for the services</p>
+          </div>
         </div>
       </section>
 
@@ -342,6 +402,36 @@ export default function RPO() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {/* Enhanced CTA Button */}
+          <div className="flex flex-col items-center mt-16">
+            <button 
+              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent mb-4"
+              style={{
+                background: 'linear-gradient(45deg, #22c55e, #16a34a, #15803d, #22c55e)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                border: '4px solid transparent',
+                backgroundClip: 'padding-box',
+                position: 'relative',
+              }}
+              onClick={() => window.open('https://niddik.com', '_blank')}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <span className="relative z-10">Get Started with Our RPO Services</span>
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(45deg, #10b981, #059669, #047857, #10b981)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite reverse',
+                  opacity: '0.3',
+                }}
+              ></div>
+            </button>
+            <p className="text-sm text-gray-600">Check out Niddik.com for the services</p>
           </div>
         </div>
       </section>
@@ -371,6 +461,36 @@ export default function RPO() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {/* Enhanced CTA Button */}
+          <div className="flex flex-col items-center mt-16">
+            <button 
+              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent mb-4"
+              style={{
+                background: 'linear-gradient(45deg, #22c55e, #16a34a, #15803d, #22c55e)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                border: '4px solid transparent',
+                backgroundClip: 'padding-box',
+                position: 'relative',
+              }}
+              onClick={() => window.open('https://niddik.com', '_blank')}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <span className="relative z-10">Get Started with Our RPO Services</span>
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(45deg, #10b981, #059669, #047857, #10b981)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite reverse',
+                  opacity: '0.3',
+                }}
+              ></div>
+            </button>
+            <p className="text-sm text-gray-600">Check out Niddik.com for the services</p>
           </div>
         </div>
       </section>
@@ -416,6 +536,36 @@ export default function RPO() {
                 </div>
               </div>
             </div>
+          </div>
+          
+          {/* Enhanced CTA Button */}
+          <div className="flex flex-col items-center mt-16">
+            <button 
+              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent mb-4"
+              style={{
+                background: 'linear-gradient(45deg, #22c55e, #16a34a, #15803d, #22c55e)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                border: '4px solid transparent',
+                backgroundClip: 'padding-box',
+                position: 'relative',
+              }}
+              onClick={() => window.open('https://niddik.com', '_blank')}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <span className="relative z-10">Get Started with Our RPO Services</span>
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(45deg, #10b981, #059669, #047857, #10b981)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite reverse',
+                  opacity: '0.3',
+                }}
+              ></div>
+            </button>
+            <p className="text-sm text-gray-600">Check out Niddik.com for the services</p>
           </div>
         </div>
       </section>
