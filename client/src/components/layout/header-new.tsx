@@ -307,8 +307,13 @@ export default function Header() {
       }`;
       
       // For rightmost items (Company, Contact, Tools & Testing), position from right
-      if (menuKey === 'company' || menuKey === 'life-sciences' || menuKey === 'tools-testing') {
+      // Adjust width based on submenu state for Tools & Testing
+      if (menuKey === 'company' || menuKey === 'life-sciences') {
         return `${baseClasses} right-0 w-[350px] max-w-[90vw]`;
+      }
+      
+      if (menuKey === 'tools-testing') {
+        return `${baseClasses} right-0 max-w-[90vw]`;
       }
       
       // For other items, position from left with responsive width
@@ -320,29 +325,47 @@ export default function Header() {
       return (
         <div 
           className={getDropdownClasses()}
-          style={{ marginTop: '8px' }}
+          style={{ 
+            marginTop: '8px',
+            width: activeSubmenu ? '240px' : '350px'
+          }}
           onMouseEnter={() => handleMouseEnter(menuKey)}
           onMouseLeave={handleMouseLeave}
         >
           <div className="grid gap-2 p-4">
             {items.map((item) => {
               const Icon = item.icon;
+              const isSubmenuActive = activeSubmenu === item.label.toLowerCase();
+              const shouldShowCompact = activeSubmenu !== null;
+              
               return (
                 <div key={item.href} className="relative group">
                   <div
-                    className={`flex items-center space-x-2 p-3 rounded-lg transition-colors cursor-pointer ${
-                      location.startsWith(item.href) || activeSubmenu === item.label.toLowerCase()
+                    className={`flex items-center rounded-lg transition-all duration-200 cursor-pointer ${
+                      location.startsWith(item.href) || isSubmenuActive
                         ? 'bg-primary/10 text-primary'
                         : 'hover:bg-gray-50'
+                    } ${
+                      shouldShowCompact ? 'p-2 space-x-2' : 'p-3 space-x-2'
                     }`}
                     onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
                   >
-                    <Icon className="h-5 w-5 text-primary" />
-                    <div className="flex-1">
-                      <div className="font-medium">{item.label}</div>
-                      <div className="text-sm text-gray-600">{item.description}</div>
+                    <Icon className={`text-primary transition-all duration-200 ${
+                      shouldShowCompact ? 'h-4 w-4' : 'h-5 w-5'
+                    }`} />
+                    <div className="flex-1 min-w-0">
+                      <div className={`font-medium transition-all duration-200 ${
+                        shouldShowCompact ? 'text-sm' : 'text-base'
+                      }`}>
+                        {item.label}
+                      </div>
+                      {!shouldShowCompact && (
+                        <div className="text-sm text-gray-600">{item.description}</div>
+                      )}
                     </div>
-                    <ChevronRight className="h-4 w-4 text-gray-400" />
+                    <ChevronRight className={`text-gray-400 transition-all duration-200 ${
+                      shouldShowCompact ? 'h-3 w-3' : 'h-4 w-4'
+                    }`} />
                   </div>
                   
                   {/* Third-level submenu */}
