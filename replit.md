@@ -29,6 +29,8 @@ Preferred communication style: Simple, everyday language.
 - Fixed duplicate close icons in mobile menu: Removed manual close button as SheetContent already provides built-in close functionality
 - Fixed mobile menu button and close button styling: Updated hamburger menu icon and close button to use primary brand color with proper hover states
 - Improved dropdown hover responsiveness: Fixed timing issues when rapidly switching between menu items, enhanced timeout handling and immediate dropdown switching for better user experience
+- Added nucleic acid extraction kit image to About page: Professional product showcase image placed above Key Features section with responsive styling
+- Updated About page statistics: Changed Our Global Impact numbers to 4+ Years of Excellence, 10+ Healthcare Partners, 5+ Countries Served, 100+ Products & Solutions
 
 ## System Architecture
 

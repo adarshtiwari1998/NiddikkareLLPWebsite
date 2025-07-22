@@ -259,19 +259,19 @@ export default function About() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-3 counter-animation">25+</div>
+                <div className="text-5xl font-bold text-primary mb-3 counter-animation">4+</div>
                 <div className="text-gray-600 font-medium">Years of Excellence</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-3 counter-animation">500+</div>
+                <div className="text-5xl font-bold text-primary mb-3 counter-animation">10+</div>
                 <div className="text-gray-600 font-medium">Healthcare Partners</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-3 counter-animation">50+</div>
+                <div className="text-5xl font-bold text-primary mb-3 counter-animation">5+</div>
                 <div className="text-gray-600 font-medium">Countries Served</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-3 counter-animation">1000+</div>
+                <div className="text-5xl font-bold text-primary mb-3 counter-animation">100+</div>
                 <div className="text-gray-600 font-medium">Products & Solutions</div>
               </div>
             </div>
