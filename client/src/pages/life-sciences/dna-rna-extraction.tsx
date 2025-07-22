@@ -189,7 +189,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1576671481656-e3383401037d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Viral RNA extraction laboratory with PCR equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -543,7 +543,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Viral nucleic acid extraction laboratory with biosafety equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -661,7 +661,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Plasmid DNA extraction from bacterial culture with laboratory equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
