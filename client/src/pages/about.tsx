@@ -41,10 +41,23 @@ export default function About() {
                         <Heart className="h-5 w-5 text-red-500 mr-2" />
                         Our Mission
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed mb-4">
                         At NIDDIKKARE LLP, our team of experts empowers researchers and clinicians to transform human health. We 
-                        provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics.
+                        provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics. High-quality 
+                        DNA and RNA extraction is crucial for molecular biology applications. Our comprehensive solutions cater to diverse 
+                        sample sources, streamlining research workflows and driving breakthroughs.
                       </p>
+                      <div className="text-center mt-4">
+                        <a 
+                          href="https://niddik.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                        >
+                          <Globe className="h-4 w-4 mr-2" />
+                          For full IT solutions visit niddik.com
+                        </a>
+                      </div>
                     </div>
                     
                     <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border-l-4 border-green-400">
@@ -53,15 +66,21 @@ export default function About() {
                         Our Technology
                       </h3>
                       <p className="text-gray-700 leading-relaxed mb-4">
-                        The Extraction Kit follows optimized chaotropic salt chemistry with novel reversible binding of silica with nucleic acids. 
-                        Key advantages include very small elution volume (starting from 30μl) for high DNA concentration.
+                        The Extraction Kit follows an optimised chaotropic salt chemistry with a novel reversible binding of silica with nucleic acids 
+                        under optimised salt & pH concentration of buffer. It allows very small elution volume (starting from 30μl) resulting in high 
+                        concentration of DNA for downstream applications. The key benefit of using this Extraction Kit is to prevent the use resins, 
+                        organic solvent based precipitation, and hazardous compounds such as phenol, chloroform etc. which interfere during 
+                        downstream application in PCR/Sequencing.
                       </p>
                       <div className="bg-white/80 p-4 rounded-lg border border-green-200">
-                        <p className="text-center font-bold text-primary text-lg">
+                        <p className="text-center font-bold text-primary text-lg mb-2">
                           "LYSE, BIND & ELUTE"
                         </p>
-                        <p className="text-sm text-gray-600 text-center mt-2">
+                        <p className="text-sm text-gray-600 text-center mb-2">
                           Silica Based Solid-Phase Extraction Method
+                        </p>
+                        <p className="text-xs text-gray-500 text-center">
+                          Contaminants & Inhibitors Free High Quality DNA/RNA using Spin-Column or Magnetic Bead Particles
                         </p>
                       </div>
                     </div>

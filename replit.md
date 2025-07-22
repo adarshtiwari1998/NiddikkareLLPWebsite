@@ -32,6 +32,7 @@ Preferred communication style: Simple, everyday language.
 - Added nucleic acid extraction kit image to About page: Professional product showcase image placed above Key Features section with responsive styling
 - Updated About page statistics: Changed Our Global Impact numbers to 4+ Years of Excellence, 10+ Healthcare Partners, 5+ Countries Served, 100+ Products & Solutions
 - Enhanced About page layout and user experience: Redesigned About Us section with visual hierarchy, color-coded cards for Mission and Technology, improved product showcase section with gradient backgrounds and interactive elements
+- Expanded About page content: Added complete company description and detailed technology explanation, included niddik.com link for IT solutions with target="_blank"
 
 ## System Architecture
 
