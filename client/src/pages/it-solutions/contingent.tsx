@@ -120,22 +120,26 @@ export default function Contingent() {
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Flexible staffing solutions for your dynamic business needs. Scale up or down with pre-vetted talent.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">10K+</div>
-              <div className="text-sm text-gray-600">Talent Pool</div>
+              <div className="text-sm text-gray-600">Communities Engaged</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">24-48h</div>
-              <div className="text-sm text-gray-600">Deployment</div>
+              <div className="text-3xl font-bold text-primary">12+</div>
+              <div className="text-sm text-gray-600">Panelled Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">92%</div>
-              <div className="text-sm text-gray-600">Fill Rate</div>
+              <div className="text-3xl font-bold text-primary">50%</div>
+              <div className="text-sm text-gray-600">Faster Time to Submit</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">40%</div>
-              <div className="text-sm text-gray-600">Cost Savings</div>
+              <div className="text-3xl font-bold text-primary">500K+</div>
+              <div className="text-sm text-gray-600">Talent Pools</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary">200+</div>
+              <div className="text-sm text-gray-600">Candidates Engaged</div>
             </div>
           </div>
           <div className="flex justify-center">
