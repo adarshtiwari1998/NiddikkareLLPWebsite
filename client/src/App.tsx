@@ -57,6 +57,9 @@ import RPO from "@/pages/it-solutions/rpo";
 import Contingent from "@/pages/it-solutions/contingent";
 import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
 
+// Healthcare parent page
+import Healthcare from "@/pages/healthcare";
+
 import Header from "@/components/layout/header-new";
 import Footer from "@/components/layout/footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -106,7 +109,8 @@ function Router() {
           <Route path="/it-solutions/contingent" component={Contingent} />
           <Route path="/it-solutions/web-app-solutions" component={WebAppSolutions} />
           
-          {/* Existing Healthcare Routes */}
+          {/* Healthcare Routes */}
+          <Route path="/healthcare" component={Healthcare} />
           <Route path="/healthcare/neonatal-care" component={NeonatalCare} />
           <Route path="/healthcare/medical-linens" component={MedicalLinens} />
           <Route path="/healthcare/medical-linens/woven" component={WovenMedicalLinens} />
