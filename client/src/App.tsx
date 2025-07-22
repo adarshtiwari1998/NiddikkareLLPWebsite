@@ -58,6 +58,7 @@ import SurgicalOTGown from "@/pages/products/medical-linens/surgical-ot-gown";
 import SurgicalCutSheets from "@/pages/products/medical-linens/surgical-cut-sheets";
 
 // New IT Solutions pages
+import ITSolutions from "@/pages/it-solutions/it-solutions";
 import RPO from "@/pages/it-solutions/rpo";
 import Contingent from "@/pages/it-solutions/contingent";
 import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
@@ -129,6 +130,7 @@ function Router() {
           <Route path="/products/molecular-diagnostics" component={ProductsMolecularDiagnostics} />
           
           {/* IT Solutions Routes */}
+          <Route path="/it-solutions" component={ITSolutions} />
           <Route path="/it-solutions/rpo" component={RPO} />
           <Route path="/it-solutions/contingent" component={Contingent} />
           <Route path="/it-solutions/web-app-solutions" component={WebAppSolutions} />
