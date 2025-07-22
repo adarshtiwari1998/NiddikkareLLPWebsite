@@ -10,16 +10,16 @@ export default function ETraining() {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center">
-              <BookOpen className="h-12 w-12 text-blue-500" />
+            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
+              <BookOpen className="h-12 w-12 text-primary" />
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            E-Training <span className="text-blue-600">Platform</span>
+            E-Learning <span className="text-primary">Resources</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive online training programs for laboratory professionals. 
-            Master new techniques, stay current with industry standards, and advance your career.
+            Access comprehensive educational materials and resources for laboratory professionals. 
+            Enhance your knowledge, stay updated with industry standards, and advance your expertise.
           </p>
         </section>
 
@@ -28,12 +28,12 @@ export default function ETraining() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Play className="h-8 w-8 text-blue-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Play className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle>Interactive Learning</CardTitle>
+                <CardTitle>Interactive Content</CardTitle>
                 <CardDescription>
-                  Hands-on training modules with real-world scenarios
+                  Engaging educational materials with real-world case studies
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -43,9 +43,9 @@ export default function ETraining() {
                 <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="h-8 w-8 text-green-500" />
                 </div>
-                <CardTitle>Certification</CardTitle>
+                <CardTitle>Expert Knowledge</CardTitle>
                 <CardDescription>
-                  Earn industry-recognized certificates upon completion
+                  Access industry-leading expertise and best practices
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -55,9 +55,9 @@ export default function ETraining() {
                 <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="h-8 w-8 text-purple-500" />
                 </div>
-                <CardTitle>Self-Paced</CardTitle>
+                <CardTitle>Always Available</CardTitle>
                 <CardDescription>
-                  Learn at your own pace with 24/7 access to materials
+                  Access resources anytime with 24/7 availability
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -68,7 +68,7 @@ export default function ETraining() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Training <span className="text-blue-600">Categories</span>
+              Resource <span className="text-primary">Categories</span>
             </h2>
           </div>
           
@@ -107,7 +107,7 @@ export default function ETraining() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Learning <span className="text-blue-600">Path</span>
+              Learning <span className="text-primary">Journey</span>
             </h2>
           </div>
           
@@ -117,8 +117,8 @@ export default function ETraining() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-blue-600">1</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Assessment</h3>
-                <p className="text-sm text-gray-600">Evaluate your current knowledge and skills</p>
+                <h3 className="text-lg font-semibold mb-2">Explore</h3>
+                <p className="text-sm text-gray-600">Browse our comprehensive resource library</p>
               </CardContent>
             </Card>
             
@@ -127,8 +127,8 @@ export default function ETraining() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-green-600">2</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Learning</h3>
-                <p className="text-sm text-gray-600">Complete interactive modules and exercises</p>
+                <h3 className="text-lg font-semibold mb-2">Study</h3>
+                <p className="text-sm text-gray-600">Access detailed guides and technical documentation</p>
               </CardContent>
             </Card>
             
@@ -137,8 +137,8 @@ export default function ETraining() {
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-purple-600">3</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Practice</h3>
-                <p className="text-sm text-gray-600">Apply knowledge through hands-on simulations</p>
+                <h3 className="text-lg font-semibold mb-2">Apply</h3>
+                <p className="text-sm text-gray-600">Implement knowledge in your laboratory work</p>
               </CardContent>
             </Card>
             
@@ -147,67 +147,57 @@ export default function ETraining() {
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-orange-600">4</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Certification</h3>
-                <p className="text-sm text-gray-600">Earn your certificate and continue learning</p>
+                <h3 className="text-lg font-semibold mb-2">Excel</h3>
+                <p className="text-sm text-gray-600">Advance your expertise and continue growing</p>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        {/* Statistics */}
+        {/* Resource Categories */}
         <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Platform <span className="text-blue-600">Statistics</span>
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-                <p className="text-gray-600">Training Courses</p>
-              </CardContent>
-            </Card>
+          <div className="bg-gradient-to-r from-primary to-green-600 rounded-2xl p-8 text-white">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-2">Learning Resources</h2>
+              <p className="text-lg opacity-90">Comprehensive educational materials for laboratory professionals</p>
+            </div>
             
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-green-600 mb-2">10,000+</div>
-                <p className="text-gray-600">Certified Professionals</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-purple-600 mb-2">95%</div>
-                <p className="text-gray-600">Completion Rate</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-orange-600 mb-2">24/7</div>
-                <p className="text-gray-600">Access Available</p>
-              </CardContent>
-            </Card>
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-green-200 mb-2">200+</div>
+                <div className="text-lg">Educational Articles</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-blue-200 mb-2">150+</div>
+                <div className="text-lg">Technical Guides</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-yellow-200 mb-2">50+</div>
+                <div className="text-lg">Video Tutorials</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-purple-200 mb-2">24/7</div>
+                <div className="text-lg">Access Available</div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Call to Action */}
-        <section className="text-center bg-blue-50 rounded-2xl p-8">
+        <section className="text-center bg-green-50 rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Start Your Learning Journey Today
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of laboratory professionals who have advanced their careers through our comprehensive training programs.
+            Join thousands of laboratory professionals who have enhanced their knowledge through our comprehensive educational resources.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Start Free Trial
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Browse Resources
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
             <Button size="lg" variant="outline">
-              Browse Courses
+              Contact Our Team
             </Button>
           </div>
         </section>
