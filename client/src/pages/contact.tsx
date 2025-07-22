@@ -393,12 +393,17 @@ export default function Contact() {
                 </div>
               </div>
               
-              <div className="h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Interactive Map</p>
-                  <p className="text-gray-400 text-sm">Map integration would be implemented here</p>
-                </div>
+              <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14018.968343715622!2d77.294943!3d28.547471!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4045578f4b3%3A0x62602b02ff4b0ec0!2sField%20Grow%20Organic%20India%20Limited.!5e0!3m2!1sen!2sus!4v1753193578728!5m2!1sen!2sus" 
+                  width="100%" 
+                  height="100%" 
+                  style={{border: 0}} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="NIDDIKKARE LLP Location - Field Grow Organic India Limited"
+                ></iframe>
               </div>
             </div>
           </div>

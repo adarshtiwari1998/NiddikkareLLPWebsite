@@ -33,6 +33,8 @@ Preferred communication style: Simple, everyday language.
 - Updated About page statistics: Changed Our Global Impact numbers to 4+ Years of Excellence, 10+ Healthcare Partners, 5+ Countries Served, 100+ Products & Solutions
 - Enhanced About page layout and user experience: Redesigned About Us section with visual hierarchy, color-coded cards for Mission and Technology, improved product showcase section with gradient backgrounds and interactive elements
 - Expanded About page content: Added complete company description and detailed technology explanation, included niddik.com link for IT solutions with target="_blank"
+- Updated About page card designs: Replaced geometric shapes with organic, laboratory-inspired fluid forms using complex border-radius values for natural, scientific aesthetic
+- Integrated Google Maps in Contact page: Replaced placeholder map with live Google Maps iframe showing Field Grow Organic India Limited location
 
 ## System Architecture
 
