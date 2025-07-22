@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X } from "lucide-react";
+import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Youtube, Building2, Newspaper } from "lucide-react";
 import logoImage from "@/assets/niddikkare-logo.png";
 
 interface DropdownItem {
@@ -147,6 +147,21 @@ export default function Header() {
     }
   ];
 
+  const companyItems: DropdownItem[] = [
+    {
+      href: "/about",
+      label: "About",
+      description: "Learn about our company and mission",
+      icon: Building2
+    },
+    {
+      href: "/news",
+      label: "News",
+      description: "Latest updates and announcements",
+      icon: Newspaper
+    }
+  ];
+
   const handleMouseEnter = (menuKey: string) => {
     // Always clear any existing timeout
     if (leaveTimeout) {
@@ -259,12 +274,18 @@ export default function Header() {
             </div>
             <div className="flex items-center space-x-4">
               <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                <Linkedin className="h-4 w-4" />
+                <Instagram className="h-4 w-4" />
               </Link>
               <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
                 <Twitter className="h-4 w-4" />
               </Link>
-              <Button size="sm" className="bg-orange-500 hover:bg-orange-600">
+              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                <Linkedin className="h-4 w-4" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                <Youtube className="h-4 w-4" />
+              </Link>
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 Request Quote
               </Button>
             </div>
@@ -377,26 +398,18 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li onMouseEnter={handleNonDropdownHover}>
-                <Link 
-                  href="/about" 
-                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
-                    location === '/about' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
+              <li className="relative"
+                onMouseEnter={() => handleMouseEnter('company')}
+              >
+                <button 
+                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
+                    location.startsWith('/about') || location.startsWith('/news') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
-                  About
-                </Link>
-              </li>
-
-              <li onMouseEnter={handleNonDropdownHover}>
-                <Link 
-                  href="/news" 
-                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
-                    location === '/news' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
-                  }`}
-                >
-                  News
-                </Link>
+                  Company
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+                <DropdownMenu items={companyItems} isOpen={activeDropdown === 'company'} menuKey="company" />
               </li>
 
               <li onMouseEnter={handleNonDropdownHover}>
@@ -590,25 +603,35 @@ export default function Header() {
                       GUT Care
                     </Link>
                     
-                    <Link 
-                      href="/about" 
-                      className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                        location === '/about' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      About
-                    </Link>
-                    
-                    <Link 
-                      href="/news" 
-                      className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                        location === '/news' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      News
-                    </Link>
+                    {/* Company Section */}
+                    <div className="py-2">
+                      <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-3">
+                        Company
+                      </div>
+                      <div className="space-y-1">
+                        <Link 
+                          href="/about" 
+                          className={`flex items-center px-6 py-2 text-sm font-medium rounded-md transition-colors ${
+                            location === '/about' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <Building2 className="h-4 w-4 mr-3" />
+                          About
+                        </Link>
+                        
+                        <Link 
+                          href="/news" 
+                          className={`flex items-center px-6 py-2 text-sm font-medium rounded-md transition-colors ${
+                            location === '/news' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <Newspaper className="h-4 w-4 mr-3" />
+                          News
+                        </Link>
+                      </div>
+                    </div>
                     
                     <Link 
                       href="/contact" 
@@ -624,19 +647,39 @@ export default function Header() {
                 
                 {/* Mobile Contact Info Footer */}
                 <div className="border-t border-gray-200 p-4">
-                  <div className="space-y-2 text-xs text-gray-600">
-                    <div className="flex items-center">
-                      <Phone className="h-3 w-3 mr-2" />
-                      <span>+91-90151 62449</span>
+                  <div className="space-y-3">
+                    {/* Mobile Social Media Icons */}
+                    <div className="flex items-center justify-center space-x-4 py-2">
+                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                        <Instagram className="h-5 w-5" />
+                      </Link>
+                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                        <Twitter className="h-5 w-5" />
+                      </Link>
+                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                        <Linkedin className="h-5 w-5" />
+                      </Link>
+                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                        <Youtube className="h-5 w-5" />
+                      </Link>
                     </div>
-                    <div className="flex items-center">
-                      <Mail className="h-3 w-3 mr-2" />
-                      <span>info@niddikkare.com</span>
+                    
+                    {/* Mobile Request Quote Button */}
+                    <Button size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                      Request Quote
+                    </Button>
+                    
+                    <div className="space-y-2 text-xs text-gray-600">
+                      <div className="flex items-center">
+                        <Phone className="h-3 w-3 mr-2" />
+                        <span>+91-90151 62449</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Mail className="h-3 w-3 mr-2" />
+                        <span>info@niddikkare.com</span>
+                      </div>
                     </div>
                   </div>
-                  <Button size="sm" className="w-full mt-3 bg-orange-500 hover:bg-orange-600 text-white">
-                    Request Quote
-                  </Button>
                 </div>
               </div>
             </SheetContent>
