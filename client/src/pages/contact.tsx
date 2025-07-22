@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, Globe, MessageSquare, ArrowRight, QrCode } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Globe, MessageSquare, ArrowRight, QrCode, Microscope, Check } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -404,6 +404,50 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="NIDDIKKARE LLP Location - Field Grow Organic India Limited"
                 ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Product Showcase Section */}
+        <section className="mb-20">
+          <div className="relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-white to-green-50 rounded-3xl"></div>
+            <div className="absolute top-4 right-4 w-32 h-32 bg-primary/5 rounded-full"></div>
+            <div className="absolute bottom-4 left-4 w-24 h-24 bg-secondary/5 rounded-full"></div>
+            
+            <div className="relative p-12">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+                  <Microscope className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                  Professional Laboratory Equipment
+                </h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  State-of-the-art Nucleic Acid Extraction Kit for precision DNA/RNA isolation
+                </p>
+              </div>
+              
+              <div className="max-w-4xl mx-auto">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-75"></div>
+                  <div className="relative bg-white rounded-2xl p-4 shadow-2xl border border-gray-100">
+                    <img 
+                      src="/assets/images/about-us/nucleic-acid-extraction-kit.png" 
+                      alt="Nucleic Acid Extraction Kit - Professional DNA/RNA Laboratory Equipment" 
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <div className="inline-flex items-center space-x-2 bg-white/80 px-6 py-3 rounded-full shadow-lg border border-gray-200">
+                    <Check className="h-5 w-5 text-green-600" />
+                    <span className="text-gray-700 font-medium">Professional-grade Nucleic Acid Extraction Kit</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -35,6 +35,7 @@ Preferred communication style: Simple, everyday language.
 - Expanded About page content: Added complete company description and detailed technology explanation, included niddik.com link for IT solutions with target="_blank"
 - Updated About page card designs: Replaced geometric shapes with organic, laboratory-inspired fluid forms using complex border-radius values for natural, scientific aesthetic
 - Integrated Google Maps in Contact page: Replaced placeholder map with live Google Maps iframe showing Field Grow Organic India Limited location
+- Added nucleic acid extraction kit banner to Contact page: Included professional equipment showcase section matching About page design for visual consistency
 
 ## System Architecture
 
