@@ -58,6 +58,22 @@ export default function About() {
           </div>
         </section>
 
+        {/* Product Showcase Image */}
+        <section className="mb-16">
+          <div className="text-center">
+            <div className="max-w-4xl mx-auto">
+              <img 
+                src="/assets/images/about-us/nucleic-acid-extraction-kit.png" 
+                alt="Nucleic Acid Extraction Kit - DNA/RNA Laboratory Equipment" 
+                className="w-full h-auto rounded-2xl shadow-xl border border-gray-200"
+              />
+              <p className="text-sm text-gray-500 mt-4 italic">
+                Professional-grade Nucleic Acid Extraction Kit for high-quality DNA/RNA isolation
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Key Features Section */}
         <section className="mb-20">
           <div className="text-center mb-16">
