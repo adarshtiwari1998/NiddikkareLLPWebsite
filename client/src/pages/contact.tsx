@@ -236,10 +236,20 @@ export default function Contact() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 mb-2">For technical assistance and product support</p>
-                    <div className="space-y-1 text-sm">
-                      <p>Email: info@niddik.com</p>
-                      <p>Phone: +91-95603 34337</p>
-                      <p>Support: +91-90151 62449</p>
+                    <div className="space-y-2 text-sm">
+                      <div>
+                        <p className="font-medium">Email:</p>
+                        <p>info@niddik.com</p>
+                      </div>
+                      <div>
+                        <p className="font-medium">Headquarters:</p>
+                        <p>Platina Heights, Sector 59, Noida - 201301</p>
+                      </div>
+                      <div>
+                        <p className="font-medium">Contact Numbers:</p>
+                        <p>+91 9717312058 (INDIA)</p>
+                        <p>+1 (646) 889-9517 (USA)</p>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
