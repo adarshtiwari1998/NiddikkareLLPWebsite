@@ -352,7 +352,10 @@ export default function Header() {
       setEnterTimeout(null);
     }
     
-    // Always immediately switch to the new dropdown
+    // Debug log
+    console.log('Hovering over:', menuKey, 'Current activeDropdown:', activeDropdown, 'Current activeSubmenu:', activeSubmenu);
+    
+    // Always immediately switch to the new dropdown and clear submenu
     setActiveDropdown(menuKey);
     setActiveSubmenu(null);
   };
@@ -488,6 +491,7 @@ export default function Header() {
                       } ${
                         shouldShowCompact ? 'p-2 space-x-2' : 'p-3 space-x-2'
                       }`}
+                      onMouseEnter={() => setActiveSubmenu(null)}
                       onClick={() => {
                         setActiveDropdown(null);
                         setActiveSubmenu(null);
@@ -624,7 +628,11 @@ export default function Header() {
                         ? 'bg-primary/10 text-primary border-l-4 border-primary'
                         : 'hover:bg-gray-50'
                     }`}
-                    onClick={() => setActiveDropdown(null)}
+                    onMouseEnter={() => setActiveSubmenu(null)}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      setActiveSubmenu(null);
+                    }}
                   >
                     <Icon className="h-5 w-5 text-primary" />
                     <div className="flex-1">
