@@ -255,30 +255,333 @@ export default function MolecularDiagnostics() {
               </div>
             </div>
 
-            {/* Product 4: Tuberculosis (TB) Drug Resistance - Content Left, Image Right */}
+            {/* Product 4: Human Immunodeficiency Virus (HIV) - Content Left, Image Right */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center space-x-2 mb-4">
-                  <Activity className="h-8 w-8 text-green-600" />
-                  <h3 className="text-3xl font-bold text-gray-800">Tuberculosis (TB) Drug Resistance</h3>
+                  <Activity className="h-8 w-8 text-orange-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Human Immunodeficiency Virus (HIV)</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-6">
-                  Rapid molecular assay for detection of Mycobacterium tuberculosis and resistance 
-                  to first-line anti-TB drugs for prompt treatment decision.
+                  Highly sensitive HIV detection and viral load monitoring assay for diagnosis, 
+                  treatment monitoring, and disease progression assessment.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-orange-600" />
+                    <span>HIV-1 and HIV-2 detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-orange-600" />
+                    <span>Viral load quantification</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-orange-600" />
+                    <span>Treatment response monitoring</span>
+                  </div>
+                </div>
+                
+                <div className="bg-orange-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Detection:</span>
+                      <span className="font-medium ml-2">HIV-1/2</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥98%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">3 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Plasma/Serum</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="HIV molecular diagnostics testing laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Product 5: Dengue, Chikungunya - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Dengue and Chikungunya molecular diagnostics setup" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Worm className="h-8 w-8 text-yellow-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Dengue, Chikungunya</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Multiplex assay for simultaneous detection and differentiation of Dengue virus 
+                  and Chikungunya virus for rapid tropical disease diagnosis.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-yellow-600" />
+                    <span>Dengue serotype differentiation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-yellow-600" />
+                    <span>Chikungunya virus detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-yellow-600" />
+                    <span>Early infection detection</span>
+                  </div>
+                </div>
+                
+                <div className="bg-yellow-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Targets:</span>
+                      <span className="font-medium ml-2">DENV 1-4, CHIKV</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥96%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">2.5 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Serum/Plasma</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Product 6: Monkeypox Flu - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <TestTube className="h-8 w-8 text-indigo-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Monkeypox Flu</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Rapid detection assay for Monkeypox virus and influenza co-detection 
+                  for differential diagnosis during outbreak scenarios.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-indigo-600" />
+                    <span>Monkeypox virus detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-indigo-600" />
+                    <span>Influenza A/B detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-indigo-600" />
+                    <span>Outbreak response optimized</span>
+                  </div>
+                </div>
+                
+                <div className="bg-indigo-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Targets:</span>
+                      <span className="font-medium ml-2">MPXV, FluA, FluB</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥97%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">1.5 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Swab, Lesion</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Monkeypox and Flu molecular diagnostics laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Product 7: Hepatitis B Virus (HBV) Quantitative - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Hepatitis B virus quantitative testing laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Activity className="h-8 w-8 text-teal-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Hepatitis B Virus (HBV) Quantitative</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Accurate quantification of HBV DNA for chronic hepatitis B monitoring, 
+                  treatment response assessment, and viral load management.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-teal-600" />
+                    <span>Wide dynamic range detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-teal-600" />
+                    <span>Treatment monitoring optimized</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-teal-600" />
+                    <span>Drug resistance mutation detection</span>
+                  </div>
+                </div>
+                
+                <div className="bg-teal-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Range:</span>
+                      <span className="font-medium ml-2">20-1×10⁹ IU/mL</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥96%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">3.5 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Plasma/Serum</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Product 8: HBV & HCV & HIV-1 Quantitative - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Microscope className="h-8 w-8 text-pink-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Hepatitis B Virus & Hepatitis C Virus & HIV-1 Quantitative</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Comprehensive multiplex assay for simultaneous quantification of HBV, HCV, 
+                  and HIV-1 viral loads in a single reaction for efficient co-infection monitoring.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>Triple viral load quantification</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>Co-infection monitoring</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-pink-600" />
+                    <span>Cost-effective multiplexing</span>
+                  </div>
+                </div>
+                
+                <div className="bg-pink-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Targets:</span>
+                      <span className="font-medium ml-2">HBV, HCV, HIV-1</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥95%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">4 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Plasma/Serum</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Triple viral load quantification laboratory setup" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Product 9: Mycobacterium Tuberculosis (MTB) - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Mycobacterium tuberculosis molecular diagnostics laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <TestTube className="h-8 w-8 text-green-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Mycobacterium Tuberculosis (MTB)</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Rapid molecular detection of Mycobacterium tuberculosis complex with drug 
+                  resistance profiling for prompt tuberculosis diagnosis and treatment guidance.
                 </p>
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <Check className="h-5 w-5 text-green-600" />
-                    <span>MTB complex detection</span>
+                    <span>MTB complex identification</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Check className="h-5 w-5 text-green-600" />
-                    <span>Rifampicin resistance detection</span>
+                    <span>Drug resistance profiling</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Check className="h-5 w-5 text-green-600" />
-                    <span>Direct from sputum samples</span>
+                    <span>Direct sputum testing</span>
                   </div>
                 </div>
                 
@@ -287,11 +590,11 @@ export default function MolecularDiagnostics() {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="text-gray-600">Detection:</span>
-                      <span className="font-medium ml-2">MTB + RIF resistance</span>
+                      <span className="font-medium ml-2">MTB + Resistance</span>
                     </div>
                     <div>
                       <span className="text-gray-600">Sensitivity:</span>
-                      <span className="font-medium ml-2">≥95%</span>
+                      <span className="font-medium ml-2">≥98%</span>
                     </div>
                     <div>
                       <span className="text-gray-600">Time:</span>
@@ -299,7 +602,58 @@ export default function MolecularDiagnostics() {
                     </div>
                     <div>
                       <span className="text-gray-600">Sample:</span>
-                      <span className="font-medium ml-2">Sputum</span>
+                      <span className="font-medium ml-2">Sputum, BAL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Product 10: Swine Flu, H1A-H7 - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Worm className="h-8 w-8 text-cyan-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Swine Flu, H1A-H7</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Comprehensive influenza subtyping assay for detection and differentiation 
+                  of swine flu and avian influenza subtypes H1A through H7 for pandemic preparedness.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-cyan-600" />
+                    <span>Swine influenza detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-cyan-600" />
+                    <span>H1A-H7 subtype differentiation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-cyan-600" />
+                    <span>Pandemic surveillance ready</span>
+                  </div>
+                </div>
+                
+                <div className="bg-cyan-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Subtypes:</span>
+                      <span className="font-medium ml-2">H1A-H7, Swine Flu</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥96%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">2.5 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Respiratory swabs</span>
                     </div>
                   </div>
                 </div>
@@ -307,8 +661,8 @@ export default function MolecularDiagnostics() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Tuberculosis molecular diagnostics testing laboratory" 
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Swine flu and avian influenza molecular diagnostics laboratory" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
