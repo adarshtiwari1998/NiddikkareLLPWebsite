@@ -19,14 +19,6 @@ import babyFirstTouchImg from "@/assets/medical-linens/receiving-blankets-swaddl
 export default function MedicalLinensProducts() {
   const productPortfolio = [
     {
-      name: "Baby's First Touch",
-      code: "NKR-101",
-      image: babyFirstTouchImg,
-      category: "Patient Care",
-      features: ["100% cotton", "Mimics womb", "Reduces startle reflex", "Soothes colicky babies"],
-      link: "/products/medical-linens/baby-first-touch"
-    },
-    {
       name: "Maternity Gown",
       code: "NKR-601",
       image: maternityGownImg,

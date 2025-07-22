@@ -14,6 +14,7 @@ Preferred communication style: Simple, everyday language.
 - Fixed medical linens product card navigation: Added proper Link components to all product cards on /products/medical-linens page, enabling navigation to individual product detail pages (Baby's First Touch, Maternity Gown, Mackintosh Rubber Sheet, Bedsheet with Pillow Covers, Surgical Drapes/Towels, Scrub Suit, Patient Gown, Surgical/OT Gown, Surgical Cut Sheets)
 - Added Baby's First Touch to product portfolio: Included missing Baby's First Touch product card with proper features and NKR-101 code in the medical linens catalog
 - Fixed Baby's First Touch button navigation: Updated "Baby's First Touch" and "Learn More" buttons to use Link components instead of onClick handlers for proper client-side routing
+- Removed duplicate Baby's First Touch from product portfolio: Eliminated redundant product card since Baby's First Touch is already featured prominently at the top of the page
 - Updated Tools section branding: Changed "Tools & Testing" to just "Tools" in both breadcrumb navigation and main page heading for cleaner, more focused presentation
 - Created separate Testing parent page: Designed comprehensive /testing page following the same pattern as Tools, Healthcare, and Life Sciences with categorized testing solutions
 - Restructured testing URLs: Moved existing testing pages from root level to /testing/* structure - /filtration → /testing/filtration, /rapid-tests → /testing/rapid-tests, /chromatography → /testing/chromatography, /bioanalysis → /testing/bioanalysis
