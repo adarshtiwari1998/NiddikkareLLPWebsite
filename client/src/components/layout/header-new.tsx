@@ -374,13 +374,13 @@ export default function Header() {
                       ref={submenuRef}
                       className="absolute top-0 bg-white border border-gray-200 rounded-md shadow-lg z-60"
                       style={{
-                        // Smart positioning: check if there's space on the right, otherwise position on the left
-                        right: menuKey === 'tools-testing' ? '100%' : 'auto',
-                        left: menuKey === 'tools-testing' ? 'auto' : '100%',
-                        marginRight: menuKey === 'tools-testing' ? '8px' : '0',
-                        marginLeft: menuKey === 'tools-testing' ? '0' : '8px',
-                        width: '300px',
-                        maxWidth: '85vw'
+                        // Position submenu to the right of the parent item (matching arrow direction)
+                        left: '100%',
+                        marginLeft: '8px',
+                        // Responsive width that prevents overflow
+                        width: 'min(280px, 25vw)',
+                        maxWidth: '280px',
+                        minWidth: '220px'
                       }}
                       onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
                       onMouseLeave={() => setActiveSubmenu(null)}
