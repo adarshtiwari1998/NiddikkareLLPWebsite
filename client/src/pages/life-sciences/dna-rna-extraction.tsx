@@ -210,8 +210,8 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="@assets/image_1753168850882.png" 
-                  alt="Viral RNA extraction laboratory" 
+                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Viral RNA extraction laboratory with PCR equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
@@ -328,8 +328,8 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="@assets/image_1753168879710.png" 
-                  alt="Cell culture DNA extraction laboratory" 
+                  src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Cell culture DNA extraction laboratory with tissue culture equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
@@ -457,8 +457,8 @@ export default function DnaRnaExtraction() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Tissue RNA extraction laboratory" 
+                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Tissue RNA extraction laboratory with tissue processing equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
@@ -564,8 +564,8 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Viral nucleic acid extraction laboratory" 
+                  src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Viral nucleic acid extraction laboratory with biosafety equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
@@ -575,8 +575,8 @@ export default function DnaRnaExtraction() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Blood and cell culture RNA extraction" 
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Blood and cell culture RNA extraction with centrifuge equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
@@ -682,8 +682,8 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Plasmid DNA extraction from bacterial culture" 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Plasmid DNA extraction from bacterial culture with incubator" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
