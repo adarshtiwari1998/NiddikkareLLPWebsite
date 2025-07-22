@@ -75,249 +75,61 @@ export default function DnaRnaExtraction() {
             </p>
           </div>
 
-          {/* Portfolio Overview Cards */}
-          <div className="mb-16">
-            <img 
-              src="@assets/image_1753167797181.png" 
-              alt="Complete Extraction Kit Portfolio showing Plant DNA, Tissue DNA, Blood DNA, and Blood & Cell Culture DNA extraction kits" 
-              className="rounded-xl shadow-lg w-full h-auto mx-auto"
-            />
-          </div>
-
-          {/* Z-Pattern Layout for Individual Kits */}
+          {/* Z-Pattern Layout with Full Product Cards */}
           <div className="space-y-20">
             
-            {/* Kit 1: Plant DNA Extraction - Image Left, Content Right */}
+            {/* Row 1: Plant DNA (left) + Tissue DNA (right) */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="@assets/image_1753167745564.png" 
-                  alt="Plant DNA extraction laboratory setup" 
+                  src="@assets/image_1753168564317.png" 
+                  alt="Plant DNA Extraction Kit with specifications" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
               
               <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <Leaf className="h-8 w-8 text-green-600" />
-                  <h3 className="text-3xl font-bold text-gray-800">Plant DNA Extraction</h3>
-                </div>
-                <p className="text-lg text-gray-600 mb-6">
-                  Specialized protocols for extracting high-quality DNA from various plant tissues 
-                  including leaves, stems, flowers, and seeds.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-green-600" />
-                    <span>Optimized for polysaccharide-rich samples</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-green-600" />
-                    <span>Effective removal of polyphenols and proteins</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-green-600" />
-                    <span>Suitable for downstream PCR and sequencing</span>
-                  </div>
-                </div>
-                
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-gray-600">Sample size:</span>
-                      <span className="font-medium ml-2">50-100mg</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Yield:</span>
-                      <span className="font-medium ml-2">up to 25 μg</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Purity:</span>
-                      <span className="font-medium ml-2">A260/280: 1.8-2.0</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Time:</span>
-                      <span className="font-medium ml-2">45 minutes</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Kit 2: Viral RNA Extraction - Content Left, Image Right */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <Worm className="h-8 w-8 text-blue-600" />
-                  <h3 className="text-3xl font-bold text-gray-800">Viral RNA Extraction</h3>
-                </div>
-                <p className="text-lg text-gray-600 mb-6">
-                  Specialized protocols for isolating viral RNA from serum, plasma, urine, 
-                  and other clinical samples with high sensitivity and specificity.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-blue-600" />
-                    <span>Preserves RNA integrity during extraction</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-blue-600" />
-                    <span>Compatible with RT-PCR and sequencing</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-blue-600" />
-                    <span>Broad spectrum viral detection</span>
-                  </div>
-                </div>
-                
-                <div className="bg-blue-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-gray-600">Sample size:</span>
-                      <span className="font-medium ml-2">200 μl</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Recovery:</span>
-                      <span className="font-medium ml-2">up to 90%</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Elution:</span>
-                      <span className="font-medium ml-2">30-100 μl</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Time:</span>
-                      <span className="font-medium ml-2">35 minutes</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
                 <img 
-                  src="@assets/image_1753167765565.png" 
-                  alt="Viral RNA extraction laboratory" 
+                  src="@assets/image_1753168564317.png" 
+                  alt="Tissue DNA Extraction Kit with specifications" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
             </div>
 
-            {/* Kit 3: Blood DNA Extraction - Image Left, Content Right */}
+            {/* Row 2: Gel & PCR (right) + Plant RNA (left) */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Blood DNA extraction equipment" 
+                  src="@assets/image_1753168578674.png" 
+                  alt="Plant RNA Extraction Kit with specifications" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
               
               <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <Droplet className="h-8 w-8 text-red-600" />
-                  <h3 className="text-3xl font-bold text-gray-800">Blood DNA Extraction</h3>
-                </div>
-                <p className="text-lg text-gray-600 mb-6">
-                  Efficient extraction from whole blood, EDTA-treated samples, and buffy coats 
-                  with minimal contamination and maximum yield.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-red-600" />
-                    <span>Compatible with fresh and frozen samples</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-red-600" />
-                    <span>Removes hemoglobin and other inhibitors</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-red-600" />
-                    <span>High molecular weight DNA recovery</span>
-                  </div>
-                </div>
-                
-                <div className="bg-red-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-gray-600">Sample size:</span>
-                      <span className="font-medium ml-2">200 μl</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Yield:</span>
-                      <span className="font-medium ml-2">up to 6 μg</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Purity:</span>
-                      <span className="font-medium ml-2">A260/280: 1.8-2.0</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Time:</span>
-                      <span className="font-medium ml-2">30 minutes</span>
-                    </div>
-                  </div>
-                </div>
+                <img 
+                  src="@assets/image_1753168578674.png" 
+                  alt="Gel & PCR Product Purification Kit with specifications" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
               </div>
             </div>
 
-            {/* Kit 4: Cell Culture DNA - Content Left, Image Right */}
+            {/* Row 3: Blood & Cell Culture RNA (left) + Plasmid DNA (right) */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <TestTube className="h-8 w-8 text-purple-600" />
-                  <h3 className="text-3xl font-bold text-gray-800">Cell Culture DNA</h3>
-                </div>
-                <p className="text-lg text-gray-600 mb-6">
-                  Optimized extraction protocols for cultured cells including adherent and 
-                  suspension cultures with high DNA quality and yield.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-purple-600" />
-                    <span>Gentle lysis preserves DNA integrity</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-purple-600" />
-                    <span>Scalable from 10³ to 10⁷ cells</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-purple-600" />
-                    <span>Compatible with various cell types</span>
-                  </div>
-                </div>
-                
-                <div className="bg-purple-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-gray-600">Cell count:</span>
-                      <span className="font-medium ml-2">10³-10⁷ cells</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Yield:</span>
-                      <span className="font-medium ml-2">up to 15 μg</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Purity:</span>
-                      <span className="font-medium ml-2">A260/280: 1.8-2.0</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Time:</span>
-                      <span className="font-medium ml-2">25 minutes</span>
-                    </div>
-                  </div>
-                </div>
+                <img 
+                  src="@assets/image_1753168590374.png" 
+                  alt="Blood & Cell Culture RNA Extraction Kit with specifications" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
               </div>
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Cell culture DNA extraction" 
+                  src="@assets/image_1753168590374.png" 
+                  alt="Plasmid DNA Extraction Kit with specifications" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
