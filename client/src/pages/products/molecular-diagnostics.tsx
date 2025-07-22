@@ -217,55 +217,54 @@ export default function MolecularDiagnosticsProducts() {
               };
 
               return (
-                <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br ${getGradientColor(index)} border-r-4 border-r-gray-200 overflow-hidden relative`}>
+                <Card key={index} className={`h-80 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br ${getGradientColor(index)} overflow-hidden relative`}>
                   {/* Background Shape */}
-                  <div className="absolute bottom-0 right-0 opacity-10 transform rotate-12 translate-x-4 translate-y-4">
-                    <kit.icon className="w-32 h-32 text-gray-600" />
+                  <div className="absolute bottom-0 right-0 opacity-20 transform rotate-12 translate-x-6 translate-y-6">
+                    <kit.icon className="w-24 h-24 text-gray-400" />
                   </div>
                   
-                  <CardHeader className="text-center pb-4">
-                    <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-r from-white/40 to-transparent rounded-t-lg"></div>
+                  <CardHeader className="pb-3">
                     <div className="relative z-10">
-                      <div className={`inline-flex items-center justify-center w-16 h-16 bg-white/60 rounded-full mb-4 shadow-sm backdrop-blur-sm`}>
-                        <kit.icon className={`w-8 h-8 ${getIconColor(index)}`} />
+                      <div className={`inline-flex items-center justify-center w-12 h-12 bg-white/80 rounded-full mb-3 shadow-sm`}>
+                        <kit.icon className={`w-6 h-6 ${getIconColor(index)}`} />
                       </div>
-                      <CardTitle className="text-lg font-bold text-gray-800 mb-2 line-clamp-2">{kit.title}</CardTitle>
-                      <CardDescription className="text-sm text-gray-600 line-clamp-2">{kit.description}</CardDescription>
+                      <CardTitle className="text-base font-bold text-gray-800 mb-1 leading-tight">{kit.title}</CardTitle>
+                      <CardDescription className="text-xs text-gray-600 leading-tight">{kit.description}</CardDescription>
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="space-y-4 relative z-10">
+                  <CardContent className="space-y-3 relative z-10 pb-4">
                     {/* Performance Metrics */}
-                    <div className="grid grid-cols-2 gap-3 text-sm">
-                      <div className="bg-white/50 p-3 rounded-lg backdrop-blur-sm">
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div>
                         <div className="font-semibold text-gray-700">Sensitivity</div>
-                        <div className="text-lg font-bold text-gray-800">{kit.sensitivity}</div>
+                        <div className="text-sm font-bold text-gray-800">{kit.sensitivity}</div>
                       </div>
-                      <div className="bg-white/50 p-3 rounded-lg backdrop-blur-sm">
+                      <div>
                         <div className="font-semibold text-gray-700">Specificity</div>
-                        <div className="text-lg font-bold text-gray-800">{kit.specificity}</div>
+                        <div className="text-sm font-bold text-gray-800">{kit.specificity}</div>
                       </div>
-                      <div className="bg-white/50 p-3 rounded-lg backdrop-blur-sm">
+                      <div>
                         <div className="font-semibold text-gray-700">Time</div>
-                        <div className="text-lg font-bold text-gray-800">{kit.time}</div>
+                        <div className="text-sm font-bold text-gray-800">{kit.time}</div>
                       </div>
-                      <div className="bg-white/50 p-3 rounded-lg backdrop-blur-sm">
+                      <div>
                         <div className="font-semibold text-gray-700">Sample</div>
-                        <div className="text-sm font-bold text-gray-800">{kit.samples[0]}</div>
+                        <div className="text-xs font-bold text-gray-800">{kit.samples[0].split(' ')[0]}</div>
                       </div>
                     </div>
 
                     {/* Sample Types */}
-                    <div className="bg-white/60 p-3 rounded-lg backdrop-blur-sm">
-                      <div className="text-xs font-semibold text-gray-700 mb-2">Sample Types:</div>
+                    <div>
+                      <div className="text-xs font-semibold text-gray-700 mb-1">Sample Types:</div>
                       <div className="flex flex-wrap gap-1">
                         {kit.samples.slice(0, 3).map((sample, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs py-1 px-2 bg-white/70">
-                            {sample}
+                          <Badge key={idx} variant="outline" className="text-xs py-0 px-1 h-5">
+                            {sample.split(' ')[0]}
                           </Badge>
                         ))}
                         {kit.samples.length > 3 && (
-                          <Badge variant="outline" className="text-xs py-1 px-2 bg-white/70">
+                          <Badge variant="outline" className="text-xs py-0 px-1 h-5">
                             +{kit.samples.length - 3}
                           </Badge>
                         )}
@@ -273,23 +272,18 @@ export default function MolecularDiagnosticsProducts() {
                     </div>
 
                     {/* Applications */}
-                    <div className="bg-white/60 p-3 rounded-lg backdrop-blur-sm">
-                      <div className="text-xs font-semibold text-gray-700 mb-2">Applications:</div>
+                    <div>
+                      <div className="text-xs font-semibold text-gray-700 mb-1">Applications:</div>
                       <div className="flex flex-wrap gap-1">
-                        {kit.applications.slice(0, 3).map((app, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs py-1 px-2 bg-white/70">
+                        {kit.applications.slice(0, 4).map((app, idx) => (
+                          <Badge key={idx} variant="secondary" className="text-xs py-0 px-1 h-5">
                             {app}
                           </Badge>
                         ))}
-                        {kit.applications.length > 3 && (
-                          <Badge variant="secondary" className="text-xs py-1 px-2 bg-white/70">
-                            +{kit.applications.length - 3}
-                          </Badge>
-                        )}
                       </div>
                     </div>
 
-                    <Button className="w-full mt-4 bg-white/80 text-gray-800 hover:bg-white/90 backdrop-blur-sm">
+                    <Button size="sm" className="w-full mt-2 bg-white/90 text-gray-800 hover:bg-white text-xs h-7">
                       View Details
                     </Button>
                   </CardContent>
