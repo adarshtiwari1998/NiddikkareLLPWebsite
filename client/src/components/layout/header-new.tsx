@@ -380,12 +380,14 @@ export default function Header() {
                         // Responsive width that prevents overflow
                         width: 'min(280px, 25vw)',
                         maxWidth: '280px',
-                        minWidth: '220px'
+                        minWidth: '220px',
+                        // Enable horizontal scrolling when content overflows
+                        maxHeight: '400px'
                       }}
                       onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
                       onMouseLeave={() => setActiveSubmenu(null)}
                     >
-                      <div className="p-3 space-y-1">
+                      <div className="p-3 space-y-1 overflow-x-auto overflow-y-auto max-h-96 submenu-scroll">
                         {item.submenu.map((subItem) => {
                           const SubIcon = subItem.icon;
                           return (
