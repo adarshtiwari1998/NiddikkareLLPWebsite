@@ -56,8 +56,8 @@ export default function WovenMedicalLinens() {
             {/* Baby's First Touch */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-green-200">
               <CardContent className="p-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
-                  <Baby className="h-8 w-8 text-green-600" />
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
+                  <Baby className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-center mb-2">Baby's First Touch</h3>
                 <p className="text-sm text-gray-600 text-center mb-3">NKR-101</p>
@@ -70,7 +70,7 @@ export default function WovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Allergen-free</Badge>
                 </div>
                 <Link href="/products/medical-linens/baby-first-touch">
-                  <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
+                  <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -106,8 +106,8 @@ export default function WovenMedicalLinens() {
             {/* Maternity Gown */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-green-200">
               <CardContent className="p-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
-                  <Heart className="h-8 w-8 text-green-600" />
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                  <Heart className="h-8 w-8 text-purple-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-center mb-2">Maternity Gown</h3>
                 <p className="text-sm text-gray-600 text-center mb-3">NKR-601</p>
@@ -120,7 +120,7 @@ export default function WovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Soft Fabric</Badge>
                 </div>
                 <Link href="/products/medical-linens/maternity-gown">
-                  <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
+                  <Button size="sm" className="w-full bg-purple-600 hover:bg-purple-700">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -131,8 +131,8 @@ export default function WovenMedicalLinens() {
             {/* Patient Gown */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-green-200">
               <CardContent className="p-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
-                  <Users className="h-8 w-8 text-green-600" />
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
+                  <Users className="h-8 w-8 text-orange-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-center mb-2">Patient Gown</h3>
                 <p className="text-sm text-gray-600 text-center mb-3">NKR-602</p>
@@ -145,7 +145,7 @@ export default function WovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Hypoallergenic</Badge>
                 </div>
                 <Link href="/products/medical-linens/patient-gown">
-                  <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
+                  <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -178,8 +178,8 @@ export default function WovenMedicalLinens() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-green-500" />
+                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-blue-500" />
                 </div>
                 <CardTitle>Easy Sterilization</CardTitle>
                 <CardDescription>
@@ -190,8 +190,8 @@ export default function WovenMedicalLinens() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-green-500" />
+                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-8 w-8 text-purple-500" />
                 </div>
                 <CardTitle>Softness & Comfort</CardTitle>
                 <CardDescription>
