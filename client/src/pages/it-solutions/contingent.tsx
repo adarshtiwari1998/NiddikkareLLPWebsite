@@ -2,183 +2,117 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Users, Clock, Zap, Shield, CheckCircle, TrendingUp, DollarSign, Award } from "lucide-react";
+import { Users, Clock, Zap, Shield, CheckCircle, TrendingUp, DollarSign, Award, Building, Briefcase } from "lucide-react";
 
 export default function Contingent() {
   const contingentServices = [
     {
-      title: "Contract Staffing",
-      description: "Short-term and project-based staffing solutions",
-      icon: Clock,
-      duration: "1-12 months",
-      benefits: ["Immediate availability", "Cost-effective", "Flexible engagement", "Specialized skills"],
-      industries: ["IT", "Healthcare", "Engineering", "Finance"]
-    },
-    {
-      title: "Temporary Staffing",
-      description: "Quick fill for temporary workforce needs",
-      icon: Zap,
-      duration: "1 day - 6 months",
-      benefits: ["Rapid deployment", "No long-term commitment", "Peak period support", "Budget control"],
-      industries: ["Healthcare", "Manufacturing", "Retail", "Logistics"]
-    },
-    {
-      title: "Freelance Management",
-      description: "Comprehensive freelancer and consultant management",
+      title: "Requirement Definition",
+      description: "Precise specification of temporary talent needs",
       icon: Users,
-      duration: "Project-based",
-      benefits: ["Global talent pool", "Specialized expertise", "Scalable workforce", "Project efficiency"],
-      industries: ["Technology", "Creative", "Consulting", "Research"]
+      features: ["Skill assessment", "Duration planning", "Budget estimation", "Compliance review"],
+      benefits: ["Clear requirements", "Targeted search", "Cost planning", "Risk mitigation"]
     },
     {
-      title: "Workforce Management",
-      description: "End-to-end contingent workforce solutions",
+      title: "Specialized Sourcing",
+      description: "Targeting candidates with niche expertise",
+      icon: Clock,
+      features: ["Niche skill identification", "Market research", "Talent mapping", "Quick turnaround"],
+      benefits: ["Expert talent", "Market insights", "Quality candidates", "Fast delivery"]
+    },
+    {
+      title: "Compliance Management",
+      description: "Handling contracts and legal requirements",
       icon: Shield,
-      duration: "Ongoing",
-      benefits: ["Compliance management", "Vendor management", "Cost optimization", "Risk mitigation"],
-      industries: ["All Industries", "Multi-sector", "Enterprise", "Global"]
+      features: ["Contract management", "Legal compliance", "Documentation", "Risk assessment"],
+      benefits: ["Legal protection", "Compliance assurance", "Proper documentation", "Risk reduction"]
+    },
+    {
+      title: "Performance Monitoring",
+      description: "Ensuring successful project completion",
+      icon: TrendingUp,
+      features: ["Performance tracking", "Quality assurance", "Progress monitoring", "Success metrics"],
+      benefits: ["Quality delivery", "Project success", "Continuous improvement", "Client satisfaction"]
     }
   ];
 
-  const workforceMetrics = [
-    { metric: "Deployment Speed", value: "24-48 hours", improvement: "75% faster", progress: 88 },
-    { metric: "Cost Savings", value: "30-40%", improvement: "vs full-time", progress: 85 },
-    { metric: "Fill Rate", value: "92%", improvement: "Industry leading", progress: 92 },
-    { metric: "Client Satisfaction", value: "4.7/5", improvement: "95% retention", progress: 94 },
-    { metric: "Talent Pool", value: "10,000+", improvement: "Pre-vetted", progress: 90 },
-    { metric: "Compliance Rate", value: "99.5%", improvement: "Zero incidents", progress: 99 }
-  ];
-
-  const skillCategories = [
-    {
-      category: "Information Technology",
-      skills: ["Software Development", "Data Science", "Cybersecurity", "Cloud Computing", "AI/ML"],
-      demand: "High",
-      availability: "Good",
-      averageRate: "$45-85/hr"
-    },
-    {
-      category: "Healthcare",
-      skills: ["Nursing", "Medical Technicians", "Therapists", "Healthcare Admin", "Specialists"],
-      demand: "Very High",
-      availability: "Limited",
-      averageRate: "$35-65/hr"
-    },
-    {
-      category: "Engineering",
-      skills: ["Civil Engineering", "Mechanical", "Electrical", "Software Engineering", "Quality"],
-      demand: "High",
-      availability: "Moderate",
-      averageRate: "$40-75/hr"
-    },
-    {
-      category: "Finance & Accounting",
-      skills: ["Financial Analysis", "Accounting", "Auditing", "Tax Preparation", "Bookkeeping"],
-      demand: "Moderate",
-      availability: "Good",
-      averageRate: "$30-60/hr"
-    }
-  ];
-
-  const engagementProcess = [
+  const processSteps = [
     {
       step: "1",
-      title: "Requirement Analysis",
-      description: "Define role specifications and project requirements",
+      title: "Requirement Definition",
+      description: "Precise specification of temporary talent needs",
       duration: "1-2 days",
-      activities: ["Skills assessment", "Role definition", "Budget planning", "Timeline setting"]
+      deliverables: ["Requirement specification", "Skills mapping", "Timeline planning"]
     },
     {
       step: "2",
-      title: "Talent Sourcing",
-      description: "Identify and screen qualified candidates",
-      duration: "2-3 days",
-      activities: ["Database search", "Skills screening", "Background checks", "Reference verification"]
+      title: "Specialized Sourcing", 
+      description: "Targeting candidates with niche expertise",
+      duration: "2-5 days",
+      deliverables: ["Candidate pipeline", "Skill assessment", "Market analysis"]
     },
     {
       step: "3",
-      title: "Selection Process",
-      description: "Client interviews and final selection",
-      duration: "1-2 days",
-      activities: ["Interview scheduling", "Technical assessments", "Client feedback", "Final selection"]
+      title: "Compliance Management",
+      description: "Handling contracts and legal requirements",
+      duration: "1-3 days",
+      deliverables: ["Contract preparation", "Legal documentation", "Compliance checklist"]
     },
     {
       step: "4",
-      title: "Onboarding",
-      description: "Rapid deployment and integration",
-      duration: "1 day",
-      activities: ["Contract execution", "System access", "Orientation", "Project briefing"]
-    },
-    {
-      step: "5",
-      title: "Ongoing Management",
-      description: "Continuous support and performance monitoring",
-      duration: "Throughout project",
-      activities: ["Performance tracking", "Issue resolution", "Contract management", "End-of-project transition"]
+      title: "Performance Monitoring",
+      description: "Ensuring successful project completion",
+      duration: "Ongoing",
+      deliverables: ["Performance reports", "Quality metrics", "Progress tracking"]
     }
   ];
 
-  const complianceFeatures = [
+  const useCases = [
     {
-      feature: "Legal Compliance",
-      description: "Full compliance with labor laws and regulations",
-      coverage: "100%",
-      details: ["Employment law", "Tax regulations", "Worker classification", "Benefits compliance"]
+      title: "Project-Based Initiatives",
+      description: "When implementing new systems or launching special projects, our Contingent service provides skilled professionals for the exact duration needed.",
+      icon: Building,
+      metrics: ["New systems", "Special projects", "Exact duration"]
     },
     {
-      feature: "Risk Management",
-      description: "Comprehensive risk assessment and mitigation",
-      coverage: "99.5%",
-      details: ["Insurance coverage", "Liability protection", "Performance guarantees", "Dispute resolution"]
+      title: "Interim Leadership",
+      description: "During transitions or unexpected departures, our service can quickly source experienced executives and managers to maintain operational continuity.",
+      icon: Users,
+      metrics: ["Executive placement", "Operational continuity", "Quick sourcing"]
     },
     {
-      feature: "Quality Assurance",
-      description: "Rigorous quality control processes",
-      coverage: "95%",
-      details: ["Skills verification", "Performance monitoring", "Client feedback", "Continuous improvement"]
-    },
-    {
-      feature: "Data Security",
-      description: "Robust data protection and privacy measures",
-      coverage: "100%",
-      details: ["GDPR compliance", "Data encryption", "Access controls", "Regular audits"]
+      title: "Specialized Technical Expertise",
+      description: "For organizations requiring niche technical skills for limited periods, our Contingent solution provides access to rare talent without permanent hiring commitments.",
+      icon: Zap,
+      metrics: ["Niche skills", "Limited periods", "No permanent commitment"]
     }
   ];
 
-  const costAnalysis = [
-    {
-      factor: "Recruitment Costs",
-      traditional: "$15,000",
-      contingent: "$3,000",
-      savings: "80%"
-    },
-    {
-      factor: "Benefits & Overhead",
-      traditional: "$25,000",
-      contingent: "$0",
-      savings: "100%"
-    },
-    {
-      factor: "Training Costs",
-      traditional: "$5,000",
-      contingent: "$500",
-      savings: "90%"
-    },
-    {
-      factor: "Onboarding Time",
-      traditional: "30 days",
-      contingent: "2 days",
-      savings: "93%"
-    }
+  const keyBenefits = [
+    "Access to specialized skills for limited durations",
+    "Reduced administrative and compliance burden", 
+    "Flexibility to scale workforce with demand",
+    "Lower long-term employment costs",
+    "Rapid deployment of qualified professionals",
+    "Risk mitigation through proper contractor management"
+  ];
+
+  const industries = [
+    { name: "Information Technology", description: "Software developers and IT professionals", growth: "85%" },
+    { name: "Healthcare", description: "Medical professionals and specialists", growth: "92%" },
+    { name: "Engineering", description: "Technical and project engineers", growth: "78%" },
+    { name: "Finance", description: "Financial analysts and consultants", growth: "81%" },
+    { name: "Manufacturing", description: "Operations and quality specialists", growth: "88%" },
+    { name: "Consulting", description: "Strategy and management consultants", growth: "94%" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6">
-            <Users className="w-10 h-10 text-white" />
+            <Briefcase className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Contingent Workforce Solutions
@@ -204,13 +138,18 @@ export default function Contingent() {
               <div className="text-sm text-gray-600">Cost Savings</div>
             </div>
           </div>
+          <div className="flex justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Get Started
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Services Overview */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Contingent Workforce Services</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Our Contingent Process</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contingentServices.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -220,28 +159,30 @@ export default function Contingent() {
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                   <CardDescription>{service.description}</CardDescription>
-                  <Badge variant="secondary" className="mt-2">{service.duration}</Badge>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-sm mb-2">Benefits:</h4>
+                      <h4 className="font-semibold text-sm mb-2">Features:</h4>
                       <ul className="space-y-1">
-                        {service.benefits.map((benefit, idx) => (
+                        {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center text-sm">
                             <CheckCircle className="w-3 h-3 text-green-500 mr-2" />
-                            {benefit}
+                            {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm mb-2">Industries:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {service.industries.map((industry, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs">{industry}</Badge>
+                      <h4 className="font-semibold text-sm mb-2">Benefits:</h4>
+                      <ul className="space-y-1">
+                        {service.benefits.map((benefit, idx) => (
+                          <li key={idx} className="flex items-center text-sm">
+                            <CheckCircle className="w-3 h-3 text-orange-500 mr-2" />
+                            {benefit}
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
                   </div>
                 </CardContent>
@@ -251,100 +192,68 @@ export default function Contingent() {
         </div>
       </section>
 
-      {/* Performance Metrics */}
+      {/* Process Timeline */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Performance Metrics</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {workforceMetrics.map((metric, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{metric.metric}</CardTitle>
-                  <div className="flex items-center space-x-2">
-                    <div className="text-2xl font-bold text-primary">{metric.value}</div>
-                    <Badge variant="secondary" className="text-xs">{metric.improvement}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <Progress value={metric.progress} className="h-3" />
-                  <div className="text-sm text-gray-600 mt-2">Performance Score: {metric.progress}%</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skill Categories */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">In-Demand Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {skillCategories.map((category, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardHeader>
-                  <CardTitle className="text-lg">{category.category}</CardTitle>
-                  <div className="flex items-center space-x-2">
-                    <Badge variant={category.demand === 'Very High' ? 'destructive' : category.demand === 'High' ? 'default' : 'secondary'}>
-                      {category.demand} Demand
-                    </Badge>
-                    <Badge variant="outline">{category.availability}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div>
-                      <h4 className="font-semibold text-sm mb-2">Key Skills:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {category.skills.map((skill, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs">{skill}</Badge>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="text-center pt-2">
-                      <div className="text-sm text-gray-600">Average Rate</div>
-                      <div className="text-lg font-bold text-primary">{category.averageRate}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Engagement Process */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Engagement Process</h2>
-          <div className="space-y-8">
-            {engagementProcess.map((step, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center justify-center w-12 h-12 bg-primary rounded-full text-white font-bold">
+          <h2 className="text-3xl font-bold text-center mb-12">Implementation Process</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="relative">
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
                         {step.step}
                       </div>
-                      <div>
-                        <CardTitle className="text-xl">{step.title}</CardTitle>
-                        <CardDescription>{step.description}</CardDescription>
-                      </div>
+                      <Badge variant="secondary">{step.duration}</Badge>
                     </div>
-                    <div className="text-right">
-                      <div className="text-sm text-gray-600">Duration</div>
-                      <div className="text-lg font-bold text-primary">{step.duration}</div>
+                    <CardTitle className="text-lg">{step.title}</CardTitle>
+                    <CardDescription>{step.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2">Deliverables:</h4>
+                      <ul className="space-y-1">
+                        {step.deliverables.map((deliverable, idx) => (
+                          <li key={idx} className="flex items-center text-sm">
+                            <CheckCircle className="w-3 h-3 text-green-500 mr-2" />
+                            {deliverable}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                  </CardContent>
+                </Card>
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-primary/30 transform -translate-y-1/2 z-10"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Ideal Use Cases</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {useCases.map((useCase, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-full mb-4">
+                    <useCase.icon className="w-6 h-6 text-orange-600" />
                   </div>
+                  <CardTitle className="text-xl text-orange-600">{useCase.title}</CardTitle>
+                  <CardDescription>{useCase.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Key Activities:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {step.activities.map((activity, idx) => (
-                        <Badge key={idx} variant="outline" className="text-sm">{activity}</Badge>
-                      ))}
-                    </div>
+                  <div className="space-y-2">
+                    {useCase.metrics.map((metric, idx) => (
+                      <Badge key={idx} variant="outline" className="mr-2">
+                        {metric}
+                      </Badge>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -353,30 +262,17 @@ export default function Contingent() {
         </div>
       </section>
 
-      {/* Cost Analysis */}
+      {/* Key Benefits */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Cost Comparison Analysis</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {costAnalysis.map((item, index) => (
+          <h2 className="text-3xl font-bold text-center mb-12">Key Benefits</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {keyBenefits.map((benefit, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{item.factor}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-sm">Traditional:</span>
-                      <span className="font-medium text-red-600">{item.traditional}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm">Contingent:</span>
-                      <span className="font-medium text-green-600">{item.contingent}</span>
-                    </div>
-                    <div className="text-center pt-2">
-                      <div className="text-2xl font-bold text-primary">{item.savings}</div>
-                      <div className="text-sm text-gray-600">Savings</div>
-                    </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center">
+                    <CheckCircle className="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">{benefit}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -385,33 +281,56 @@ export default function Contingent() {
         </div>
       </section>
 
-      {/* Compliance Features */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Industry Expertise */}
+      <section className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Compliance & Risk Management</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {complianceFeatures.map((feature, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardHeader className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                    <Shield className="w-8 h-8 text-primary" />
+          <h2 className="text-3xl font-bold text-center mb-12">Industry Expertise</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {industries.map((industry, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <CardTitle className="text-lg">{industry.name}</CardTitle>
+                    <Badge variant="secondary">{industry.growth} Success</Badge>
                   </div>
-                  <CardTitle className="text-xl">{feature.feature}</CardTitle>
-                  <CardDescription>{feature.description}</CardDescription>
-                  <Badge variant="secondary" className="mt-2">{feature.coverage} Coverage</Badge>
+                  <CardDescription>{industry.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
-                    {feature.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>Success Rate</span>
+                      <span className="font-semibold">{industry.growth}</span>
+                    </div>
+                    <Progress value={parseInt(industry.growth)} className="h-2" />
+                  </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-primary to-secondary text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-12">Our Track Record</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="space-y-2">
+              <div className="text-4xl font-bold">10K+</div>
+              <div className="text-sm opacity-90">Pre-vetted Talent</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold">24-48h</div>
+              <div className="text-sm opacity-90">Deployment Time</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold">92%</div>
+              <div className="text-sm opacity-90">Fill Rate</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold">40%</div>
+              <div className="text-sm opacity-90">Cost Savings</div>
+            </div>
           </div>
         </div>
       </section>
@@ -419,16 +338,16 @@ export default function Contingent() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-primary text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Build Your Flexible Workforce?</h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Scale Your Workforce?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Access skilled talent quickly and cost-effectively with our contingent workforce solutions
+            Access specialized talent when you need it, for as long as you need it
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
-              Start Today
+              Start Contingent Partnership
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              View Talent Pool
+              Download Case Study
             </Button>
           </div>
         </div>
