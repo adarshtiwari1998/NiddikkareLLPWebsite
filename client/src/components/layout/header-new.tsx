@@ -352,21 +352,9 @@ export default function Header() {
       setEnterTimeout(null);
     }
     
-    // If switching between different dropdowns, close previous immediately
-    if (activeDropdown && activeDropdown !== menuKey) {
-      setActiveDropdown(null);
-      setActiveSubmenu(null);
-      // Use a minimal timeout to prevent flickering
-      const timeout = setTimeout(() => {
-        setActiveDropdown(menuKey);
-        setActiveSubmenu(null);
-      }, 25);
-      setEnterTimeout(timeout);
-    } else {
-      // Same dropdown or no active dropdown - immediate update
-      setActiveDropdown(menuKey);
-      setActiveSubmenu(null);
-    }
+    // Always immediately switch to the new dropdown
+    setActiveDropdown(menuKey);
+    setActiveSubmenu(null);
   };
 
   const handleMouseLeave = () => {
@@ -382,7 +370,7 @@ export default function Header() {
     const timeout = setTimeout(() => {
       setActiveDropdown(null);
       setActiveSubmenu(null);
-    }, 200); // Slightly increased delay for better user experience
+    }, 150);
     setLeaveTimeout(timeout);
   };
 
@@ -404,7 +392,7 @@ export default function Header() {
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => {
     // Calculate dynamic positioning and width
     const getDropdownClasses = () => {
-      const baseClasses = `absolute top-full bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-75 z-50 ${
+      const baseClasses = `absolute top-full bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-75 z-[9999] ${
         isOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
       }`;
       
@@ -525,7 +513,7 @@ export default function Header() {
                   {item.submenu && activeSubmenu === item.label.toLowerCase() && (
                     <div 
                       ref={submenuRef}
-                      className="absolute top-0 bg-white border border-gray-200 rounded-md shadow-lg z-60"
+                      className="absolute top-0 bg-white border border-gray-200 rounded-md shadow-lg z-[10000]"
                       style={{
                         // Position submenu to the right of the parent item (matching arrow direction)
                         left: '100%',
@@ -647,9 +635,9 @@ export default function Header() {
                 )}
                 
                 {/* Submenu for any dropdown */}
-                {item.submenu && activeSubmenu === item.label.toLowerCase() && (
+                {item.submenu && activeSubmenu === item.label.toLowerCase() && activeDropdown === menuKey && (
                   <div 
-                    className="absolute top-0 bg-white border border-gray-200 rounded-md shadow-lg z-60"
+                    className="absolute top-0 bg-white border border-gray-200 rounded-md shadow-lg z-[10000]"
                     style={{
                       left: '100%',
                       marginLeft: '8px',
