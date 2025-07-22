@@ -60,12 +60,23 @@ import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
 import Header from "@/components/layout/header-new";
 import Footer from "@/components/layout/footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { SmartBreadcrumb } from "@/components/ui/breadcrumb";
 
 function Router() {
   return (
     <div className="min-h-screen bg-background">
       <ScrollToTop />
       <Header />
+      
+      {/* Breadcrumb Navigation */}
+      <div className="bg-gray-50 dark:bg-gray-900 border-b">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-3">
+            <SmartBreadcrumb />
+          </div>
+        </div>
+      </div>
+      
       <main>
         <Switch>
           <Route path="/" component={Home} />
