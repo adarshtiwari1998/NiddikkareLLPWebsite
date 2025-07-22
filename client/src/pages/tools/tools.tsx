@@ -27,21 +27,21 @@ export default function Tools() {
       description: "Advanced digital tools for modern laboratory workflows",
       tools: [
         {
-          href: "/tools/e-training",
+          href: "/tools-testing/tools/e-training",
           title: "E-Learning Resources",
           description: "Comprehensive educational materials and resources for laboratory professionals",
           icon: BookOpen,
           features: ["200+ Educational Articles", "150+ Technical Guides", "Video Tutorials", "24/7 Access"]
         },
         {
-          href: "/tools/sample-request",
+          href: "/tools-testing/tools/sample-request",
           title: "Sample Request System",
           description: "Streamlined sample request and tracking system with real-time monitoring",
           icon: FileText,
           features: ["Real-Time Tracking", "Analytics Dashboard", "Secure Protocol", "Automated Notifications"]
         },
         {
-          href: "/tools/application-database-chromatography",
+          href: "/tools-testing/tools/application-database-chromatography",
           title: "Application Database - Chromatography",
           description: "Comprehensive chromatography application database and analysis tools",
           icon: Database,
@@ -54,42 +54,42 @@ export default function Tools() {
       description: "Intelligent tools to find the perfect laboratory equipment and supplies",
       tools: [
         {
-          href: "/tools/filter-finder",
+          href: "/tools-testing/tools/filter-finder",
           title: "FilterFinder",
           description: "Advanced filtration solution finder for laboratory applications",
           icon: Filter,
           features: ["Smart Search", "Custom Parameters", "Quick Results", "AI-Powered Recommendations"]
         },
         {
-          href: "/tools/strip-finder",
+          href: "/tools-testing/tools/strip-finder",
           title: "StripFinder", 
           description: "Test strip selection and optimization tool for rapid diagnostics",
           icon: TestTube,
           features: ["Intelligent Search", "Precision Matching", "Rapid Results", "Comprehensive Database"]
         },
         {
-          href: "/tools/nanocolor-finder",
+          href: "/tools-testing/tools/nanocolor-finder",
           title: "NANOCOLOR Finder",
           description: "Colorimetric analysis tools for precise water and environmental testing",
           icon: Droplet,
           features: ["Colorimetric Analysis", "Parameter Search", "Quick Results", "Water Quality Testing"]
         },
         {
-          href: "/tools/chromafil-finder",
+          href: "/tools-testing/tools/chromafil-finder",
           title: "CHROMAFIL Finder",
           description: "Chromatography filtration and sample preparation solutions",
           icon: Filter,
           features: ["Specialized Search", "Method Matching", "Performance Data", "HPLC & GC Applications"]
         },
         {
-          href: "/tools/vial-finder",
+          href: "/tools-testing/tools/vial-finder",
           title: "VialFinder",
           description: "Laboratory vial and container selection tool with compatibility checking",
           icon: FlaskConical,
           features: ["Advanced Search", "Compatibility Check", "Quick Selection", "Material Options"]
         },
         {
-          href: "/tools/bioanalysis-kitfinder",
+          href: "/tools-testing/tools/bioanalysis-kitfinder",
           title: "Bioanalysis KitFinder",
           description: "Comprehensive bioanalysis kit selection and optimization tool",
           icon: Microscope,
@@ -284,7 +284,7 @@ export default function Tools() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300"
+                className="px-8 py-4 text-lg font-semibold border-white text-primary hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300"
               >
                 Get Started Today
                 <ArrowRight className="h-5 w-5 ml-2" />

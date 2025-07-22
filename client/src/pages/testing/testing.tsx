@@ -23,21 +23,21 @@ export default function Testing() {
       description: "Cutting-edge analytical tools for comprehensive laboratory testing and research",
       tests: [
         {
-          href: "/testing/filtration",
+          href: "/tools-testing/testing/filtration",
           title: "Filtration Solutions",
           description: "Advanced filtration systems and membrane technologies for laboratory applications",
           icon: Filter,
           features: ["Membrane Technology", "High Precision", "Quality Control", "Various Applications"]
         },
         {
-          href: "/testing/rapid-tests",
+          href: "/tools-testing/testing/rapid-tests",
           title: "Rapid Test Solutions",
           description: "Quick and accurate diagnostic testing solutions for immediate results",
           icon: Zap,
           features: ["Fast Results", "High Accuracy", "Point-of-Care", "Easy to Use"]
         },
         {
-          href: "/testing/water-analysis",
+          href: "/tools-testing/testing/water-analysis",
           title: "Water Analysis",
           description: "Comprehensive water quality testing and environmental monitoring solutions",
           icon: Droplet,
@@ -50,14 +50,14 @@ export default function Testing() {
       description: "Sophisticated analytical instruments and methods for research and quality control",
       tests: [
         {
-          href: "/testing/chromatography",
+          href: "/tools-testing/testing/chromatography",
           title: "Chromatography Solutions",
           description: "High-performance chromatography systems for separation and analysis",
           icon: Activity,
           features: ["HPLC & GC", "Method Development", "Quantitative Analysis", "Quality Assurance"]
         },
         {
-          href: "/testing/bioanalysis",
+          href: "/tools-testing/testing/bioanalysis",
           title: "Bioanalysis Solutions",
           description: "Comprehensive bioanalytical testing for pharmaceutical and research applications",
           icon: FlaskConical,
@@ -221,7 +221,7 @@ export default function Testing() {
             <Button 
               size="lg"
               variant="outline"
-              className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-primary transition-all duration-300"
+              className="px-8 py-4 text-lg font-semibold border-white text-primary hover:bg-white hover:text-primary transition-all duration-300"
             >
               View Documentation
             </Button>
