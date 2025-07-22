@@ -183,11 +183,30 @@ export default function GutCare() {
                 
                 <div>
                   <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 shadow-lg">
-                    <img 
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f8fafc'/%3E%3Cg transform='translate(50,50)'%3E%3Crect x='50' y='50' width='200' height='120' rx='10' fill='%233b82f6' opacity='0.1' stroke='%233b82f6' stroke-width='2'/%3E%3Ccircle cx='100' cy='100' r='8' fill='%233b82f6'/%3E%3Ccircle cx='150' cy='90' r='6' fill='%2310b981'/%3E%3Ccircle cx='200' cy='110' r='7' fill='%23f59e0b'/%3E%3Ctext x='150' y='200' text-anchor='middle' font-size='14' fill='%23374151'%3EDiagnostic Testing%3C/text%3E%3C/g%3E%3C/svg%3E" 
-                      alt="Digestive health diagnostics laboratory" 
-                      className="w-full h-auto rounded-lg"
-                    />
+                    <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                      <svg viewBox="0 0 400 300" className="w-full h-full">
+                        <rect width="400" height="300" fill="#f8fafc"/>
+                        
+                        <g transform="translate(50,50)">
+                          {/* Diagnostic equipment */}
+                          <rect x="50" y="50" width="200" height="120" rx="10" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" strokeWidth="2"/>
+                          
+                          {/* Sample results */}
+                          <circle cx="100" cy="100" r="8" fill="#3b82f6"/>
+                          <circle cx="150" cy="90" r="6" fill="#10b981"/>
+                          <circle cx="200" cy="110" r="7" fill="#f59e0b"/>
+                          <circle cx="120" cy="130" r="5" fill="#a855f7"/>
+                          <circle cx="180" cy="130" r="6" fill="#ef4444"/>
+                          
+                          {/* Chart lines */}
+                          <path d="M70 180 Q120 160 170 170 Q220 165 270 155" stroke="#3b82f6" strokeWidth="2" fill="none" opacity="0.6"/>
+                        </g>
+                        
+                        <text x="200" y="260" textAnchor="middle" fontSize="16" fill="#374151" fontWeight="600">
+                          Diagnostic Testing
+                        </text>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -197,11 +216,23 @@ export default function GutCare() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-8 shadow-lg">
-                    <img 
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f9ff'/%3E%3Ccircle cx='200' cy='150' r='80' fill='%2306b6d4' opacity='0.1'/%3E%3Ccircle cx='160' cy='120' r='20' fill='%2306b6d4' opacity='0.3'/%3E%3Ccircle cx='240' cy='130' r='15' fill='%2310b981' opacity='0.4'/%3E%3Ccircle cx='180' cy='180' r='25' fill='%23f59e0b' opacity='0.3'/%3E%3Ctext x='200' y='220' text-anchor='middle' font-size='16' fill='%23374151'%3EGut Microbiome Analysis%3C/text%3E%3C/svg%3E" 
-                      alt="Gut health research laboratory" 
-                      className="w-full h-auto rounded-lg"
-                    />
+                    <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                      <svg viewBox="0 0 400 300" className="w-full h-full">
+                        <rect width="400" height="300" fill="#f0f9ff"/>
+                        
+                        {/* Microbiome visualization */}
+                        <circle cx="200" cy="150" r="80" fill="#06b6d4" opacity="0.1"/>
+                        <circle cx="160" cy="120" r="20" fill="#06b6d4" opacity="0.3"/>
+                        <circle cx="240" cy="130" r="15" fill="#10b981" opacity="0.4"/>
+                        <circle cx="180" cy="180" r="25" fill="#f59e0b" opacity="0.3"/>
+                        <circle cx="220" cy="170" r="12" fill="#a855f7" opacity="0.4"/>
+                        <circle cx="170" cy="140" r="8" fill="#ef4444" opacity="0.3"/>
+                        
+                        <text x="200" y="260" textAnchor="middle" fontSize="16" fill="#374151" fontWeight="600">
+                          Gut Microbiome Analysis
+                        </text>
+                      </svg>
+                    </div>
                   </div>
                 </div>
                 
@@ -315,11 +346,27 @@ export default function GutCare() {
                 
                 <div>
                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 shadow-lg">
-                    <img 
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23fdf2f8'/%3E%3Cg transform='translate(50,50)'%3E%3Crect x='60' y='60' width='40' height='80' rx='20' fill='%23a855f7' opacity='0.6'/%3E%3Crect x='120' y='70' width='40' height='70' rx='20' fill='%236366f1' opacity='0.5'/%3E%3Crect x='180' y='50' width='40' height='90' rx='20' fill='%2310b981' opacity='0.7'/%3E%3Crect x='240' y='65' width='40' height='75' rx='20' fill='%23f59e0b' opacity='0.6'/%3E%3Ctext x='150' y='180' text-anchor='middle' font-size='14' fill='%23374151'%3ETherapeutic Solutions%3C/text%3E%3C/g%3E%3C/svg%3E" 
-                      alt="Therapeutic solutions for gut health" 
-                      className="w-full h-auto rounded-lg"
-                    />
+                    <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                      <svg viewBox="0 0 400 300" className="w-full h-full">
+                        <rect width="400" height="300" fill="#fdf2f8"/>
+                        
+                        <g transform="translate(50,50)">
+                          {/* Therapeutic compounds */}
+                          <rect x="60" y="60" width="40" height="80" rx="20" fill="#a855f7" opacity="0.6"/>
+                          <rect x="120" y="70" width="40" height="70" rx="20" fill="#6366f1" opacity="0.5"/>
+                          <rect x="180" y="50" width="40" height="90" rx="20" fill="#10b981" opacity="0.7"/>
+                          <rect x="240" y="65" width="40" height="75" rx="20" fill="#f59e0b" opacity="0.6"/>
+                          
+                          {/* Connection lines showing interactions */}
+                          <path d="M80 150 Q150 130 220 150" stroke="#a855f7" strokeWidth="2" fill="none" opacity="0.4"/>
+                          <path d="M140 140 Q200 120 260 140" stroke="#6366f1" strokeWidth="2" fill="none" opacity="0.4"/>
+                        </g>
+                        
+                        <text x="200" y="260" textAnchor="middle" fontSize="16" fill="#374151" fontWeight="600">
+                          Therapeutic Solutions
+                        </text>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -329,11 +376,29 @@ export default function GutCare() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-8 shadow-lg">
-                    <img 
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23fffbeb'/%3E%3Cg transform='translate(50,50)'%3E%3Ccircle cx='100' cy='100' r='30' fill='%23f59e0b' opacity='0.3'/%3E%3Ccircle cx='150' cy='80' r='20' fill='%2310b981' opacity='0.4'/%3E%3Ccircle cx='200' cy='110' r='25' fill='%23ef4444' opacity='0.3'/%3E%3Ccircle cx='120' cy='140' r='15' fill='%236366f1' opacity='0.4'/%3E%3Ccircle cx='180' cy='150' r='18' fill='%23a855f7' opacity='0.3'/%3E%3Ctext x='150' y='190' text-anchor='middle' font-size='14' fill='%23374151'%3ENutritional Analysis%3C/text%3E%3C/g%3E%3C/svg%3E" 
-                      alt="Nutritional analysis for gut health" 
-                      className="w-full h-auto rounded-lg"
-                    />
+                    <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                      <svg viewBox="0 0 400 300" className="w-full h-full">
+                        <rect width="400" height="300" fill="#fffbeb"/>
+                        
+                        <g transform="translate(50,50)">
+                          {/* Nutritional elements */}
+                          <circle cx="100" cy="100" r="30" fill="#f59e0b" opacity="0.3"/>
+                          <circle cx="150" cy="80" r="20" fill="#10b981" opacity="0.4"/>
+                          <circle cx="200" cy="110" r="25" fill="#ef4444" opacity="0.3"/>
+                          <circle cx="120" cy="140" r="15" fill="#6366f1" opacity="0.4"/>
+                          <circle cx="180" cy="150" r="18" fill="#a855f7" opacity="0.3"/>
+                          <circle cx="250" cy="100" r="22" fill="#06b6d4" opacity="0.3"/>
+                          
+                          {/* Nutritional flow paths */}
+                          <path d="M70 130 Q130 110 190 130 Q250 120 300 110" stroke="#f59e0b" strokeWidth="2" fill="none" opacity="0.4"/>
+                          <path d="M90 160 Q150 140 210 160" stroke="#10b981" strokeWidth="2" fill="none" opacity="0.4"/>
+                        </g>
+                        
+                        <text x="200" y="260" textAnchor="middle" fontSize="16" fill="#374151" fontWeight="600">
+                          Nutritional Analysis
+                        </text>
+                      </svg>
+                    </div>
                   </div>
                 </div>
                 
@@ -546,11 +611,40 @@ export default function GutCare() {
             
             <div>
               <div className="bg-gradient-to-br from-green-50 to-cyan-50 rounded-xl p-8 shadow-lg">
-                <img 
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0fdf4'/%3E%3Cg transform='translate(50,50)'%3E%3Ccircle cx='150' cy='100' r='60' fill='none' stroke='%2310b981' stroke-width='3' opacity='0.6'/%3E%3Ccircle cx='120' cy='80' r='12' fill='%2310b981' opacity='0.8'/%3E%3Ccircle cx='180' cy='90' r='10' fill='%2306b6d4' opacity='0.7'/%3E%3Ccircle cx='150' cy='120' r='8' fill='%23f59e0b' opacity='0.6'/%3E%3Cpath d='M100 140 Q150 110 200 140' stroke='%2310b981' stroke-width='2' fill='none' opacity='0.5'/%3E%3Ctext x='150' y='180' text-anchor='middle' font-size='14' fill='%23374151'%3EResearch %26 Development%3C/text%3E%3C/g%3E%3C/svg%3E" 
-                  alt="Gut health research laboratory" 
-                  className="w-full h-auto rounded-lg"
-                />
+                <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center relative overflow-hidden">
+                  {/* Laboratory illustration */}
+                  <svg viewBox="0 0 400 300" className="w-full h-full">
+                    <rect width="400" height="300" fill="#f0fdf4"/>
+                    
+                    {/* Laboratory equipment */}
+                    <g transform="translate(50,50)">
+                      {/* Microscope */}
+                      <rect x="80" y="120" width="40" height="80" rx="5" fill="#10b981" opacity="0.8"/>
+                      <circle cx="100" cy="110" r="15" fill="#10b981" opacity="0.6"/>
+                      <rect x="95" y="95" width="10" height="20" fill="#10b981"/>
+                      
+                      {/* Test tubes */}
+                      <rect x="150" y="140" width="12" height="50" rx="6" fill="#06b6d4" opacity="0.7"/>
+                      <rect x="168" y="135" width="12" height="55" rx="6" fill="#f59e0b" opacity="0.7"/>
+                      <rect x="186" y="145" width="12" height="45" rx="6" fill="#a855f7" opacity="0.7"/>
+                      
+                      {/* Petri dishes */}
+                      <circle cx="240" cy="140" r="20" fill="none" stroke="#10b981" strokeWidth="2" opacity="0.6"/>
+                      <circle cx="280" cy="130" r="15" fill="none" stroke="#06b6d4" strokeWidth="2" opacity="0.6"/>
+                      
+                      {/* Research data visualization */}
+                      <path d="M50 200 Q100 180 150 190 Q200 185 250 175 Q300 170 350 165" 
+                            stroke="#10b981" strokeWidth="3" fill="none" opacity="0.5"/>
+                      <circle cx="100" cy="185" r="3" fill="#10b981"/>
+                      <circle cx="200" cy="180" r="3" fill="#06b6d4"/>
+                      <circle cx="300" cy="170" r="3" fill="#f59e0b"/>
+                    </g>
+                    
+                    <text x="200" y="260" textAnchor="middle" fontSize="16" fill="#374151" fontWeight="600">
+                      Gut Health Research Laboratory
+                    </text>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
