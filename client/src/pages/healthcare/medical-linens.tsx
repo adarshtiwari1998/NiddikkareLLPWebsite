@@ -84,6 +84,153 @@ export default function MedicalLinens() {
           </div>
         </section>
 
+        {/* Product Portfolio */}
+        <section className="mb-16">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
+              Our Product Portfolio
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              We deliver exceptional hospital linen solutions that elevate patient care. Our extensive
+              portfolio features premium products, including soft bed sheets with pillow covers, surgical
+              draw sheets, surgical gowns, rubber sheets, and receiving blankets. Each item is carefully
+              designed to prioritize comfort, hygiene, and quality.
+            </p>
+            <div className="mt-8 p-6 bg-blue-50 rounded-lg mx-auto max-w-4xl">
+              <p className="text-sm text-blue-800 font-medium">
+                <strong>Note:</strong> We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the
+                use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for Cuddle Up With Hygiene reducing the rate of Hospital Acquired Infection.
+              </p>
+            </div>
+          </div>
+          
+          {/* Product Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+            {/* Maternity Gown */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/maternity-gown-nkr-601.png" 
+                  alt="Maternity Gown NKR-601"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Maternity Gown</h3>
+                <p className="text-secondary font-semibold">NKR-601</p>
+              </div>
+            </div>
+
+            {/* Mackintosh Rubber Sheet */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/mackintosh-rubber-sheet-nkr-701-702.png" 
+                  alt="Mackintosh Rubber Sheet NKR-701/702"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Mackintosh Rubber Sheet</h3>
+                <p className="text-secondary font-semibold">With & W/o Cloth</p>
+                <p className="text-secondary font-semibold">NKR-702, NKR-701</p>
+              </div>
+            </div>
+
+            {/* Bedsheet with Pillow Covers */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/bedsheet-pillow-covers-nkr-202.png" 
+                  alt="Bedsheet with Pillow Covers NKR-202"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Bedsheet with Pillow Covers</h3>
+                <p className="text-secondary font-semibold">NKR-202</p>
+              </div>
+            </div>
+
+            {/* Surgical Drapes/Towels */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/surgical-drapes-towels-nkr-301.png" 
+                  alt="Surgical Drapes/Towels NKR-301"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical Drapes (plain) / Towels</h3>
+                <p className="text-secondary font-semibold">NKR-301</p>
+              </div>
+            </div>
+
+            {/* Scrub Suit */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/scrub-suit-nkr-501.png" 
+                  alt="Scrub Suit NKR-501"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Scrub Suit</h3>
+                <p className="text-secondary font-semibold">NKR-501</p>
+              </div>
+            </div>
+
+            {/* Patient Gown */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/patient-gown-nkr-602.png" 
+                  alt="Patient Gown NKR-602"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Patient Gown</h3>
+                <p className="text-secondary font-semibold">NKR-602</p>
+              </div>
+            </div>
+
+            {/* Surgical/OT Gown */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/surgical-ot-gown-nkr-401-402.png" 
+                  alt="Surgical/OT Gown NKR-401/402"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical/ OT Gown</h3>
+                <p className="text-secondary font-semibold">with/Without overlap</p>
+                <p className="text-secondary font-semibold">NKR-401, NKR-402</p>
+              </div>
+            </div>
+
+            {/* Surgical Cut Sheets */}
+            <div className="glass-card rounded-xl overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/assets/images/medical-linens/surgical-cut-sheets-nkr-302.png" 
+                  alt="Surgical Cut Sheets NKR-302"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical Cut Sheets</h3>
+                <p className="text-secondary font-semibold">with holes</p>
+                <p className="text-secondary font-semibold">NKR-302</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Product Categories */}
         <section className="mb-16">
           <div className="text-center mb-16">
