@@ -270,22 +270,6 @@ export default function MolecularDiagnosticsProducts() {
                         )}
                       </div>
                     </div>
-
-                    {/* Applications */}
-                    <div>
-                      <div className="text-xs font-semibold text-gray-700 mb-1">Applications:</div>
-                      <div className="flex flex-wrap gap-1">
-                        {kit.applications.slice(0, 4).map((app, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs py-0 px-1 h-5">
-                            {app}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <Button size="sm" className="w-full mt-2 bg-white/90 text-gray-800 hover:bg-white text-xs h-7">
-                      View Details
-                    </Button>
                   </CardContent>
                 </Card>
               );
