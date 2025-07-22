@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Microscope, Worm, Heart, Brain, TestTube, Timer, Target, Check, ArrowRight, Activity } from "lucide-react";
 
 export default function MolecularDiagnostics() {
@@ -65,278 +64,257 @@ export default function MolecularDiagnostics() {
           </div>
         </section>
 
-        {/* Diagnostic Categories */}
+        {/* Molecular Diagnostics Portfolio */}
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Diagnostic <span className="text-secondary">Solutions</span>
+              Product List
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive molecular diagnostics solutions for clinical laboratories and healthcare providers
+            </p>
           </div>
-          
-          <Tabs defaultValue="infectious" className="w-full">
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="infectious">Infectious Diseases</TabsTrigger>
-              <TabsTrigger value="genetic">Genetic Testing</TabsTrigger>
-              <TabsTrigger value="oncology">Oncology</TabsTrigger>
-              <TabsTrigger value="cardiovascular">Cardiovascular</TabsTrigger>
-            </TabsList>
+
+          {/* Z-Pattern Layout for Individual Products */}
+          <div className="space-y-20">
             
-            <TabsContent value="infectious" className="mt-8">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Worm className="h-8 w-8 text-red-600" />
-                    <h3 className="text-3xl font-bold text-gray-800">Infectious Disease Testing</h3>
-                  </div>
-                  <p className="text-lg text-gray-600 mb-6">
-                    Comprehensive panel for rapid identification of bacterial, viral, and fungal pathogens 
-                    with antimicrobial resistance profiling.
-                  </p>
-                  
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-red-600" />
-                      <span>COVID-19, Influenza, RSV multiplex</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-red-600" />
-                      <span>Hepatitis B, C, and HIV screening</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-red-600" />
-                      <span>Antimicrobial resistance detection</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-red-600" />
-                      <span>Sexually transmitted infections panel</span>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-red-50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-3">Performance:</h4>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="text-gray-600">Sensitivity:</span>
-                        <span className="font-medium ml-2">≥95%</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Specificity:</span>
-                        <span className="font-medium ml-2">≥98%</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Turnaround:</span>
-                        <span className="font-medium ml-2">1-2 hours</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Sample types:</span>
-                        <span className="font-medium ml-2">Swab, Blood, Urine</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                    alt="Infectious disease molecular diagnostics laboratory" 
-                    className="rounded-xl shadow-lg w-full h-auto"
-                  />
-                </div>
+            {/* Product 1: SARS-CoV-2 (COVID-19) RT-PCR Kit - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="COVID-19 RT-PCR testing laboratory setup" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
               </div>
-            </TabsContent>
-            
-            <TabsContent value="genetic" className="mt-8">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                    alt="Genetic testing laboratory equipment" 
-                    className="rounded-xl shadow-lg w-full h-auto"
-                  />
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Worm className="h-8 w-8 text-blue-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">SARS-CoV-2 (COVID-19) RT-PCR Kit</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  High-sensitivity real-time RT-PCR assay for detection of SARS-CoV-2 RNA in respiratory specimens 
+                  with rapid turnaround time and excellent analytical performance.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-blue-600" />
+                    <span>Targets N, E, and RdRp genes</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-blue-600" />
+                    <span>Internal control included</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-blue-600" />
+                    <span>Multiple specimen types supported</span>
+                  </div>
                 </div>
                 
-                <div>
-                  <div className="flex items-center space-x-2 mb-4">
-                    <TestTube className="h-8 w-8 text-blue-600" />
-                    <h3 className="text-3xl font-bold text-gray-800">Genetic Testing</h3>
-                  </div>
-                  <p className="text-lg text-gray-600 mb-6">
-                    Comprehensive genetic analysis for inherited disorders, pharmacogenomics, 
-                    and personalized medicine applications.
-                  </p>
-                  
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
-                      <span>Carrier screening panels</span>
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥95%</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
-                      <span>Pharmacogenomic testing</span>
+                    <div>
+                      <span className="text-gray-600">Specificity:</span>
+                      <span className="font-medium ml-2">≥98%</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
-                      <span>Hereditary cancer screening</span>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">2 hours</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
-                      <span>Rare disease diagnostics</span>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-blue-50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-3">Coverage:</h4>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="text-gray-600">Genes analyzed:</span>
-                        <span className="font-medium ml-2">500+</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Variants detected:</span>
-                        <span className="font-medium ml-2">SNPs, CNVs, Indels</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Turnaround:</span>
-                        <span className="font-medium ml-2">7-14 days</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Sample type:</span>
-                        <span className="font-medium ml-2">Blood, Saliva</span>
-                      </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Nasopharyngeal swab</span>
                     </div>
                   </div>
                 </div>
               </div>
-            </TabsContent>
-            
-            <TabsContent value="oncology" className="mt-8">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Activity className="h-8 w-8 text-purple-600" />
-                    <h3 className="text-3xl font-bold text-gray-800">Oncology Diagnostics</h3>
+            </div>
+
+            {/* Product 2: Hepatitis C Virus (HCV) Quantitative Kit - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <TestTube className="h-8 w-8 text-red-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Hepatitis C Virus (HCV) Quantitative Kit</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Precise quantification of HCV RNA for treatment monitoring and management with broad genotype 
+                  coverage and excellent linearity across the clinical range.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-red-600" />
+                    <span>All HCV genotypes coverage</span>
                   </div>
-                  <p className="text-lg text-gray-600 mb-6">
-                    Advanced molecular profiling for cancer diagnosis, prognosis, and treatment 
-                    selection with liquid biopsy capabilities.
-                  </p>
-                  
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
-                      <span>Tumor mutation profiling</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
-                      <span>Liquid biopsy (ctDNA/ctRNA)</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
-                      <span>Minimal residual disease monitoring</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
-                      <span>Companion diagnostics</span>
-                    </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-red-600" />
+                    <span>Wide dynamic range</span>
                   </div>
-                  
-                  <div className="bg-purple-50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-3">Applications:</h4>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="text-gray-600">Cancer types:</span>
-                        <span className="font-medium ml-2">Solid tumors</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Biomarkers:</span>
-                        <span className="font-medium ml-2">400+</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Detection limit:</span>
-                        <span className="font-medium ml-2">0.1% VAF</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Turnaround:</span>
-                        <span className="font-medium ml-2">3-5 days</span>
-                      </div>
-                    </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-red-600" />
+                    <span>Treatment monitoring optimized</span>
                   </div>
                 </div>
                 
-                <div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                    alt="Oncology molecular diagnostics laboratory" 
-                    className="rounded-xl shadow-lg w-full h-auto"
-                  />
-                </div>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="cardiovascular" className="mt-8">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                    alt="Cardiovascular diagnostics laboratory" 
-                    className="rounded-xl shadow-lg w-full h-auto"
-                  />
-                </div>
-                
-                <div>
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Heart className="h-8 w-8 text-green-600" />
-                    <h3 className="text-3xl font-bold text-gray-800">Cardiovascular Diagnostics</h3>
-                  </div>
-                  <p className="text-lg text-gray-600 mb-6">
-                    Molecular markers for cardiovascular risk assessment, disease monitoring, 
-                    and therapeutic guidance.
-                  </p>
-                  
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
-                      <span>Cardiac biomarkers panel</span>
+                <div className="bg-red-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Range:</span>
+                      <span className="font-medium ml-2">15-1×10⁸ IU/mL</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
-                      <span>Thrombophilia screening</span>
+                    <div>
+                      <span className="text-gray-600">Linearity:</span>
+                      <span className="font-medium ml-2">R² ≥0.99</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
-                      <span>Lipid metabolism analysis</span>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">3 hours</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
-                      <span>Hypertension genetics</span>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-green-50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-3">Panel Details:</h4>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="text-gray-600">Biomarkers:</span>
-                        <span className="font-medium ml-2">25+ cardiac markers</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Risk stratification:</span>
-                        <span className="font-medium ml-2">Low, Medium, High</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Turnaround:</span>
-                        <span className="font-medium ml-2">4-6 hours</span>
-                      </div>
-                      <div>
-                        <span className="text-gray-600">Sample type:</span>
-                        <span className="font-medium ml-2">Plasma, Serum</span>
-                      </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Plasma/Serum</span>
                     </div>
                   </div>
                 </div>
               </div>
-            </TabsContent>
-          </Tabs>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Hepatitis C virus quantitative testing laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Product 3: Human Papillomavirus (HPV) genotyping - Image Left, Content Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="HPV genotyping molecular diagnostics equipment" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+              
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Microscope className="h-8 w-8 text-purple-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Human Papillomavirus (HPV) Genotyping</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Comprehensive HPV genotyping assay for cervical cancer screening and management 
+                  with individual detection of high-risk HPV types.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-purple-600" />
+                    <span>14 high-risk HPV types detected</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-purple-600" />
+                    <span>Individual genotype identification</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-purple-600" />
+                    <span>Liquid-based cytology compatible</span>
+                  </div>
+                </div>
+                
+                <div className="bg-purple-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">HPV types:</span>
+                      <span className="font-medium ml-2">16, 18, 31, 33, +10 more</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥95%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">4 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Cervical specimens</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Product 4: Tuberculosis (TB) Drug Resistance - Content Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Activity className="h-8 w-8 text-green-600" />
+                  <h3 className="text-3xl font-bold text-gray-800">Tuberculosis (TB) Drug Resistance</h3>
+                </div>
+                <p className="text-lg text-gray-600 mb-6">
+                  Rapid molecular assay for detection of Mycobacterium tuberculosis and resistance 
+                  to first-line anti-TB drugs for prompt treatment decision.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-green-600" />
+                    <span>MTB complex detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-green-600" />
+                    <span>Rifampicin resistance detection</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-green-600" />
+                    <span>Direct from sputum samples</span>
+                  </div>
+                </div>
+                
+                <div className="bg-green-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-3">Specifications:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-600">Detection:</span>
+                      <span className="font-medium ml-2">MTB + RIF resistance</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sensitivity:</span>
+                      <span className="font-medium ml-2">≥95%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium ml-2">2 hours</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Sample:</span>
+                      <span className="font-medium ml-2">Sputum</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Tuberculosis molecular diagnostics testing laboratory" 
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
+
+          </div>
         </section>
 
         {/* Technology Platform */}
