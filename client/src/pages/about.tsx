@@ -190,8 +190,8 @@ export default function About() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {/* Plant DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-green-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-green-50 rounded-full "></div>
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-green-100 opacity-40" style={{borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%'}}></div>
+              <div className="absolute -bottom-3 -left-3 w-20 h-20 bg-green-300 opacity-30" style={{borderRadius: '40% 60% 65% 35% / 25% 30% 70% 75%'}}></div>
               <div className="bg-gradient-to-r from-green-400 to-green-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Plant DNA <span className="text-green-100">EXTRACTION</span></h3>
               </div>
@@ -215,8 +215,8 @@ export default function About() {
 
             {/* Animal DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-orange-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-orange-50 rounded-full "></div>
+              <div className="absolute -top-4 -right-4 w-28 h-28 bg-orange-100 opacity-40" style={{borderRadius: '73% 27% 44% 56% / 49% 44% 56% 51%'}}></div>
+              <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-orange-300 opacity-30" style={{borderRadius: '50% 50% 80% 20%'}}></div>
               <div className="bg-gradient-to-r from-orange-400 to-orange-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Animal DNA <span className="text-orange-100">EXTRACTION</span></h3>
               </div>
@@ -240,8 +240,9 @@ export default function About() {
 
             {/* Blood DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-gray-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-gray-50 rounded-full "></div>
+              <div className="absolute -top-3 -right-3 w-24 h-24 bg-red-100 opacity-40" style={{borderRadius: '50% 50% 50% 50%'}}></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-red-200 opacity-30" style={{borderRadius: '30% 70% 63% 37%'}}></div>
+              <div className="absolute top-8 right-8 w-8 h-8 bg-red-50 opacity-25" style={{borderRadius: '50% 50% 50% 50%'}}></div>
               <div className="bg-gradient-to-r from-gray-500 to-gray-700 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Blood DNA <span className="text-gray-100">EXTRACTION</span></h3>
               </div>
@@ -265,8 +266,9 @@ export default function About() {
 
             {/* Cell Culture DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-yellow-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-yellow-50 rounded-full "></div>
+              <div className="absolute -top-2 -right-2 w-24 h-24 bg-yellow-100 opacity-40" style={{borderRadius: '50% 50% 50% 50%'}}></div>
+              <div className="absolute -bottom-5 -left-5 w-20 h-20 bg-yellow-200 opacity-30" style={{borderRadius: '58% 42% 45% 55% / 64% 47% 53% 36%'}}></div>
+              <div className="absolute top-6 right-6 w-6 h-6 bg-yellow-50 opacity-25" style={{borderRadius: '50% 50% 50% 50%'}}></div>
               <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Cell Culture DNA <span className="text-yellow-100">EXTRACTION</span></h3>
               </div>
@@ -290,8 +292,8 @@ export default function About() {
 
             {/* Viral Nucleic Acid Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-teal-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-teal-50 rounded-full "></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-100 opacity-40" style={{borderRadius: '46% 54% 66% 34% / 68% 47% 53% 32%'}}></div>
+              <div className="absolute -bottom-3 -left-3 w-16 h-16 bg-teal-300 opacity-30" style={{borderRadius: '37% 63% 56% 44% / 49% 56% 44% 51%'}}></div>
               <div className="bg-gradient-to-r from-teal-400 to-teal-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Viral Nucleic Acid <span className="text-teal-100">EXTRACTION</span></h3>
               </div>
@@ -315,8 +317,8 @@ export default function About() {
 
             {/* Gel Extraction & PCR Purification */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-purple-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-purple-50 rounded-full "></div>
+              <div className="absolute -top-4 -right-4 w-28 h-16 bg-purple-100 opacity-40" style={{borderRadius: '45% 55% 72% 28% / 48% 77% 23% 52%'}}></div>
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-purple-200 opacity-30" style={{borderRadius: '25% 75% 48% 52% / 62% 44% 56% 38%'}}></div>
               <div className="bg-gradient-to-r from-purple-400 to-blue-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Gel <span className="text-purple-100">EXTRACTION</span> & PCR Purification</h3>
               </div>
@@ -379,8 +381,8 @@ export default function About() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {/* Plant RNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-purple-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-purple-50 rounded-full "></div>
+              <div className="absolute -top-5 -right-5 w-28 h-28 bg-purple-100 opacity-40" style={{borderRadius: '61% 39% 52% 48% / 64% 47% 53% 36%'}}></div>
+              <div className="absolute -bottom-3 -left-3 w-16 h-16 bg-purple-300 opacity-30" style={{borderRadius: '44% 56% 72% 28% / 35% 62% 38% 65%'}}></div>
               <div className="bg-gradient-to-r from-purple-400 to-pink-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Plant RNA <span className="text-purple-100">EXTRACTION</span></h3>
               </div>
@@ -404,8 +406,8 @@ export default function About() {
 
             {/* Animal Tissue RNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-pink-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-pink-50 rounded-full "></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-pink-100 opacity-40" style={{borderRadius: '67% 33% 58% 42% / 45% 68% 32% 55%'}}></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-pink-200 opacity-30" style={{borderRadius: '35% 65% 44% 56% / 58% 42% 58% 42%'}}></div>
               <div className="bg-gradient-to-r from-pink-400 to-pink-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Animal Tissue RNA <span className="text-pink-100">EXTRACTION</span></h3>
               </div>
@@ -429,8 +431,9 @@ export default function About() {
 
             {/* Cell Culture RNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-blue-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-blue-50 rounded-full "></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 opacity-40" style={{borderRadius: '50% 50% 50% 50%'}}></div>
+              <div className="absolute -bottom-2 -left-2 w-18 h-18 bg-blue-300 opacity-30" style={{borderRadius: '47% 53% 34% 66% / 42% 48% 52% 58%'}}></div>
+              <div className="absolute top-6 right-6 w-6 h-6 bg-blue-50 opacity-25" style={{borderRadius: '50% 50% 50% 50%'}}></div>
               <div className="bg-gradient-to-r from-blue-400 to-cyan-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Cell Culture RNA <span className="text-blue-100">EXTRACTION</span></h3>
               </div>
@@ -454,8 +457,8 @@ export default function About() {
 
             {/* Plasmid DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-2 right-2 w-32 h-32 bg-yellow-100 rounded-full "></div>
-              <div className="absolute bottom-2 left-2 w-24 h-24 bg-yellow-50 rounded-full "></div>
+              <div className="absolute -top-3 -right-3 w-24 h-24 bg-amber-100 opacity-40" style={{borderRadius: '50% 50% 50% 50%'}}></div>
+              <div className="absolute -bottom-5 -left-5 w-20 h-12 bg-amber-200 opacity-30" style={{borderRadius: '72% 28% 69% 31% / 34% 72% 28% 66%'}}></div>
               <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Plasmid DNA <span className="text-yellow-100">EXTRACTION</span></h3>
               </div>
