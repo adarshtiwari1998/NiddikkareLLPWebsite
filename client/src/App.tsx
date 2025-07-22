@@ -41,6 +41,9 @@ import ProductsMedicalLinens from "@/pages/products/medical-linens";
 import ProductsDnaRnaExtraction from "@/pages/products/dna-rna-extraction";
 import ProductsMolecularDiagnostics from "@/pages/products/molecular-diagnostics";
 
+// Medical Linens Sub-pages
+import BabyFirstTouch from "@/pages/products/medical-linens/baby-first-touch";
+
 // New IT Solutions pages
 import RPO from "@/pages/it-solutions/rpo";
 import Contingent from "@/pages/it-solutions/contingent";
@@ -67,6 +70,7 @@ function Router() {
           {/* Products Routes */}
           <Route path="/products/neonatal-care" component={ProductsNeonatalCare} />
           <Route path="/products/medical-linens" component={ProductsMedicalLinens} />
+          <Route path="/products/medical-linens/baby-first-touch" component={BabyFirstTouch} />
           <Route path="/products/dna-rna-extraction" component={ProductsDnaRnaExtraction} />
           <Route path="/products/molecular-diagnostics" component={ProductsMolecularDiagnostics} />
           

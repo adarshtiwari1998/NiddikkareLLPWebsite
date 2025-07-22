@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Bed, Shield, Droplets, CheckCircle, Star, Heart, Stethoscope, ArrowRight, Users } from "lucide-react";
+import { Bed, Shield, Droplets, CheckCircle, Star, Heart, Stethoscope, ArrowRight, Users, Baby } from "lucide-react";
 
 // Import medical linen images
 import maternityGownImg from "@/assets/medical-linens/maternity-gown-nkr-601.png";
@@ -164,6 +164,14 @@ export default function MedicalLinensProducts() {
                     <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 text-center">
                       <h3 className="font-bold text-lg text-gray-800">Receiving Blankets/Swaddle</h3>
                       <p className="text-blue-600 font-semibold">NKR-101</p>
+                      <Button 
+                        size="sm" 
+                        className="mt-3 bg-blue-600 hover:bg-blue-700 text-white"
+                        onClick={() => window.location.href = '/products/medical-linens/baby-first-touch'}
+                      >
+                        <Heart className="w-4 h-4 mr-1" />
+                        Baby's First Touch
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -195,6 +203,27 @@ export default function MedicalLinensProducts() {
                 </Card>
               ))}
             </div>
+          </div>
+
+          {/* Call to Action for Baby's First Touch */}
+          <div className="text-center">
+            <Card className="inline-block p-6 bg-gradient-to-r from-orange-50 to-yellow-50 border-orange-200">
+              <div className="flex items-center justify-center space-x-4">
+                <Baby className="w-8 h-8 text-orange-600" />
+                <div className="text-left">
+                  <h3 className="font-bold text-lg text-gray-800">Explore Baby's First Touch</h3>
+                  <p className="text-gray-600">Discover our detailed newborn care solution</p>
+                </div>
+                <Button 
+                  size="lg" 
+                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                  onClick={() => window.location.href = '/products/medical-linens/baby-first-touch'}
+                >
+                  <ArrowRight className="w-5 h-5 mr-2" />
+                  Learn More
+                </Button>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
