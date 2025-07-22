@@ -15,6 +15,15 @@ export default function NeonatalCareProducts() {
       price: "NKR-101",
       rating: 4.9,
       href: "/products/neonatal-care/baby-first-touch"
+    },
+    {
+      title: "Kouvèr Receiving Blanket",
+      description: "Premium scientifically designed swaddle solution",
+      icon: Shield,
+      features: ["Womb-like environment", "Infection control priority", "Safe swaddling practices", "Enhanced comfort & sleep"],
+      price: "Premium",
+      rating: 4.9,
+      href: "/products/neonatal-care/baby-first-touch"
     }
   ];
 
@@ -308,42 +317,40 @@ export default function NeonatalCareProducts() {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Neonatal Care Products</h2>
-          <div className="flex justify-center">
-            <div className="max-w-md">
-              {products.map((product, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <CardHeader className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                      <product.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{product.title}</CardTitle>
-                    <CardDescription>{product.description}</CardDescription>
-                    <div className="flex items-center justify-center space-x-1 mt-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-                      ))}
-                      <span className="text-sm text-gray-600 ml-1">({product.rating})</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 mb-4">
-                      {product.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm">
-                          <Shield className="w-4 h-4 text-green-500 mr-2" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-primary mb-3">{product.price}</div>
-                      <Link href={product.href}>
-                        <Button size="sm" className="w-full">Learn More</Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {products.map((product, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <CardHeader className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                    <product.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">{product.title}</CardTitle>
+                  <CardDescription>{product.description}</CardDescription>
+                  <div className="flex items-center justify-center space-x-1 mt-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                    ))}
+                    <span className="text-sm text-gray-600 ml-1">({product.rating})</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 mb-4">
+                    {product.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm">
+                        <Shield className="w-4 h-4 text-green-500 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary mb-3">{product.price}</div>
+                    <Link href={product.href}>
+                      <Button size="sm" className="w-full">Learn More</Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
