@@ -175,16 +175,8 @@ export default function Header() {
     {
       href: "/healthcare/neonatal-care",
       label: "Neonatal Care",
-      description: "Advanced newborn care products",
-      icon: Baby,
-      submenu: [
-        {
-          href: "/products/medical-linens/baby-first-touch",
-          label: "Baby's First Touch",
-          description: "100% cotton construction",
-          icon: Heart
-        }
-      ]
+      description: "Specialized newborn care solutions",
+      icon: Baby
     },
     {
       href: "/healthcare/medical-linens",
