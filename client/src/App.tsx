@@ -58,10 +58,10 @@ import Contingent from "@/pages/it-solutions/contingent";
 import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
 
 // Healthcare parent page
-import Healthcare from "@/pages/healthcare";
+import Healthcare from "@/pages/healthcare/healthcare";
 
 // Life Sciences parent page
-import LifeSciences from "@/pages/life-sciences";
+import LifeSciences from "@/pages/life-sciences/life-sciences";
 
 import Header from "@/components/layout/header-new";
 import Footer from "@/components/layout/footer";

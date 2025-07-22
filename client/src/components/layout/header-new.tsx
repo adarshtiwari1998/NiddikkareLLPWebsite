@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Youtube, Building2, Newspaper, Wrench, TestTube, GraduationCap, Search, Database, Filter, Droplets, BarChart3, FlaskConical, Zap } from "lucide-react";
+import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Youtube, Building2, Newspaper, Wrench, TestTube, GraduationCap, Search, Database, Filter, Droplets, BarChart3, FlaskConical, Zap, HeartHandshake } from "lucide-react";
 import logoImage from "@/assets/niddikkare-logo.png";
 
 interface DropdownItem {
@@ -173,6 +173,12 @@ export default function Header() {
 
   const healthcareItems: DropdownItem[] = [
     {
+      href: "/healthcare",
+      label: "Healthcare Overview",
+      description: "Complete healthcare solutions portfolio",
+      icon: HeartHandshake
+    },
+    {
       href: "/healthcare/neonatal-care",
       label: "Neonatal Care",
       description: "Specialized newborn care solutions",
@@ -207,6 +213,12 @@ export default function Header() {
   ];
 
   const lifeSciencesItems: DropdownItem[] = [
+    {
+      href: "/life-sciences",
+      label: "Life Sciences Overview",
+      description: "Complete molecular biology solutions portfolio",
+      icon: FlaskConical
+    },
     {
       href: "/life-sciences/dna-rna-extraction",
       label: "DNA/RNA Extraction",
