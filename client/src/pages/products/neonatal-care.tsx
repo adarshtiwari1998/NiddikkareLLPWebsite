@@ -487,7 +487,7 @@ export default function NeonatalCareProducts() {
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
               Request Demo
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary">
               Download Brochure
             </Button>
           </div>

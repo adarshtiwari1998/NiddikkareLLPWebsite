@@ -537,7 +537,7 @@ export default function DnaRnaExtractionProducts() {
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
               Order Now
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary">
               Request Protocol
             </Button>
           </div>

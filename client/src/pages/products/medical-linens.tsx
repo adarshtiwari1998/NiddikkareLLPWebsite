@@ -490,7 +490,7 @@ export default function MedicalLinensProducts() {
                 <Users className="w-5 h-5 mr-2" />
                 Contact Our Team
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Button size="lg" variant="outline" className="border-white text-blue-600 hover:bg-white hover:text-blue-600">
                 <Stethoscope className="w-5 h-5 mr-2" />
                 Request Catalog
               </Button>

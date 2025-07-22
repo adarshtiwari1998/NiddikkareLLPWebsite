@@ -604,7 +604,7 @@ export default function MolecularDiagnosticsProducts() {
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
               Schedule Demo
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary">
               Get Technical Info
             </Button>
           </div>
