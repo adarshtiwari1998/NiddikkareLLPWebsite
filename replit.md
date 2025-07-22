@@ -118,6 +118,7 @@ Preferred communication style: Simple, everyday language.
 - Made Healthcare and Life Sciences menu items directly clickable to parent pages
 - Removed "Overview" submenu items - main menu now links directly to /healthcare and /life-sciences
 - Maintained dropdown functionality for accessing subpages while making parent menu items clickable
+- Standardized gut-care page color scheme: Updated all color references (blue, purple, orange, success, secondary, accent) to use consistent primary brand color hsl(134, 37%, 27%) throughout statistics section, tabs content, icons, checkmarks, backgrounds, buttons, and call-to-action sections for complete brand consistency
 
 ## System Architecture
 

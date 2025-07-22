@@ -29,7 +29,7 @@ export default function GutCare() {
           <div className="bg-white rounded-xl shadow-lg p-12">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Our Impact in <span className="text-success">Gut Health</span>
+                Our Impact in <span className="text-primary">Gut Health</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Trusted by healthcare providers and patients worldwide for comprehensive digestive health solutions
@@ -37,7 +37,7 @@ export default function GutCare() {
             </div>
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div className="p-6">
-                <div className="text-4xl font-bold text-success mb-2">95%</div>
+                <div className="text-4xl font-bold text-primary mb-2">95%</div>
                 <div className="text-gray-600">Diagnostic Accuracy</div>
               </div>
               <div className="p-6">
@@ -45,11 +45,11 @@ export default function GutCare() {
                 <div className="text-gray-600">Biomarkers Tested</div>
               </div>
               <div className="p-6">
-                <div className="text-4xl font-bold text-accent mb-2">48h</div>
+                <div className="text-4xl font-bold text-primary mb-2">48h</div>
                 <div className="text-gray-600">Turnaround Time</div>
               </div>
               <div className="p-6">
-                <div className="text-4xl font-bold text-secondary mb-2">10K+</div>
+                <div className="text-4xl font-bold text-primary mb-2">10K+</div>
                 <div className="text-gray-600">Patients Served</div>
               </div>
             </div>
@@ -60,14 +60,14 @@ export default function GutCare() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Why Choose Our <span className="text-success">Gut Care</span> Solutions?
+              Why Choose Our <span className="text-primary">Gut Care</span> Solutions?
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow border-l-4 border-l-success">
+            <Card className="text-center hover:shadow-lg transition-shadow border-l-4 border-l-primary">
               <CardHeader>
-                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Microscope className="h-8 w-8 text-success" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Microscope className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Advanced Microbiome Analysis</CardTitle>
                 <CardDescription className="text-left">
@@ -94,10 +94,10 @@ export default function GutCare() {
               </CardHeader>
             </Card>
             
-            <Card className="text-center hover:shadow-lg transition-shadow border-l-4 border-l-accent">
+            <Card className="text-center hover:shadow-lg transition-shadow border-l-4 border-l-primary">
               <CardHeader>
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Activity className="h-8 w-8 text-accent" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Activity className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Personalized Nutrition Care</CardTitle>
                 <CardDescription className="text-left">
@@ -115,7 +115,7 @@ export default function GutCare() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Our <span className="text-secondary">Solutions</span>
+              Our <span className="text-primary">Solutions</span>
             </h2>
           </div>
           
@@ -131,7 +131,7 @@ export default function GutCare() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center space-x-2 mb-4">
-                    <TestTube className="h-8 w-8 text-blue-600" />
+                    <TestTube className="h-8 w-8 text-primary" />
                     <h3 className="text-3xl font-bold text-gray-800">Digestive Health Diagnostics</h3>
                   </div>
                   <p className="text-lg text-gray-600 mb-6">
@@ -141,24 +141,24 @@ export default function GutCare() {
                   
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Inflammatory biomarkers (CRP, calprotectin)</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Food sensitivity and allergy testing</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Celiac disease screening</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>H. pylori detection</span>
                     </div>
                   </div>
                   
-                  <div className="bg-blue-50 p-6 rounded-lg">
+                  <div className="bg-primary/5 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Test Parameters:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div>
@@ -182,24 +182,24 @@ export default function GutCare() {
                 </div>
                 
                 <div>
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 shadow-lg">
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 shadow-lg">
                     <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
                       <svg viewBox="0 0 400 300" className="w-full h-full">
                         <rect width="400" height="300" fill="#f8fafc"/>
                         
                         <g transform="translate(50,50)">
                           {/* Diagnostic equipment */}
-                          <rect x="50" y="50" width="200" height="120" rx="10" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" strokeWidth="2"/>
+                          <rect x="50" y="50" width="200" height="120" rx="10" fill="hsl(134, 37%, 27%)" opacity="0.1" stroke="hsl(134, 37%, 27%)" strokeWidth="2"/>
                           
                           {/* Sample results */}
-                          <circle cx="100" cy="100" r="8" fill="#3b82f6"/>
+                          <circle cx="100" cy="100" r="8" fill="hsl(134, 37%, 27%)"/>
                           <circle cx="150" cy="90" r="6" fill="#10b981"/>
                           <circle cx="200" cy="110" r="7" fill="#f59e0b"/>
                           <circle cx="120" cy="130" r="5" fill="#a855f7"/>
                           <circle cx="180" cy="130" r="6" fill="#ef4444"/>
                           
                           {/* Chart lines */}
-                          <path d="M70 180 Q120 160 170 170 Q220 165 270 155" stroke="#3b82f6" strokeWidth="2" fill="none" opacity="0.6"/>
+                          <path d="M70 180 Q120 160 170 170 Q220 165 270 155" stroke="hsl(134, 37%, 27%)" strokeWidth="2" fill="none" opacity="0.6"/>
                         </g>
                         
                         <text x="200" y="260" textAnchor="middle" fontSize="16" fill="#374151" fontWeight="600">
@@ -215,14 +215,14 @@ export default function GutCare() {
             <TabsContent value="microbiome" className="mt-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-8 shadow-lg">
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 shadow-lg">
                     <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
                       <svg viewBox="0 0 400 300" className="w-full h-full">
-                        <rect width="400" height="300" fill="#f0f9ff"/>
+                        <rect width="400" height="300" fill="#f8fafc"/>
                         
                         {/* Microbiome visualization */}
-                        <circle cx="200" cy="150" r="80" fill="#06b6d4" opacity="0.1"/>
-                        <circle cx="160" cy="120" r="20" fill="#06b6d4" opacity="0.3"/>
+                        <circle cx="200" cy="150" r="80" fill="hsl(134, 37%, 27%)" opacity="0.1"/>
+                        <circle cx="160" cy="120" r="20" fill="hsl(134, 37%, 27%)" opacity="0.3"/>
                         <circle cx="240" cy="130" r="15" fill="#10b981" opacity="0.4"/>
                         <circle cx="180" cy="180" r="25" fill="#f59e0b" opacity="0.3"/>
                         <circle cx="220" cy="170" r="12" fill="#a855f7" opacity="0.4"/>
@@ -238,7 +238,7 @@ export default function GutCare() {
                 
                 <div>
                   <div className="flex items-center space-x-2 mb-4">
-                    <Microscope className="h-8 w-8 text-green-600" />
+                    <Microscope className="h-8 w-8 text-primary" />
                     <h3 className="text-3xl font-bold text-gray-800">Microbiome Analysis</h3>
                   </div>
                   <p className="text-lg text-gray-600 mb-6">
@@ -248,24 +248,24 @@ export default function GutCare() {
                   
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Bacterial diversity assessment</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Beneficial bacteria quantification</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Pathogen detection</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Functional pathway analysis</span>
                     </div>
                   </div>
                   
-                  <div className="bg-green-50 p-6 rounded-lg">
+                  <div className="bg-primary/5 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Analysis Details:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div>
@@ -294,7 +294,7 @@ export default function GutCare() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center space-x-2 mb-4">
-                    <Shield className="h-8 w-8 text-purple-600" />
+                    <Shield className="h-8 w-8 text-primary" />
                     <h3 className="text-3xl font-bold text-gray-800">Therapeutic Solutions</h3>
                   </div>
                   <p className="text-lg text-gray-600 mb-6">
@@ -304,24 +304,24 @@ export default function GutCare() {
                   
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Targeted probiotic formulations</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Prebiotic fiber supplements</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Digestive enzyme therapy</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-purple-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Anti-inflammatory compounds</span>
                     </div>
                   </div>
                   
-                  <div className="bg-purple-50 p-6 rounded-lg">
+                  <div className="bg-primary/5 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Treatment Options:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div>
@@ -345,21 +345,21 @@ export default function GutCare() {
                 </div>
                 
                 <div>
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 shadow-lg">
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 shadow-lg">
                     <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
                       <svg viewBox="0 0 400 300" className="w-full h-full">
-                        <rect width="400" height="300" fill="#fdf2f8"/>
+                        <rect width="400" height="300" fill="#f8fafc"/>
                         
                         <g transform="translate(50,50)">
                           {/* Therapeutic compounds */}
-                          <rect x="60" y="60" width="40" height="80" rx="20" fill="#a855f7" opacity="0.6"/>
-                          <rect x="120" y="70" width="40" height="70" rx="20" fill="#6366f1" opacity="0.5"/>
+                          <rect x="60" y="60" width="40" height="80" rx="20" fill="hsl(134, 37%, 27%)" opacity="0.6"/>
+                          <rect x="120" y="70" width="40" height="70" rx="20" fill="hsl(134, 37%, 27%)" opacity="0.5"/>
                           <rect x="180" y="50" width="40" height="90" rx="20" fill="#10b981" opacity="0.7"/>
                           <rect x="240" y="65" width="40" height="75" rx="20" fill="#f59e0b" opacity="0.6"/>
                           
                           {/* Connection lines showing interactions */}
-                          <path d="M80 150 Q150 130 220 150" stroke="#a855f7" strokeWidth="2" fill="none" opacity="0.4"/>
-                          <path d="M140 140 Q200 120 260 140" stroke="#6366f1" strokeWidth="2" fill="none" opacity="0.4"/>
+                          <path d="M80 150 Q150 130 220 150" stroke="hsl(134, 37%, 27%)" strokeWidth="2" fill="none" opacity="0.4"/>
+                          <path d="M140 140 Q200 120 260 140" stroke="hsl(134, 37%, 27%)" strokeWidth="2" fill="none" opacity="0.4"/>
                         </g>
                         
                         <text x="200" y="260" textAnchor="middle" fontSize="16" fill="#374151" fontWeight="600">
@@ -375,7 +375,7 @@ export default function GutCare() {
             <TabsContent value="nutrition" className="mt-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-8 shadow-lg">
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 shadow-lg">
                     <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center">
                       <svg viewBox="0 0 400 300" className="w-full h-full">
                         <rect width="400" height="300" fill="#fffbeb"/>
@@ -404,7 +404,7 @@ export default function GutCare() {
                 
                 <div>
                   <div className="flex items-center space-x-2 mb-4">
-                    <Heart className="h-8 w-8 text-orange-600" />
+                    <Heart className="h-8 w-8 text-primary" />
                     <h3 className="text-3xl font-bold text-gray-800">Nutritional Support</h3>
                   </div>
                   <p className="text-lg text-gray-600 mb-6">
@@ -414,24 +414,24 @@ export default function GutCare() {
                   
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-orange-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Personalized meal planning</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-orange-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Nutrient absorption optimization</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-orange-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Food sensitivity guidance</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-orange-600" />
+                      <Check className="h-5 w-5 text-primary" />
                       <span>Supplement recommendations</span>
                     </div>
                   </div>
                   
-                  <div className="bg-orange-50 p-6 rounded-lg">
+                  <div className="bg-primary/5 p-6 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-3">Program Features:</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div>
@@ -463,7 +463,7 @@ export default function GutCare() {
           <div className="bg-white rounded-xl shadow-lg p-8">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                The Gut-Brain <span className="text-secondary">Connection</span>
+                The Gut-Brain <span className="text-primary">Connection</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Understanding the bidirectional communication between the gut and brain is crucial 
@@ -473,24 +473,24 @@ export default function GutCare() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Brain className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">Neurotransmitter Production</h3>
                 <p className="text-sm text-gray-600">Gut bacteria produce key neurotransmitters</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-green-600" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">Mood Regulation</h3>
                 <p className="text-sm text-gray-600">Gut health impacts mood and mental well-being</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-purple-600" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">Immune Function</h3>
                 <p className="text-sm text-gray-600">Gut microbiome modulates immune responses</p>
@@ -503,7 +503,7 @@ export default function GutCare() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Conditions <span className="text-secondary">We Address</span>
+              Conditions <span className="text-primary">We Address</span>
             </h2>
           </div>
           
@@ -563,7 +563,7 @@ export default function GutCare() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Research & <span className="text-secondary">Development</span>
+                Research & <span className="text-primary">Development</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Our ongoing research initiatives focus on advancing understanding of the gut microbiome 
@@ -572,8 +572,8 @@ export default function GutCare() {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center">
-                    <Target className="h-6 w-6 text-success" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Target className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Microbiome Therapeutics</h3>
@@ -584,8 +584,8 @@ export default function GutCare() {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center">
-                    <Brain className="h-6 w-6 text-success" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Brain className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Gut-Brain Axis</h3>
@@ -596,8 +596,8 @@ export default function GutCare() {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center">
-                    <Activity className="h-6 w-6 text-success" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Activity className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Precision Medicine</h3>
@@ -610,7 +610,7 @@ export default function GutCare() {
             </div>
             
             <div>
-              <div className="bg-gradient-to-br from-green-50 to-cyan-50 rounded-xl p-8 shadow-lg">
+              <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 shadow-lg">
                 <div className="w-full h-64 bg-white rounded-lg shadow-inner flex items-center justify-center relative overflow-hidden">
                   {/* Laboratory illustration */}
                   <svg viewBox="0 0 400 300" className="w-full h-full">
@@ -651,10 +651,10 @@ export default function GutCare() {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center bg-gradient-to-br from-success/5 via-white to-primary/5 rounded-xl shadow-xl p-12 border border-success/10">
+        <section className="text-center bg-gradient-to-br from-primary/5 via-white to-primary/10 rounded-xl shadow-xl p-12 border border-primary/10">
           <div className="max-w-3xl mx-auto">
-            <div className="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Heart className="h-10 w-10 text-success" />
+            <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Heart className="h-10 w-10 text-primary" />
             </div>
             <h2 className="text-4xl font-bold text-gray-800 mb-6">
               Take Control of Your Digestive Health
@@ -666,7 +666,7 @@ export default function GutCare() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
                 size="lg" 
-                className="bg-success hover:bg-success/90 text-primary px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Start Assessment
                 <ArrowRight className="h-5 w-5 ml-2" />
@@ -674,22 +674,22 @@ export default function GutCare() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-success text-success hover:bg-success hover:text-white px-8 py-4 text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Learn More
               </Button>
             </div>
             <div className="mt-8 flex items-center justify-center space-x-8 text-sm text-gray-500">
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-success" />
+                <Check className="h-4 w-4 text-primary" />
                 <span>Personalized Analysis</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-success" />
+                <Check className="h-4 w-4 text-primary" />
                 <span>Expert Guidance</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-success" />
+                <Check className="h-4 w-4 text-primary" />
                 <span>Proven Results</span>
               </div>
             </div>
