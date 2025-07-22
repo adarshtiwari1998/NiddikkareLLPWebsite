@@ -143,7 +143,11 @@ export default function RPO() {
             </div>
           </div>
           <div className="flex justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.open('https://niddik.com', '_blank')}
+            >
               Get Started
             </Button>
           </div>
