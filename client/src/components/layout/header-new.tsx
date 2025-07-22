@@ -72,7 +72,15 @@ export default function Header() {
       href: "/products/neonatal-care",
       label: "Neonatal Care",
       description: "Advanced newborn care products",
-      icon: Baby
+      icon: Baby,
+      submenu: [
+        {
+          href: "/products/medical-linens/baby-first-touch",
+          label: "Baby First Touch",
+          description: "100% cotton construction",
+          icon: Baby
+        }
+      ]
     },
     {
       href: "/products/medical-linens",
@@ -80,12 +88,6 @@ export default function Header() {
       description: "Hospital-grade linens and textiles",
       icon: Bed,
       submenu: [
-        {
-          href: "/products/medical-linens/baby-first-touch",
-          label: "Baby First Touch",
-          description: "100% cotton construction",
-          icon: Layers
-        },
         {
           href: "/products/medical-linens/maternity-gown",
           label: "Maternity Gown",
