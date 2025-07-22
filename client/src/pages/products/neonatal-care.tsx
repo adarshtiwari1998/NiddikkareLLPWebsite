@@ -11,7 +11,7 @@ export default function NeonatalCareProducts() {
       description: "Advanced incubators for optimal newborn care",
       icon: Thermometer,
       features: ["Temperature control", "Humidity regulation", "Infection control", "Monitoring systems"],
-      price: "From $8,500",
+      price: "***",
       rating: 4.9
     },
     {
@@ -19,7 +19,7 @@ export default function NeonatalCareProducts() {
       description: "Specialized respiratory support systems",
       icon: Activity,
       features: ["Gentle ventilation", "Precise control", "Safety alarms", "Data monitoring"],
-      price: "From $15,000",
+      price: "***",
       rating: 4.8
     },
     {
@@ -27,7 +27,7 @@ export default function NeonatalCareProducts() {
       description: "LED phototherapy for jaundice treatment",
       icon: Shield,
       features: ["LED technology", "Uniform illumination", "Eye protection", "Mobile design"],
-      price: "From $3,200",
+      price: "***",
       rating: 4.7
     },
     {
@@ -35,7 +35,7 @@ export default function NeonatalCareProducts() {
       description: "Continuous vital sign monitoring",
       icon: Heart,
       features: ["Multi-parameter", "Alarm systems", "Wireless connectivity", "Data logging"],
-      price: "From $6,800",
+      price: "***",
       rating: 4.9
     }
   ];
@@ -49,28 +49,40 @@ export default function NeonatalCareProducts() {
     { feature: "Reliability", value: "99.9% uptime", progress: 99 }
   ];
 
-  const testimonials = [
+  const applicationAreas = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Neonatologist",
-      hospital: "Children's Medical Center",
-      comment: "The incubators have significantly improved our NICU outcomes. The precise temperature control is exceptional.",
-      rating: 5
+      title: "Neonatal Intensive Care Units (NICU)",
+      description: "Comprehensive care for critically ill newborns",
+      icon: Heart,
+      features: ["24/7 monitoring", "Advanced life support", "Family-centered care", "Infection control"]
     },
     {
-      name: "Maria Rodriguez",
-      role: "NICU Nurse",
-      hospital: "General Hospital",
-      comment: "Easy to use and maintain. The monitoring systems provide peace of mind for both staff and families.",
-      rating: 5
+      title: "Labor & Delivery Units",
+      description: "Immediate newborn care and stabilization",
+      icon: Baby,
+      features: ["Rapid response", "Resuscitation equipment", "Thermal management", "Transport systems"]
     },
     {
-      name: "Dr. Michael Chen",
-      role: "Pediatrician",
-      hospital: "Regional Medical Center",
-      comment: "Outstanding quality and reliability. These products have become essential in our neonatal care.",
-      rating: 5
+      title: "Pediatric Emergency Care",
+      description: "Emergency treatment for infants and children",
+      icon: Activity,
+      features: ["Portable equipment", "Quick deployment", "Multi-parameter monitoring", "Emergency protocols"]
+    },
+    {
+      title: "Special Care Nurseries",
+      description: "Intermediate care for stable newborns",
+      icon: Shield,
+      features: ["Step-down care", "Growth monitoring", "Feeding support", "Developmental care"]
     }
+  ];
+
+  const clinicalBenefits = [
+    { benefit: "Reduced Hospital Stay", improvement: "25%", description: "Earlier discharge with improved outcomes" },
+    { benefit: "Lower Infection Rates", improvement: "40%", description: "Enhanced infection control protocols" },
+    { benefit: "Improved Survival Rates", improvement: "15%", description: "Better clinical outcomes for preterm infants" },
+    { benefit: "Staff Efficiency", improvement: "30%", description: "Streamlined workflows and monitoring" },
+    { benefit: "Family Satisfaction", improvement: "35%", description: "Enhanced family involvement in care" },
+    { benefit: "Cost Effectiveness", improvement: "20%", description: "Reduced overall treatment costs" }
   ];
 
   const certifications = [
@@ -196,26 +208,90 @@ export default function NeonatalCareProducts() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* About Neonatal Care */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">What Healthcare Professionals Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center space-x-1 mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">About Neonatal Care</h2>
+            <div className="prose max-w-none text-gray-700 mb-8">
+              <p className="text-lg leading-relaxed mb-6">
+                Neonatal (the babies during their first 28 days of life), needs prompt and appropriate care, as 
+                they are in Transition to Life Outside the Womb. During this period of life, baby's immunity is 
+                developing gradually and making them more vulnerable to infections from maternal 
+                transmission, healthcare environments, caregivers, and environmental factors. Contagious 
+                Hospital Linens is found to be one of the major factor for infection. We have developed a 
+                product <strong>Swaddle/Receiving Blanket</strong>, which is mimic the womb and provides layer of 
+                warmth, hygiene, and comfort.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-primary mb-4">About product:</h3>
+              <p className="text-lg leading-relaxed mb-4">
+                Welcome Your Newborn with Science and Safety.
+              </p>
+              <p className="leading-relaxed">
+                The Kouvèr Receiving Blanket by Niddikkare LLP is a premium, and scientifically designed swaddle 
+                solution, created to offer newborns a womb-like environment during their most vulnerable initial 
+                weeks. Made from 100% breathable cotton, Kouvèr blankets are individually packed ensuring the 
+                safest first touch for every baby. With hospital linens being a known source of hospital-acquired 
+                infections (HAIs), Niddikkare pioneered a solution that not only prioritizes hygiene and infection 
+                control but also enhances comfort and sleep for the baby. The Kouvèr blanket supports safe 
+                swaddling practices, which are proven to reduce startle reflexes, soothe colicky babies, and help 
+                newborns sleep longer and more peacefully.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Application Areas */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Application Areas</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {applicationAreas.map((area, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <CardHeader className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                    <area.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                  <CardDescription>
-                    {testimonial.role} at {testimonial.hospital}
-                  </CardDescription>
+                  <CardTitle className="text-lg">{area.title}</CardTitle>
+                  <CardDescription>{area.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700 italic">"{testimonial.comment}"</p>
+                  <ul className="space-y-2">
+                    {area.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm">
+                        <Shield className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Clinical Benefits */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Clinical Benefits & Outcomes</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {clinicalBenefits.map((benefit, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">{benefit.improvement}</div>
+                  <CardTitle className="text-lg">{benefit.benefit}</CardTitle>
+                  <CardDescription>{benefit.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="w-full bg-gray-200 rounded-full h-3">
+                    <div 
+                      className="bg-primary h-3 rounded-full transition-all duration-500"
+                      style={{ width: benefit.improvement }}
+                    ></div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
