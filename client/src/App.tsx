@@ -60,6 +60,9 @@ import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
 // Healthcare parent page
 import Healthcare from "@/pages/healthcare";
 
+// Life Sciences parent page
+import LifeSciences from "@/pages/life-sciences";
+
 import Header from "@/components/layout/header-new";
 import Footer from "@/components/layout/footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -117,7 +120,8 @@ function Router() {
           <Route path="/healthcare/medical-linens/non-woven" component={NonWovenMedicalLinens} />
           <Route path="/healthcare/medical-linens/blended" component={BlendedMedicalLinens} />
           
-          {/* Existing Life Sciences Routes */}
+          {/* Life Sciences Routes */}
+          <Route path="/life-sciences" component={LifeSciences} />
           <Route path="/life-sciences/dna-rna-extraction" component={DnaRnaExtraction} />
           <Route path="/life-sciences/molecular-diagnostics" component={MolecularDiagnostics} />
           
