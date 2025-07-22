@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Stethoscope, Shield, Bed, Users, CheckCircle, Droplet, Recycle, ArrowRight, Heart } from "lucide-react";
+import { Link } from "wouter";
 
 // Import medical linen images
 import maternityGownImg from "@/assets/medical-linens/maternity-gown-nkr-601.png";
@@ -107,22 +108,23 @@ export default function MedicalLinens() {
                 <p className="text-xl text-gray-600">Specially designed for newborn care and comfort</p>
               </div>
 
-              <div className="glass-card rounded-2xl overflow-hidden max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-0">
-                  {/* Image Section */}
-                  <div className="relative">
-                    <div className="aspect-square lg:aspect-auto lg:h-full overflow-hidden">
-                      <img 
-                        src={receivingBlanketsImg} 
-                        alt="Receiving Blankets/Swaddle NKR-101"
-                        className="w-full h-full object-cover"
-                      />
+              <Link href="/products/medical-linens/baby-first-touch">
+                <div className="glass-card rounded-2xl overflow-hidden max-w-6xl mx-auto cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="grid lg:grid-cols-2 gap-0">
+                    {/* Image Section */}
+                    <div className="relative">
+                      <div className="aspect-square lg:aspect-auto lg:h-full overflow-hidden">
+                        <img 
+                          src={receivingBlanketsImg} 
+                          alt="Receiving Blankets/Swaddle NKR-101"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                        <h3 className="font-bold text-lg text-gray-800">Receiving Blankets/Swaddle</h3>
+                        <p className="text-secondary font-semibold">NKR-101</p>
+                      </div>
                     </div>
-                    <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                      <h3 className="font-bold text-lg text-gray-800">Receiving Blankets/Swaddle</h3>
-                      <p className="text-secondary font-semibold">NKR-101</p>
-                    </div>
-                  </div>
 
                   {/* Features Section */}
                   <div className="p-8 lg:p-12 flex flex-col justify-center">
@@ -180,7 +182,8 @@ export default function MedicalLinens() {
                     </div>
                   </div>
                 </div>
-              </div>
+                </div>
+              </Link>
             </div>
             <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
               Our Product Portfolio
@@ -202,127 +205,143 @@ export default function MedicalLinens() {
           {/* Product Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
             {/* Maternity Gown */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={maternityGownImg} 
-                  alt="Maternity Gown NKR-601"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/maternity-gown">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={maternityGownImg} 
+                    alt="Maternity Gown NKR-601"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Maternity Gown</h3>
+                  <p className="text-secondary font-semibold">NKR-601</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Maternity Gown</h3>
-                <p className="text-secondary font-semibold">NKR-601</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Mackintosh Rubber Sheet */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={mackintoshSheetImg} 
-                  alt="Mackintosh Rubber Sheet NKR-701/702"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/mackintosh-rubber-sheet">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={mackintoshSheetImg} 
+                    alt="Mackintosh Rubber Sheet NKR-701/702"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Mackintosh Rubber Sheet</h3>
+                  <p className="text-secondary font-semibold">With & W/o Cloth</p>
+                  <p className="text-secondary font-semibold">NKR-702, NKR-701</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Mackintosh Rubber Sheet</h3>
-                <p className="text-secondary font-semibold">With & W/o Cloth</p>
-                <p className="text-secondary font-semibold">NKR-702, NKR-701</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Bedsheet with Pillow Covers */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={bedsheetCoversImg} 
-                  alt="Bedsheet with Pillow Covers NKR-202"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/bedsheet-pillow-covers">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={bedsheetCoversImg} 
+                    alt="Bedsheet with Pillow Covers NKR-202"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Bedsheet with Pillow Covers</h3>
+                  <p className="text-secondary font-semibold">NKR-202</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Bedsheet with Pillow Covers</h3>
-                <p className="text-secondary font-semibold">NKR-202</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Surgical Drapes/Towels */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={surgicalDrapesImg} 
-                  alt="Surgical Drapes/Towels NKR-301"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/surgical-drapes-towels">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={surgicalDrapesImg} 
+                    alt="Surgical Drapes/Towels NKR-301"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical Drapes (plain) / Towels</h3>
+                  <p className="text-secondary font-semibold">NKR-301</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical Drapes (plain) / Towels</h3>
-                <p className="text-secondary font-semibold">NKR-301</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Scrub Suit */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={scrubSuitImg} 
-                  alt="Scrub Suit NKR-501"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/scrub-suit">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={scrubSuitImg} 
+                    alt="Scrub Suit NKR-501"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Scrub Suit</h3>
+                  <p className="text-secondary font-semibold">NKR-501</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Scrub Suit</h3>
-                <p className="text-secondary font-semibold">NKR-501</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Patient Gown */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={patientGownImg} 
-                  alt="Patient Gown NKR-602"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/patient-gown">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={patientGownImg} 
+                    alt="Patient Gown NKR-602"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Patient Gown</h3>
+                  <p className="text-secondary font-semibold">NKR-602</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Patient Gown</h3>
-                <p className="text-secondary font-semibold">NKR-602</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Surgical/OT Gown */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={surgicalOTGownImg} 
-                  alt="Surgical/OT Gown NKR-401/402"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/surgical-ot-gown">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={surgicalOTGownImg} 
+                    alt="Surgical/OT Gown NKR-401/402"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical/ OT Gown</h3>
+                  <p className="text-secondary font-semibold">with/Without overlap</p>
+                  <p className="text-secondary font-semibold">NKR-401, NKR-402</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical/ OT Gown</h3>
-                <p className="text-secondary font-semibold">with/Without overlap</p>
-                <p className="text-secondary font-semibold">NKR-401, NKR-402</p>
-              </div>
-            </div>
+            </Link>
 
             {/* Surgical Cut Sheets */}
-            <div className="glass-card rounded-xl overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src={surgicalCutSheetsImg} 
-                  alt="Surgical Cut Sheets NKR-302"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+            <Link href="/products/medical-linens/surgical-cut-sheets">
+              <div className="glass-card rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={surgicalCutSheetsImg} 
+                    alt="Surgical Cut Sheets NKR-302"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical Cut Sheets</h3>
+                  <p className="text-secondary font-semibold">with holes</p>
+                  <p className="text-secondary font-semibold">NKR-302</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-gray-800 mb-2">Surgical Cut Sheets</h3>
-                <p className="text-secondary font-semibold">with holes</p>
-                <p className="text-secondary font-semibold">NKR-302</p>
-              </div>
-            </div>
+            </Link>
           </div>
 
          
