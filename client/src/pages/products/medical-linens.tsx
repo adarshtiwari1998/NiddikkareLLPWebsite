@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Bed, Shield, Droplets, CheckCircle, Star, Heart, Stethoscope, ArrowRight, Users, Baby } from "lucide-react";
+import { Link } from "wouter";
 
 // Import medical linen images
 import maternityGownImg from "@/assets/medical-linens/maternity-gown-nkr-601.png";
@@ -13,16 +14,25 @@ import scrubSuitImg from "@/assets/medical-linens/scrub-suit-nkr-501.png";
 import patientGownImg from "@/assets/medical-linens/patient-gown-nkr-602.png";
 import surgicalOTGownImg from "@/assets/medical-linens/surgical-ot-gown-nkr-401-402.png";
 import surgicalCutSheetsImg from "@/assets/medical-linens/surgical-cut-sheets-nkr-302.png";
-import receivingBlanketsImg from "@/assets/medical-linens/receiving-blankets-swaddle-nkr-101.png";
+import babyFirstTouchImg from "@/assets/medical-linens/receiving-blankets-swaddle-nkr-101.png";
 
 export default function MedicalLinensProducts() {
   const productPortfolio = [
+    {
+      name: "Baby's First Touch",
+      code: "NKR-101",
+      image: babyFirstTouchImg,
+      category: "Patient Care",
+      features: ["100% cotton", "Mimics womb", "Reduces startle reflex", "Soothes colicky babies"],
+      link: "/products/medical-linens/baby-first-touch"
+    },
     {
       name: "Maternity Gown",
       code: "NKR-601",
       image: maternityGownImg,
       category: "Patient Care",
-      features: ["Comfortable fit", "Easy access", "Soft fabric", "Machine washable"]
+      features: ["Comfortable fit", "Easy access", "Soft fabric", "Machine washable"],
+      link: "/products/medical-linens/maternity-gown"
     },
     {
       name: "Mackintosh Rubber Sheet",
@@ -30,14 +40,16 @@ export default function MedicalLinensProducts() {
       subtitle: "With & W/o Cloth",
       image: mackintoshSheetImg,
       category: "Protective",
-      features: ["Waterproof", "Durable", "Easy to clean", "Infection control"]
+      features: ["Waterproof", "Durable", "Easy to clean", "Infection control"],
+      link: "/products/medical-linens/mackintosh-rubber-sheet"
     },
     {
       name: "Bedsheet with Pillow Covers",
       code: "NKR-202",
       image: bedsheetCoversImg,
       category: "Bedding",
-      features: ["Soft cotton", "Wrinkle resistant", "Easy care", "Comfort focused"]
+      features: ["Soft cotton", "Wrinkle resistant", "Easy care", "Comfort focused"],
+      link: "/products/medical-linens/bedsheet-pillow-covers"
     },
     {
       name: "Surgical Drapes/Towels",
@@ -45,21 +57,24 @@ export default function MedicalLinensProducts() {
       subtitle: "Plain",
       image: surgicalDrapesImg,
       category: "Surgical",
-      features: ["Sterile barrier", "Fluid resistant", "Single use", "High quality"]
+      features: ["Sterile barrier", "Fluid resistant", "Single use", "High quality"],
+      link: "/products/medical-linens/surgical-drapes-towels"
     },
     {
       name: "Scrub Suit",
       code: "NKR-501",
       image: scrubSuitImg,
       category: "Surgical",
-      features: ["Professional fit", "Breathable", "Comfortable", "Easy movement"]
+      features: ["Professional fit", "Breathable", "Comfortable", "Easy movement"],
+      link: "/products/medical-linens/scrub-suit"
     },
     {
       name: "Patient Gown",
       code: "NKR-602",
       image: patientGownImg,
       category: "Patient Care",
-      features: ["Patient comfort", "Easy access", "Tie closure", "Soft material"]
+      features: ["Patient comfort", "Easy access", "Tie closure", "Soft material"],
+      link: "/products/medical-linens/patient-gown"
     },
     {
       name: "Surgical/OT Gown",
@@ -67,7 +82,8 @@ export default function MedicalLinensProducts() {
       subtitle: "with/Without overlap",
       image: surgicalOTGownImg,
       category: "Surgical",
-      features: ["Sterile protection", "Fluid resistant", "Reinforced", "Professional"]
+      features: ["Sterile protection", "Fluid resistant", "Reinforced", "Professional"],
+      link: "/products/medical-linens/surgical-ot-gown"
     },
     {
       name: "Surgical Cut Sheets",
@@ -75,7 +91,8 @@ export default function MedicalLinensProducts() {
       subtitle: "with holes",
       image: surgicalCutSheetsImg,
       category: "Surgical",
-      features: ["Precise openings", "Sterile field", "Single use", "Quality assured"]
+      features: ["Precise openings", "Sterile field", "Single use", "Quality assured"],
+      link: "/products/medical-linens/surgical-cut-sheets"
     }
   ];
 
@@ -155,7 +172,7 @@ export default function MedicalLinensProducts() {
               <Card className="overflow-hidden shadow-2xl border-0">
                 <div className="aspect-square relative">
                   <img 
-                    src={receivingBlanketsImg} 
+                    src={babyFirstTouchImg} 
                     alt="Receiving Blankets/Swaddle NKR-101"
                     className="w-full h-full object-cover"
                   />
@@ -276,43 +293,45 @@ export default function MedicalLinensProducts() {
                   {productPortfolio
                     .filter(product => category.name === "All" || product.category === category.name)
                     .map((product, index) => (
-                      <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-                        <div className="aspect-square overflow-hidden relative">
-                          <img 
-                            src={product.image} 
-                            alt={product.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          <Badge className="absolute top-3 left-3 bg-white/90 text-gray-800">
-                            {product.category}
-                          </Badge>
-                        </div>
-                        <CardContent className="p-6">
-                          <h3 className="font-bold text-lg text-gray-800 mb-2">{product.name}</h3>
-                          <div className="text-blue-600 font-semibold mb-3">
-                            <p>{product.code}</p>
-                            {product.subtitle && (
-                              <p className="text-sm text-gray-600">{product.subtitle}</p>
-                            )}
+                      <Link key={index} href={product.link}>
+                        <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden cursor-pointer">
+                          <div className="aspect-square overflow-hidden relative">
+                            <img 
+                              src={product.image} 
+                              alt={product.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <Badge className="absolute top-3 left-3 bg-white/90 text-gray-800">
+                              {product.category}
+                            </Badge>
                           </div>
-                          
-                          {/* Features List */}
-                          <div className="space-y-2 mb-4">
-                            {product.features.slice(0, 3).map((feature, idx) => (
-                              <div key={idx} className="flex items-center text-sm text-gray-600">
-                                <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
-                                {feature}
-                              </div>
-                            ))}
-                          </div>
-                          
-                          <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            View Details
-                            <ArrowRight className="w-4 h-4 ml-2" />
-                          </Button>
-                        </CardContent>
-                      </Card>
+                          <CardContent className="p-6">
+                            <h3 className="font-bold text-lg text-gray-800 mb-2">{product.name}</h3>
+                            <div className="text-blue-600 font-semibold mb-3">
+                              <p>{product.code}</p>
+                              {product.subtitle && (
+                                <p className="text-sm text-gray-600">{product.subtitle}</p>
+                              )}
+                            </div>
+                            
+                            {/* Features List */}
+                            <div className="space-y-2 mb-4">
+                              {product.features.slice(0, 3).map((feature, idx) => (
+                                <div key={idx} className="flex items-center text-sm text-gray-600">
+                                  <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                                  {feature}
+                                </div>
+                              ))}
+                            </div>
+                            
+                            <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                              View Details
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </Button>
+                          </CardContent>
+                        </Card>
+                      </Link>
                     ))}
                 </div>
               </TabsContent>
