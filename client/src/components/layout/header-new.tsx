@@ -455,7 +455,7 @@ export default function Header() {
                             {item.label}
                             {item.submenu && (
                               <Badge variant="secondary" className="text-xs px-1.5 py-0.5 bg-primary/10 text-primary border-primary/20">
-                                {item.submenu.length}
+                                {item.submenu.length} {item.submenu.length === 1 ? 'product' : 'products'}
                               </Badge>
                             )}
                           </div>
@@ -597,7 +597,7 @@ export default function Header() {
                           {item.label}
                           {item.submenu && (
                             <Badge variant="secondary" className="text-xs px-1.5 py-0.5 bg-primary/10 text-primary border-primary/20">
-                              {item.submenu.length}
+                              {item.submenu.length} {item.submenu.length === 1 ? 'product' : 'products'}
                             </Badge>
                           )}
                         </div>
