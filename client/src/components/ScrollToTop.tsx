@@ -5,12 +5,8 @@ export default function ScrollToTop() {
   const [location] = useLocation();
 
   useEffect(() => {
-    // Scroll to top when location changes
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    // Instantly jump to top when location changes
+    window.scrollTo(0, 0);
   }, [location]);
 
   return null;
