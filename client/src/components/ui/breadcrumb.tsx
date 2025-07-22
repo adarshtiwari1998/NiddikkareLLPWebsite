@@ -172,7 +172,7 @@ export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
       "healthcare": "Healthcare",
       "life-sciences": "Life Sciences", 
       "it-solutions": "IT Solutions",
-      "tools": "Tools & Testing",
+      "tools": "Tools",
       
       // Products
       "neonatal-care": "Neonatal Care",
@@ -206,15 +206,15 @@ export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
       "contingent": "Contingent Workforce Management",
       "web-app-solutions": "Web & App Solutions",
       
-      // Tools
-      "e-training": "E-Training",
-      "sample-request": "Sample Request",
+      // Tools & Testing
+      "e-training": "E-Learning Resources",
+      "sample-request": "Sample Request System",
       "application-database-chromatography": "Application Database - Chromatography", 
-      "filter-finder": "Filter Finder",
-      "strip-finder": "Strip Finder",
-      "nanocolor-finder": "Nanocolor Finder",
-      "chromafil-finder": "Chromafil Finder",
-      "vial-finder": "Vial Finder",
+      "filter-finder": "FilterFinder",
+      "strip-finder": "StripFinder",
+      "nanocolor-finder": "NANOCOLOR Finder",
+      "chromafil-finder": "ChromafilFinder",
+      "vial-finder": "VialFinder",
       "bioanalysis-kitfinder": "Bioanalysis Kit Finder",
       
       // Other pages

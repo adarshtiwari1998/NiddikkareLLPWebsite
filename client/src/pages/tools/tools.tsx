@@ -135,7 +135,7 @@ export default function Tools() {
             <Settings className="w-12 h-12 text-primary" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Tools & <span className="text-primary">Testing</span>
+            <span className="text-primary">Tools</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
             Comprehensive digital solutions and advanced tools for modern laboratory workflows. 
