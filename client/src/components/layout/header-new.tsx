@@ -10,6 +10,7 @@ interface DropdownItem {
   label: string;
   description: string;
   icon: React.ElementType;
+  submenu?: DropdownItem[];
 }
 
 export default function Header() {
@@ -107,7 +108,27 @@ export default function Header() {
       href: "/healthcare/medical-linens",
       label: "Medical Linens",
       description: "Hospital-grade linens and textiles",
-      icon: Bed
+      icon: Bed,
+      submenu: [
+        {
+          href: "/healthcare/medical-linens/woven",
+          label: "Woven Medical Linens",
+          description: "100% cotton construction",
+          icon: Layers
+        },
+        {
+          href: "/healthcare/medical-linens/non-woven",
+          label: "Non-woven Medical Linens", 
+          description: "Barrier protection materials",
+          icon: Shield
+        },
+        {
+          href: "/healthcare/medical-linens/blended",
+          label: "Blended Medical Linens",
+          description: "Combined material benefits",
+          icon: Shirt
+        }
+      ]
     }
   ];
 
@@ -169,22 +190,51 @@ export default function Header() {
         {items.map((item) => {
           const Icon = item.icon;
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
-                location === item.href
-                  ? 'bg-primary/10 text-primary border-l-4 border-primary'
-                  : 'hover:bg-gray-50'
-              }`}
-              onClick={() => setActiveDropdown(null)}
-            >
-              <Icon className="h-5 w-5 text-primary" />
-              <div>
-                <div className="font-medium">{item.label}</div>
-                <div className="text-sm text-gray-600">{item.description}</div>
-              </div>
-            </Link>
+            <div key={item.href}>
+              <Link
+                href={item.href}
+                className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                  location === item.href
+                    ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                    : 'hover:bg-gray-50'
+                }`}
+                onClick={() => setActiveDropdown(null)}
+              >
+                <Icon className="h-5 w-5 text-primary" />
+                <div className="flex-1">
+                  <div className="font-medium">{item.label}</div>
+                  <div className="text-sm text-gray-600">{item.description}</div>
+                </div>
+                {item.submenu && <ChevronRight className="h-4 w-4 text-gray-400" />}
+              </Link>
+              
+              {/* Render submenu items if they exist */}
+              {item.submenu && (
+                <div className="ml-8 mt-2 space-y-1">
+                  {item.submenu.map((subItem) => {
+                    const SubIcon = subItem.icon;
+                    return (
+                      <Link
+                        key={subItem.href}
+                        href={subItem.href}
+                        className={`flex items-center space-x-2 p-2 rounded-md text-sm transition-colors ${
+                          location === subItem.href
+                            ? 'bg-primary/10 text-primary'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                        }`}
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <SubIcon className="h-4 w-4" />
+                        <div>
+                          <div className="font-medium">{subItem.label}</div>
+                          <div className="text-xs text-gray-500">{subItem.description}</div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           );
         })}
       </div>
@@ -416,14 +466,30 @@ export default function Header() {
                 <div className="space-y-2">
                   <h3 className="text-lg font-medium">Healthcare</h3>
                   {healthcareItems.map((item) => (
-                    <Link 
-                      key={item.href}
-                      href={item.href} 
-                      className="block pl-4 text-gray-600 hover:text-primary"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
+                    <div key={item.href}>
+                      <Link 
+                        href={item.href} 
+                        className="block pl-4 text-gray-600 hover:text-primary"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                      {/* Mobile submenu items */}
+                      {item.submenu && (
+                        <div className="ml-8 mt-1 space-y-1">
+                          {item.submenu.map((subItem) => (
+                            <Link 
+                              key={subItem.href}
+                              href={subItem.href} 
+                              className="block text-sm text-gray-500 hover:text-primary"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
                 <div className="space-y-2">
