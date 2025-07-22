@@ -32,7 +32,7 @@ export default function NonWovenMedicalLinens() {
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            <span className="text-blue-600">Non-woven</span> Medical Linens
+            <span className="text-primary">Non-woven</span> Medical Linens
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Made from polypropylene or polyester, our non-woven medical linens offer superior barrier protection 
@@ -44,7 +44,7 @@ export default function NonWovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Our Non-woven <span className="text-blue-600">Product Lines</span>
+              Our Non-woven <span className="text-primary">Product Lines</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Explore our complete range of SMS non-woven medical linens, designed for superior barrier protection, 
@@ -70,7 +70,7 @@ export default function NonWovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Lint-free</Badge>
                 </div>
                 <Link href="/products/medical-linens/surgical-drapes-towels">
-                  <Button size="sm" className="w-full bg-red-600 hover:bg-red-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -95,7 +95,7 @@ export default function NonWovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Fluid Resistant</Badge>
                 </div>
                 <Link href="/products/medical-linens/surgical-ot-gown">
-                  <Button size="sm" className="w-full bg-teal-600 hover:bg-teal-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -120,7 +120,7 @@ export default function NonWovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Medical Grade</Badge>
                 </div>
                 <Link href="/products/medical-linens/surgical-cut-sheets">
-                  <Button size="sm" className="w-full bg-slate-600 hover:bg-slate-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -134,7 +134,7 @@ export default function NonWovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Key <span className="text-blue-600">Advantages</span>
+              Key <span className="text-primary">Advantages</span>
             </h2>
           </div>
           
@@ -181,7 +181,7 @@ export default function NonWovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              SMS <span className="text-blue-600">Technology</span>
+              SMS <span className="text-primary">Technology</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We offer SMS (Spunbond-Meltblown-Spunbond) non-woven fabric, known for its strength, 

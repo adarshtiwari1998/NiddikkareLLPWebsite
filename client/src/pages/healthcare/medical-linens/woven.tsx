@@ -32,7 +32,7 @@ export default function WovenMedicalLinens() {
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            <span className="text-green-600">Woven</span> Medical Linens
+            <span className="text-primary">Woven</span> Medical Linens
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Made from 100% cotton, our woven medical linens offer high absorbency, ease of sterilization, and softness, 
@@ -44,7 +44,7 @@ export default function WovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Our Woven <span className="text-green-600">Product Lines</span>
+              Our Woven <span className="text-primary">Product Lines</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Explore our complete range of 100% cotton woven medical linens, designed for superior comfort, 
@@ -70,7 +70,7 @@ export default function WovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Allergen-free</Badge>
                 </div>
                 <Link href="/products/medical-linens/baby-first-touch">
-                  <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -95,7 +95,7 @@ export default function WovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Complete Set</Badge>
                 </div>
                 <Link href="/products/medical-linens/bedsheet-pillow-covers">
-                  <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -120,7 +120,7 @@ export default function WovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Soft Fabric</Badge>
                 </div>
                 <Link href="/products/medical-linens/maternity-gown">
-                  <Button size="sm" className="w-full bg-purple-600 hover:bg-purple-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -145,7 +145,7 @@ export default function WovenMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Hypoallergenic</Badge>
                 </div>
                 <Link href="/products/medical-linens/patient-gown">
-                  <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -159,7 +159,7 @@ export default function WovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Key <span className="text-green-600">Benefits</span>
+              Key <span className="text-primary">Benefits</span>
             </h2>
           </div>
           
@@ -206,7 +206,7 @@ export default function WovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Product <span className="text-green-600">Applications</span>
+              Product <span className="text-primary">Applications</span>
             </h2>
           </div>
           

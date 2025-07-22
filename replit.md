@@ -15,7 +15,7 @@ Preferred communication style: Simple, everyday language.
 - Added Baby's First Touch to product portfolio: Included missing Baby's First Touch product card with proper features and NKR-101 code in the medical linens catalog
 - Fixed Baby's First Touch button navigation: Updated "Baby's First Touch" and "Learn More" buttons to use Link components instead of onClick handlers for proper client-side routing
 - Removed duplicate Baby's First Touch from product portfolio: Eliminated redundant product card since Baby's First Touch is already featured prominently at the top of the page
-- Updated Tools section branding: Changed "Tools & Testing" to just "Tools" in both breadcrumb navigation and main page heading for cleaner, more focused presentation
+- Standardized medical linen page colors: Updated all three medical linen category pages (/healthcare/medical-linens/woven, /healthcare/medical-linens/non-woven, /healthcare/medical-linens/blended) to use consistent primary brand color hsl(134, 37%, 27%) in headings and buttons, replacing inconsistent blue, purple, and light green colors
 - Created separate Testing parent page: Designed comprehensive /testing page following the same pattern as Tools, Healthcare, and Life Sciences with categorized testing solutions
 - Restructured testing URLs: Moved existing testing pages from root level to /testing/* structure - /filtration → /testing/filtration, /rapid-tests → /testing/rapid-tests, /chromatography → /testing/chromatography, /bioanalysis → /testing/bioanalysis
 - Added new water analysis page: Created /testing/water-analysis with comprehensive water quality testing solutions and environmental monitoring

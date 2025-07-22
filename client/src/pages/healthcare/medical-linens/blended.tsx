@@ -32,7 +32,7 @@ export default function BlendedMedicalLinens() {
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            <span className="text-purple-600">Blended</span> Medical Linens
+            <span className="text-primary">Blended</span> Medical Linens
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Prepared with both woven and non-woven fabrics or materials to combine their properties. 
@@ -44,7 +44,7 @@ export default function BlendedMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Our Blended <span className="text-purple-600">Product Lines</span>
+              Our Blended <span className="text-primary">Product Lines</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Explore our cotton-polyester blend medical linens that combine the best properties of both materials, 
@@ -70,7 +70,7 @@ export default function BlendedMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Breathable</Badge>
                 </div>
                 <Link href="/products/medical-linens/maternity-gown">
-                  <Button size="sm" className="w-full bg-purple-600 hover:bg-purple-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -95,7 +95,7 @@ export default function BlendedMedicalLinens() {
                   <Badge variant="secondary" className="text-xs">Durable</Badge>
                 </div>
                 <Link href="/products/medical-linens/patient-gown">
-                  <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -109,7 +109,7 @@ export default function BlendedMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Key <span className="text-purple-600">Advantages</span>
+              Key <span className="text-primary">Advantages</span>
             </h2>
           </div>
           
@@ -156,7 +156,7 @@ export default function BlendedMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Blended <span className="text-purple-600">Characteristics</span>
+              Blended <span className="text-primary">Characteristics</span>
             </h2>
           </div>
           
