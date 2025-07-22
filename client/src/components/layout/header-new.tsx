@@ -336,7 +336,7 @@ export default function Header() {
             {items.map((item) => {
               const Icon = item.icon;
               const isSubmenuActive = activeSubmenu === item.label.toLowerCase();
-              const shouldShowCompact = activeSubmenu !== null;
+              const shouldShowCompact = activeSubmenu !== null && !isSubmenuActive;
               
               return (
                 <div key={item.href} className="relative group">
