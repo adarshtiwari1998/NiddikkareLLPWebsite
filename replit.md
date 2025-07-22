@@ -45,7 +45,7 @@ Preferred communication style: Simple, everyday language.
 - Implemented unique visual identities: Baby First Touch (pink organic curves), Maternity Gown (purple floating cards), Mackintosh Sheet (blue zigzag), Bedsheet Covers (green mosaic), Surgical Drapes (red split screen), Scrub Suit (indigo card stack), Patient Gown (amber stepped layout), Surgical OT Gown (teal hexagonal), Surgical Cut Sheets (slate layered design)
 - Enhanced user experience with real product imagery: All medical linen pages now display actual product images from /assets/images/medical-linens/ folder instead of placeholder icons, creating professional product showcases with proper image integration
 - Fixed navigation UI inconsistencies: Applied consistent left border styling across all dropdown menus (Products, Healthcare, Tools & Testing) to maintain visual consistency
-- Improved badge descriptions: Changed count badges from numeric values (e.g., "9") to descriptive text (e.g., "9 products") for better user understanding
+- Improved badge descriptions: Changed count badges from numeric values (e.g., "9") to descriptive text (e.g., "9 items") for better user understanding across all menu types (services, products, tools, info pages)
 - Added decorative background elements: Applied organic curved shapes and gradient backgrounds to all healthcare medical linen pages (woven, non-woven, blended) for visual consistency
 
 ## System Architecture
