@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -73,6 +73,25 @@ import Footer from "@/components/layout/footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { SmartBreadcrumb } from "@/components/ui/breadcrumb";
 
+function BreadcrumbContainer() {
+  const [location] = useLocation();
+  
+  // Don't render breadcrumb container on home page
+  if (location === "/") {
+    return null;
+  }
+  
+  return (
+    <div className="bg-gray-50 dark:bg-gray-900 border-b">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="py-3">
+          <SmartBreadcrumb />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Router() {
   return (
     <div className="min-h-screen bg-background">
@@ -80,13 +99,7 @@ function Router() {
       <Header />
       
       {/* Breadcrumb Navigation */}
-      <div className="bg-gray-50 dark:bg-gray-900 border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-3">
-            <SmartBreadcrumb />
-          </div>
-        </div>
-      </div>
+      <BreadcrumbContainer />
       
       <main>
         <Switch>
