@@ -95,15 +95,15 @@ export default function Testing() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-100">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-blue-500/10 rounded-full mb-8 shadow-xl">
-            <Beaker className="w-12 h-12 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-primary/10 rounded-full mb-8 shadow-xl">
+            <Beaker className="w-12 h-12 text-primary" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Advanced <span className="text-blue-600">Testing</span> Solutions
+            Advanced <span className="text-primary">Testing</span> Solutions
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
             Cutting-edge analytical tools for comprehensive laboratory testing and research. 
@@ -114,10 +114,10 @@ export default function Testing() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto">
             {platformStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full mb-3">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary rounded-full mb-3">
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-blue-600 mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
                 <div className="text-sm font-medium text-gray-700 mb-1">{stat.label}</div>
                 <div className="text-xs text-gray-500">{stat.description}</div>
               </div>
@@ -127,7 +127,7 @@ export default function Testing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="px-12 py-4 text-lg font-semibold bg-blue-600 hover:bg-blue-700 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              className="px-12 py-4 text-lg font-semibold bg-primary hover:bg-primary/90 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               Explore Testing Solutions
               <ArrowRight className="h-5 w-5 ml-2" />
@@ -136,7 +136,7 @@ export default function Testing() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              className="px-8 py-4 text-lg font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
               >
                 Request Consultation
               </Button>
@@ -162,15 +162,15 @@ export default function Testing() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {category.tests.map((test, index) => (
                   <Link key={index} href={test.href}>
-                    <Card className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-br from-white to-blue-50/30 border-2 hover:border-blue-200">
+                    <Card className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-br from-white to-green-50/30 border-2 hover:border-primary/20">
                       <CardHeader className="pb-4">
                         <div className="flex items-center justify-between">
-                          <div className="p-3 bg-blue-100 rounded-xl group-hover:bg-blue-200 transition-colors duration-300">
-                            <test.icon className="h-8 w-8 text-blue-600" />
+                          <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
+                            <test.icon className="h-8 w-8 text-primary" />
                           </div>
-                          <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-2 transition-all duration-300" />
+                          <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" />
                         </div>
-                        <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
+                        <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
                           {test.title}
                         </CardTitle>
                         <CardDescription className="text-gray-600 leading-relaxed">
@@ -183,7 +183,7 @@ export default function Testing() {
                             <Badge 
                               key={featureIndex} 
                               variant="secondary" 
-                              className="bg-blue-100 text-blue-700 hover:bg-blue-200 transition-colors duration-200"
+                              className="bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200"
                             >
                               {feature}
                             </Badge>
@@ -200,7 +200,7 @@ export default function Testing() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-primary to-green-700 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Enhance Your Testing Capabilities?
@@ -212,7 +212,7 @@ export default function Testing() {
             <Link href="/contact">
               <Button 
                 size="lg"
-                className="px-8 py-4 text-lg font-semibold bg-white text-blue-600 hover:bg-gray-100 shadow-xl"
+                className="px-8 py-4 text-lg font-semibold bg-white text-primary hover:bg-gray-100 shadow-xl"
               >
                 Get Started Today
                 <ArrowRight className="h-5 w-5 ml-2" />
@@ -221,7 +221,7 @@ export default function Testing() {
             <Button 
               size="lg"
               variant="outline"
-              className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300"
+              className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-primary transition-all duration-300"
             >
               View Documentation
             </Button>

@@ -21,6 +21,9 @@ import RapidTests from "@/pages/testing/rapid-tests";
 import Chromatography from "@/pages/testing/chromatography";
 import Bioanalysis from "@/pages/testing/bioanalysis";
 import WaterAnalysis from "@/pages/testing/water-analysis";
+
+// Tools & Testing combined page
+import ToolsTesting from "@/pages/tools-testing";
 import About from "@/pages/about";
 import News from "@/pages/news";
 import Contact from "@/pages/contact";
@@ -152,6 +155,9 @@ function Router() {
           <Route path="/life-sciences" component={LifeSciences} />
           <Route path="/life-sciences/dna-rna-extraction" component={DnaRnaExtraction} />
           <Route path="/life-sciences/molecular-diagnostics" component={MolecularDiagnostics} />
+          
+          {/* Tools & Testing Combined Route */}
+          <Route path="/tools-testing" component={ToolsTesting} />
           
           {/* Testing Routes */}
           <Route path="/testing" component={Testing} />

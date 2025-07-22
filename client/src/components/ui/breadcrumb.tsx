@@ -174,6 +174,7 @@ export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
       "it-solutions": "IT Solutions",
       "tools": "Tools",
       "testing": "Testing",
+      "tools-testing": "Tools & Testing",
       
       // Products
       "neonatal-care": "Neonatal Care",
