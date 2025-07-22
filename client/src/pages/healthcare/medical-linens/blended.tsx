@@ -116,8 +116,8 @@ export default function BlendedMedicalLinens() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Layers className="h-8 w-8 text-purple-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Layers className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Combined Properties</CardTitle>
                 <CardDescription>
@@ -128,8 +128,8 @@ export default function BlendedMedicalLinens() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Settings className="h-8 w-8 text-green-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Settings className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Tailored Performance</CardTitle>
                 <CardDescription>
@@ -140,8 +140,8 @@ export default function BlendedMedicalLinens() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-blue-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Enhanced Functionality</CardTitle>
                 <CardDescription>
@@ -165,28 +165,28 @@ export default function BlendedMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">Enhanced Properties</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Lightweight Design</h4>
                     <p className="text-gray-600">Reduced weight without compromising strength</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Enhanced Durability</h4>
                     <p className="text-gray-600">Longer-lasting performance in demanding environments</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Improved Comfort</h4>
                     <p className="text-gray-600">Better breathability and skin compatibility</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Optimized Functionality</h4>
                     <p className="text-gray-600">Tailored for specific medical applications</p>
@@ -199,28 +199,28 @@ export default function BlendedMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">Performance Benefits</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Barrier Protection</h4>
                     <p className="text-gray-600">Effective protection against contaminants</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Moisture Management</h4>
                     <p className="text-gray-600">Balanced absorbency and wicking properties</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Flexibility</h4>
                     <p className="text-gray-600">Adaptable to various medical procedures</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Cost Efficiency</h4>
                     <p className="text-gray-600">Optimized performance-to-cost ratio</p>
@@ -235,7 +235,7 @@ export default function BlendedMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Product <span className="text-purple-600">Applications</span>
+              Product <span className="text-primary">Applications</span>
             </h2>
           </div>
           
@@ -244,21 +244,21 @@ export default function BlendedMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">Surgical Applications</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Hybrid Surgical Gowns</h4>
                     <p className="text-gray-600">Combining comfort and protection</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Specialized Drapes</h4>
                     <p className="text-gray-600">Procedure-specific draping solutions</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Reinforced Covers</h4>
                     <p className="text-gray-600">Enhanced protection for critical areas</p>
@@ -271,21 +271,21 @@ export default function BlendedMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">Patient Care</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Comfort Linens</h4>
                     <p className="text-gray-600">Enhanced patient comfort solutions</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Wound Care Products</h4>
                     <p className="text-gray-600">Specialized wound management materials</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-purple-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Protective Covers</h4>
                     <p className="text-gray-600">Multi-purpose protection solutions</p>
@@ -300,35 +300,35 @@ export default function BlendedMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Material <span className="text-purple-600">Combinations</span>
+              Material <span className="text-primary">Combinations</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-purple-600 mb-2">Cotton</div>
+                <div className="text-3xl font-bold text-primary mb-2">Cotton</div>
                 <p className="text-gray-600">+ Non-woven</p>
               </CardContent>
             </Card>
             
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">PP</div>
+                <div className="text-3xl font-bold text-primary mb-2">PP</div>
                 <p className="text-gray-600">+ Cotton Blend</p>
               </CardContent>
             </Card>
             
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-green-600 mb-2">PET</div>
+                <div className="text-3xl font-bold text-primary mb-2">PET</div>
                 <p className="text-gray-600">+ Natural Fibers</p>
               </CardContent>
             </Card>
             
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-orange-600 mb-2">Multi</div>
+                <div className="text-3xl font-bold text-primary mb-2">Multi</div>
                 <p className="text-gray-600">Layer Systems</p>
               </CardContent>
             </Card>
@@ -339,7 +339,7 @@ export default function BlendedMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Quality <span className="text-purple-600">Standards</span>
+              Quality <span className="text-primary">Standards</span>
             </h2>
           </div>
           
@@ -371,7 +371,7 @@ export default function BlendedMedicalLinens() {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center bg-purple-50 rounded-2xl p-8">
+        <section className="text-center bg-primary/5 rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Discover Customized Blended Medical Linens
           </h2>
@@ -380,7 +380,7 @@ export default function BlendedMedicalLinens() {
             tailored for your specific healthcare applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
               Request Consultation
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>

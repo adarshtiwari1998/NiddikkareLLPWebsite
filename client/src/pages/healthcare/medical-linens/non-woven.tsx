@@ -141,8 +141,8 @@ export default function NonWovenMedicalLinens() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-blue-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Superior Barrier Protection</CardTitle>
                 <CardDescription>
@@ -153,8 +153,8 @@ export default function NonWovenMedicalLinens() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-8 w-8 text-green-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Reduced Cross-contamination</CardTitle>
                 <CardDescription>
@@ -165,8 +165,8 @@ export default function NonWovenMedicalLinens() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Feather className="h-8 w-8 text-purple-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Feather className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Lightweight & Breathable</CardTitle>
                 <CardDescription>
@@ -194,21 +194,21 @@ export default function NonWovenMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">SMS Layer Structure</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Spunbond Outer Layer</h4>
                     <p className="text-gray-600">Provides strength and durability</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Meltblown Filter Layer</h4>
                     <p className="text-gray-600">Superior filtration and barrier protection</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Spunbond Inner Layer</h4>
                     <p className="text-gray-600">Comfort and breathability</p>
@@ -221,21 +221,21 @@ export default function NonWovenMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">Performance Benefits</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">High Barrier Protection</h4>
                     <p className="text-gray-600">Blocks bacteria and virus penetration</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Excellent Breathability</h4>
                     <p className="text-gray-600">Allows air circulation for comfort</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Tear Resistance</h4>
                     <p className="text-gray-600">Maintains integrity during use</p>
@@ -250,7 +250,7 @@ export default function NonWovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Product <span className="text-blue-600">Applications</span>
+              Product <span className="text-primary">Applications</span>
             </h2>
           </div>
           
@@ -259,21 +259,21 @@ export default function NonWovenMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">Surgical Applications</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Surgical Gowns</h4>
                     <p className="text-gray-600">Disposable protective gowns for surgeons</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Surgical Drapes</h4>
                     <p className="text-gray-600">Sterile field maintenance during procedures</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Face Masks</h4>
                     <p className="text-gray-600">Respiratory protection for medical staff</p>
@@ -286,21 +286,21 @@ export default function NonWovenMedicalLinens() {
               <h3 className="text-2xl font-semibold mb-6">Infection Control</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Isolation Gowns</h4>
                     <p className="text-gray-600">Protection in isolation environments</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Shoe Covers</h4>
                     <p className="text-gray-600">Prevent contamination in clean areas</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-blue-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Caps & Covers</h4>
                     <p className="text-gray-600">Complete protection solutions</p>
@@ -315,35 +315,35 @@ export default function NonWovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Material <span className="text-blue-600">Properties</span>
+              Material <span className="text-primary">Properties</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">PP/PET</div>
+                <div className="text-3xl font-bold text-primary mb-2">PP/PET</div>
                 <p className="text-gray-600">Material Base</p>
               </CardContent>
             </Card>
             
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-green-600 mb-2">Single</div>
+                <div className="text-3xl font-bold text-primary mb-2">Single</div>
                 <p className="text-gray-600">Use Design</p>
               </CardContent>
             </Card>
             
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-purple-600 mb-2">Light</div>
+                <div className="text-3xl font-bold text-primary mb-2">Light</div>
                 <p className="text-gray-600">Weight</p>
               </CardContent>
             </Card>
             
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-3xl font-bold text-orange-600 mb-2">High</div>
+                <div className="text-3xl font-bold text-primary mb-2">High</div>
                 <p className="text-gray-600">Barrier</p>
               </CardContent>
             </Card>
@@ -354,7 +354,7 @@ export default function NonWovenMedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Quality <span className="text-blue-600">Standards</span>
+              Quality <span className="text-primary">Standards</span>
             </h2>
           </div>
           
