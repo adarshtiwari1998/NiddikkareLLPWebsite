@@ -181,14 +181,15 @@ export default function MedicalLinensProducts() {
                     <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 text-center">
                       <h3 className="font-bold text-lg text-gray-800">Receiving Blankets/Swaddle</h3>
                       <p className="text-blue-600 font-semibold">NKR-101</p>
-                      <Button 
-                        size="sm" 
-                        className="mt-3 bg-blue-600 hover:bg-blue-700 text-white"
-                        onClick={() => window.location.href = '/products/medical-linens/baby-first-touch'}
-                      >
-                        <Heart className="w-4 h-4 mr-1" />
-                        Baby's First Touch
-                      </Button>
+                      <Link href="/products/medical-linens/baby-first-touch">
+                        <Button 
+                          size="sm" 
+                          className="mt-3 bg-blue-600 hover:bg-blue-700 text-white"
+                        >
+                          <Heart className="w-4 h-4 mr-1" />
+                          Baby's First Touch
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -231,14 +232,15 @@ export default function MedicalLinensProducts() {
                   <h3 className="font-bold text-lg text-gray-800">Explore Baby's First Touch</h3>
                   <p className="text-gray-600">Discover our detailed newborn care solution</p>
                 </div>
-                <Button 
-                  size="lg" 
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
-                  onClick={() => window.location.href = '/products/medical-linens/baby-first-touch'}
-                >
-                  <ArrowRight className="w-5 h-5 mr-2" />
-                  Learn More
-                </Button>
+                <Link href="/products/medical-linens/baby-first-touch">
+                  <Button 
+                    size="lg" 
+                    className="bg-orange-500 hover:bg-orange-600 text-white"
+                  >
+                    <ArrowRight className="w-5 h-5 mr-2" />
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             </Card>
           </div>
