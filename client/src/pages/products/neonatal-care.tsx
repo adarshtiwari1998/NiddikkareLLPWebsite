@@ -494,7 +494,7 @@ export default function NeonatalCareProducts() {
                 View Baby First Touch Product
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary">
               Request Demo
             </Button>
           </div>
