@@ -189,7 +189,7 @@ export default function MolecularDiagnostics() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                   alt="Hepatitis C virus quantitative testing laboratory" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -425,7 +425,7 @@ export default function MolecularDiagnostics() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1543489822-c4349132eff1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                   alt="Monkeypox and Flu molecular diagnostics laboratory" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -543,7 +543,7 @@ export default function MolecularDiagnostics() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1585435557343-3b092031dc76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Triple viral load quantification laboratory setup" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -554,7 +554,7 @@ export default function MolecularDiagnostics() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Mycobacterium tuberculosis molecular diagnostics laboratory" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -661,7 +661,7 @@ export default function MolecularDiagnostics() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Swine flu and avian influenza molecular diagnostics laboratory" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
