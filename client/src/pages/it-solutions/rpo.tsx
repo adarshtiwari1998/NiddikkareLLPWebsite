@@ -316,7 +316,7 @@ export default function RPO() {
       {/* Stats Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">Our Track Record</h2>
+          <h2 className="text-3xl font-bold mb-12">Our Global Network</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="space-y-2">
               <div className="text-4xl font-bold">10K+</div>
@@ -333,6 +333,30 @@ export default function RPO() {
             <div className="space-y-2">
               <div className="text-4xl font-bold">500K+</div>
               <div className="text-sm opacity-90">Talent Pools</div>
+            </div>
+          </div>
+          
+          {/* Additional stats from network visualization */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="space-y-2">
+              <div className="text-3xl font-bold">200+</div>
+              <div className="text-sm opacity-90">Candidates Engaged</div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center justify-center space-x-4 text-sm">
+                <div className="flex items-center">
+                  <div className="w-3 h-3 bg-orange-400 rounded-full mr-2"></div>
+                  India (HQ)
+                </div>
+                <div className="flex items-center">
+                  <div className="w-3 h-3 bg-red-400 rounded-full mr-2"></div>
+                  USA
+                </div>
+                <div className="flex items-center">
+                  <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                  Canada
+                </div>
+              </div>
             </div>
           </div>
         </div>
