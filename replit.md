@@ -82,6 +82,9 @@ Preferred communication style: Simple, everyday language.
 - Updated App.tsx imports to reference renamed files with proper paths
 - Added Healthcare Overview and Life Sciences Overview links to header navigation dropdowns
 - Enhanced navigation hierarchy with parent page links in both healthcare and life sciences menus
+- Made Healthcare and Life Sciences menu items directly clickable to parent pages
+- Removed "Overview" submenu items - main menu now links directly to /healthcare and /life-sciences
+- Maintained dropdown functionality for accessing subpages while making parent menu items clickable
 
 ## System Architecture
 

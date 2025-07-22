@@ -173,12 +173,6 @@ export default function Header() {
 
   const healthcareItems: DropdownItem[] = [
     {
-      href: "/healthcare",
-      label: "Healthcare Overview",
-      description: "Complete healthcare solutions portfolio",
-      icon: HeartHandshake
-    },
-    {
       href: "/healthcare/neonatal-care",
       label: "Neonatal Care",
       description: "Specialized newborn care solutions",
@@ -213,12 +207,6 @@ export default function Header() {
   ];
 
   const lifeSciencesItems: DropdownItem[] = [
-    {
-      href: "/life-sciences",
-      label: "Life Sciences Overview",
-      description: "Complete molecular biology solutions portfolio",
-      icon: FlaskConical
-    },
     {
       href: "/life-sciences/dna-rna-extraction",
       label: "DNA/RNA Extraction",
@@ -813,28 +801,30 @@ export default function Header() {
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('healthcare')}
               >
-                <button 
+                <Link 
+                  href="/healthcare"
                   className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/healthcare') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Healthcare
                   <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
+                </Link>
                 <DropdownMenu items={healthcareItems} isOpen={activeDropdown === 'healthcare'} menuKey="healthcare" />
               </li>
 
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('life-sciences')}
               >
-                <button 
+                <Link 
+                  href="/life-sciences"
                   className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/life-sciences') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Life Sciences
                   <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
+                </Link>
                 <DropdownMenu items={lifeSciencesItems} isOpen={activeDropdown === 'life-sciences'} menuKey="life-sciences" />
               </li>
 
