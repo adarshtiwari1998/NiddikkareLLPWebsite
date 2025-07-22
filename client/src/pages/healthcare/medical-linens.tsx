@@ -108,7 +108,7 @@ export default function MedicalLinens() {
                 <p className="text-xl text-gray-600">Specially designed for newborn care and comfort</p>
               </div>
 
-              <Link href="/products/medical-linens/baby-first-touch">
+              <Link href="/products/neonatal-care/baby-first-touch">
                 <div className="glass-card rounded-2xl overflow-hidden max-w-6xl mx-auto cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                   <div className="grid lg:grid-cols-2 gap-0">
                     {/* Image Section */}
