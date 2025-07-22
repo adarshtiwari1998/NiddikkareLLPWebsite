@@ -805,14 +805,15 @@ export default function Header() {
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('it-solutions')}
               >
-                <button 
+                <Link
+                  href="/it-solutions"
                   className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/it-solutions') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   IT Solutions
                   <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
+                </Link>
                 <DropdownMenu items={itSolutionsItems} isOpen={activeDropdown === 'it-solutions'} menuKey="it-solutions" />
               </li>
 
@@ -995,11 +996,22 @@ export default function Header() {
                     </div>
                     
                     <div className="space-y-1">
+                      {/* Parent IT Solutions link */}
+                      <Link
+                        href="/it-solutions"
+                        className={`flex items-center px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors ${
+                          location === '/it-solutions' ? 'bg-primary/10 text-primary' : ''
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <span>IT Solutions Overview</span>
+                      </Link>
+                      
                       <button
                         onClick={() => toggleSection('it-solutions')}
                         className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
                       >
-                        <span>IT Solutions</span>
+                        <span>Services</span>
                         <ChevronRight 
                           className={`h-4 w-4 transition-transform ${
                             collapsedSections.has('it-solutions') ? 'rotate-90' : ''

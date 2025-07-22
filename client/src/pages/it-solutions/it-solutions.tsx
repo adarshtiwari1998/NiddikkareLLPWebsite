@@ -381,7 +381,7 @@ export default function ITSolutions() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300"
+                className="px-8 py-4 text-lg font-semibold border-white text-primary hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300"
               >
                 Contact Our Team
               </Button>

@@ -15,6 +15,7 @@ Preferred communication style: Simple, everyday language.
 - Fixed breadcrumb display on home page: Modified SmartBreadcrumb component to not render breadcrumbs on the home page (/) to maintain clean home page design
 - Created comprehensive IT Solutions overview page: Designed /it-solutions page with enhanced UI/UX featuring service comparison tables, interactive cards, company statistics, and direct links to all three IT solution services (RPO, Contingent Workforce, Web App Solutions)
 - Updated IT Solutions page color scheme: Replaced blue color scheme with primary green colors throughout the page for brand consistency
+- Enhanced header navigation with IT Solutions parent page link: Made IT Solutions menu item clickable while maintaining dropdown functionality, following the same pattern as Healthcare and Life Sciences menus
 - Removed ISO 13485 and certification trademarks from neonatal care page: Replaced with generic healthcare quality terms (Hospital Grade Quality, Safety Verified, Healthcare Standard, Medical Device Safety, Energy Efficient)
 - Added CTA button to neonatal care page: "View Baby First Touch Product" button now links to /products/neonatal-care/baby-first-touch
 - Fixed navigation URL structure: Updated header-new.tsx to use proper parent slug /products/neonatal-care/baby-first-touch instead of /products/medical-linens/baby-first-touch
