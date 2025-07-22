@@ -1,193 +1,197 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Bed, Shield, Droplets, Zap, CheckCircle, Star, Award, Factory } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Bed, Shield, Droplets, CheckCircle, Star, Heart, Stethoscope, ArrowRight, Users } from "lucide-react";
+
+// Import medical linen images
+import maternityGownImg from "@/assets/medical-linens/maternity-gown-nkr-601.png";
+import mackintoshSheetImg from "@/assets/medical-linens/mackintosh-rubber-sheet-nkr-701-702.png";
+import bedsheetCoversImg from "@/assets/medical-linens/bedsheet-pillow-covers-nkr-202.png";
+import surgicalDrapesImg from "@/assets/medical-linens/surgical-drapes-towels-nkr-301.png";
+import scrubSuitImg from "@/assets/medical-linens/scrub-suit-nkr-501.png";
+import patientGownImg from "@/assets/medical-linens/patient-gown-nkr-602.png";
+import surgicalOTGownImg from "@/assets/medical-linens/surgical-ot-gown-nkr-401-402.png";
+import surgicalCutSheetsImg from "@/assets/medical-linens/surgical-cut-sheets-nkr-302.png";
+import receivingBlanketsImg from "@/assets/medical-linens/receiving-blankets-swaddle-nkr-101.png";
 
 export default function MedicalLinensProducts() {
-  const linenTypes = [
+  const productPortfolio = [
     {
-      title: "Surgical Linens",
-      description: "Sterile surgical drapes and gowns",
-      icon: Shield,
-      features: ["Fluid resistant", "Sterile barrier", "Comfortable fit", "Disposable"],
-      applications: ["Operating rooms", "Surgical procedures", "Sterile environments"],
-      color: "bg-blue-500"
+      name: "Maternity Gown",
+      code: "NKR-601",
+      image: maternityGownImg,
+      category: "Patient Care",
+      features: ["Comfortable fit", "Easy access", "Soft fabric", "Machine washable"]
     },
     {
-      title: "Patient Bedding",
-      description: "Comfortable and hygienic patient linens",
-      icon: Bed,
-      features: ["Soft material", "Easy cleaning", "Antimicrobial", "Wrinkle resistant"],
-      applications: ["Patient rooms", "Recovery areas", "Long-term care"],
-      color: "bg-green-500"
+      name: "Mackintosh Rubber Sheet",
+      code: "NKR-701/702",
+      subtitle: "With & W/o Cloth",
+      image: mackintoshSheetImg,
+      category: "Protective",
+      features: ["Waterproof", "Durable", "Easy to clean", "Infection control"]
     },
     {
-      title: "Protective Covers",
-      description: "Waterproof and protective coverings",
-      icon: Droplets,
-      features: ["Waterproof", "Breathable", "Durable", "Infection control"],
-      applications: ["ICU units", "Emergency rooms", "Isolation rooms"],
-      color: "bg-purple-500"
+      name: "Bedsheet with Pillow Covers",
+      code: "NKR-202",
+      image: bedsheetCoversImg,
+      category: "Bedding",
+      features: ["Soft cotton", "Wrinkle resistant", "Easy care", "Comfort focused"]
     },
     {
-      title: "Specialty Textiles",
-      description: "Specialized medical textiles",
-      icon: Zap,
-      features: ["Conductive properties", "Anti-static", "Flame retardant", "Custom designs"],
-      applications: ["Cardiac units", "Burn centers", "Specialized procedures"],
-      color: "bg-orange-500"
+      name: "Surgical Drapes/Towels",
+      code: "NKR-301",
+      subtitle: "Plain",
+      image: surgicalDrapesImg,
+      category: "Surgical",
+      features: ["Sterile barrier", "Fluid resistant", "Single use", "High quality"]
+    },
+    {
+      name: "Scrub Suit",
+      code: "NKR-501",
+      image: scrubSuitImg,
+      category: "Surgical",
+      features: ["Professional fit", "Breathable", "Comfortable", "Easy movement"]
+    },
+    {
+      name: "Patient Gown",
+      code: "NKR-602",
+      image: patientGownImg,
+      category: "Patient Care",
+      features: ["Patient comfort", "Easy access", "Tie closure", "Soft material"]
+    },
+    {
+      name: "Surgical/OT Gown",
+      code: "NKR-401/402",
+      subtitle: "with/Without overlap",
+      image: surgicalOTGownImg,
+      category: "Surgical",
+      features: ["Sterile protection", "Fluid resistant", "Reinforced", "Professional"]
+    },
+    {
+      name: "Surgical Cut Sheets",
+      code: "NKR-302",
+      subtitle: "with holes",
+      image: surgicalCutSheetsImg,
+      category: "Surgical",
+      features: ["Precise openings", "Sterile field", "Single use", "Quality assured"]
     }
   ];
 
-  const qualityMetrics = [
-    { metric: "Fluid Resistance", value: "≥300 mmHg", progress: 95 },
-    { metric: "Tensile Strength", value: "≥40 N", progress: 92 },
-    { metric: "Antimicrobial Efficacy", value: "99.9% reduction", progress: 98 },
-    { metric: "Comfort Rating", value: "4.8/5.0", progress: 96 },
-    { metric: "Durability", value: "100+ wash cycles", progress: 90 },
-    { metric: "Environmental Impact", value: "Eco-friendly", progress: 85 }
+  const featuredProductFeatures = [
+    { text: "Breathable, 100% cotton", color: "bg-red-50 text-red-700" },
+    { text: "Germ free", color: "bg-green-50 text-green-700" },
+    { text: "Mimics the womb", color: "bg-purple-50 text-purple-700" },
+    { text: "Reduces startle reflex", color: "bg-yellow-50 text-yellow-700" },
+    { text: "Soothes colicky babies", color: "bg-green-50 text-green-700" },
+    { text: "Improves sleep", color: "bg-orange-50 text-orange-700" },
+    { text: "Hygiene & Comfort", color: "bg-blue-50 text-blue-700" }
   ];
 
-  const certifications = [
-    { name: "FDA 510(k)", status: "Approved", icon: Award },
-    { name: "AATCC Standards", status: "Compliant", icon: CheckCircle },
-    { name: "ISO 13485", status: "Certified", icon: Factory },
-    { name: "OEKO-TEX", status: "Standard 100", icon: Shield }
-  ];
-
-  const benefits = [
-    {
-      title: "Infection Prevention",
-      description: "Advanced antimicrobial properties reduce infection risk",
-      percentage: 97
-    },
-    {
-      title: "Cost Effectiveness",
-      description: "Durable materials reduce replacement frequency",
-      percentage: 85
-    },
-    {
-      title: "Patient Comfort",
-      description: "Soft, breathable fabrics enhance patient experience",
-      percentage: 93
-    },
-    {
-      title: "Staff Efficiency",
-      description: "Easy-care properties save time and resources",
-      percentage: 88
-    }
+  const categories = [
+    { name: "All", count: productPortfolio.length },
+    { name: "Surgical", count: productPortfolio.filter(p => p.category === "Surgical").length },
+    { name: "Patient Care", count: productPortfolio.filter(p => p.category === "Patient Care").length },
+    { name: "Bedding", count: productPortfolio.filter(p => p.category === "Bedding").length },
+    { name: "Protective", count: productPortfolio.filter(p => p.category === "Protective").length }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-100">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-green-50">
+      
       {/* Hero Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6">
+              <Stethoscope className="w-10 h-10" />
+            </div>
+            <h1 className="text-5xl font-bold mb-6">Medical Linens Collection</h1>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              Exceptional hospital linen solutions that elevate patient care through superior quality, 
+              comfort, and infection control design
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold">Premium</div>
+                <div className="text-sm text-blue-100">Quality Products</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold">100%</div>
+                <div className="text-sm text-blue-100">Cotton Materials</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold">Sterile</div>
+                <div className="text-sm text-blue-100">Certified Safe</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold">CSSD</div>
+                <div className="text-sm text-blue-100">Compliant</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Product Section - Different Layout */}
       <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6">
-            <Bed className="w-10 h-10 text-white" />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Medical Linens Products
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Professional-grade medical textiles for healthcare facilities worldwide
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">500+</div>
-              <div className="text-sm text-gray-600">Hospitals Served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">99.9%</div>
-              <div className="text-sm text-gray-600">Infection Reduction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">24/7</div>
-              <div className="text-sm text-gray-600">Support Available</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">ISO</div>
-              <div className="text-sm text-gray-600">Certified Quality</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Categories */}
-      <section className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Product Categories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {linenTypes.map((type, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardHeader className="text-center">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${type.color} rounded-full mb-4`}>
-                    <type.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl">{type.title}</CardTitle>
-                  <CardDescription>{type.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-sm mb-2">Features:</h4>
-                      <ul className="space-y-1">
-                        {type.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm">
-                            <CheckCircle className="w-3 h-3 text-green-500 mr-2" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm mb-2">Applications:</h4>
-                      <ul className="space-y-1">
-                        {type.applications.map((app, idx) => (
-                          <li key={idx} className="text-sm text-gray-600">• {app}</li>
-                        ))}
-                      </ul>
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-lg py-2 px-6" variant="secondary">
+              <Star className="w-4 h-4 mr-2" />
+              Featured Product
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Receiving Blankets/Swaddle NKR-101
+            </h2>
+            <p className="text-xl text-gray-600">Specially designed for newborn care and comfort</p>
+          </div>
+
+          {/* Interactive Feature Cards Layout */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Product Image - Center */}
+            <div className="lg:order-2">
+              <Card className="overflow-hidden shadow-2xl border-0">
+                <div className="aspect-square relative">
+                  <img 
+                    src={receivingBlanketsImg} 
+                    alt="Receiving Blankets/Swaddle NKR-101"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 text-center">
+                      <h3 className="font-bold text-lg text-gray-800">Receiving Blankets/Swaddle</h3>
+                      <p className="text-blue-600 font-semibold">NKR-101</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quality Metrics */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Quality & Performance</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              {qualityMetrics.map((metric, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">{metric.metric}</span>
-                    <span className="text-sm text-primary font-semibold">{metric.value}</span>
-                  </div>
-                  <Progress value={metric.progress} className="h-3" />
                 </div>
+              </Card>
+            </div>
+
+            {/* Features Left Side */}
+            <div className="lg:order-1 space-y-4">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Key Benefits</h3>
+              {featuredProductFeatures.slice(0, 4).map((feature, index) => (
+                <Card key={index} className={`p-4 border-0 ${feature.color} hover:scale-105 transition-transform`}>
+                  <div className="flex items-center space-x-3">
+                    <Heart className="w-5 h-5" />
+                    <span className="font-semibold">{feature.text}</span>
+                  </div>
+                </Card>
               ))}
             </div>
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <CardTitle className="text-lg">{benefit.title}</CardTitle>
-                        <CardDescription className="text-sm">{benefit.description}</CardDescription>
-                      </div>
-                      <div className="text-2xl font-bold text-primary">{benefit.percentage}%</div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <Progress value={benefit.percentage} className="h-2" />
-                  </CardContent>
+
+            {/* Features Right Side */}
+            <div className="lg:order-3 space-y-4">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Health Features</h3>
+              {featuredProductFeatures.slice(4).map((feature, index) => (
+                <Card key={index} className={`p-4 border-0 ${feature.color} hover:scale-105 transition-transform`}>
+                  <div className="flex items-center space-x-3">
+                    <Shield className="w-5 h-5" />
+                    <span className="font-semibold">{feature.text}</span>
+                  </div>
                 </Card>
               ))}
             </div>
@@ -195,83 +199,117 @@ export default function MedicalLinensProducts() {
         </div>
       </section>
 
-      {/* Certifications */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Product Portfolio Section - Tab-based Layout */}
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Certifications & Standards</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                    <cert.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{cert.name}</CardTitle>
-                  <CardDescription>
-                    <Badge variant="secondary">{cert.status}</Badge>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sustainability */}
-      <section className="py-16 px-4 bg-green-50">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Sustainable Healthcare Textiles</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Committed to environmental responsibility without compromising on quality or safety
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Product Portfolio</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              We deliver exceptional hospital linen solutions that elevate patient care. Our extensive
+              portfolio features premium products, including soft bed sheets with pillow covers, surgical
+              draw sheets, surgical gowns, rubber sheets, and receiving blankets. Each item is carefully
+              designed to prioritize comfort, hygiene, and quality.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500 rounded-full mb-4">
-                  <Droplets className="w-8 h-8 text-white" />
+            
+            {/* CSSD Note */}
+            <Card className="p-6 bg-blue-50 border-blue-200 max-w-4xl mx-auto">
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                <div className="text-left">
+                  <p className="text-sm text-blue-800 font-medium">
+                    <strong>Note:</strong> We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the
+                    use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for Cuddle Up With Hygiene reducing the rate of Hospital Acquired Infection.
+                  </p>
                 </div>
-                <CardTitle>Water Conservation</CardTitle>
-                <CardDescription>30% reduction in water usage during manufacturing</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500 rounded-full mb-4">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle>Energy Efficiency</CardTitle>
-                <CardDescription>Renewable energy powers 70% of our facilities</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-500 rounded-full mb-4">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle>Eco-Friendly Materials</CardTitle>
-                <CardDescription>Biodegradable and recycled materials used</CardDescription>
-              </CardHeader>
+              </div>
             </Card>
           </div>
+
+          {/* Category Tabs */}
+          <Tabs defaultValue="All" className="w-full">
+            <div className="flex justify-center mb-12">
+              <TabsList className="grid grid-cols-5 w-full max-w-2xl h-12">
+                {categories.map((category) => (
+                  <TabsTrigger 
+                    key={category.name} 
+                    value={category.name}
+                    className="text-sm font-semibold"
+                  >
+                    {category.name} ({category.count})
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+
+            {categories.map((category) => (
+              <TabsContent key={category.name} value={category.name}>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {productPortfolio
+                    .filter(product => category.name === "All" || product.category === category.name)
+                    .map((product, index) => (
+                      <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                        <div className="aspect-square overflow-hidden relative">
+                          <img 
+                            src={product.image} 
+                            alt={product.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <Badge className="absolute top-3 left-3 bg-white/90 text-gray-800">
+                            {product.category}
+                          </Badge>
+                        </div>
+                        <CardContent className="p-6">
+                          <h3 className="font-bold text-lg text-gray-800 mb-2">{product.name}</h3>
+                          <div className="text-blue-600 font-semibold mb-3">
+                            <p>{product.code}</p>
+                            {product.subtitle && (
+                              <p className="text-sm text-gray-600">{product.subtitle}</p>
+                            )}
+                          </div>
+                          
+                          {/* Features List */}
+                          <div className="space-y-2 mb-4">
+                            {product.features.slice(0, 3).map((feature, idx) => (
+                              <div key={idx} className="flex items-center text-sm text-gray-600">
+                                <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                                {feature}
+                              </div>
+                            ))}
+                          </div>
+                          
+                          <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            View Details
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    ))}
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-primary text-white">
+      {/* Call to Action */}
+      <section className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Upgrade Your Healthcare Facility</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Experience the difference premium medical linens can make
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
-              Request Samples
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              Get Quote
-            </Button>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6">Elevate Your Healthcare Standards</h2>
+            <p className="text-xl mb-8 text-blue-100">
+              Discover how our premium medical linens can transform patient care in your facility
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                <Users className="w-5 h-5 mr-2" />
+                Contact Our Team
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                <Stethoscope className="w-5 h-5 mr-2" />
+                Request Catalog
+              </Button>
+            </div>
           </div>
         </div>
       </section>
