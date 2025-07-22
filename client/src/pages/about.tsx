@@ -22,54 +22,124 @@ export default function About() {
         <section className="mb-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
-              <h2 className="text-4xl font-bold text-gray-800 mb-8 section-header">
-                About Us
-              </h2>
-              <div className="glass-card p-8 rounded-2xl">
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  At NIDDIKKARE LLP, our team of experts empowers researchers and clinicians to transform human health. We 
-                  provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics. High-quality 
-                  DNA and RNA extraction is crucial for molecular biology applications. Our comprehensive solutions cater to diverse 
-                  sample sources, streamlining research workflows and driving breakthroughs.
-                </p>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  The Extraction Kit follows an optimised chaotropic salt chemistry with a novel reversible binding of silica with nucleic acids 
-                  under optimised salt & pH concentration of buffer. It allows very small elution volume (starting from 30μl) resulting in high 
-                  concentration of DNA for downstream applications. The key benefit of using this Extraction Kit is to prevent the use resins, 
-                  organic solvent based precipitation, and hazardous compounds such as phenol, chloroform etc. which interfere during 
-                  downstream application in PCR/Sequencing. The DNA/RNA Extraction Kit work on the principle of <strong>"LYSE, BIND & ELUTE"</strong>.
-                  The unique chemistry and buffer conditions gives Contaminants & Inhibitors Free High Quality DNA/RNA by following 
-                  Silica Based Solid-Phase Extraction Method using either Spin-Column or Magnetic Bead Particles.
-                </p>
+              <div className="relative">
+                <div className="absolute -top-4 -left-4 w-20 h-20 bg-primary/10 rounded-full"></div>
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-secondary/10 rounded-full"></div>
+                <div className="relative glass-card p-8 rounded-2xl border-l-4 border-primary">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                      <Microscope className="h-6 w-6 text-primary" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-800 section-header">
+                      About Us
+                    </h2>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-xl border-l-4 border-blue-400">
+                      <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+                        <Heart className="h-5 w-5 text-red-500 mr-2" />
+                        Our Mission
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        At NIDDIKKARE LLP, our team of experts empowers researchers and clinicians to transform human health. We 
+                        provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border-l-4 border-green-400">
+                      <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+                        <Award className="h-5 w-5 text-yellow-500 mr-2" />
+                        Our Technology
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        The Extraction Kit follows optimized chaotropic salt chemistry with novel reversible binding of silica with nucleic acids. 
+                        Key advantages include very small elution volume (starting from 30μl) for high DNA concentration.
+                      </p>
+                      <div className="bg-white/80 p-4 rounded-lg border border-green-200">
+                        <p className="text-center font-bold text-primary text-lg">
+                          "LYSE, BIND & ELUTE"
+                        </p>
+                        <p className="text-sm text-gray-600 text-center mt-2">
+                          Silica Based Solid-Phase Extraction Method
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             
             <div className="animate-fade-in">
-              <div className="glass-card p-8 rounded-2xl text-center">
-                <Building className="h-24 w-24 text-primary mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Healthcare & IT Solutions</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Leveraging expertise in both domains to drive innovation. Our healthcare team develops cutting-edge 
-                  products for the healthcare industry, while our IT sector provides top-notch resources, consultation, 
-                  and recruitment services.
-                </p>
+              <div className="relative">
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full"></div>
+                <div className="relative glass-card p-8 rounded-2xl text-center bg-gradient-to-br from-white to-gray-50">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                    <Building className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6">Healthcare & IT Solutions</h3>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <Heart className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                      <p className="text-sm font-semibold text-blue-800">Healthcare</p>
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <Globe className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                      <p className="text-sm font-semibold text-green-800">IT Solutions</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-600 leading-relaxed">
+                    Leveraging expertise in both domains to drive innovation. Our healthcare team develops cutting-edge 
+                    products while our IT sector provides top-notch consultation and recruitment services.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Product Showcase Image */}
-        <section className="mb-16">
-          <div className="text-center">
-            <div className="max-w-4xl mx-auto">
-              <img 
-                src="/assets/images/about-us/nucleic-acid-extraction-kit.png" 
-                alt="Nucleic Acid Extraction Kit - DNA/RNA Laboratory Equipment" 
-                className="w-full h-auto rounded-2xl shadow-xl border border-gray-200"
-              />
-              <p className="text-sm text-gray-500 mt-4 italic">
-                Professional-grade Nucleic Acid Extraction Kit for high-quality DNA/RNA isolation
-              </p>
+        {/* Product Showcase Section */}
+        <section className="mb-20">
+          <div className="relative">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-white to-green-50 rounded-3xl"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-8 translate-x-8"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full translate-y-8 -translate-x-8"></div>
+            
+            <div className="relative p-12">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+                  <Microscope className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                  Professional Laboratory Equipment
+                </h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  State-of-the-art Nucleic Acid Extraction Kit for precision DNA/RNA isolation
+                </p>
+              </div>
+              
+              <div className="max-w-4xl mx-auto">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-75"></div>
+                  <div className="relative bg-white rounded-2xl p-4 shadow-2xl border border-gray-100">
+                    <img 
+                      src="/assets/images/about-us/nucleic-acid-extraction-kit.png" 
+                      alt="Nucleic Acid Extraction Kit - Professional DNA/RNA Laboratory Equipment" 
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <div className="inline-flex items-center space-x-2 bg-white/80 px-6 py-3 rounded-full shadow-lg border border-gray-200">
+                    <Check className="h-5 w-5 text-green-600" />
+                    <span className="text-gray-700 font-medium">Professional-grade Nucleic Acid Extraction Kit</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
