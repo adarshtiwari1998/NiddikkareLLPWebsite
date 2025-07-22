@@ -85,6 +85,54 @@ export default function Header() {
           description: "100% cotton construction",
           icon: Layers
         },
+        {
+          href: "/products/medical-linens/maternity-gown",
+          label: "Maternity Gown",
+          description: "Comfortable fit, breathable, soft fabric",
+          icon: Heart
+        },
+        {
+          href: "/products/medical-linens/mackintosh-rubber-sheet",
+          label: "Mackintosh Rubber Sheet",
+          description: "Waterproof, durable, easy to clean",
+          icon: Shield
+        },
+        {
+          href: "/products/medical-linens/bedsheet-pillow-covers",
+          label: "Bedsheet with Pillow Covers",
+          description: "Soft cotton, wrinkle resistant, easy care",
+          icon: Bed
+        },
+        {
+          href: "/products/medical-linens/surgical-drapes-towels",
+          label: "Surgical Drapes/Towels",
+          description: "Sterile barrier, fluid resistant, single use",
+          icon: Shirt
+        },
+        {
+          href: "/products/medical-linens/scrub-suit",
+          label: "Scrub Suit",
+          description: "Professional fit, breathable, comfortable",
+          icon: Shirt
+        },
+        {
+          href: "/products/medical-linens/patient-gown",
+          label: "Patient Gown",
+          description: "Patient comfort, easy access, tie closure",
+          icon: Baby
+        },
+        {
+          href: "/products/medical-linens/surgical-ot-gown",
+          label: "Surgical/OT Gown",
+          description: "Sterile protection, fluid resistant, reinforced",
+          icon: Shield
+        },
+        {
+          href: "/products/medical-linens/surgical-cut-sheets",
+          label: "Surgical Cut Sheets",
+          description: "Precise openings, sterile field, single use",
+          icon: Layers
+        }
       ]
     },
     {

@@ -43,6 +43,14 @@ import ProductsMolecularDiagnostics from "@/pages/products/molecular-diagnostics
 
 // Medical Linens Sub-pages
 import BabyFirstTouch from "@/pages/products/medical-linens/baby-first-touch";
+import MaternityGown from "@/pages/products/medical-linens/maternity-gown";
+import MackintoshRubberSheet from "@/pages/products/medical-linens/mackintosh-rubber-sheet";
+import BedsheetPillowCovers from "@/pages/products/medical-linens/bedsheet-pillow-covers";
+import SurgicalDrapesTowels from "@/pages/products/medical-linens/surgical-drapes-towels";
+import ScrubSuit from "@/pages/products/medical-linens/scrub-suit";
+import PatientGown from "@/pages/products/medical-linens/patient-gown";
+import SurgicalOTGown from "@/pages/products/medical-linens/surgical-ot-gown";
+import SurgicalCutSheets from "@/pages/products/medical-linens/surgical-cut-sheets";
 
 // New IT Solutions pages
 import RPO from "@/pages/it-solutions/rpo";
@@ -71,6 +79,14 @@ function Router() {
           <Route path="/products/neonatal-care" component={ProductsNeonatalCare} />
           <Route path="/products/medical-linens" component={ProductsMedicalLinens} />
           <Route path="/products/medical-linens/baby-first-touch" component={BabyFirstTouch} />
+          <Route path="/products/medical-linens/maternity-gown" component={MaternityGown} />
+          <Route path="/products/medical-linens/mackintosh-rubber-sheet" component={MackintoshRubberSheet} />
+          <Route path="/products/medical-linens/bedsheet-pillow-covers" component={BedsheetPillowCovers} />
+          <Route path="/products/medical-linens/surgical-drapes-towels" component={SurgicalDrapesTowels} />
+          <Route path="/products/medical-linens/scrub-suit" component={ScrubSuit} />
+          <Route path="/products/medical-linens/patient-gown" component={PatientGown} />
+          <Route path="/products/medical-linens/surgical-ot-gown" component={SurgicalOTGown} />
+          <Route path="/products/medical-linens/surgical-cut-sheets" component={SurgicalCutSheets} />
           <Route path="/products/dna-rna-extraction" component={ProductsDnaRnaExtraction} />
           <Route path="/products/molecular-diagnostics" component={ProductsMolecularDiagnostics} />
           
