@@ -160,14 +160,14 @@ export default function ITSolutions() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-emerald-100">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-8 shadow-xl">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-primary rounded-full mb-8 shadow-xl">
             <Code className="w-12 h-12 text-white" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-primary to-green-600 bg-clip-text text-transparent">
             IT Solutions & Services
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -179,10 +179,10 @@ export default function ITSolutions() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto">
             {companyStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mb-3">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary rounded-full mb-3">
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-blue-600 mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -191,7 +191,7 @@ export default function ITSolutions() {
           <div className="flex flex-col items-center">
             <Button 
               size="lg"
-              className="px-12 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+              className="px-12 py-4 text-lg font-semibold bg-primary hover:bg-primary/90 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
               onClick={() => window.open('https://niddik.com', '_blank')}
             >
               Explore Our Services
@@ -232,7 +232,7 @@ export default function ITSolutions() {
                   <div className="grid grid-cols-2 gap-3">
                     {solution.stats.map((stat, idx) => (
                       <div key={idx} className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-lg font-bold text-blue-600">{stat.value}</div>
+                        <div className="text-lg font-bold text-primary">{stat.value}</div>
                         <div className="text-xs text-gray-600">{stat.label}</div>
                       </div>
                     ))}
@@ -254,11 +254,11 @@ export default function ITSolutions() {
                   {/* Process Info */}
                   <div className="flex justify-between items-center pt-4 border-t border-gray-200">
                     <div className="text-center">
-                      <div className="text-lg font-bold text-blue-600">{solution.processSteps}</div>
+                      <div className="text-lg font-bold text-primary">{solution.processSteps}</div>
                       <div className="text-xs text-gray-600">Process Steps</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg font-bold text-blue-600">{solution.timeline}</div>
+                      <div className="text-lg font-bold text-primary">{solution.timeline}</div>
                       <div className="text-xs text-gray-600">Typical Timeline</div>
                     </div>
                   </div>
@@ -292,12 +292,12 @@ export default function ITSolutions() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 bg-gradient-to-br from-gray-50 to-blue-50">
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 bg-gradient-to-br from-gray-50 to-green-50">
                 <CardHeader>
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mb-4 mx-auto">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-4 mx-auto">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <Badge variant="secondary" className="mb-2 bg-blue-100 text-blue-700">{item.highlight}</Badge>
+                  <Badge variant="secondary" className="mb-2 bg-green-100 text-green-700">{item.highlight}</Badge>
                   <CardTitle className="text-lg">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -310,7 +310,7 @@ export default function ITSolutions() {
       </section>
 
       {/* Service Comparison */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="py-20 px-4 bg-gradient-to-br from-green-50 to-emerald-100">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Service Comparison</h2>
@@ -321,7 +321,7 @@ export default function ITSolutions() {
 
           <div className="overflow-x-auto">
             <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-              <thead className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+              <thead className="bg-primary text-white">
                 <tr>
                   <th className="px-6 py-4 text-left font-semibold">Feature</th>
                   <th className="px-6 py-4 text-center font-semibold">RPO</th>
@@ -361,7 +361,7 @@ export default function ITSolutions() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+      <section className="py-20 px-4 bg-primary text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
@@ -381,7 +381,7 @@ export default function ITSolutions() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-blue-600 hover:scale-105 transition-all duration-300"
+                className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300"
               >
                 Contact Our Team
               </Button>
