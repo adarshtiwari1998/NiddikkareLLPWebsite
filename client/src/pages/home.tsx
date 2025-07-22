@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         
         <div className="container mx-auto px-4 z-10 text-center">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto py-8 sm:py-12 md:py-0">
             {/* Company Logo/Name */}
             <div className="mb-8">
               <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
@@ -48,33 +48,33 @@ export default function Home() {
             </div>
             
             {/* Main tagline */}
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
               Harnesses the power of talent and technology to unlock limitless possibilities for its clients and customers
             </p>
             
             {/* Key value propositions */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="glass-card p-6 rounded-2xl">
-                <Baby className="h-12 w-12 text-secondary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Baby's First Touch</h3>
-                <p className="text-gray-600 text-sm">Providing world's safest receiving blankets for newborns</p>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12 px-1 sm:px-2 md:px-0">
+              <div className="glass-card p-2 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl">
+                <Baby className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-secondary mx-auto mb-2 sm:mb-3 md:mb-4" />
+                <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1 sm:mb-2 leading-tight">Baby's First Touch</h3>
+                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm leading-tight hidden sm:block">Providing world's safest receiving blankets for newborns</p>
               </div>
               
-              <div className="glass-card p-6 rounded-2xl">
-                <Stethoscope className="h-12 w-12 text-secondary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Hospital Linens</h3>
-                <p className="text-gray-600 text-sm">Exceptional hospital linen solutions for patient care</p>
+              <div className="glass-card p-2 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl">
+                <Stethoscope className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-secondary mx-auto mb-2 sm:mb-3 md:mb-4" />
+                <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1 sm:mb-2 leading-tight">Hospital Linens</h3>
+                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm leading-tight hidden sm:block">Exceptional hospital linen solutions for patient care</p>
               </div>
               
-              <div className="glass-card p-6 rounded-2xl">
-                <Dna className="h-12 w-12 text-secondary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Life Sciences</h3>
-                <p className="text-gray-600 text-sm">Advanced molecular biology and diagnostic solutions</p>
+              <div className="glass-card p-2 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl">
+                <Dna className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-secondary mx-auto mb-2 sm:mb-3 md:mb-4" />
+                <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1 sm:mb-2 leading-tight">Life Sciences</h3>
+                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm leading-tight hidden sm:block">Advanced molecular biology and diagnostic solutions</p>
               </div>
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
               <Link href="/about">
                 <Button size="lg" className="btn-modern">
                   Learn More About Us
