@@ -775,14 +775,16 @@ export default function Header() {
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('products')}
               >
-                <button 
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
-                    location.startsWith('/products') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
-                  }`}
-                >
-                  Products
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
+                <Link href="/products">
+                  <button 
+                    className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                      location.startsWith('/products') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
+                    }`}
+                  >
+                    Products
+                    <ChevronDown className="h-4 w-4 ml-1" />
+                  </button>
+                </Link>
                 <DropdownMenu items={productsItems} isOpen={activeDropdown === 'products'} menuKey="products" />
               </li>
 

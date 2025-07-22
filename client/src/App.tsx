@@ -36,6 +36,7 @@ import ContractResearch from "@/pages/services/contract-research";
 import OEMProducts from "@/pages/services/oem-products";
 
 // New Products pages
+import Products from "@/pages/products/products";
 import ProductsNeonatalCare from "@/pages/products/neonatal-care";
 import ProductsMedicalLinens from "@/pages/products/medical-linens";
 import ProductsDnaRnaExtraction from "@/pages/products/dna-rna-extraction";
@@ -96,6 +97,7 @@ function Router() {
           <Route path="/services/oem-products" component={OEMProducts} />
           
           {/* Products Routes */}
+          <Route path="/products" component={Products} />
           <Route path="/products/neonatal-care" component={ProductsNeonatalCare} />
           <Route path="/products/neonatal-care/baby-first-touch" component={NeonatalBabyFirstTouch} />
           <Route path="/products/medical-linens" component={ProductsMedicalLinens} />
