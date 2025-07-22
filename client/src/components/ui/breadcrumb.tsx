@@ -151,15 +151,15 @@ interface SmartBreadcrumbProps {
 export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
   const [location] = useLocation();
   
+  // Don't render breadcrumbs on home page
+  if (location === "/") {
+    return null;
+  }
+  
   const generateBreadcrumbs = (pathname: string): BreadcrumbItem[] => {
     const breadcrumbs: BreadcrumbItem[] = [
       { label: "Home", href: "/" }
     ];
-    
-    // Handle root path
-    if (pathname === "/") {
-      return [{ label: "Home", isCurrentPage: true }];
-    }
     
     const segments = pathname.split("/").filter(Boolean);
     let currentPath = "";
