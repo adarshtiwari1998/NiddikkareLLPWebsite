@@ -77,25 +77,21 @@ export default function DnaRnaExtraction() {
 
           {/* Portfolio Overview Cards */}
           <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="space-y-8">
               <img 
                 src="@assets/image_1753168792740.png" 
                 alt="DNA Extraction Kits - Plant, Tissue, Blood, and Blood & Cell Culture" 
-                className="rounded-xl shadow-lg w-full h-auto"
+                className="rounded-xl shadow-lg w-full h-auto mx-auto"
               />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <img 
                 src="@assets/image_1753168807313.png" 
                 alt="Additional DNA/RNA Extraction Kits - Gel & PCR, Plant RNA, Tissue RNA, and Viral Nucleic Acid" 
-                className="rounded-xl shadow-lg w-full h-auto"
+                className="rounded-xl shadow-lg w-full h-auto mx-auto"
               />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <img 
                 src="@assets/image_1753168818159.png" 
                 alt="Blood & Cell Culture RNA and Plasmid DNA Extraction Kits" 
-                className="rounded-xl shadow-lg w-full h-auto"
+                className="rounded-xl shadow-lg w-full h-auto mx-auto"
               />
             </div>
           </div>
@@ -107,7 +103,7 @@ export default function DnaRnaExtraction() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="@assets/image_1753167745564.png" 
+                  src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Plant DNA extraction laboratory setup" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -343,7 +339,7 @@ export default function DnaRnaExtraction() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Gel and PCR product purification setup" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -450,7 +446,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Plant RNA extraction from leaves" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -568,7 +564,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Viral nucleic acid extraction laboratory" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -579,7 +575,7 @@ export default function DnaRnaExtraction() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Blood and cell culture RNA extraction" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
