@@ -115,27 +115,31 @@ export default function RPO() {
             <Users className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Full RPO
+            RPO
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             End-to-end recruitment process outsourcing for comprehensive talent acquisition needs.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">2000+</div>
-              <div className="text-sm text-gray-600">Successful Placements</div>
+              <div className="text-3xl font-bold text-primary">10K+</div>
+              <div className="text-sm text-gray-600">Communities Engaged</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">95%</div>
-              <div className="text-sm text-gray-600">Fill Rate</div>
+              <div className="text-3xl font-bold text-primary">12+</div>
+              <div className="text-sm text-gray-600">Panelled Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">18</div>
-              <div className="text-sm text-gray-600">Days Average TTF</div>
+              <div className="text-3xl font-bold text-primary">50%</div>
+              <div className="text-sm text-gray-600">Faster Time to Submit</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">50+</div>
-              <div className="text-sm text-gray-600">Client Partners</div>
+              <div className="text-3xl font-bold text-primary">500K+</div>
+              <div className="text-sm text-gray-600">Talent Pools</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary">200+</div>
+              <div className="text-sm text-gray-600">Candidates Engaged</div>
             </div>
           </div>
           <div className="flex justify-center">
