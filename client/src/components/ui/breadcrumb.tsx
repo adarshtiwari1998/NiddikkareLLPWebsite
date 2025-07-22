@@ -173,6 +173,7 @@ export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
       "life-sciences": "Life Sciences", 
       "it-solutions": "IT Solutions",
       "tools": "Tools",
+      "testing": "Testing",
       
       // Products
       "neonatal-care": "Neonatal Care",
@@ -217,12 +218,15 @@ export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
       "vial-finder": "VialFinder",
       "bioanalysis-kitfinder": "Bioanalysis Kit Finder",
       
-      // Other pages
-      "gut-care": "Gut Care Products",
+      // Testing Solutions
       "filtration": "Filtration Solutions",
-      "rapid-tests": "Rapid Test Solutions", 
+      "rapid-tests": "Rapid Test Solutions",
+      "water-analysis": "Water Analysis",
       "chromatography": "Chromatography Solutions",
       "bioanalysis": "Bioanalysis Solutions",
+      
+      // Other pages
+      "gut-care": "Gut Care Products",
       "about": "About Us",
       "news": "News & Updates",
       "contact": "Contact Us"

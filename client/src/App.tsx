@@ -13,10 +13,14 @@ import BlendedMedicalLinens from "@/pages/healthcare/medical-linens/blended";
 import DnaRnaExtraction from "@/pages/life-sciences/dna-rna-extraction";
 import MolecularDiagnostics from "@/pages/life-sciences/molecular-diagnostics";
 import GutCare from "@/pages/gut-care";
-import Filtration from "@/pages/filtration";
-import RapidTests from "@/pages/rapid-tests";
-import Chromatography from "@/pages/chromatography";
-import Bioanalysis from "@/pages/bioanalysis";
+
+// Testing pages
+import Testing from "@/pages/testing/testing";
+import Filtration from "@/pages/testing/filtration";
+import RapidTests from "@/pages/testing/rapid-tests";
+import Chromatography from "@/pages/testing/chromatography";
+import Bioanalysis from "@/pages/testing/bioanalysis";
+import WaterAnalysis from "@/pages/testing/water-analysis";
 import About from "@/pages/about";
 import News from "@/pages/news";
 import Contact from "@/pages/contact";
@@ -149,12 +153,16 @@ function Router() {
           <Route path="/life-sciences/dna-rna-extraction" component={DnaRnaExtraction} />
           <Route path="/life-sciences/molecular-diagnostics" component={MolecularDiagnostics} />
           
+          {/* Testing Routes */}
+          <Route path="/testing" component={Testing} />
+          <Route path="/testing/filtration" component={Filtration} />
+          <Route path="/testing/rapid-tests" component={RapidTests} />
+          <Route path="/testing/water-analysis" component={WaterAnalysis} />
+          <Route path="/testing/chromatography" component={Chromatography} />
+          <Route path="/testing/bioanalysis" component={Bioanalysis} />
+          
           {/* Other Routes */}
           <Route path="/gut-care" component={GutCare} />
-          <Route path="/filtration" component={Filtration} />
-          <Route path="/rapid-tests" component={RapidTests} />
-          <Route path="/chromatography" component={Chromatography} />
-          <Route path="/bioanalysis" component={Bioanalysis} />
           <Route path="/about" component={About} />
           <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />
