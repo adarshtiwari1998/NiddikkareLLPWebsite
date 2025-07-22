@@ -22,6 +22,7 @@ Preferred communication style: Simple, everyday language.
 - Fixed favicon loading issue: Updated HTML to reference correct path `/assets/images/favicon/favicon.png`
 - Removed certification trademarks from Consultancy IVD page: Eliminated ISO 13485, FDA Approved, CE Marking references
 - Removed certification trademarks from Contract Research page: Eliminated GCP, FDA, ISO 14155, CFR Part 11 references
+- Updated OEM Products page statistics: Changed to 4+ Years of Excellence, 10+ Healthcare Partners, 5+ Countries Served, kept 99.8% Quality Rate
 - Fixed dropdown menu clickability issue: parent items with submenus (e.g., Medical Linens) are now clickable while still showing submenus on hover
 
 ## System Architecture

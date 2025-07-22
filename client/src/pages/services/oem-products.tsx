@@ -85,9 +85,9 @@ export default function OEMProducts() {
   ];
 
   const stats = [
-    { value: "15+", label: "Years Experience" },
-    { value: "500+", label: "Products Manufactured" },
-    { value: "50+", label: "Global Partners" },
+    { value: "4+", label: "Years of Excellence" },
+    { value: "10+", label: "Healthcare Partners" },
+    { value: "5+", label: "Countries Served" },
     { value: "99.8%", label: "Quality Rate" }
   ];
 
