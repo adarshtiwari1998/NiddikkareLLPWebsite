@@ -31,6 +31,7 @@ import VialFinder from "@/pages/tools/vial-finder";
 import BioanalysisKitFinder from "@/pages/tools/bioanalysis-kitfinder";
 
 // New Services pages
+import Services from "@/pages/services/services";
 import ConsultancyIVD from "@/pages/services/consultancy-ivd";
 import ContractResearch from "@/pages/services/contract-research";
 import OEMProducts from "@/pages/services/oem-products";
@@ -92,6 +93,7 @@ function Router() {
           <Route path="/" component={Home} />
           
           {/* Services Routes */}
+          <Route path="/services" component={Services} />
           <Route path="/services/consultancy-ivd" component={ConsultancyIVD} />
           <Route path="/services/contract-research" component={ContractResearch} />
           <Route path="/services/oem-products" component={OEMProducts} />
