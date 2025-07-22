@@ -115,115 +115,22 @@ export default function NeonatalCareProducts() {
         </div>
       </section>
 
-      {/* Product Grid */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Product Range</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.map((product, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardHeader className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                    <product.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{product.title}</CardTitle>
-                  <CardDescription>{product.description}</CardDescription>
-                  <div className="flex items-center justify-center space-x-1 mt-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-                    ))}
-                    <span className="text-sm text-gray-600 ml-1">({product.rating})</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-4">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <Shield className="w-4 h-4 text-green-500 mr-2" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-primary mb-3">{product.price}</div>
-                    <Button size="sm" className="w-full">Learn More</Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Specifications */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Technical Specifications</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              {specifications.map((spec, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">{spec.feature}</span>
-                    <span className="text-sm text-primary font-semibold">{spec.value}</span>
-                  </div>
-                  <Progress value={spec.progress} className="h-3" />
-                </div>
-              ))}
-            </div>
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold mb-6">Why Choose Our Products?</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Award className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Award-Winning Design</h4>
-                    <p className="text-gray-600">Recognized for innovation in neonatal care</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Users className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Trusted by Professionals</h4>
-                    <p className="text-gray-600">Used in over 500 hospitals worldwide</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Shield className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Safety First</h4>
-                    <p className="text-gray-600">Exceeds international safety standards</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Heart className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Improved Outcomes</h4>
-                    <p className="text-gray-600">Proven to enhance patient care</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Neonatal Care - Visual Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-blue-50 to-pink-50">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">About Neonatal Care</h2>
-          
+
           {/* Timeline Visualization */}
           <div className="max-w-6xl mx-auto mb-16">
             <div className="text-center mb-12">
               <h3 className="text-2xl font-bold text-primary mb-4">Critical First 28 Days of Life</h3>
               <p className="text-lg text-gray-600">Neonatal period requires specialized care and protection</p>
             </div>
-            
+
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-pink-400"></div>
-              
+
               {/* Timeline Items */}
               <div className="space-y-12">
                 {/* Day 0-1 */}
@@ -419,6 +326,99 @@ export default function NeonatalCareProducts() {
           </div>
         </div>
       </section>
+      {/* Product Grid */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Product Range</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((product, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <CardHeader className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                    <product.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">{product.title}</CardTitle>
+                  <CardDescription>{product.description}</CardDescription>
+                  <div className="flex items-center justify-center space-x-1 mt-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                    ))}
+                    <span className="text-sm text-gray-600 ml-1">({product.rating})</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 mb-4">
+                    {product.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm">
+                        <Shield className="w-4 h-4 text-green-500 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary mb-3">{product.price}</div>
+                    <Button size="sm" className="w-full">Learn More</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Specifications */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Technical Specifications</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              {specifications.map((spec, index) => (
+                <div key={index} className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">{spec.feature}</span>
+                    <span className="text-sm text-primary font-semibold">{spec.value}</span>
+                  </div>
+                  <Progress value={spec.progress} className="h-3" />
+                </div>
+              ))}
+            </div>
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold mb-6">Why Choose Our Products?</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Award className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Award-Winning Design</h4>
+                    <p className="text-gray-600">Recognized for innovation in neonatal care</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Users className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Trusted by Professionals</h4>
+                    <p className="text-gray-600">Used in over 500 hospitals worldwide</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Shield className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Safety First</h4>
+                    <p className="text-gray-600">Exceeds international safety standards</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Heart className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Improved Outcomes</h4>
+                    <p className="text-gray-600">Proven to enhance patient care</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Application Areas */}
       <section className="py-16 px-4 bg-white">
