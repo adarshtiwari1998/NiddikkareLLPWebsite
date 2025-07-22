@@ -501,7 +501,7 @@ export default function Header() {
       );
     }
 
-    // Regular dropdown for other menus
+    // Regular dropdown for other menus - now with submenu support
     return (
       <div 
         className={getDropdownClasses()}
@@ -512,24 +512,98 @@ export default function Header() {
         <div className="grid gap-3 p-4">
           {items.map((item) => {
             const Icon = item.icon;
+            const isSubmenuActive = activeSubmenu === item.label.toLowerCase();
+            
             return (
-              <div key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
-                    location === item.href
-                      ? 'bg-primary/10 text-primary border-l-4 border-primary'
-                      : 'hover:bg-gray-50'
-                  }`}
-                  onClick={() => setActiveDropdown(null)}
-                >
-                  <Icon className="h-5 w-5 text-primary" />
-                  <div className="flex-1">
-                    <div className="font-medium">{item.label}</div>
-                    <div className="text-sm text-gray-600">{item.description}</div>
+              <div key={item.href} className="relative group">
+                {item.submenu ? (
+                  // Parent item with submenu - clickable but also shows submenu on hover
+                  <div
+                    className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                      location.startsWith(item.href) || isSubmenuActive
+                        ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                        : 'hover:bg-gray-50'
+                    }`}
+                    onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
+                  >
+                    <Link
+                      href={item.href}
+                      className="flex items-center space-x-2 flex-1 cursor-pointer"
+                      onClick={() => {
+                        setActiveDropdown(null);
+                        setActiveSubmenu(null);
+                      }}
+                    >
+                      <Icon className="h-5 w-5 text-primary" />
+                      <div className="flex-1">
+                        <div className="font-medium">{item.label}</div>
+                        <div className="text-sm text-gray-600">{item.description}</div>
+                      </div>
+                    </Link>
+                    <ChevronRight className="h-4 w-4 text-gray-400" />
                   </div>
-                  {item.submenu && <ChevronRight className="h-4 w-4 text-gray-400" />}
-                </Link>
+                ) : (
+                  // Regular item without submenu
+                  <Link
+                    href={item.href}
+                    className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                      location === item.href
+                        ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                        : 'hover:bg-gray-50'
+                    }`}
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <Icon className="h-5 w-5 text-primary" />
+                    <div className="flex-1">
+                      <div className="font-medium">{item.label}</div>
+                      <div className="text-sm text-gray-600">{item.description}</div>
+                    </div>
+                  </Link>
+                )}
+                
+                {/* Submenu for any dropdown */}
+                {item.submenu && activeSubmenu === item.label.toLowerCase() && (
+                  <div 
+                    className="absolute top-0 bg-white border border-gray-200 rounded-md shadow-lg z-60"
+                    style={{
+                      left: '100%',
+                      marginLeft: '8px',
+                      width: 'min(280px, 25vw)',
+                      maxWidth: '280px',
+                      minWidth: '220px',
+                      maxHeight: '400px'
+                    }}
+                    onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
+                    onMouseLeave={() => setActiveSubmenu(null)}
+                  >
+                    <div className="p-3 space-y-1 overflow-y-auto max-h-96">
+                      {item.submenu.map((subItem) => {
+                        const SubIcon = subItem.icon;
+                        return (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            className={`flex items-center space-x-2 p-2 rounded-md text-sm transition-colors ${
+                              location === subItem.href
+                                ? 'bg-primary/10 text-primary'
+                                : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                            }`}
+                            onClick={() => {
+                              setActiveDropdown(null);
+                              setActiveSubmenu(null);
+                            }}
+                          >
+                            <SubIcon className="h-4 w-4" />
+                            <div>
+                              <div className="font-medium">{subItem.label}</div>
+                              <div className="text-xs text-gray-500">{subItem.description}</div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}
