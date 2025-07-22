@@ -53,23 +53,23 @@ export default function Home() {
             </p>
             
             {/* Key value propositions */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-4 sm:mb-6 md:mb-12 px-1 sm:px-2 md:px-0">
-              <div className="glass-card p-1 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl">
-                <Baby className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4" />
-                <h3 className="text-[10px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight">Baby's First Touch</h3>
-                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block">Providing world's safest receiving blankets for newborns</p>
+            <div className="grid grid-cols-3 gap-1 sm:gap-4 md:gap-6 mb-4 sm:mb-6 md:mb-12 px-1 sm:px-2 md:px-0 max-w-xs sm:max-w-none mx-auto">
+              <div className="glass-card px-1 py-2 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl min-h-[80px] sm:min-h-[120px] md:min-h-auto flex flex-col justify-center">
+                <Baby className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4 flex-shrink-0" />
+                <h3 className="text-[9px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight text-center">Baby's First Touch</h3>
+                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block text-center">Providing world's safest receiving blankets for newborns</p>
               </div>
               
-              <div className="glass-card p-1 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl">
-                <Stethoscope className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4" />
-                <h3 className="text-[10px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight">Hospital Linens</h3>
-                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block">Exceptional hospital linen solutions for patient care</p>
+              <div className="glass-card px-1 py-2 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl min-h-[80px] sm:min-h-[120px] md:min-h-auto flex flex-col justify-center">
+                <Stethoscope className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4 flex-shrink-0" />
+                <h3 className="text-[9px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight text-center">Hospital Linens</h3>
+                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block text-center">Exceptional hospital linen solutions for patient care</p>
               </div>
               
-              <div className="glass-card p-1 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl">
-                <Dna className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4" />
-                <h3 className="text-[10px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight">Life Sciences</h3>
-                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block">Advanced molecular biology and diagnostic solutions</p>
+              <div className="glass-card px-1 py-2 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl min-h-[80px] sm:min-h-[120px] md:min-h-auto flex flex-col justify-center">
+                <Dna className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4 flex-shrink-0" />
+                <h3 className="text-[9px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight text-center">Life Sciences</h3>
+                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block text-center">Advanced molecular biology and diagnostic solutions</p>
               </div>
             </div>
             

@@ -19,6 +19,7 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [collapsedSections, setCollapsedSections] = useState<Set<string>>(new Set());
   const submenuRef = useRef<HTMLDivElement>(null);
 
   // Cleanup timeout on unmount
@@ -29,6 +30,16 @@ export default function Header() {
       }
     };
   }, [leaveTimeout]);
+
+  const toggleSection = (sectionKey: string) => {
+    const newCollapsed = new Set(collapsedSections);
+    if (newCollapsed.has(sectionKey)) {
+      newCollapsed.delete(sectionKey);
+    } else {
+      newCollapsed.add(sectionKey);
+    }
+    setCollapsedSections(newCollapsed);
+  };
 
   const servicesItems: DropdownItem[] = [
     {
@@ -532,9 +543,11 @@ export default function Header() {
               <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
                 <Youtube className="h-4 w-4" />
               </Link>
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Request Quote
-              </Button>
+              <Link href="/contact">
+                <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  Request Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -689,8 +702,9 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" className="lg:hidden flex flex-col items-center gap-1 px-2 py-2">
+                <Menu className="h-8 w-8" />
+                <span className="text-xs">Menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-white">
@@ -722,179 +736,277 @@ export default function Header() {
                     </Link>
                     
                     <div className="space-y-1">
-                      <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                        Services
-                      </div>
-                      {servicesItems.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link 
-                            key={item.href}
-                            href={item.href} 
-                            className={`flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                              location === item.href ? 'bg-primary/10 text-primary' : ''
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <Icon className="h-4 w-4 mr-3" />
-                            {item.label}
-                          </Link>
-                        );
-                      })}
+                      <button
+                        onClick={() => toggleSection('services')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
+                      >
+                        <span>Services</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('services') ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {collapsedSections.has('services') && (
+                        <div className="ml-3 space-y-1">
+                          {servicesItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <Link 
+                                key={item.href}
+                                href={item.href} 
+                                className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                  location === item.href ? 'bg-primary/10 text-primary' : ''
+                                }`}
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <Icon className="h-4 w-4 mr-3 text-gray-400" />
+                                <span className="text-xs">{item.label}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                     
                     <div className="space-y-1">
-                      <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                        Products
-                      </div>
-                      {productsItems.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link 
-                            key={item.href}
-                            href={item.href} 
-                            className={`flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                              location === item.href ? 'bg-primary/10 text-primary' : ''
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <Icon className="h-4 w-4 mr-3" />
-                            {item.label}
-                          </Link>
-                        );
-                      })}
+                      <button
+                        onClick={() => toggleSection('products')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
+                      >
+                        <span>Products</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('products') ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {collapsedSections.has('products') && (
+                        <div className="ml-3 space-y-1">
+                          {productsItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <Link 
+                                key={item.href}
+                                href={item.href} 
+                                className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                  location === item.href ? 'bg-primary/10 text-primary' : ''
+                                }`}
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <Icon className="h-4 w-4 mr-3 text-gray-400" />
+                                <span className="text-xs">{item.label}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                     
                     <div className="space-y-1">
-                      <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                        IT Solutions
-                      </div>
-                      {itSolutionsItems.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link 
-                            key={item.href}
-                            href={item.href} 
-                            className={`flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                              location === item.href ? 'bg-primary/10 text-primary' : ''
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <Icon className="h-4 w-4 mr-3" />
-                            {item.label}
-                          </Link>
-                        );
-                      })}
+                      <button
+                        onClick={() => toggleSection('it-solutions')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
+                      >
+                        <span>IT Solutions</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('it-solutions') ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {collapsedSections.has('it-solutions') && (
+                        <div className="ml-3 space-y-1">
+                          {itSolutionsItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <Link 
+                                key={item.href}
+                                href={item.href} 
+                                className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                  location === item.href ? 'bg-primary/10 text-primary' : ''
+                                }`}
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <Icon className="h-4 w-4 mr-3 text-gray-400" />
+                                <span className="text-xs">{item.label}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                     
                     <div className="space-y-1">
-                      <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                        Healthcare
-                      </div>
-                      {healthcareItems.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <div key={item.href} className="space-y-1">
-                            <Link 
-                              href={item.href} 
-                              className={`flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                                location === item.href ? 'bg-primary/10 text-primary' : ''
-                              }`}
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <Icon className="h-4 w-4 mr-3" />
-                              {item.label}
-                            </Link>
-                            {/* Mobile submenu items */}
-                            {item.submenu && (
-                              <div className="ml-6 space-y-1">
-                                {item.submenu.map((subItem) => {
-                                  const SubIcon = subItem.icon;
-                                  return (
-                                    <Link 
-                                      key={subItem.href}
-                                      href={subItem.href} 
-                                      className={`flex items-center px-6 py-1.5 text-xs text-gray-500 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                                        location === subItem.href ? 'bg-primary/10 text-primary' : ''
-                                      }`}
-                                      onClick={() => setIsOpen(false)}
+                      <button
+                        onClick={() => toggleSection('healthcare')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
+                      >
+                        <span>Healthcare</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('healthcare') ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {collapsedSections.has('healthcare') && (
+                        <div className="ml-3 space-y-1">
+                          {healthcareItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <div key={item.href} className="space-y-1">
+                                <div className="flex items-center">
+                                  <Link 
+                                    href={item.href} 
+                                    className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors flex-1 ${
+                                      location === item.href ? 'bg-primary/10 text-primary' : ''
+                                    }`}
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    <Icon className="h-4 w-4 mr-3 text-gray-400" />
+                                    <span className="text-xs">{item.label}</span>
+                                  </Link>
+                                  {item.submenu && (
+                                    <button
+                                      onClick={() => toggleSection(`healthcare-${item.href}`)}
+                                      className="p-1 hover:bg-gray-100 rounded"
                                     >
-                                      <SubIcon className="h-3 w-3 mr-2" />
-                                      {subItem.label}
-                                    </Link>
-                                  );
-                                })}
+                                      <ChevronRight 
+                                        className={`h-3 w-3 transition-transform text-gray-400 ${
+                                          collapsedSections.has(`healthcare-${item.href}`) ? 'rotate-90' : ''
+                                        }`}
+                                      />
+                                    </button>
+                                  )}
+                                </div>
+                                {item.submenu && collapsedSections.has(`healthcare-${item.href}`) && (
+                                  <div className="ml-8 space-y-1">
+                                    {item.submenu.map((subItem) => {
+                                      const SubIcon = subItem.icon;
+                                      return (
+                                        <Link 
+                                          key={subItem.href}
+                                          href={subItem.href} 
+                                          className={`flex items-center px-4 py-1.5 text-xs text-gray-500 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                            location === subItem.href ? 'bg-primary/10 text-primary' : ''
+                                          }`}
+                                          onClick={() => setIsOpen(false)}
+                                        >
+                                          <SubIcon className="h-3 w-3 mr-2 text-gray-400" />
+                                          {subItem.label}
+                                        </Link>
+                                      );
+                                    })}
+                                  </div>
+                                )}
                               </div>
-                            )}
-                          </div>
-                        );
-                      })}
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                     
                     <div className="space-y-1">
-                      <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                        Life Sciences
-                      </div>
-                      {lifeSciencesItems.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link 
-                            key={item.href}
-                            href={item.href} 
-                            className={`flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                              location === item.href ? 'bg-primary/10 text-primary' : ''
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <Icon className="h-4 w-4 mr-3" />
-                            {item.label}
-                          </Link>
-                        );
-                      })}
+                      <button
+                        onClick={() => toggleSection('life-sciences')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
+                      >
+                        <span>Life Sciences</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('life-sciences') ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {collapsedSections.has('life-sciences') && (
+                        <div className="ml-3 space-y-1">
+                          {lifeSciencesItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <Link 
+                                key={item.href}
+                                href={item.href} 
+                                className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                  location === item.href ? 'bg-primary/10 text-primary' : ''
+                                }`}
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <Icon className="h-4 w-4 mr-3 text-gray-400" />
+                                <span className="text-xs">{item.label}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                     
                     <div className="space-y-1">
-                      <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                        Tools & Testing
-                      </div>
-                      {toolsTestingItems.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <div key={item.href} className="space-y-1">
-                            <Link 
-                              href={item.href} 
-                              className={`flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                                location === item.href ? 'bg-primary/10 text-primary' : ''
-                              }`}
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <Icon className="h-4 w-4 mr-3" />
-                              {item.label}
-                            </Link>
-                            {/* Mobile submenu items */}
-                            {item.submenu && (
-                              <div className="ml-6 space-y-1">
-                                {item.submenu.map((subItem) => {
-                                  const SubIcon = subItem.icon;
-                                  return (
-                                    <Link 
-                                      key={subItem.href}
-                                      href={subItem.href} 
-                                      className={`flex items-center px-6 py-1.5 text-xs text-gray-500 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                                        location === subItem.href ? 'bg-primary/10 text-primary' : ''
-                                      }`}
-                                      onClick={() => setIsOpen(false)}
+                      <button
+                        onClick={() => toggleSection('tools-testing')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
+                      >
+                        <span>Tools & Testing</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('tools-testing') ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {collapsedSections.has('tools-testing') && (
+                        <div className="ml-3 space-y-1">
+                          {toolsTestingItems.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <div key={item.href} className="space-y-1">
+                                <div className="flex items-center">
+                                  <Link 
+                                    href={item.href} 
+                                    className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors flex-1 ${
+                                      location === item.href ? 'bg-primary/10 text-primary' : ''
+                                    }`}
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    <Icon className="h-4 w-4 mr-3 text-gray-400" />
+                                    <span className="text-xs">{item.label}</span>
+                                  </Link>
+                                  {item.submenu && (
+                                    <button
+                                      onClick={() => toggleSection(`tools-testing-${item.href}`)}
+                                      className="p-1 hover:bg-gray-100 rounded"
                                     >
-                                      <SubIcon className="h-3 w-3 mr-2" />
-                                      {subItem.label}
-                                    </Link>
-                                  );
-                                })}
+                                      <ChevronRight 
+                                        className={`h-3 w-3 transition-transform text-gray-400 ${
+                                          collapsedSections.has(`tools-testing-${item.href}`) ? 'rotate-90' : ''
+                                        }`}
+                                      />
+                                    </button>
+                                  )}
+                                </div>
+                                {item.submenu && collapsedSections.has(`tools-testing-${item.href}`) && (
+                                  <div className="ml-8 space-y-1">
+                                    {item.submenu.map((subItem) => {
+                                      const SubIcon = subItem.icon;
+                                      return (
+                                        <Link 
+                                          key={subItem.href}
+                                          href={subItem.href} 
+                                          className={`flex items-center px-4 py-1.5 text-xs text-gray-500 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                            location === subItem.href ? 'bg-primary/10 text-primary' : ''
+                                          }`}
+                                          onClick={() => setIsOpen(false)}
+                                        >
+                                          <SubIcon className="h-3 w-3 mr-2 text-gray-400" />
+                                          {subItem.label}
+                                        </Link>
+                                      );
+                                    })}
+                                  </div>
+                                )}
                               </div>
-                            )}
-                          </div>
-                        );
-                      })}
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                     
                     <Link 
@@ -908,34 +1020,43 @@ export default function Header() {
                       GUT Care
                     </Link>
                     
-                    {/* Company Section */}
-                    <div className="py-2">
-                      <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-3">
-                        Company
-                      </div>
-                      <div className="space-y-1">
-                        <Link 
-                          href="/about" 
-                          className={`flex items-center px-6 py-2 text-sm font-medium rounded-md transition-colors ${
-                            location === '/about' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                    <div className="space-y-1">
+                      <button
+                        onClick={() => toggleSection('company')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-700 uppercase tracking-wider hover:bg-gray-50 rounded-md transition-colors"
+                      >
+                        <span>Company</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('company') ? 'rotate-90' : ''
                           }`}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <Building2 className="h-4 w-4 mr-3" />
-                          About
-                        </Link>
-                        
-                        <Link 
-                          href="/news" 
-                          className={`flex items-center px-6 py-2 text-sm font-medium rounded-md transition-colors ${
-                            location === '/news' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
-                          }`}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <Newspaper className="h-4 w-4 mr-3" />
-                          News
-                        </Link>
-                      </div>
+                        />
+                      </button>
+                      {collapsedSections.has('company') && (
+                        <div className="ml-3 space-y-1">
+                          <Link 
+                            href="/about" 
+                            className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                              location === '/about' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <Building2 className="h-4 w-4 mr-3 text-gray-400" />
+                            <span className="text-xs">About</span>
+                          </Link>
+                          
+                          <Link 
+                            href="/news" 
+                            className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                              location === '/news' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <Newspaper className="h-4 w-4 mr-3 text-gray-400" />
+                            <span className="text-xs">News</span>
+                          </Link>
+                        </div>
+                      )}
                     </div>
                     
                     <Link 
