@@ -24,6 +24,13 @@ export default function Header() {
   const [enterTimeout, setEnterTimeout] = useState<NodeJS.Timeout | null>(null);
   const submenuRef = useRef<HTMLDivElement>(null);
 
+  // Close dropdown menus when route changes
+  useEffect(() => {
+    setActiveDropdown(null);
+    setActiveSubmenu(null);
+    setIsOpen(false);
+  }, [location]);
+
   // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
@@ -694,8 +701,25 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50 w-full">
-      <div className="container mx-auto px-4 max-w-full">
+    <>
+      {/* Backdrop blur overlay - shown when dropdown is active */}
+      {activeDropdown && (
+        <div 
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+          style={{ 
+            top: '0',
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)'
+          }}
+          onClick={() => {
+            setActiveDropdown(null);
+            setActiveSubmenu(null);
+          }}
+        />
+      )}
+      
+      <header className="bg-white shadow-lg sticky top-0 z-50 w-full">
+        <div className="container mx-auto px-4 max-w-full">
         {/* Top Bar */}
         <div className="border-b border-gray-200 py-2 hidden md:block">
           <div className="flex justify-between items-center text-sm">
@@ -1317,5 +1341,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }
