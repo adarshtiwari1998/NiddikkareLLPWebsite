@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { ShoppingCart, Cog, Truck, Shield, CheckCircle, Factory, Users, Globe, Clock } from "lucide-react";
+import { ShoppingCart, Cog, Truck, Shield, CheckCircle, Factory, Users, Globe, Clock, DollarSign, TrendingUp } from "lucide-react";
 
 export default function OEMProducts() {
   const productCategories = [
@@ -45,13 +45,43 @@ export default function OEMProducts() {
     { stage: "Delivery", progress: 92, color: "bg-indigo-500" }
   ];
 
-  const certifications = [
-    { name: "ISO 13485", description: "Medical Device Quality Management", achieved: true },
-    { name: "FDA 21 CFR Part 820", description: "Quality System Regulation", achieved: true },
-    { name: "CE Marking", description: "European Conformity", achieved: true },
-    { name: "ISO 9001", description: "Quality Management Systems", achieved: true },
-    { name: "Clean Room Class 10000", description: "Sterile Manufacturing", achieved: true },
-    { name: "Good Manufacturing Practice", description: "GMP Compliance", achieved: true }
+  const oemAdvantages = [
+    { 
+      title: "Cost Efficiency", 
+      description: "Reduce manufacturing costs by 30-50% compared to in-house production",
+      icon: DollarSign,
+      benefits: ["Lower overhead costs", "Economies of scale", "Reduced capital investment"]
+    },
+    { 
+      title: "Time to Market", 
+      description: "Accelerate product launches with our streamlined manufacturing processes",
+      icon: Clock,
+      benefits: ["Faster prototyping", "Quick scaling", "Reduced development cycles"]
+    },
+    { 
+      title: "Quality Assurance", 
+      description: "Consistent quality through rigorous testing and quality control systems",
+      icon: Shield,
+      benefits: ["Certified processes", "Quality tracking", "Compliance support"]
+    },
+    { 
+      title: "Scalability", 
+      description: "Scale production volumes up or down based on market demand",
+      icon: TrendingUp,
+      benefits: ["Flexible capacity", "Volume adjustments", "Market responsiveness"]
+    },
+    { 
+      title: "Technical Expertise", 
+      description: "Access specialized knowledge and advanced manufacturing capabilities",
+      icon: Cog,
+      benefits: ["Expert engineers", "Latest technology", "Process optimization"]
+    },
+    { 
+      title: "Risk Management", 
+      description: "Minimize business risks with our proven manufacturing track record",
+      icon: Shield,
+      benefits: ["Supply chain security", "Quality guarantees", "Regulatory compliance"]
+    }
   ];
 
   const stats = [
@@ -179,22 +209,37 @@ export default function OEMProducts() {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* OEM Advantages */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Quality Certifications</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Our OEM Services?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+            {oemAdvantages.map((advantage, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300">
                 <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{cert.name}</CardTitle>
-                    {cert.achieved && (
-                      <CheckCircle className="w-6 h-6 text-green-500" />
-                    )}
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full">
+                      <advantage.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg">{advantage.title}</CardTitle>
                   </div>
-                  <CardDescription>{cert.description}</CardDescription>
+                  <CardDescription className="text-sm leading-relaxed">
+                    {advantage.description}
+                  </CardDescription>
                 </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-sm text-primary">Key Benefits:</h4>
+                    <ul className="space-y-1">
+                      {advantage.benefits.map((benefit, idx) => (
+                        <li key={idx} className="flex items-center text-sm">
+                          <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
               </Card>
             ))}
           </div>
