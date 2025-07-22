@@ -5,8 +5,24 @@ import { Layers, Settings, Zap, Award, ArrowRight, CheckCircle } from "lucide-re
 
 export default function BlendedMedicalLinens() {
   return (
-    <div className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-violet-50">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-100/30 rounded-full"></div>
+        <div className="absolute top-60 right-20 w-24 h-24 bg-violet-100/30 rounded-full"></div>
+        <div className="absolute bottom-40 left-20 w-28 h-28 bg-fuchsia-100/30 rounded-full"></div>
+        <div className="absolute bottom-20 right-10 w-36 h-36 bg-purple-100/30 rounded-full"></div>
+        {/* Decorative curved shape - matching design pattern */}
+        <div 
+          className="absolute top-36 right-1/3 w-52 h-52 bg-gradient-to-br from-purple-200/20 to-violet-200/20"
+          style={{
+            borderRadius: '55% 45% 65% 35% / 40% 60% 40% 60%'
+          }}
+        ></div>
+      </div>
+      
+      <div className="relative py-20">
+        <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="flex justify-center mb-6">
@@ -307,6 +323,7 @@ export default function BlendedMedicalLinens() {
             </Button>
           </div>
         </section>
+        </div>
       </div>
     </div>
   );

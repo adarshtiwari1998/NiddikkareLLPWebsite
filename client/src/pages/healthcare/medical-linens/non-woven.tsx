@@ -5,8 +5,24 @@ import { Shield, Zap, Feather, Users, ArrowRight, CheckCircle } from "lucide-rea
 
 export default function NonWovenMedicalLinens() {
   return (
-    <div className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-100/30 rounded-full"></div>
+        <div className="absolute top-60 right-20 w-24 h-24 bg-indigo-100/30 rounded-full"></div>
+        <div className="absolute bottom-40 left-20 w-28 h-28 bg-sky-100/30 rounded-full"></div>
+        <div className="absolute bottom-20 right-10 w-36 h-36 bg-blue-100/30 rounded-full"></div>
+        {/* Decorative curved shape - matching design pattern */}
+        <div 
+          className="absolute top-40 left-1/3 w-48 h-48 bg-gradient-to-br from-blue-200/20 to-indigo-200/20"
+          style={{
+            borderRadius: '45% 55% 35% 65% / 50% 40% 60% 50%'
+          }}
+        ></div>
+      </div>
+      
+      <div className="relative py-20">
+        <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="flex justify-center mb-6">
@@ -297,6 +313,7 @@ export default function NonWovenMedicalLinens() {
             </Button>
           </div>
         </section>
+        </div>
       </div>
     </div>
   );

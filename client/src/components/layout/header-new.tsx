@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Youtube, Building2, Newspaper, Wrench, TestTube, GraduationCap, Search, Database, Filter, Droplets, BarChart3, FlaskConical, Zap } from "lucide-react";
 import logoImage from "@/assets/niddikkare-logo.png";
@@ -448,13 +449,21 @@ export default function Header() {
                           shouldShowCompact ? 'h-4 w-4' : 'h-5 w-5'
                         }`} />
                         <div className="flex-1 min-w-0">
-                          <div className={`font-medium transition-all duration-200 ${
+                          <div className={`font-medium transition-all duration-200 flex items-center gap-2 ${
                             shouldShowCompact ? 'text-sm' : 'text-base'
                           }`}>
                             {item.label}
+                            {item.submenu && (
+                              <Badge variant="secondary" className="text-xs px-1.5 py-0.5 bg-primary/10 text-primary border-primary/20">
+                                {item.submenu.length}
+                              </Badge>
+                            )}
                           </div>
                           {!shouldShowCompact && (
-                            <div className="text-sm text-gray-600">{item.description}</div>
+                            <div className="text-sm text-gray-600">
+                              {item.description}
+                              {item.submenu && <span className="text-primary/70 ml-1">• Hover to explore</span>}
+                            </div>
                           )}
                         </div>
                       </Link>
@@ -584,8 +593,18 @@ export default function Header() {
                     >
                       <Icon className="h-5 w-5 text-primary" />
                       <div className="flex-1">
-                        <div className="font-medium">{item.label}</div>
-                        <div className="text-sm text-gray-600">{item.description}</div>
+                        <div className="font-medium flex items-center gap-2">
+                          {item.label}
+                          {item.submenu && (
+                            <Badge variant="secondary" className="text-xs px-1.5 py-0.5 bg-primary/10 text-primary border-primary/20">
+                              {item.submenu.length}
+                            </Badge>
+                          )}
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          {item.description}
+                          {item.submenu && <span className="text-primary/70 ml-1">• Hover to explore</span>}
+                        </div>
                       </div>
                     </Link>
                     <ChevronRight className="h-4 w-4 text-gray-400" />
