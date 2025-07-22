@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Stethoscope, Shield, Bed, Users, CheckCircle, Droplet, Recycle, ArrowRight, Heart } from "lucide-react";
 
+// Import medical linen images
+import maternityGownImg from "@/assets/medical-linens/maternity-gown-nkr-601.png";
+import mackintoshSheetImg from "@/assets/medical-linens/mackintosh-rubber-sheet-nkr-701-702.png";
+import bedsheetCoversImg from "@/assets/medical-linens/bedsheet-pillow-covers-nkr-202.png";
+import surgicalDrapesImg from "@/assets/medical-linens/surgical-drapes-towels-nkr-301.png";
+import scrubSuitImg from "@/assets/medical-linens/scrub-suit-nkr-501.png";
+import patientGownImg from "@/assets/medical-linens/patient-gown-nkr-602.png";
+import surgicalOTGownImg from "@/assets/medical-linens/surgical-ot-gown-nkr-401-402.png";
+import surgicalCutSheetsImg from "@/assets/medical-linens/surgical-cut-sheets-nkr-302.png";
+
 export default function MedicalLinens() {
   return (
     <div className="py-20 bg-gray-50">
@@ -110,7 +120,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/maternity-gown-nkr-601.png" 
+                  src={maternityGownImg} 
                   alt="Maternity Gown NKR-601"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -125,7 +135,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/mackintosh-rubber-sheet-nkr-701-702.png" 
+                  src={mackintoshSheetImg} 
                   alt="Mackintosh Rubber Sheet NKR-701/702"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -141,7 +151,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/bedsheet-pillow-covers-nkr-202.png" 
+                  src={bedsheetCoversImg} 
                   alt="Bedsheet with Pillow Covers NKR-202"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -156,7 +166,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/surgical-drapes-towels-nkr-301.png" 
+                  src={surgicalDrapesImg} 
                   alt="Surgical Drapes/Towels NKR-301"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -171,7 +181,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/scrub-suit-nkr-501.png" 
+                  src={scrubSuitImg} 
                   alt="Scrub Suit NKR-501"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -186,7 +196,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/patient-gown-nkr-602.png" 
+                  src={patientGownImg} 
                   alt="Patient Gown NKR-602"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -201,7 +211,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/surgical-ot-gown-nkr-401-402.png" 
+                  src={surgicalOTGownImg} 
                   alt="Surgical/OT Gown NKR-401/402"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -217,7 +227,7 @@ export default function MedicalLinens() {
             <div className="glass-card rounded-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/assets/images/medical-linens/surgical-cut-sheets-nkr-302.png" 
+                  src={surgicalCutSheetsImg} 
                   alt="Surgical Cut Sheets NKR-302"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
