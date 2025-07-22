@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Baby, Heart, Shield, CheckCircle, Thermometer, Wind, Moon, ArrowRight, Clock, AlertTriangle, TrendingUp, Users, Activity, Zap, Target } from "lucide-react";
+import { Baby, Heart, Shield, CheckCircle, Thermometer, Wind, Moon, ArrowRight, Clock, AlertTriangle, TrendingUp, Users, Activity, Zap, Target, Star } from "lucide-react";
 
 export default function NeonatalCare() {
   return (
@@ -461,54 +461,79 @@ export default function NeonatalCare() {
           </div>
         </section>
 
-        {/* Product Showcase */}
+        {/* Our Neonatal Care Products */}
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
-              Cuddle Up With Hygiene
+              Our Neonatal Care Products
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The Kouvér Receiving Blanket by NiDDikKare LLP - Premium swaddle solution for your newborn's safety and comfort
+              Scientifically designed receiving blankets and swaddle solutions for newborn care and comfort
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="glass-card border-0">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="glass-card border-0 hover:shadow-lg transition-all duration-300 hover:scale-105">
               <CardHeader className="text-center">
-                <CardTitle className="text-xl">Receiving Blankets/Swaddles</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Baby className="h-12 w-12 text-primary" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                  <Baby className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-gray-600 mb-4">Premium quality receiving blankets designed for newborn comfort and safety</p>
-                <Badge className="bg-primary/10 text-primary">Available Now</Badge>
+                <CardTitle className="text-xl">Baby First Touch Receiving Blanket</CardTitle>
+                <CardDescription>100% cotton receiving blanket for newborn care</CardDescription>
+                <div className="flex items-center justify-center space-x-1 mt-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Heart key={i} className={`w-4 h-4 ${i < 4 ? 'text-red-400 fill-current' : 'text-gray-300'}`} />
+                  ))}
+                  <span className="text-sm text-gray-600 ml-1">(4.9)</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 mb-4">
+                  {["100% breathable cotton", "Individually packed", "Infection control", "Womb-like environment"].map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm">
+                      <Shield className="w-4 h-4 text-green-500 mr-2" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-primary mb-3">NKR-101</div>
+                  <a href="/products/neonatal-care/baby-first-touch">
+                    <Button size="sm" className="w-full">Learn More</Button>
+                  </a>
+                </div>
               </CardContent>
             </Card>
-            
-            <Card className="glass-card border-0">
+
+            <Card className="glass-card border-0 hover:shadow-lg transition-all duration-300 hover:scale-105">
               <CardHeader className="text-center">
-                <CardTitle className="text-xl">NiDDik Brand</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-12 w-12 text-secondary" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                  <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-gray-600 mb-4">Trusted brand for healthcare and IT solutions with decades of experience</p>
-                <Badge className="bg-secondary/10 text-secondary">Premium Quality</Badge>
-              </CardContent>
-            </Card>
-            
-            <Card className="glass-card border-0">
-              <CardHeader className="text-center">
-                <CardTitle className="text-xl">Scientific Design</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-12 w-12 text-accent" />
+                <CardTitle className="text-xl">Kouvèr Receiving Blanket</CardTitle>
+                <CardDescription>Premium scientifically designed swaddle solution</CardDescription>
+                <div className="flex items-center justify-center space-x-1 mt-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Heart key={i} className={`w-4 h-4 ${i < 4 ? 'text-red-400 fill-current' : 'text-gray-300'}`} />
+                  ))}
+                  <span className="text-sm text-gray-600 ml-1">(4.9)</span>
                 </div>
-                <p className="text-gray-600 mb-4">Scientifically designed to replicate womb-like environment for optimal comfort</p>
-                <Badge className="bg-accent/10 text-accent">Research Based</Badge>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 mb-4">
+                  {["Womb-like environment", "Infection control priority", "Safe swaddling practices", "Enhanced comfort & sleep"].map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm">
+                      <Shield className="w-4 h-4 text-green-500 mr-2" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-primary mb-3">Premium</div>
+                  <a href="/products/neonatal-care/baby-first-touch">
+                    <Button size="sm" className="w-full">Learn More</Button>
+                  </a>
+                </div>
               </CardContent>
             </Card>
           </div>
