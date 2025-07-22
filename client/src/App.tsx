@@ -43,6 +43,9 @@ import ProductsMolecularDiagnostics from "@/pages/products/molecular-diagnostics
 
 // Medical Linens Sub-pages
 import BabyFirstTouch from "@/pages/products/medical-linens/baby-first-touch";
+
+// Neonatal Care Sub-pages
+import NeonatalBabyFirstTouch from "@/pages/products/neonatal-care/baby-first-touch";
 import MaternityGown from "@/pages/products/medical-linens/maternity-gown";
 import MackintoshRubberSheet from "@/pages/products/medical-linens/mackintosh-rubber-sheet";
 import BedsheetPillowCovers from "@/pages/products/medical-linens/bedsheet-pillow-covers";
@@ -94,6 +97,7 @@ function Router() {
           
           {/* Products Routes */}
           <Route path="/products/neonatal-care" component={ProductsNeonatalCare} />
+          <Route path="/products/neonatal-care/baby-first-touch" component={NeonatalBabyFirstTouch} />
           <Route path="/products/medical-linens" component={ProductsMedicalLinens} />
           <Route path="/products/medical-linens/baby-first-touch" component={BabyFirstTouch} />
           <Route path="/products/medical-linens/maternity-gown" component={MaternityGown} />

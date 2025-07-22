@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { Link } from "wouter";
 import { Baby, Heart, Thermometer, Activity, Shield, Star, Award, Users, Clock, Zap, Target, TrendingUp, AlertTriangle, CheckCircle } from "lucide-react";
 
 export default function NeonatalCareProducts() {
@@ -85,12 +86,12 @@ export default function NeonatalCareProducts() {
     { benefit: "Cost Effectiveness", improvement: "20%", description: "Reduced overall treatment costs" }
   ];
 
-  const certifications = [
-    "FDA 510(k) Cleared",
-    "CE Mark Certified",
-    "ISO 13485 Quality",
-    "IEC 60601-2-19 Safety",
-    "Energy Star Qualified"
+  const qualityStandards = [
+    "Hospital Grade Quality",
+    "Safety Verified",
+    "Healthcare Standard",
+    "Medical Device Safety",
+    "Energy Efficient"
   ];
 
   return (
@@ -108,8 +109,8 @@ export default function NeonatalCareProducts() {
             Advanced medical equipment designed specifically for newborn care and NICU environments
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {certifications.map((cert, index) => (
-              <Badge key={index} variant="secondary" className="text-sm py-2 px-4">{cert}</Badge>
+            {qualityStandards.map((standard, index) => (
+              <Badge key={index} variant="secondary" className="text-sm py-2 px-4">{standard}</Badge>
             ))}
           </div>
         </div>
@@ -484,11 +485,17 @@ export default function NeonatalCareProducts() {
             Discover how our neonatal care products can improve patient outcomes
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
+            <Link href="/products/neonatal-care/baby-first-touch">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-white text-primary hover:bg-gray-100"
+              >
+                View Baby First Touch Product
+              </Button>
+            </Link>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
               Request Demo
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary">
-              Download Brochure
             </Button>
           </div>
         </div>

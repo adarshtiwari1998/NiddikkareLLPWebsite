@@ -75,7 +75,7 @@ export default function Header() {
       icon: Baby,
       submenu: [
         {
-          href: "/products/medical-linens/baby-first-touch",
+          href: "/products/neonatal-care/baby-first-touch",
           label: "Baby First Touch",
           description: "100% cotton construction",
           icon: Baby
