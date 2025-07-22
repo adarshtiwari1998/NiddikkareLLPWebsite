@@ -543,7 +543,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Viral nucleic acid extraction laboratory with biosafety equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
