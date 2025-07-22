@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Baby, Heart, Thermometer, Activity, Shield, Star, Award, Users } from "lucide-react";
+import { Baby, Heart, Thermometer, Activity, Shield, Star, Award, Users, Clock, Zap, Target, TrendingUp, AlertTriangle, CheckCircle } from "lucide-react";
 
 export default function NeonatalCareProducts() {
   const products = [
@@ -208,36 +208,213 @@ export default function NeonatalCareProducts() {
         </div>
       </section>
 
-      {/* About Neonatal Care */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* About Neonatal Care - Visual Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-blue-50 to-pink-50">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">About Neonatal Care</h2>
-            <div className="prose max-w-none text-gray-700 mb-8">
-              <p className="text-lg leading-relaxed mb-6">
-                Neonatal (the babies during their first 28 days of life), needs prompt and appropriate care, as 
-                they are in Transition to Life Outside the Womb. During this period of life, baby's immunity is 
-                developing gradually and making them more vulnerable to infections from maternal 
-                transmission, healthcare environments, caregivers, and environmental factors. Contagious 
-                Hospital Linens is found to be one of the major factor for infection. We have developed a 
-                product <strong>Swaddle/Receiving Blanket</strong>, which is mimic the womb and provides layer of 
-                warmth, hygiene, and comfort.
-              </p>
+          <h2 className="text-4xl font-bold text-center mb-16">About Neonatal Care</h2>
+          
+          {/* Timeline Visualization */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-primary mb-4">Critical First 28 Days of Life</h3>
+              <p className="text-lg text-gray-600">Neonatal period requires specialized care and protection</p>
+            </div>
+            
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-pink-400"></div>
               
-              <h3 className="text-2xl font-bold text-primary mb-4">About product:</h3>
-              <p className="text-lg leading-relaxed mb-4">
-                Welcome Your Newborn with Science and Safety.
-              </p>
-              <p className="leading-relaxed">
-                The Kouvèr Receiving Blanket by Niddikkare LLP is a premium, and scientifically designed swaddle 
-                solution, created to offer newborns a womb-like environment during their most vulnerable initial 
-                weeks. Made from 100% breathable cotton, Kouvèr blankets are individually packed ensuring the 
-                safest first touch for every baby. With hospital linens being a known source of hospital-acquired 
-                infections (HAIs), Niddikkare pioneered a solution that not only prioritizes hygiene and infection 
-                control but also enhances comfort and sleep for the baby. The Kouvèr blanket supports safe 
-                swaddling practices, which are proven to reduce startle reflexes, soothe colicky babies, and help 
-                newborns sleep longer and more peacefully.
-              </p>
+              {/* Timeline Items */}
+              <div className="space-y-12">
+                {/* Day 0-1 */}
+                <div className="flex items-center justify-between">
+                  <div className="w-5/12 text-right">
+                    <Card className="bg-gradient-to-r from-blue-100 to-blue-50 border-l-4 border-l-blue-500">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-end mb-3">
+                          <Clock className="w-6 h-6 text-blue-600 mr-2" />
+                          <h4 className="font-bold text-blue-800">Day 0-1</h4>
+                        </div>
+                        <h5 className="font-semibold mb-2">Birth & Transition</h5>
+                        <p className="text-sm text-gray-600">Immediate adaptation to life outside the womb</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="w-2/12 flex justify-center">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                      <Baby className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="w-5/12"></div>
+                </div>
+
+                {/* Day 1-7 */}
+                <div className="flex items-center justify-between">
+                  <div className="w-5/12"></div>
+                  <div className="w-2/12 flex justify-center">
+                    <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                      <AlertTriangle className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="w-5/12">
+                    <Card className="bg-gradient-to-r from-yellow-100 to-yellow-50 border-r-4 border-r-yellow-500">
+                      <CardContent className="p-6">
+                        <div className="flex items-center mb-3">
+                          <AlertTriangle className="w-6 h-6 text-yellow-600 mr-2" />
+                          <h4 className="font-bold text-yellow-800">Day 1-7</h4>
+                        </div>
+                        <h5 className="font-semibold mb-2">High Vulnerability</h5>
+                        <p className="text-sm text-gray-600">Peak risk period for infections and complications</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+
+                {/* Day 7-28 */}
+                <div className="flex items-center justify-between">
+                  <div className="w-5/12 text-right">
+                    <Card className="bg-gradient-to-r from-green-100 to-green-50 border-l-4 border-l-green-500">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-end mb-3">
+                          <TrendingUp className="w-6 h-6 text-green-600 mr-2" />
+                          <h4 className="font-bold text-green-800">Day 7-28</h4>
+                        </div>
+                        <h5 className="font-semibold mb-2">Gradual Strengthening</h5>
+                        <p className="text-sm text-gray-600">Immunity development and stabilization</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="w-2/12 flex justify-center">
+                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="w-5/12"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Infection Risk Factors Visualization */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <h3 className="text-2xl font-bold text-center mb-8">Infection Risk Factors</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Users, title: "Maternal Transmission", risk: "High", color: "red" },
+                { icon: Shield, title: "Healthcare Environment", risk: "Very High", color: "red" },
+                { icon: Heart, title: "Caregivers", risk: "Medium", color: "yellow" },
+                { icon: Activity, title: "Environmental Factors", risk: "Medium", color: "yellow" }
+              ].map((factor, index) => (
+                <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br ${
+                  factor.color === 'red' ? 'from-red-100 to-red-50' : 'from-yellow-100 to-yellow-50'
+                }`}>
+                  <CardContent className="p-6 text-center">
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full mb-4 ${
+                      factor.color === 'red' ? 'bg-red-500' : 'bg-yellow-500'
+                    }`}>
+                      <factor.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold mb-2">{factor.title}</h4>
+                    <Badge variant={factor.color === 'red' ? 'destructive' : 'secondary'} className="text-xs">
+                      {factor.risk} Risk
+                    </Badge>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Product Solution Highlight */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-r from-primary to-pink-500 text-white overflow-hidden relative">
+              <div className="absolute top-0 right-0 opacity-20">
+                <Baby className="w-32 h-32" />
+              </div>
+              <CardContent className="p-8 relative z-10">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4">Our Solution: Kouvèr Receiving Blanket</h3>
+                    <p className="mb-6 opacity-90">
+                      Scientifically designed to mimic the womb environment, providing essential warmth, 
+                      hygiene, and comfort during the critical neonatal period.
+                    </p>
+                    <div className="space-y-3">
+                      {[
+                        "100% Breathable Cotton",
+                        "Individually Packed",
+                        "Infection Control",
+                        "Womb-like Environment"
+                      ].map((feature, index) => (
+                        <div key={index} className="flex items-center">
+                          <CheckCircle className="w-5 h-5 mr-3" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/20 rounded-full p-8 inline-block mb-4">
+                      <Shield className="w-16 h-16" />
+                    </div>
+                    <h4 className="text-xl font-semibold mb-2">Welcome Your Newborn</h4>
+                    <p className="opacity-90">with Science and Safety</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Benefits Comparison */}
+          <div className="max-w-6xl mx-auto mt-16">
+            <h3 className="text-2xl font-bold text-center mb-8">Before vs After Kouvèr Blanket</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Before */}
+              <Card className="bg-gradient-to-br from-gray-100 to-gray-50">
+                <CardHeader className="text-center">
+                  <AlertTriangle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+                  <CardTitle className="text-red-700">Traditional Hospital Linens</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {[
+                      "Potential contamination source",
+                      "Reused across patients", 
+                      "Higher infection risk",
+                      "Limited comfort",
+                      "Standard washing protocols"
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-center text-gray-600">
+                        <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* After */}
+              <Card className="bg-gradient-to-br from-green-100 to-green-50">
+                <CardHeader className="text-center">
+                  <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                  <CardTitle className="text-green-700">Kouvèr Receiving Blanket</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {[
+                      "Sterile, individually packed",
+                      "Single-use for each baby",
+                      "Infection control priority",
+                      "Womb-like comfort",
+                      "Scientific design approach"
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-center text-gray-600">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
