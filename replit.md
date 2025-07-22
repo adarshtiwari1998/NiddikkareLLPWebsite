@@ -20,6 +20,8 @@ Preferred communication style: Simple, everyday language.
 - Completed migration from Replit Agent to Replit environment
 - Fixed header navigation: Made parent menu items with submenus clickable (e.g., Medical Linens with href + submenu)
 - Fixed favicon loading issue: Updated HTML to reference correct path `/assets/images/favicon/favicon.png`
+- Removed certification trademarks from Consultancy IVD page: Eliminated ISO 13485, FDA Approved, CE Marking references
+- Removed certification trademarks from Contract Research page: Eliminated GCP, FDA, ISO 14155, CFR Part 11 references
 - Fixed dropdown menu clickability issue: parent items with submenus (e.g., Medical Linens) are now clickable while still showing submenus on hover
 
 ## System Architecture

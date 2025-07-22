@@ -51,7 +51,7 @@ export default function ContractResearch() {
       client: "Pharma Company A",
       duration: "18 months",
       status: "Completed",
-      results: "FDA approval achieved"
+      results: "Regulatory approval achieved"
     },
     {
       title: "Cardiovascular Device Study",
@@ -65,7 +65,7 @@ export default function ContractResearch() {
       client: "Biotech Startup",
       duration: "24 months",
       status: "Completed",
-      results: "Orphan drug designation"
+      results: "Special designation obtained"
     }
   ];
 
@@ -84,10 +84,10 @@ export default function ContractResearch() {
             Accelerate your research with our expert contract research organization (CRO) services
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge variant="secondary" className="text-sm py-2 px-4">GCP Compliant</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4">FDA Inspected</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4">ISO 14155</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4">21 CFR Part 11</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Quality Compliant</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Regulatory Expertise</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Clinical Standards</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Data Integrity</Badge>
           </div>
         </div>
       </section>

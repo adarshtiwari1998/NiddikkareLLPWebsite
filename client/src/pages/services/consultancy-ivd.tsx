@@ -7,9 +7,9 @@ export default function ConsultancyIVD() {
   const services = [
     {
       title: "Regulatory Strategy",
-      description: "Navigate FDA, CE marking, and global regulatory requirements",
+      description: "Navigate regulatory approval and global market requirements",
       icon: FileText,
-      features: ["FDA 510(k) submissions", "CE marking guidance", "International standards compliance"]
+      features: ["Regulatory submissions", "Market approval guidance", "International standards compliance"]
     },
     {
       title: "Clinical Trial Design",
@@ -19,7 +19,7 @@ export default function ConsultancyIVD() {
     },
     {
       title: "Quality Management",
-      description: "ISO 13485 and QSR implementation",
+      description: "Quality system design and implementation",
       icon: Award,
       features: ["Quality system design", "Risk management", "Process validation"]
     },
@@ -53,10 +53,10 @@ export default function ConsultancyIVD() {
             Expert guidance for In Vitro Diagnostic medical devices through regulatory approval and market success
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge variant="secondary" className="text-sm py-2 px-4">FDA Approved</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4">CE Marking</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4">ISO 13485</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4">Quality Systems</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Regulatory Guidance</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Market Strategy</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Clinical Validation</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4">Quality Management</Badge>
           </div>
         </div>
       </section>
