@@ -54,22 +54,22 @@ export default function Home() {
             
             {/* Key value propositions */}
             <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-4 sm:mb-6 md:mb-12 px-1 sm:px-2 md:px-0">
-              <div className="glass-card p-2 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl">
-                <Baby className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-secondary mx-auto mb-2 sm:mb-3 md:mb-4" />
-                <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1 sm:mb-2 leading-tight">Baby's First Touch</h3>
-                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm leading-tight hidden sm:block">Providing world's safest receiving blankets for newborns</p>
+              <div className="glass-card p-1 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl">
+                <Baby className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4" />
+                <h3 className="text-[10px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight">Baby's First Touch</h3>
+                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block">Providing world's safest receiving blankets for newborns</p>
               </div>
               
-              <div className="glass-card p-2 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl">
-                <Stethoscope className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-secondary mx-auto mb-2 sm:mb-3 md:mb-4" />
-                <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1 sm:mb-2 leading-tight">Hospital Linens</h3>
-                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm leading-tight hidden sm:block">Exceptional hospital linen solutions for patient care</p>
+              <div className="glass-card p-1 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl">
+                <Stethoscope className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4" />
+                <h3 className="text-[10px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight">Hospital Linens</h3>
+                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block">Exceptional hospital linen solutions for patient care</p>
               </div>
               
-              <div className="glass-card p-2 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl">
-                <Dna className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-secondary mx-auto mb-2 sm:mb-3 md:mb-4" />
-                <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1 sm:mb-2 leading-tight">Life Sciences</h3>
-                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm leading-tight hidden sm:block">Advanced molecular biology and diagnostic solutions</p>
+              <div className="glass-card p-1 sm:p-3 md:p-6 rounded-lg sm:rounded-xl md:rounded-2xl">
+                <Dna className="h-6 w-6 sm:h-8 sm:w-8 md:h-12 md:w-12 text-secondary mx-auto mb-1 sm:mb-2 md:mb-4" />
+                <h3 className="text-[10px] sm:text-xs md:text-base lg:text-lg font-semibold text-gray-800 mb-0 sm:mb-1 leading-tight">Life Sciences</h3>
+                <p className="text-gray-600 text-[8px] sm:text-xs md:text-sm leading-tight hidden sm:block">Advanced molecular biology and diagnostic solutions</p>
               </div>
             </div>
             
