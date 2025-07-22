@@ -234,6 +234,16 @@ export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
     };
     
     segments.forEach((segment, index) => {
+      // Special handling for tools and testing - add parent breadcrumb
+      if ((segment === 'tools' || segment === 'testing') && index === 0) {
+        // Add Tools & Testing parent first
+        breadcrumbs.push({
+          label: "Tools & Testing",
+          href: "/tools-testing",
+          isCurrentPage: false
+        });
+      }
+      
       currentPath += `/${segment}`;
       const label = pathLabels[segment] || segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, " ");
       const isLast = index === segments.length - 1;
