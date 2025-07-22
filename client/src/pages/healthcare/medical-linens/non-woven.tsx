@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
 import { Shield, Zap, Feather, Users, ArrowRight, CheckCircle } from "lucide-react";
 
 export default function NonWovenMedicalLinens() {
@@ -289,6 +290,96 @@ export default function NonWovenMedicalLinens() {
                 <Badge className="mb-4">ASTM F1671</Badge>
                 <h3 className="text-lg font-semibold mb-2">Barrier Performance</h3>
                 <p className="text-sm text-gray-600">Viral penetration resistance</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Related Product Lines */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Our Non-woven <span className="text-blue-600">Product Lines</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore our complete range of SMS non-woven medical linens, designed for superior barrier protection, 
+              infection control, and single-use reliability in critical healthcare environments.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Surgical Drapes/Towels */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-colors">
+                  <Shield className="h-8 w-8 text-red-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Surgical Drapes & Towels</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-301</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  SMS non-woven sterile barrier protection for operating rooms and surgical environments
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">SMS Non-woven</Badge>
+                  <Badge variant="secondary" className="text-xs">Sterile Barrier</Badge>
+                  <Badge variant="secondary" className="text-xs">Lint-free</Badge>
+                </div>
+                <Link href="/products/medical-linens/surgical-drapes-towels">
+                  <Button size="sm" className="w-full bg-red-600 hover:bg-red-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Surgical/OT Gown */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-200 transition-colors">
+                  <Feather className="h-8 w-8 text-teal-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Surgical/OT Gown</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-401/402</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  Level 4 barrier protection SMS non-woven gowns for operating theater professionals
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">Level 4 Barrier</Badge>
+                  <Badge variant="secondary" className="text-xs">Sterile Grade</Badge>
+                  <Badge variant="secondary" className="text-xs">Fluid Resistant</Badge>
+                </div>
+                <Link href="/products/medical-linens/surgical-ot-gown">
+                  <Button size="sm" className="w-full bg-teal-600 hover:bg-teal-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Surgical Cut Sheets */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-200 transition-colors">
+                  <Zap className="h-8 w-8 text-slate-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Surgical Cut Sheets</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-302</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  Precision SMS non-woven draping with targeted access for surgical procedures
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">Level 3 Barrier</Badge>
+                  <Badge variant="secondary" className="text-xs">Precision Cut</Badge>
+                  <Badge variant="secondary" className="text-xs">Medical Grade</Badge>
+                </div>
+                <Link href="/products/medical-linens/surgical-cut-sheets">
+                  <Button size="sm" className="w-full bg-slate-600 hover:bg-slate-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>

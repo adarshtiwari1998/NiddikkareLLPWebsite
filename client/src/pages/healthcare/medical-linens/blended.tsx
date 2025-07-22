@@ -1,7 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Layers, Settings, Zap, Award, ArrowRight, CheckCircle } from "lucide-react";
+import { Layers, Settings, Zap, Award, ArrowRight, CheckCircle, Heart, Users } from "lucide-react";
+import { Link } from "wouter";
 
 export default function BlendedMedicalLinens() {
   return (
@@ -299,6 +300,71 @@ export default function BlendedMedicalLinens() {
                 <Badge className="mb-4">Performance Validated</Badge>
                 <h3 className="text-lg font-semibold mb-2">Proven Performance</h3>
                 <p className="text-sm text-gray-600">Validated in medical environments</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Related Product Lines */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Our Blended <span className="text-purple-600">Product Lines</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore our cotton-polyester blend medical linens that combine the best properties of both materials, 
+              delivering enhanced comfort, durability, and functionality for diverse healthcare applications.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Maternity Gown */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                  <Heart className="h-8 w-8 text-purple-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Maternity Gown</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-601</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  Cotton-poly blend fabric designed for maximum comfort and dignity during hospital stays and delivery
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">Cotton Poly Blend</Badge>
+                  <Badge variant="secondary" className="text-xs">Comfortable Fit</Badge>
+                  <Badge variant="secondary" className="text-xs">Breathable</Badge>
+                </div>
+                <Link href="/products/medical-linens/maternity-gown">
+                  <Button size="sm" className="w-full bg-purple-600 hover:bg-purple-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Patient Gown */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
+                  <Users className="h-8 w-8 text-orange-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Patient Gown</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-602</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  Cotton-poly blend material offering soft fabric for extended wear with hypoallergenic properties
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">Cotton Poly Blend</Badge>
+                  <Badge variant="secondary" className="text-xs">Extended Wear</Badge>
+                  <Badge variant="secondary" className="text-xs">Hypoallergenic</Badge>
+                </div>
+                <Link href="/products/medical-linens/patient-gown">
+                  <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
