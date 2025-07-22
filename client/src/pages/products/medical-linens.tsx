@@ -292,6 +292,191 @@ export default function MedicalLinensProducts() {
         </div>
       </section>
 
+      {/* Product Categories & Collections Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-6 text-lg py-3 px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+              Product Categories & Collections
+            </Badge>
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              Manufacturing Excellence
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <strong>NiDDikKare</strong> manufactures a wide range of medical linen products and drape kits using 
+              <strong> woven, non-woven and blended fabric.</strong>
+            </p>
+          </div>
+
+          {/* Interactive Stacked Cards Layout */}
+          <div className="max-w-6xl mx-auto space-y-8">
+            
+            {/* Woven Medical Linens - Left Aligned */}
+            <div className="grid lg:grid-cols-5 gap-8 items-center">
+              <div className="lg:col-span-2 lg:order-1">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl transform rotate-3"></div>
+                  <Card className="relative bg-white shadow-xl border-0 rounded-2xl overflow-hidden">
+                    <CardHeader className="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100">
+                      <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <Bed className="h-10 w-10 text-white" />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-blue-800">Woven Medical Linens</CardTitle>
+                    </CardHeader>
+                  </Card>
+                </div>
+              </div>
+              
+              <div className="lg:col-span-3 lg:order-2">
+                <Card className="bg-white shadow-lg border-blue-200 border-2 rounded-xl">
+                  <CardContent className="p-8">
+                    <p className="text-lg text-gray-700 mb-6 font-medium leading-relaxed">
+                      are made from <strong>100% cotton</strong>. Cotton linens benefits include high absorbency, 
+                      ease of sterilization, and softness, making it ideal for surgical drapes, gowns, and bed sheets.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-3">
+                        <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">100% Cotton construction</span>
+                        </div>
+                        <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">High thread count for softness</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">Reinforced edges for durability</span>
+                        </div>
+                        <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">Machine washable up to 160°C</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Non-woven Medical Linens - Right Aligned */}
+            <div className="grid lg:grid-cols-5 gap-8 items-center">
+              <div className="lg:col-span-3 lg:order-1">
+                <Card className="bg-white shadow-lg border-green-200 border-2 rounded-xl">
+                  <CardContent className="p-8">
+                    <p className="text-lg text-gray-700 mb-6 font-medium leading-relaxed">
+                      are made from <strong>polypropylene or polyester</strong>, they offer superior barrier protection against bacteria and viruses, 
+                      minimizing infection risk.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-4 mb-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">Single-use infection prevention</span>
+                        </div>
+                        <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">Fluid-resistant barriers</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">Lightweight and breathable</span>
+                        </div>
+                        <div className="flex items-center p-3 bg-green-50 rounded-lg">
+                          <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                          <span className="font-semibold text-gray-800">Environmentally conscious disposal</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                      <p className="text-sm text-green-800 font-medium">
+                        Their single-use design ensures simplified sterilization and reduced cross-contamination. Additionally, 
+                        many non-woven materials are also lightweight and breathable, enhancing comfort for prolonged use.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <div className="lg:col-span-2 lg:order-2">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl transform -rotate-3"></div>
+                  <Card className="relative bg-white shadow-xl border-0 rounded-2xl overflow-hidden">
+                    <CardHeader className="text-center p-8 bg-gradient-to-br from-green-50 to-green-100">
+                      <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <Shield className="h-10 w-10 text-white" />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-green-800">Non-woven Medical Linens</CardTitle>
+                    </CardHeader>
+                  </Card>
+                </div>
+              </div>
+            </div>
+
+            {/* Blended Medical Linens - Center */}
+            <div className="flex justify-center">
+              <div className="max-w-4xl w-full">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl transform rotate-1"></div>
+                  <Card className="relative bg-white shadow-2xl border-0 rounded-3xl overflow-hidden">
+                    <CardHeader className="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50">
+                      <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <Droplets className="h-12 w-12 text-white" />
+                      </div>
+                      <CardTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        Blended Medical Linens
+                      </CardTitle>
+                      <p className="text-lg text-gray-700 mt-4 font-medium">
+                        are prepared with both woven and non-woven fabrics or materials to combine their properties.
+                      </p>
+                    </CardHeader>
+                    
+                    <CardContent className="p-8">
+                      <div className="grid md:grid-cols-2 gap-6 mb-6">
+                        <div className="space-y-3">
+                          <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+                            <CheckCircle className="h-5 w-5 text-purple-600 mr-3 flex-shrink-0" />
+                            <span className="font-semibold text-gray-800">Cotton-polyester blends</span>
+                          </div>
+                          <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+                            <CheckCircle className="h-5 w-5 text-purple-600 mr-3 flex-shrink-0" />
+                            <span className="font-semibold text-gray-800">Enhanced strength and durability</span>
+                          </div>
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+                            <CheckCircle className="h-5 w-5 text-purple-600 mr-3 flex-shrink-0" />
+                            <span className="font-semibold text-gray-800">Improved moisture management</span>
+                          </div>
+                          <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+                            <CheckCircle className="h-5 w-5 text-purple-600 mr-3 flex-shrink-0" />
+                            <span className="font-semibold text-gray-800">Reduced shrinkage and wrinkles</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-xl border border-purple-200">
+                        <p className="text-center text-gray-800 font-medium leading-relaxed">
+                          Blending enhances characteristics like lightweight, durability, comfort, and functionality, 
+                          allowing for tailored performance in various applications as medical linens.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white">
         <div className="container mx-auto text-center">

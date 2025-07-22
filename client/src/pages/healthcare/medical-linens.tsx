@@ -332,7 +332,7 @@ export default function MedicalLinens() {
         <section className="mb-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 section-header mb-4">
-              About Products
+              Product Categories & Collections
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               <strong>NiDDikKare</strong> manufactures a wide range of medical linen products and drape kits using 
