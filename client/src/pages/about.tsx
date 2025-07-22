@@ -22,9 +22,9 @@ export default function About() {
         <section className="mb-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-20 h-20 bg-primary/10 rounded-full"></div>
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-secondary/10 rounded-full"></div>
+              <div className="relative overflow-hidden">
+                <div className="absolute top-2 left-2 w-20 h-20 bg-primary/10 rounded-full"></div>
+                <div className="absolute bottom-2 right-2 w-16 h-16 bg-secondary/10 rounded-full"></div>
                 <div className="relative glass-card p-8 rounded-2xl border-l-4 border-primary">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
@@ -41,23 +41,12 @@ export default function About() {
                         <Heart className="h-5 w-5 text-red-500 mr-2" />
                         Our Mission
                       </h3>
-                      <p className="text-gray-700 leading-relaxed mb-4">
+                      <p className="text-gray-700 leading-relaxed">
                         At NIDDIKKARE LLP, our team of experts empowers researchers and clinicians to transform human health. We 
                         provide seamless sample-to-insight experiences, enabling novel discoveries and improved diagnostics. High-quality 
                         DNA and RNA extraction is crucial for molecular biology applications. Our comprehensive solutions cater to diverse 
                         sample sources, streamlining research workflows and driving breakthroughs.
                       </p>
-                      <div className="text-center mt-4">
-                        <a 
-                          href="https://niddik.com" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-                        >
-                          <Globe className="h-4 w-4 mr-2" />
-                          For full IT solutions visit niddik.com
-                        </a>
-                      </div>
                     </div>
                     
                     <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border-l-4 border-green-400">
@@ -90,8 +79,8 @@ export default function About() {
             </div>
             
             <div className="animate-fade-in">
-              <div className="relative">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full"></div>
+              <div className="relative overflow-hidden">
+                <div className="absolute top-2 right-2 w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full"></div>
                 <div className="relative glass-card p-8 rounded-2xl text-center bg-gradient-to-br from-white to-gray-50">
                   <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
                     <Building className="h-10 w-10 text-white" />
@@ -109,10 +98,22 @@ export default function About() {
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     Leveraging expertise in both domains to drive innovation. Our healthcare team develops cutting-edge 
                     products while our IT sector provides top-notch consultation and recruitment services.
                   </p>
+                  
+                  <div className="text-center">
+                    <a 
+                      href="https://niddik.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium shadow-lg"
+                    >
+                      <Globe className="h-5 w-5 mr-2" />
+                      For full IT solutions visit niddik.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,11 +122,11 @@ export default function About() {
 
         {/* Product Showcase Section */}
         <section className="mb-20">
-          <div className="relative">
+          <div className="relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-white to-green-50 rounded-3xl"></div>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-8 translate-x-8"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full translate-y-8 -translate-x-8"></div>
+            <div className="absolute top-4 right-4 w-32 h-32 bg-primary/5 rounded-full"></div>
+            <div className="absolute bottom-4 left-4 w-24 h-24 bg-secondary/5 rounded-full"></div>
             
             <div className="relative p-12">
               <div className="text-center mb-12">
@@ -189,8 +190,8 @@ export default function About() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {/* Plant DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-green-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-green-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-green-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-green-400 to-green-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Plant DNA <span className="text-green-100">EXTRACTION</span></h3>
               </div>
@@ -214,8 +215,8 @@ export default function About() {
 
             {/* Animal DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-orange-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-orange-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-orange-400 to-orange-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Animal DNA <span className="text-orange-100">EXTRACTION</span></h3>
               </div>
@@ -239,8 +240,8 @@ export default function About() {
 
             {/* Blood DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gray-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gray-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-gray-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-gray-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-gray-500 to-gray-700 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Blood DNA <span className="text-gray-100">EXTRACTION</span></h3>
               </div>
@@ -264,8 +265,8 @@ export default function About() {
 
             {/* Cell Culture DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-yellow-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-yellow-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Cell Culture DNA <span className="text-yellow-100">EXTRACTION</span></h3>
               </div>
@@ -289,8 +290,8 @@ export default function About() {
 
             {/* Viral Nucleic Acid Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-teal-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-teal-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-teal-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-teal-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-teal-400 to-teal-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Viral Nucleic Acid <span className="text-teal-100">EXTRACTION</span></h3>
               </div>
@@ -314,8 +315,8 @@ export default function About() {
 
             {/* Gel Extraction & PCR Purification */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-purple-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-purple-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-purple-400 to-blue-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Gel <span className="text-purple-100">EXTRACTION</span> & PCR Purification</h3>
               </div>
@@ -378,8 +379,8 @@ export default function About() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {/* Plant RNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-purple-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-purple-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-purple-400 to-pink-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Plant RNA <span className="text-purple-100">EXTRACTION</span></h3>
               </div>
@@ -403,8 +404,8 @@ export default function About() {
 
             {/* Animal Tissue RNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-pink-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-pink-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-pink-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-pink-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-pink-400 to-pink-600 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Animal Tissue RNA <span className="text-pink-100">EXTRACTION</span></h3>
               </div>
@@ -428,8 +429,8 @@ export default function About() {
 
             {/* Cell Culture RNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-blue-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-blue-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-blue-400 to-cyan-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Cell Culture RNA <span className="text-blue-100">EXTRACTION</span></h3>
               </div>
@@ -453,8 +454,8 @@ export default function About() {
 
             {/* Plasmid DNA Extraction */}
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-100 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-50 rounded-full translate-y-8 -translate-x-8"></div>
+              <div className="absolute top-2 right-2 w-32 h-32 bg-yellow-100 rounded-full "></div>
+              <div className="absolute bottom-2 left-2 w-24 h-24 bg-yellow-50 rounded-full "></div>
               <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-t-2xl">
                 <h3 className="text-xl font-bold text-white">Plasmid DNA <span className="text-yellow-100">EXTRACTION</span></h3>
               </div>
