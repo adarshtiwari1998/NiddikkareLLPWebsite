@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Youtube, Building2, Newspaper } from "lucide-react";
+import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Youtube, Building2, Newspaper, Wrench, TestTube, GraduationCap, Search, Database, Filter, Droplets, BarChart3, FlaskConical, Zap } from "lucide-react";
 import logoImage from "@/assets/niddikkare-logo.png";
 
 interface DropdownItem {
@@ -159,6 +159,109 @@ export default function Header() {
       label: "News",
       description: "Latest updates and announcements",
       icon: Newspaper
+    }
+  ];
+
+  const toolsTestingItems: DropdownItem[] = [
+    {
+      href: "/tools",
+      label: "Tools",
+      description: "Digital solutions and advanced tools",
+      icon: Wrench,
+      submenu: [
+        {
+          href: "/tools/e-training",
+          label: "E-Training",
+          description: "Comprehensive online training programs",
+          icon: GraduationCap
+        },
+        {
+          href: "/tools/sample-request",
+          label: "Sample Request",
+          description: "Streamlined sample request and tracking",
+          icon: FileText
+        },
+        {
+          href: "/tools/application-database-chromatography",
+          label: "Application Database Chromatography",
+          description: "Comprehensive chromatography application database",
+          icon: Database
+        },
+        {
+          href: "/tools/filter-finder",
+          label: "FilterFinder",
+          description: "Advanced filtration solution finder",
+          icon: Filter
+        },
+        {
+          href: "/tools/strip-finder",
+          label: "StripFinder",
+          description: "Test strip selection and optimization tool",
+          icon: Search
+        },
+        {
+          href: "/tools/nanocolor-finder",
+          label: "NANOCOLOR Finder",
+          description: "Colorimetric analysis tools for precise testing",
+          icon: Droplets
+        },
+        {
+          href: "/tools/chromafil-finder",
+          label: "CHROMAFIL Finder",
+          description: "Chromatography filtration and sample preparation",
+          icon: BarChart3
+        },
+        {
+          href: "/tools/vial-finder",
+          label: "VialFinder",
+          description: "Laboratory vial and container selection tool",
+          icon: FlaskConical
+        },
+        {
+          href: "/tools/bioanalysis-kit-finder",
+          label: "Bioanalysis KitFinder",
+          description: "Comprehensive bioanalysis kit selection tool",
+          icon: Microscope
+        }
+      ]
+    },
+    {
+      href: "/testing",
+      label: "Testing",
+      description: "Advanced testing solutions and analytics",
+      icon: TestTube,
+      submenu: [
+        {
+          href: "/testing/filtration",
+          label: "Filtration",
+          description: "Advanced filtration testing solutions",
+          icon: Filter
+        },
+        {
+          href: "/testing/rapid-tests",
+          label: "Rapid Tests",
+          description: "Quick diagnostic testing solutions",
+          icon: Zap
+        },
+        {
+          href: "/testing/water-analysis",
+          label: "Water Analysis",
+          description: "Comprehensive water quality testing",
+          icon: Droplets
+        },
+        {
+          href: "/testing/chromatography",
+          label: "Chromatography",
+          description: "Advanced chromatography testing services",
+          icon: BarChart3
+        },
+        {
+          href: "/testing/bioanalysis",
+          label: "Bioanalysis",
+          description: "Comprehensive bioanalytical testing",
+          icon: Microscope
+        }
+      ]
     }
   ];
 
@@ -402,6 +505,20 @@ export default function Header() {
                 <DropdownMenu items={lifeSciencesItems} isOpen={activeDropdown === 'life-sciences'} menuKey="life-sciences" />
               </li>
 
+              <li className="relative"
+                onMouseEnter={() => handleMouseEnter('tools-testing')}
+              >
+                <button 
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                    location.startsWith('/tools') || location.startsWith('/testing') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
+                  }`}
+                >
+                  Tools & Testing
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+                <DropdownMenu items={toolsTestingItems} isOpen={activeDropdown === 'tools-testing'} menuKey="tools-testing" />
+              </li>
+
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/gut-care" 
@@ -603,6 +720,50 @@ export default function Header() {
                             <Icon className="h-4 w-4 mr-3" />
                             {item.label}
                           </Link>
+                        );
+                      })}
+                    </div>
+                    
+                    <div className="space-y-1">
+                      <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                        Tools & Testing
+                      </div>
+                      {toolsTestingItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <div key={item.href} className="space-y-1">
+                            <Link 
+                              href={item.href} 
+                              className={`flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                location === item.href ? 'bg-primary/10 text-primary' : ''
+                              }`}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <Icon className="h-4 w-4 mr-3" />
+                              {item.label}
+                            </Link>
+                            {/* Mobile submenu items */}
+                            {item.submenu && (
+                              <div className="ml-6 space-y-1">
+                                {item.submenu.map((subItem) => {
+                                  const SubIcon = subItem.icon;
+                                  return (
+                                    <Link 
+                                      key={subItem.href}
+                                      href={subItem.href} 
+                                      className={`flex items-center px-6 py-1.5 text-xs text-gray-500 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                                        location === subItem.href ? 'bg-primary/10 text-primary' : ''
+                                      }`}
+                                      onClick={() => setIsOpen(false)}
+                                    >
+                                      <SubIcon className="h-3 w-3 mr-2" />
+                                      {subItem.label}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
                         );
                       })}
                     </div>

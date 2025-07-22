@@ -16,6 +16,7 @@ Preferred communication style: Simple, everyday language.
 - Changed Request Quote button from orange to brand primary green color
 - Reorganized navigation: moved About and News under "Company" dropdown
 - Fixed header overflow issues and implemented dynamic dropdown positioning
+- Added "Tools & Testing" menu with comprehensive submenus for digital solutions
 - Completed migration from Replit Agent to Replit environment
 
 ## System Architecture
