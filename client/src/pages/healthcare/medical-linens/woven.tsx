@@ -1,7 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Shield, Droplets, Shirt, ArrowRight, CheckCircle } from "lucide-react";
+import { Heart, Shield, Droplets, Shirt, ArrowRight, CheckCircle, Baby, Bed, Users } from "lucide-react";
+import { Link } from "wouter";
 
 export default function WovenMedicalLinens() {
   return (
@@ -220,6 +221,121 @@ export default function WovenMedicalLinens() {
                 <Badge className="mb-4">CE Marked</Badge>
                 <h3 className="text-lg font-semibold mb-2">European Standards</h3>
                 <p className="text-sm text-gray-600">European conformity certified</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Related Product Lines */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Our Woven <span className="text-green-600">Product Lines</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore our complete range of 100% cotton woven medical linens, designed for superior comfort, 
+              absorbency, and patient care in healthcare environments.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Baby's First Touch */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-green-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
+                  <Baby className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Baby's First Touch</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-101</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  100% organic cotton receiving blankets for newborn safety and comfort
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">Organic Cotton</Badge>
+                  <Badge variant="secondary" className="text-xs">Breathable</Badge>
+                  <Badge variant="secondary" className="text-xs">Allergen-free</Badge>
+                </div>
+                <Link href="/products/medical-linens/baby-first-touch">
+                  <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Bedsheet with Pillow Covers */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-green-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
+                  <Bed className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Bedsheet & Pillow Covers</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-202</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  100% cotton complete bedding solution for patient comfort and hospital hygiene
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">100% Cotton</Badge>
+                  <Badge variant="secondary" className="text-xs">Pre-shrunk</Badge>
+                  <Badge variant="secondary" className="text-xs">Complete Set</Badge>
+                </div>
+                <Link href="/products/medical-linens/bedsheet-pillow-covers">
+                  <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Maternity Gown */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-green-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                  <Heart className="h-8 w-8 text-purple-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Maternity Gown</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-601</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  Comfortable and breathable gown designed for maximum comfort during important moments
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">Comfortable Fit</Badge>
+                  <Badge variant="secondary" className="text-xs">Breathable</Badge>
+                  <Badge variant="secondary" className="text-xs">Soft Fabric</Badge>
+                </div>
+                <Link href="/products/medical-linens/maternity-gown">
+                  <Button size="sm" className="w-full bg-purple-600 hover:bg-purple-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Patient Gown */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-green-200">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
+                  <Users className="h-8 w-8 text-orange-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-center mb-2">Patient Gown</h3>
+                <p className="text-sm text-gray-600 text-center mb-3">NKR-602</p>
+                <p className="text-sm text-gray-700 text-center mb-4">
+                  Soft fabric for extended wear with hypoallergenic materials for patient comfort
+                </p>
+                <div className="flex flex-wrap gap-1 justify-center mb-4">
+                  <Badge variant="secondary" className="text-xs">Soft Fabric</Badge>
+                  <Badge variant="secondary" className="text-xs">Extended Wear</Badge>
+                  <Badge variant="secondary" className="text-xs">Hypoallergenic</Badge>
+                </div>
+                <Link href="/products/medical-linens/patient-gown">
+                  <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700">
+                    View Details
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
