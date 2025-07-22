@@ -159,13 +159,13 @@ function Router() {
           {/* Tools & Testing Combined Route */}
           <Route path="/tools-testing" component={ToolsTesting} />
           
-          {/* Testing Routes */}
-          <Route path="/testing" component={Testing} />
-          <Route path="/testing/filtration" component={Filtration} />
-          <Route path="/testing/rapid-tests" component={RapidTests} />
-          <Route path="/testing/water-analysis" component={WaterAnalysis} />
-          <Route path="/testing/chromatography" component={Chromatography} />
-          <Route path="/testing/bioanalysis" component={Bioanalysis} />
+          {/* Testing Routes - with parent slug */}
+          <Route path="/tools-testing/testing" component={Testing} />
+          <Route path="/tools-testing/testing/filtration" component={Filtration} />
+          <Route path="/tools-testing/testing/rapid-tests" component={RapidTests} />
+          <Route path="/tools-testing/testing/water-analysis" component={WaterAnalysis} />
+          <Route path="/tools-testing/testing/chromatography" component={Chromatography} />
+          <Route path="/tools-testing/testing/bioanalysis" component={Bioanalysis} />
           
           {/* Other Routes */}
           <Route path="/gut-care" component={GutCare} />
@@ -173,17 +173,17 @@ function Router() {
           <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />
           
-          {/* Tools Routes */}
-          <Route path="/tools" component={Tools} />
-          <Route path="/tools/e-training" component={ETraining} />
-          <Route path="/tools/sample-request" component={SampleRequest} />
-          <Route path="/tools/application-database-chromatography" component={ApplicationDatabaseChromatography} />
-          <Route path="/tools/filter-finder" component={FilterFinder} />
-          <Route path="/tools/strip-finder" component={StripFinder} />
-          <Route path="/tools/nanocolor-finder" component={NanocolorFinder} />
-          <Route path="/tools/chromafil-finder" component={ChromafilFinder} />
-          <Route path="/tools/vial-finder" component={VialFinder} />
-          <Route path="/tools/bioanalysis-kitfinder" component={BioanalysisKitFinder} />
+          {/* Tools Routes - with parent slug */}
+          <Route path="/tools-testing/tools" component={Tools} />
+          <Route path="/tools-testing/tools/e-training" component={ETraining} />
+          <Route path="/tools-testing/tools/sample-request" component={SampleRequest} />
+          <Route path="/tools-testing/tools/application-database-chromatography" component={ApplicationDatabaseChromatography} />
+          <Route path="/tools-testing/tools/filter-finder" component={FilterFinder} />
+          <Route path="/tools-testing/tools/strip-finder" component={StripFinder} />
+          <Route path="/tools-testing/tools/nanocolor-finder" component={NanocolorFinder} />
+          <Route path="/tools-testing/tools/chromafil-finder" component={ChromafilFinder} />
+          <Route path="/tools-testing/tools/vial-finder" component={VialFinder} />
+          <Route path="/tools-testing/tools/bioanalysis-kitfinder" component={BioanalysisKitFinder} />
           
           <Route component={NotFound} />
         </Switch>

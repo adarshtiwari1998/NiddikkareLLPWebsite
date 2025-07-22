@@ -27,7 +27,7 @@ export default function ToolsTesting() {
   const sectionOverview = [
     {
       title: "Digital Tools",
-      href: "/tools",
+      href: "/tools-testing/tools",
       description: "Comprehensive digital solutions and advanced tools for modern laboratory workflows",
       icon: Settings,
       color: "primary",
@@ -61,7 +61,7 @@ export default function ToolsTesting() {
     },
     {
       title: "Testing Solutions",
-      href: "/testing",
+      href: "/tools-testing/testing",
       description: "Cutting-edge analytical tools for comprehensive laboratory testing and research",
       icon: Beaker,
       color: "green-600",
@@ -126,19 +126,19 @@ export default function ToolsTesting() {
     {
       category: "Popular Tools",
       items: [
-        { href: "/tools/filter-finder", title: "FilterFinder", icon: Filter },
-        { href: "/tools/e-training", title: "E-Learning", icon: BookOpen },
-        { href: "/tools/sample-request", title: "Sample Request", icon: FileText },
-        { href: "/tools/bioanalysis-kitfinder", title: "Kit Finder", icon: Search }
+        { href: "/tools-testing/tools/filter-finder", title: "FilterFinder", icon: Filter },
+        { href: "/tools-testing/tools/e-training", title: "E-Learning", icon: BookOpen },
+        { href: "/tools-testing/tools/sample-request", title: "Sample Request", icon: FileText },
+        { href: "/tools-testing/tools/bioanalysis-kitfinder", title: "Kit Finder", icon: Search }
       ]
     },
     {
       category: "Popular Testing",
       items: [
-        { href: "/testing/water-analysis", title: "Water Analysis", icon: Droplet },
-        { href: "/testing/rapid-tests", title: "Rapid Tests", icon: Zap },
-        { href: "/testing/chromatography", title: "Chromatography", icon: Activity },
-        { href: "/testing/bioanalysis", title: "Bioanalysis", icon: FlaskConical }
+        { href: "/tools-testing/testing/water-analysis", title: "Water Analysis", icon: Droplet },
+        { href: "/tools-testing/testing/rapid-tests", title: "Rapid Tests", icon: Zap },
+        { href: "/tools-testing/testing/chromatography", title: "Chromatography", icon: Activity },
+        { href: "/tools-testing/testing/bioanalysis", title: "Bioanalysis", icon: FlaskConical }
       ]
     }
   ];
@@ -181,7 +181,7 @@ export default function ToolsTesting() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/tools">
+            <Link href="/tools-testing/tools">
               <Button 
                 size="lg"
                 className="px-12 py-4 text-lg font-semibold bg-primary hover:bg-primary/90 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
@@ -190,7 +190,7 @@ export default function ToolsTesting() {
                 <Settings className="h-5 w-5 ml-2" />
               </Button>
             </Link>
-            <Link href="/testing">
+            <Link href="/tools-testing/testing">
               <Button 
                 size="lg"
                 className="px-12 py-4 text-lg font-semibold bg-green-600 hover:bg-green-700 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"

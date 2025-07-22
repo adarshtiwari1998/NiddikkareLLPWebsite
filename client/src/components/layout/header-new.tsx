@@ -240,61 +240,61 @@ export default function Header() {
 
   const toolsTestingItems: DropdownItem[] = [
     {
-      href: "/tools",
+      href: "/tools-testing/tools",
       label: "Tools",
       description: "Digital solutions and advanced tools",
       icon: Wrench,
       submenu: [
         {
-          href: "/tools/e-training",
+          href: "/tools-testing/tools/e-training",
           label: "E-Training",
           description: "Comprehensive online training programs",
           icon: GraduationCap
         },
         {
-          href: "/tools/sample-request",
+          href: "/tools-testing/tools/sample-request",
           label: "Sample Request",
           description: "Streamlined sample request and tracking",
           icon: FileText
         },
         {
-          href: "/tools/application-database-chromatography",
+          href: "/tools-testing/tools/application-database-chromatography",
           label: "Application Database Chromatography",
           description: "Comprehensive chromatography application database",
           icon: Database
         },
         {
-          href: "/tools/filter-finder",
+          href: "/tools-testing/tools/filter-finder",
           label: "FilterFinder",
           description: "Advanced filtration solution finder",
           icon: Filter
         },
         {
-          href: "/tools/strip-finder",
+          href: "/tools-testing/tools/strip-finder",
           label: "StripFinder",
           description: "Test strip selection and optimization tool",
           icon: Search
         },
         {
-          href: "/tools/nanocolor-finder",
+          href: "/tools-testing/tools/nanocolor-finder",
           label: "NANOCOLOR Finder",
           description: "Colorimetric analysis tools for precise testing",
           icon: Droplets
         },
         {
-          href: "/tools/chromafil-finder",
+          href: "/tools-testing/tools/chromafil-finder",
           label: "CHROMAFIL Finder",
           description: "Chromatography filtration and sample preparation",
           icon: BarChart3
         },
         {
-          href: "/tools/vial-finder",
+          href: "/tools-testing/tools/vial-finder",
           label: "VialFinder",
           description: "Laboratory vial and container selection tool",
           icon: FlaskConical
         },
         {
-          href: "/tools/bioanalysis-kitfinder",
+          href: "/tools-testing/tools/bioanalysis-kitfinder",
           label: "Bioanalysis KitFinder",
           description: "Comprehensive bioanalysis kit selection tool",
           icon: Microscope
@@ -302,37 +302,37 @@ export default function Header() {
       ]
     },
     {
-      href: "/testing",
+      href: "/tools-testing/testing",
       label: "Testing",
       description: "Advanced testing solutions and analytics",
       icon: TestTube,
       submenu: [
         {
-          href: "/testing/filtration",
+          href: "/tools-testing/testing/filtration",
           label: "Filtration",
           description: "Advanced filtration testing solutions",
           icon: Filter
         },
         {
-          href: "/testing/rapid-tests",
+          href: "/tools-testing/testing/rapid-tests",
           label: "Rapid Tests",
           description: "Quick diagnostic testing solutions",
           icon: Zap
         },
         {
-          href: "/testing/water-analysis",
+          href: "/tools-testing/testing/water-analysis",
           label: "Water Analysis",
           description: "Comprehensive water quality testing",
           icon: Droplets
         },
         {
-          href: "/testing/chromatography",
+          href: "/tools-testing/testing/chromatography",
           label: "Chromatography",
           description: "Advanced chromatography testing services",
           icon: BarChart3
         },
         {
-          href: "/testing/bioanalysis",
+          href: "/tools-testing/testing/bioanalysis",
           label: "Bioanalysis",
           description: "Comprehensive bioanalytical testing",
           icon: Microscope
@@ -853,7 +853,7 @@ export default function Header() {
                 <Link
                   href="/tools-testing"
                   className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
-                    location.startsWith('/tools') || location.startsWith('/testing') || location === '/tools-testing' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
+                    location.startsWith('/tools-testing') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Tools & Testing

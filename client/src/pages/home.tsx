@@ -675,7 +675,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* E-Training */}
-            <Link href="/tools/e-training">
+            <Link href="/tools-testing/tools/e-training">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -693,7 +693,7 @@ export default function Home() {
             </Link>
             
             {/* Sample Request */}
-            <Link href="/tools/sample-request">
+            <Link href="/tools-testing/tools/sample-request">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -710,7 +710,7 @@ export default function Home() {
             </Link>
             
             {/* Application Database Chromatography */}
-            <Link href="/tools/application-database-chromatography">
+            <Link href="/tools-testing/tools/application-database-chromatography">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -727,7 +727,7 @@ export default function Home() {
             </Link>
             
             {/* FilterFinder */}
-            <Link href="/tools/filter-finder">
+            <Link href="/tools-testing/tools/filter-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -744,7 +744,7 @@ export default function Home() {
             </Link>
             
             {/* StripFinder */}
-            <Link href="/tools/strip-finder">
+            <Link href="/tools-testing/tools/strip-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -759,7 +759,7 @@ export default function Home() {
             </Link>
             
             {/* NANOCOLOR Finder */}
-            <Link href="/tools/nanocolor-finder">
+            <Link href="/tools-testing/tools/nanocolor-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -774,7 +774,7 @@ export default function Home() {
             </Link>
             
             {/* CHROMAFIL Finder */}
-            <Link href="/tools/chromafil-finder">
+            <Link href="/tools-testing/tools/chromafil-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -791,7 +791,7 @@ export default function Home() {
             </Link>
             
             {/* VialFinder */}
-            <Link href="/tools/vial-finder">
+            <Link href="/tools-testing/tools/vial-finder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -806,7 +806,7 @@ export default function Home() {
             </Link>
             
             {/* Bioanalysis KitFinder */}
-            <Link href="/tools/bioanalysis-kitfinder">
+            <Link href="/tools-testing/tools/bioanalysis-kitfinder">
               <Card className="bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group border-0 h-32">
                 <CardContent className="p-6 flex items-center">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors">
@@ -840,7 +840,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
             {/* Filtration */}
-            <Link href="/testing/filtration">
+            <Link href="/tools-testing/testing/filtration">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
@@ -872,7 +872,7 @@ export default function Home() {
             </Link>
             
             {/* Rapid Tests */}
-            <Link href="/testing/rapid-tests">
+            <Link href="/tools-testing/testing/rapid-tests">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
@@ -902,7 +902,7 @@ export default function Home() {
             </Link>
             
             {/* Water Analysis */}
-            <Link href="/testing/water-analysis">
+            <Link href="/tools-testing/testing/water-analysis">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
@@ -932,7 +932,7 @@ export default function Home() {
             </Link>
             
             {/* Chromatography */}
-            <Link href="/testing/chromatography">
+            <Link href="/tools-testing/testing/chromatography">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
@@ -962,7 +962,7 @@ export default function Home() {
             </Link>
             
             {/* Bioanalysis */}
-            <Link href="/testing/bioanalysis">
+            <Link href="/tools-testing/testing/bioanalysis">
               <div className="group cursor-pointer">
                 <div className="bg-gradient-to-b from-blue-400 to-blue-600 rounded-lg p-8 text-center transition-all duration-300 transform group-hover:scale-105 relative overflow-hidden h-48 flex flex-col justify-between">
                   {/* Card-specific bubbles */}
