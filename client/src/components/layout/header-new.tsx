@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown } from "lucide-react";
+import logoImage from "@/assets/niddikkare-logo.png";
 
 interface DropdownItem {
   href: string;
@@ -225,7 +226,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img 
-              src="/assets/images/niddikkare-logo.png" 
+              src={logoImage} 
               alt="NIDDIKKARE LLP" 
               className="h-12 w-auto"
             />
