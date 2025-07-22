@@ -1,8 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Activity, TestTube, Microscope, Worm, Shield, CheckCircle, BarChart3, Clock, Award } from "lucide-react";
+import { Activity, TestTube, Microscope, Worm, Shield } from "lucide-react";
 
 export default function MolecularDiagnosticsProducts() {
   const diagnosticsKits = [
@@ -13,8 +11,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥95%",
       specificity: "≥98%",
       time: "2 hours",
-      samples: ["Nasopharyngeal swab", "Respiratory specimens"],
-      applications: ["Diagnosis", "Screening", "Surveillance", "Contact tracing"]
+      samples: ["Nasopharyngeal swab", "Respiratory specimens"]
     },
     {
       title: "Hepatitis C Virus (HCV) Quantitative",
@@ -23,8 +20,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥96%",
       specificity: "≥99%",
       time: "3 hours",
-      samples: ["Plasma", "Serum", "EDTA blood"],
-      applications: ["Treatment monitoring", "Viral load", "Genotyping", "Research"]
+      samples: ["Plasma", "Serum", "EDTA blood"]
     },
     {
       title: "Human Papillomavirus (HPV) Genotyping",
@@ -33,8 +29,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥94%",
       specificity: "≥97%",
       time: "4 hours",
-      samples: ["Cervical specimens", "Liquid-based cytology"],
-      applications: ["Cancer screening", "Risk assessment", "Management", "Follow-up"]
+      samples: ["Cervical specimens", "Liquid-based cytology"]
     },
     {
       title: "Human Immunodeficiency Virus (HIV)",
@@ -43,8 +38,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥98%",
       specificity: "≥99%",
       time: "3 hours",
-      samples: ["Plasma", "Serum", "Whole blood"],
-      applications: ["Diagnosis", "Viral load", "Treatment monitoring", "Disease progression"]
+      samples: ["Plasma", "Serum", "Whole blood"]
     },
     {
       title: "Dengue, Chikungunya",
@@ -53,8 +47,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥96%",
       specificity: "≥98%",
       time: "2.5 hours",
-      samples: ["Serum", "Plasma", "Whole blood"],
-      applications: ["Tropical disease", "Differential diagnosis", "Outbreak response", "Surveillance"]
+      samples: ["Serum", "Plasma", "Whole blood"]
     },
     {
       title: "Monkeypox Flu",
@@ -63,8 +56,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥97%",
       specificity: "≥99%",
       time: "1.5 hours",
-      samples: ["Swab", "Lesion", "Respiratory specimens"],
-      applications: ["Outbreak response", "Differential diagnosis", "Public health", "Surveillance"]
+      samples: ["Swab", "Lesion", "Respiratory specimens"]
     },
     {
       title: "Hepatitis B Virus (HBV) Quantitative",
@@ -73,8 +65,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥96%",
       specificity: "≥98%",
       time: "3.5 hours",
-      samples: ["Plasma", "Serum", "EDTA blood"],
-      applications: ["Treatment monitoring", "Drug resistance", "Viral load", "Disease management"]
+      samples: ["Plasma", "Serum", "EDTA blood"]
     },
     {
       title: "HBV & HCV & HIV-1 Quantitative",
@@ -83,8 +74,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥95%",
       specificity: "≥97%",
       time: "4 hours",
-      samples: ["Plasma", "Serum", "EDTA blood"],
-      applications: ["Co-infection monitoring", "Treatment response", "Cost-effective testing", "Resource optimization"]
+      samples: ["Plasma", "Serum", "EDTA blood"]
     },
     {
       title: "Mycobacterium Tuberculosis (MTB)",
@@ -93,8 +83,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥98%",
       specificity: "≥99%",
       time: "2 hours",
-      samples: ["Sputum", "BAL", "Respiratory specimens"],
-      applications: ["TB diagnosis", "Drug resistance", "Treatment guidance", "Public health"]
+      samples: ["Sputum", "BAL", "Respiratory specimens"]
     },
     {
       title: "Swine Flu, H1A-H7",
@@ -103,44 +92,7 @@ export default function MolecularDiagnosticsProducts() {
       sensitivity: "≥96%",
       specificity: "≥98%",
       time: "2.5 hours",
-      samples: ["Respiratory swabs", "Nasopharyngeal specimens"],
-      applications: ["Pandemic surveillance", "Subtype identification", "Outbreak response", "Research"]
-    }
-  ];
-
-  const performanceMetrics = [
-    { metric: "Analytical Sensitivity", value: "95-99%", progress: 97 },
-    { metric: "Analytical Specificity", value: "97-99%", progress: 98 },
-    { metric: "Processing Time", value: "1.5-4 hours", progress: 85 },
-    { metric: "Success Rate", value: "99.5%", progress: 99 },
-    { metric: "Reproducibility", value: "CV <3%", progress: 96 },
-    { metric: "Shelf Life", value: "18-24 months", progress: 92 }
-  ];
-
-  const applications = [
-    {
-      title: "Clinical Diagnostics",
-      description: "Disease diagnosis and patient management",
-      icon: Award,
-      examples: ["Infectious diseases", "Viral load monitoring", "Drug resistance testing", "Treatment response"]
-    },
-    {
-      title: "Public Health Surveillance",
-      description: "Population health monitoring and outbreak response",
-      icon: Shield,
-      examples: ["Pandemic preparedness", "Disease surveillance", "Outbreak investigation", "Contact tracing"]
-    },
-    {
-      title: "Research Applications",
-      description: "Academic and pharmaceutical research",
-      icon: Microscope,
-      examples: ["Drug development", "Epidemiological studies", "Viral evolution", "Biomarker discovery"]
-    },
-    {
-      title: "Point-of-Care Testing",
-      description: "Rapid testing in clinical settings",
-      icon: TestTube,
-      examples: ["Emergency departments", "Remote locations", "Resource-limited settings", "Rapid diagnosis"]
+      samples: ["Respiratory swabs", "Nasopharyngeal specimens"]
     }
   ];
 
@@ -274,57 +226,6 @@ export default function MolecularDiagnosticsProducts() {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Performance Metrics */}
-      <section className="py-16 px-4 bg-white/70">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Performance Excellence</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {performanceMetrics.map((metric, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{metric.metric}</CardTitle>
-                  <CardDescription className="text-2xl font-bold text-primary">{metric.value}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Progress value={metric.progress} className="w-full" />
-                  <p className="text-sm text-gray-600 mt-2">{metric.progress}% Performance</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Applications */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Key Applications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {applications.map((app, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                    <app.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{app.title}</CardTitle>
-                  <CardDescription>{app.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    {app.examples.map((example, idx) => (
-                      <li key={idx} className="flex items-center">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                        {example}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
