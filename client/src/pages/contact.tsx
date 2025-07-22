@@ -353,7 +353,7 @@ export default function Contact() {
                     <MapPin className="h-5 w-5 text-primary mt-1" />
                     <div>
                       <p className="font-medium text-gray-800">Address</p>
-                      <p className="text-gray-600">123 Innovation Drive, Biotech Park, Science City, SC 12345</p>
+                      <p className="text-gray-600">C-11, Pocket-9A, Jasola, New Delhi-110025 INDIA</p>
                     </div>
                   </div>
                   
@@ -370,7 +370,7 @@ export default function Contact() {
                     <Phone className="h-5 w-5 text-primary mt-1" />
                     <div>
                       <p className="font-medium text-gray-800">Schedule a Visit</p>
-                      <p className="text-gray-600">Call +1 (555) 123-4567 or email visits@niddikkare.com</p>
+                      <p className="text-gray-600">Call +91-90151 62449 or +91-95603 34337 or email info@niddikkare.com</p>
                     </div>
                   </div>
                 </div>
