@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Linkedin, Twitter, Facebook } from "lucide-react";
+import logoImage from "@/assets/niddikkare-logo.png";
 
 export default function Footer() {
   return (
@@ -9,12 +10,11 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <div className="bg-primary text-white px-3 py-2 rounded-lg mr-2">
-                <span className="font-bold text-xl">Ni</span>
-              </div>
-              <div className="bg-secondary text-white px-3 py-2 rounded-lg">
-                <span className="font-bold text-xl">DiK</span>
-              </div>
+              <img 
+                src={logoImage} 
+                alt="NIDDIKKARE LLP" 
+                className="w-[120px] h-auto"
+              />
             </div>
             <p className="text-gray-400 mb-4">
               Empowering researchers and clinicians with advanced healthcare and life sciences solutions.
@@ -70,7 +70,7 @@ export default function Footer() {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 NIDDIKKARE LLP. All rights reserved.
+            © 2025 NIDDIKKARE LLP. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</Link>
