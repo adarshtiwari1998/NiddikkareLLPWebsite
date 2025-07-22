@@ -228,7 +228,7 @@ export default function Header() {
             <img 
               src={logoImage} 
               alt="NIDDIKKARE LLP" 
-              className="w-[200px] h-auto"
+              className="w-[150px] h-auto"
             />
           </Link>
           
