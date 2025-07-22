@@ -192,73 +192,88 @@ export default function Header() {
     setActiveDropdown(null);
   };
 
-  const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => (
-    <div 
-      className={`absolute top-full left-0 w-[500px] bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-150 z-50 ${
+  const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => {
+    // Calculate dynamic positioning and width
+    const getDropdownClasses = () => {
+      const baseClasses = `absolute top-full bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-150 z-50 ${
         isOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
-      }`}
-      style={{ marginTop: '8px' }}
-      onMouseEnter={() => handleMouseEnter(menuKey)}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="grid gap-3 p-4">
-        {items.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div key={item.href}>
-              <Link
-                href={item.href}
-                className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
-                  location === item.href
-                    ? 'bg-primary/10 text-primary border-l-4 border-primary'
-                    : 'hover:bg-gray-50'
-                }`}
-                onClick={() => setActiveDropdown(null)}
-              >
-                <Icon className="h-5 w-5 text-primary" />
-                <div className="flex-1">
-                  <div className="font-medium">{item.label}</div>
-                  <div className="text-sm text-gray-600">{item.description}</div>
-                </div>
-                {item.submenu && <ChevronRight className="h-4 w-4 text-gray-400" />}
-              </Link>
-              
-              {/* Render submenu items if they exist */}
-              {item.submenu && (
-                <div className="ml-8 mt-2 space-y-1">
-                  {item.submenu.map((subItem) => {
-                    const SubIcon = subItem.icon;
-                    return (
-                      <Link
-                        key={subItem.href}
-                        href={subItem.href}
-                        className={`flex items-center space-x-2 p-2 rounded-md text-sm transition-colors ${
-                          location === subItem.href
-                            ? 'bg-primary/10 text-primary'
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
-                        }`}
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <SubIcon className="h-4 w-4" />
-                        <div>
-                          <div className="font-medium">{subItem.label}</div>
-                          <div className="text-xs text-gray-500">{subItem.description}</div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          );
-        })}
+      }`;
+      
+      // For rightmost items (Company, Contact), position from right
+      if (menuKey === 'company' || menuKey === 'life-sciences') {
+        return `${baseClasses} right-0 w-[350px] max-w-[90vw]`;
+      }
+      
+      // For other items, position from left with responsive width
+      return `${baseClasses} left-0 w-[400px] max-w-[85vw]`;
+    };
+
+    return (
+      <div 
+        className={getDropdownClasses()}
+        style={{ marginTop: '8px' }}
+        onMouseEnter={() => handleMouseEnter(menuKey)}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="grid gap-3 p-4">
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                    location === item.href
+                      ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                      : 'hover:bg-gray-50'
+                  }`}
+                  onClick={() => setActiveDropdown(null)}
+                >
+                  <Icon className="h-5 w-5 text-primary" />
+                  <div className="flex-1">
+                    <div className="font-medium">{item.label}</div>
+                    <div className="text-sm text-gray-600">{item.description}</div>
+                  </div>
+                  {item.submenu && <ChevronRight className="h-4 w-4 text-gray-400" />}
+                </Link>
+                
+                {/* Render submenu items if they exist */}
+                {item.submenu && (
+                  <div className="ml-8 mt-2 space-y-1">
+                    {item.submenu.map((subItem) => {
+                      const SubIcon = subItem.icon;
+                      return (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          className={`flex items-center space-x-2 p-2 rounded-md text-sm transition-colors ${
+                            location === subItem.href
+                              ? 'bg-primary/10 text-primary'
+                              : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                          }`}
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <SubIcon className="h-4 w-4" />
+                          <div>
+                            <div className="font-medium">{subItem.label}</div>
+                            <div className="text-xs text-gray-500">{subItem.description}</div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
+    <header className="bg-white shadow-lg sticky top-0 z-50 w-full">
+      <div className="container mx-auto px-4 max-w-full">
         {/* Top Bar */}
         <div className="border-b border-gray-200 py-2 hidden md:block">
           <div className="flex justify-between items-center text-sm">
@@ -293,7 +308,7 @@ export default function Header() {
         </div>
 
         {/* Main Navigation */}
-        <div className="flex items-center justify-between py-4 min-h-[70px]">
+        <div className="flex items-center justify-between py-4 min-h-[70px] w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img 
@@ -304,12 +319,12 @@ export default function Header() {
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex" onMouseLeave={handleMouseLeave}>
-            <ul className="flex items-center space-x-2">
+          <nav className="hidden lg:flex flex-shrink-0" onMouseLeave={handleMouseLeave}>
+            <ul className="flex items-center space-x-1">
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/" 
-                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
+                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap ${
                     location === '/' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -321,7 +336,7 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter('services')}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/services') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -335,7 +350,7 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter('products')}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/products') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -349,7 +364,7 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter('it-solutions')}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/it-solutions') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -363,7 +378,7 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter('healthcare')}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/healthcare') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -377,7 +392,7 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter('life-sciences')}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/life-sciences') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -390,7 +405,7 @@ export default function Header() {
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/gut-care" 
-                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
+                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap ${
                     location === '/gut-care' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -402,7 +417,7 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter('company')}
               >
                 <button 
-                  className={`flex items-center px-4 py-2 font-medium transition-colors h-10 ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/about') || location.startsWith('/news') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -415,7 +430,7 @@ export default function Header() {
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/contact" 
-                  className={`px-4 py-2 font-medium transition-colors flex items-center h-10 ${
+                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap ${
                     location === '/contact' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
