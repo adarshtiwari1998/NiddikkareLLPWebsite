@@ -341,35 +341,75 @@ export default function Header() {
               
               return (
                 <div key={item.href} className="relative group">
-                  <div
-                    className={`flex items-center rounded-lg transition-all duration-200 cursor-pointer ${
-                      location.startsWith(item.href) || isSubmenuActive
-                        ? 'bg-primary/10 text-primary'
-                        : 'hover:bg-gray-50'
-                    } ${
-                      shouldShowCompact ? 'p-2 space-x-2' : 'p-3 space-x-2'
-                    }`}
-                    onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
-                  >
-                    <Icon className={`text-primary transition-all duration-200 ${
-                      shouldShowCompact ? 'h-4 w-4' : 'h-5 w-5'
-                    }`} />
-                    <div className="flex-1 min-w-0">
-                      <div className={`font-medium transition-all duration-200 ${
-                        shouldShowCompact ? 'text-sm' : 'text-base'
-                      }`}>
-                        {item.label}
-                      </div>
-                      {!shouldShowCompact && (
-                        <div className="text-sm text-gray-600">{item.description}</div>
-                      )}
-                    </div>
-                    {item.submenu && (
+                  {item.submenu ? (
+                    // Parent item with submenu - clickable but also shows submenu on hover
+                    <div
+                      className={`flex items-center rounded-lg transition-all duration-200 ${
+                        location.startsWith(item.href) || isSubmenuActive
+                          ? 'bg-primary/10 text-primary'
+                          : 'hover:bg-gray-50'
+                      } ${
+                        shouldShowCompact ? 'p-2 space-x-2' : 'p-3 space-x-2'
+                      }`}
+                      onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
+                    >
+                      <Link
+                        href={item.href}
+                        className="flex items-center space-x-2 flex-1 cursor-pointer"
+                        onClick={() => {
+                          setActiveDropdown(null);
+                          setActiveSubmenu(null);
+                        }}
+                      >
+                        <Icon className={`text-primary transition-all duration-200 ${
+                          shouldShowCompact ? 'h-4 w-4' : 'h-5 w-5'
+                        }`} />
+                        <div className="flex-1 min-w-0">
+                          <div className={`font-medium transition-all duration-200 ${
+                            shouldShowCompact ? 'text-sm' : 'text-base'
+                          }`}>
+                            {item.label}
+                          </div>
+                          {!shouldShowCompact && (
+                            <div className="text-sm text-gray-600">{item.description}</div>
+                          )}
+                        </div>
+                      </Link>
                       <ChevronRight className={`text-gray-400 transition-all duration-200 ${
                         shouldShowCompact ? 'h-3 w-3' : 'h-4 w-4'
                       }`} />
-                    )}
-                  </div>
+                    </div>
+                  ) : (
+                    // Regular item without submenu - simple clickable link
+                    <Link
+                      href={item.href}
+                      className={`flex items-center rounded-lg transition-all duration-200 cursor-pointer ${
+                        location.startsWith(item.href)
+                          ? 'bg-primary/10 text-primary'
+                          : 'hover:bg-gray-50'
+                      } ${
+                        shouldShowCompact ? 'p-2 space-x-2' : 'p-3 space-x-2'
+                      }`}
+                      onClick={() => {
+                        setActiveDropdown(null);
+                        setActiveSubmenu(null);
+                      }}
+                    >
+                      <Icon className={`text-primary transition-all duration-200 ${
+                        shouldShowCompact ? 'h-4 w-4' : 'h-5 w-5'
+                      }`} />
+                      <div className="flex-1 min-w-0">
+                        <div className={`font-medium transition-all duration-200 ${
+                          shouldShowCompact ? 'text-sm' : 'text-base'
+                        }`}>
+                          {item.label}
+                        </div>
+                        {!shouldShowCompact && (
+                          <div className="text-sm text-gray-600">{item.description}</div>
+                        )}
+                      </div>
+                    </Link>
+                  )}
                   
                   {/* Third-level submenu */}
                   {item.submenu && activeSubmenu === item.label.toLowerCase() && (

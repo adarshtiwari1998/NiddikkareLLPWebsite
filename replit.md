@@ -18,6 +18,7 @@ Preferred communication style: Simple, everyday language.
 - Fixed header overflow issues and implemented dynamic dropdown positioning
 - Added "Tools & Testing" menu with comprehensive submenus for digital solutions
 - Completed migration from Replit Agent to Replit environment
+- Fixed dropdown menu clickability issue: parent items with submenus (e.g., Medical Linens) are now clickable while still showing submenus on hover
 
 ## System Architecture
 
