@@ -75,27 +75,6 @@ export default function DnaRnaExtraction() {
             </p>
           </div>
 
-          {/* Portfolio Overview Cards */}
-          <div className="mb-16">
-            <div className="space-y-8">
-              <img 
-                src="@assets/image_1753168792740.png" 
-                alt="DNA Extraction Kits - Plant, Tissue, Blood, and Blood & Cell Culture" 
-                className="rounded-xl shadow-lg w-full h-auto mx-auto"
-              />
-              <img 
-                src="@assets/image_1753168807313.png" 
-                alt="Additional DNA/RNA Extraction Kits - Gel & PCR, Plant RNA, Tissue RNA, and Viral Nucleic Acid" 
-                className="rounded-xl shadow-lg w-full h-auto mx-auto"
-              />
-              <img 
-                src="@assets/image_1753168818159.png" 
-                alt="Blood & Cell Culture RNA and Plasmid DNA Extraction Kits" 
-                className="rounded-xl shadow-lg w-full h-auto mx-auto"
-              />
-            </div>
-          </div>
-
           {/* Z-Pattern Layout for Individual Kits */}
           <div className="space-y-20">
             
@@ -210,7 +189,7 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src="https://images.unsplash.com/photo-1576671481656-e3383401037d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                   alt="Viral RNA extraction laboratory with PCR equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
@@ -682,8 +661,8 @@ export default function DnaRnaExtraction() {
               
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Plasmid DNA extraction from bacterial culture with incubator" 
+                  src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  alt="Plasmid DNA extraction from bacterial culture with laboratory equipment" 
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
               </div>
