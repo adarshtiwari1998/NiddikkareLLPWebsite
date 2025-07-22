@@ -315,7 +315,7 @@ export default function RPO() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-green-400 to-orange-400 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">Our Global Network</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -346,15 +346,15 @@ export default function RPO() {
             <div className="space-y-2">
               <div className="flex items-center justify-center space-x-4 text-sm">
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-orange-400 rounded-full mr-2"></div>
+                  <div className="w-3 h-3 bg-orange-300 rounded-full mr-2"></div>
                   India (HQ)
                 </div>
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-red-400 rounded-full mr-2"></div>
+                  <div className="w-3 h-3 bg-red-300 rounded-full mr-2"></div>
                   USA
                 </div>
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                  <div className="w-3 h-3 bg-green-300 rounded-full mr-2"></div>
                   Canada
                 </div>
               </div>
