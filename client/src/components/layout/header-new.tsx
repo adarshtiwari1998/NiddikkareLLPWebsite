@@ -18,6 +18,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -280,6 +281,7 @@ export default function Header() {
     if (!leaveTimeout) {
       const timeout = setTimeout(() => {
         setActiveDropdown(null);
+        setActiveSubmenu(null);
       }, 100); // Reduced from 200ms to 100ms for faster response
       setLeaveTimeout(timeout);
     }
@@ -293,8 +295,9 @@ export default function Header() {
     }
     // Immediately close any open dropdown
     setActiveDropdown(null);
+    setActiveSubmenu(null);
   };
-
+  
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => {
     // Calculate dynamic positioning and width
     const getDropdownClasses = () => {
@@ -302,8 +305,8 @@ export default function Header() {
         isOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
       }`;
       
-      // For rightmost items (Company, Contact), position from right
-      if (menuKey === 'company' || menuKey === 'life-sciences') {
+      // For rightmost items (Company, Contact, Tools & Testing), position from right
+      if (menuKey === 'company' || menuKey === 'life-sciences' || menuKey === 'tools-testing') {
         return `${baseClasses} right-0 w-[350px] max-w-[90vw]`;
       }
       
@@ -311,6 +314,80 @@ export default function Header() {
       return `${baseClasses} left-0 w-[400px] max-w-[85vw]`;
     };
 
+    // Special handling for Tools & Testing menu with third-level submenu
+    if (menuKey === 'tools-testing') {
+      return (
+        <div 
+          className={getDropdownClasses()}
+          style={{ marginTop: '8px' }}
+          onMouseEnter={() => handleMouseEnter(menuKey)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="grid gap-2 p-4">
+            {items.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.href} className="relative group">
+                  <div
+                    className={`flex items-center space-x-2 p-3 rounded-lg transition-colors cursor-pointer ${
+                      location.startsWith(item.href) || activeSubmenu === item.label.toLowerCase()
+                        ? 'bg-primary/10 text-primary'
+                        : 'hover:bg-gray-50'
+                    }`}
+                    onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
+                  >
+                    <Icon className="h-5 w-5 text-primary" />
+                    <div className="flex-1">
+                      <div className="font-medium">{item.label}</div>
+                      <div className="text-sm text-gray-600">{item.description}</div>
+                    </div>
+                    <ChevronRight className="h-4 w-4 text-gray-400" />
+                  </div>
+                  
+                  {/* Third-level submenu */}
+                  {item.submenu && activeSubmenu === item.label.toLowerCase() && (
+                    <div 
+                      className="absolute left-full top-0 ml-2 bg-white border border-gray-200 rounded-md shadow-lg w-[320px] max-w-[85vw] z-60"
+                      onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
+                      onMouseLeave={() => setActiveSubmenu(null)}
+                    >
+                      <div className="p-3 space-y-1">
+                        {item.submenu.map((subItem) => {
+                          const SubIcon = subItem.icon;
+                          return (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              className={`flex items-center space-x-2 p-2 rounded-md text-sm transition-colors ${
+                                location === subItem.href
+                                  ? 'bg-primary/10 text-primary'
+                                  : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                              }`}
+                              onClick={() => {
+                                setActiveDropdown(null);
+                                setActiveSubmenu(null);
+                              }}
+                            >
+                              <SubIcon className="h-4 w-4" />
+                              <div>
+                                <div className="font-medium">{subItem.label}</div>
+                                <div className="text-xs text-gray-500">{subItem.description}</div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    // Regular dropdown for other menus
     return (
       <div 
         className={getDropdownClasses()}
