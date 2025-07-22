@@ -224,15 +224,11 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="bg-primary text-white px-3 py-2 rounded-lg mr-2">
-              <span className="font-bold text-xl">Ni</span>
-            </div>
-            <div className="bg-secondary text-white px-3 py-2 rounded-lg">
-              <span className="font-bold text-xl">DiK</span>
-            </div>
-            <div className="ml-3">
-              <span className="font-bold text-2xl text-gray-800">NIDDIKKARE LLP</span>
-            </div>
+            <img 
+              src="/assets/images/niddikkare-logo.png" 
+              alt="NIDDIKKARE LLP" 
+              className="h-12 w-auto"
+            />
           </Link>
           
           {/* Desktop Navigation */}
