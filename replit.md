@@ -26,6 +26,7 @@ Preferred communication style: Simple, everyday language.
 - Added CTA button to RPO page: "Get Started" button now links to https://niddik.com in new tab
 - Added enhanced CTA buttons to Contingent page: Multiple "Get Started with Our Contingent Services" buttons with gradient effects added to all major sections, linking to https://niddik.com
 - Fixed dropdown menu clickability issue: parent items with submenus (e.g., Medical Linens) are now clickable while still showing submenus on hover
+- Fixed duplicate close icons in mobile menu: Removed manual close button as SheetContent already provides built-in close functionality
 
 ## System Architecture
 

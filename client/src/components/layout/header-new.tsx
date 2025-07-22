@@ -710,16 +710,8 @@ export default function Header() {
             <SheetContent side="right" className="w-[280px] bg-white">
               <div className="flex flex-col h-full">
                 {/* Mobile Header */}
-                <div className="flex items-center justify-between p-4 border-b border-gray-200">
+                <div className="flex items-center justify-center p-4 border-b border-gray-200">
                   <img src={logoImage} alt="NIDDIKKARE LLP" className="w-[120px] h-auto" />
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    onClick={() => setIsOpen(false)}
-                    className="h-8 w-8"
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
                 </div>
                 
                 {/* Mobile Navigation Menu */}
