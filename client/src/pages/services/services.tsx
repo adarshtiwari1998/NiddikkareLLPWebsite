@@ -339,7 +339,7 @@ export default function Services() {
               </Button>
             </Link>
             <Link href="/about">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 shadow-lg">
+              <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white/10 shadow-lg">
                 Learn About Us
               </Button>
             </Link>

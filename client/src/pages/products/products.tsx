@@ -359,7 +359,7 @@ export default function Products() {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary">
               Request Product Catalog
             </Button>
           </div>
