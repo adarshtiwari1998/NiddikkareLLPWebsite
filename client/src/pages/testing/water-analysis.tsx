@@ -22,7 +22,7 @@ export default function WaterAnalysis() {
       description: "Comprehensive physical water quality testing",
       tests: ["pH Level", "Turbidity", "Temperature", "Conductivity", "Total Dissolved Solids"],
       icon: Droplet,
-      color: "bg-blue-500"
+      color: "bg-primary/100"
     },
     {
       title: "Chemical Analysis",
@@ -94,15 +94,15 @@ export default function WaterAnalysis() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-100">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-cyan-50 to-teal-100">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-blue-500/10 rounded-full mb-8 shadow-xl">
-            <Droplet className="w-12 h-12 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-primary/10 rounded-full mb-8 shadow-xl">
+            <Droplet className="w-12 h-12 text-primary" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Water <span className="text-blue-600">Analysis</span> Solutions
+            Water <span className="text-primary">Analysis</span> Solutions
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
             Comprehensive water quality testing and environmental monitoring solutions for drinking water, 
@@ -112,7 +112,7 @@ export default function WaterAnalysis() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="px-12 py-4 text-lg font-semibold bg-blue-600 hover:bg-blue-700 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              className="px-12 py-4 text-lg font-semibold bg-primary hover:bg-primary/90 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               Request Analysis
               <ArrowRight className="h-5 w-5 ml-2" />
@@ -121,7 +121,7 @@ export default function WaterAnalysis() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                className="px-8 py-4 text-lg font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
               >
                 Get Consultation
               </Button>
@@ -144,7 +144,7 @@ export default function WaterAnalysis() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {analysisTypes.map((type, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-br from-white to-blue-50/30">
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-br from-white to-primary/10/30">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`p-3 ${type.color} rounded-xl shadow-lg`}>
@@ -192,7 +192,7 @@ export default function WaterAnalysis() {
             {applicationAreas.map((area, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
                     {area.title}
                   </CardTitle>
                   <CardDescription className="text-gray-600 text-sm">
@@ -205,7 +205,7 @@ export default function WaterAnalysis() {
                       <Badge 
                         key={featureIndex} 
                         variant="secondary" 
-                        className="bg-blue-100 text-blue-700 text-xs"
+                        className="bg-primary/20 text-primary text-xs"
                       >
                         {feature}
                       </Badge>
@@ -230,7 +230,7 @@ export default function WaterAnalysis() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {keyFeatures.map((feature, index) => (
               <div key={index} className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4 group-hover:bg-blue-700 transition-colors shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-4 group-hover:bg-primary/90 transition-colors shadow-lg">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -242,7 +242,7 @@ export default function WaterAnalysis() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-primary to-primary/80 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Ensure Water Quality?
@@ -254,7 +254,7 @@ export default function WaterAnalysis() {
             <Link href="/contact">
               <Button 
                 size="lg"
-                className="px-8 py-4 text-lg font-semibold bg-white text-blue-600 hover:bg-gray-100 shadow-xl"
+                className="px-8 py-4 text-lg font-semibold bg-white text-primary hover:bg-gray-100 shadow-xl"
               >
                 Schedule Testing
                 <Beaker className="h-5 w-5 ml-2" />
@@ -263,7 +263,7 @@ export default function WaterAnalysis() {
             <Button 
               size="lg"
               variant="outline"
-              className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300"
+              className="px-8 py-4 text-lg font-semibold border-white text-white hover:bg-white hover:text-primary transition-all duration-300"
             >
               Download Brochure
             </Button>

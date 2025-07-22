@@ -11,12 +11,12 @@ export default function Bioanalysis() {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 bg-purple-500/10 rounded-full flex items-center justify-center">
-              <Dna className="h-12 w-12 text-purple-500" />
+            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
+              <Dna className="h-12 w-12 text-primary" />
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            Advanced <span className="text-secondary">Bioanalysis</span>
+            Advanced <span className="text-primary">Bioanalysis</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Comprehensive bioanalytical solutions for drug development, biomarker discovery, and molecular diagnostics. 
@@ -29,8 +29,8 @@ export default function Bioanalysis() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Microscope className="h-8 w-8 text-purple-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Microscope className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>High Sensitivity</CardTitle>
                 <CardDescription>
@@ -69,7 +69,7 @@ export default function Bioanalysis() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Bioanalytical <span className="text-secondary">Methods</span>
+              Bioanalytical <span className="text-primary">Methods</span>
             </h2>
           </div>
           
@@ -86,7 +86,7 @@ export default function Bioanalysis() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <FlaskConical className="h-5 w-5 mr-2 text-purple-500" />
+                      <FlaskConical className="h-5 w-5 mr-2 text-primary" />
                       Protein Quantification
                     </CardTitle>
                   </CardHeader>
@@ -103,7 +103,7 @@ export default function Bioanalysis() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Beaker className="h-5 w-5 mr-2 text-purple-500" />
+                      <Beaker className="h-5 w-5 mr-2 text-primary" />
                       Protein Characterization
                     </CardTitle>
                   </CardHeader>
@@ -124,7 +124,7 @@ export default function Bioanalysis() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Dna className="h-5 w-5 mr-2 text-blue-500" />
+                      <Dna className="h-5 w-5 mr-2 text-primary" />
                       DNA/RNA Analysis
                     </CardTitle>
                   </CardHeader>
@@ -141,7 +141,7 @@ export default function Bioanalysis() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Target className="h-5 w-5 mr-2 text-blue-500" />
+                      <Target className="h-5 w-5 mr-2 text-primary" />
                       Pharmacogenomics
                     </CardTitle>
                   </CardHeader>
@@ -239,7 +239,7 @@ export default function Bioanalysis() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Technology <span className="text-secondary">Platforms</span>
+              Technology <span className="text-primary">Platforms</span>
             </h2>
           </div>
           
@@ -295,7 +295,7 @@ export default function Bioanalysis() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Industry <span className="text-secondary">Applications</span>
+              Industry <span className="text-primary">Applications</span>
             </h2>
           </div>
           
@@ -351,14 +351,14 @@ export default function Bioanalysis() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Performance <span className="text-secondary">Metrics</span>
+              Performance <span className="text-primary">Metrics</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-purple-500 mb-2">pg/mL</div>
+                <div className="text-4xl font-bold text-primary mb-2">pg/mL</div>
                 <p className="text-gray-600">Detection Limit</p>
                 <p className="text-sm text-gray-500">Ultra-sensitive</p>
               </CardContent>

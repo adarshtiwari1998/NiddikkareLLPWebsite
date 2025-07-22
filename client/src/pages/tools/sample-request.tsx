@@ -10,12 +10,12 @@ export default function SampleRequest() {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center">
-              <FileText className="h-12 w-12 text-blue-500" />
+            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
+              <FileText className="h-12 w-12 text-primary" />
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            Sample <span className="text-blue-600">Request</span> System
+            Sample <span className="text-primary">Request</span> System
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Streamlined sample request and tracking system for laboratories. 
@@ -28,8 +28,8 @@ export default function SampleRequest() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="h-8 w-8 text-blue-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Real-Time Tracking</CardTitle>
                 <CardDescription>
@@ -40,8 +40,8 @@ export default function SampleRequest() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BarChart3 className="h-8 w-8 text-green-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Analytics Dashboard</CardTitle>
                 <CardDescription>
@@ -52,8 +52,8 @@ export default function SampleRequest() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-purple-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Secure Protocol</CardTitle>
                 <CardDescription>
@@ -68,7 +68,7 @@ export default function SampleRequest() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              System <span className="text-blue-600">Capabilities</span>
+              System <span className="text-primary">Capabilities</span>
             </h2>
           </div>
           
@@ -77,21 +77,21 @@ export default function SampleRequest() {
               <h3 className="text-2xl font-semibold mb-6">Request Management</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Digital Sample Forms</h4>
                     <p className="text-gray-600">Create and submit sample requests digitally</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Automated Routing</h4>
                     <p className="text-gray-600">Intelligent routing to appropriate departments</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Priority Management</h4>
                     <p className="text-gray-600">Set and manage sample processing priorities</p>
@@ -104,21 +104,21 @@ export default function SampleRequest() {
               <h3 className="text-2xl font-semibold mb-6">Tracking & Monitoring</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Real-Time Updates</h4>
                     <p className="text-gray-600">Live status updates throughout the process</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Automated Notifications</h4>
                     <p className="text-gray-600">Email and SMS alerts for key milestones</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Chain of Custody</h4>
                     <p className="text-gray-600">Complete audit trail and documentation</p>
@@ -133,15 +133,15 @@ export default function SampleRequest() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Sample <span className="text-blue-600">Workflow</span>
+              Sample <span className="text-primary">Workflow</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-5 gap-6">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-blue-600">1</span>
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">1</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Request</h3>
                 <p className="text-sm text-gray-600">Submit sample request form</p>
@@ -194,14 +194,14 @@ export default function SampleRequest() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Performance <span className="text-blue-600">Metrics</span>
+              Performance <span className="text-primary">Metrics</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-blue-600 mb-2">99.9%</div>
+                <div className="text-4xl font-bold text-primary mb-2">99.9%</div>
                 <p className="text-gray-600">System Uptime</p>
               </CardContent>
             </Card>
@@ -230,7 +230,7 @@ export default function SampleRequest() {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center bg-blue-50 rounded-2xl p-8">
+        <section className="text-center bg-primary/10 rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Streamline Your Sample Management
           </h2>
@@ -238,7 +238,7 @@ export default function SampleRequest() {
             Join hundreds of laboratories that have improved their efficiency with our sample request system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
               Request Demo
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>

@@ -40,8 +40,8 @@ export default function ETraining() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-green-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Expert Knowledge</CardTitle>
                 <CardDescription>
@@ -52,8 +52,8 @@ export default function ETraining() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="h-8 w-8 text-purple-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Always Available</CardTitle>
                 <CardDescription>
@@ -79,10 +79,10 @@ export default function ETraining() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Safety protocols and procedures</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Equipment operation and maintenance</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Quality control and assurance</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Documentation and record keeping</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Safety protocols and procedures</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Equipment operation and maintenance</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Quality control and assurance</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Documentation and record keeping</li>
                 </ul>
               </CardContent>
             </Card>
@@ -93,10 +93,10 @@ export default function ETraining() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Molecular diagnostics methods</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Chromatography applications</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Bioanalytical methods</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-green-500" />Regulatory compliance</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Molecular diagnostics methods</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Chromatography applications</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Bioanalytical methods</li>
+                  <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-3 text-primary" />Regulatory compliance</li>
                 </ul>
               </CardContent>
             </Card>
@@ -114,8 +114,8 @@ export default function ETraining() {
           <div className="grid md:grid-cols-4 gap-6">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-blue-600">1</span>
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">1</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Explore</h3>
                 <p className="text-sm text-gray-600">Browse our comprehensive resource library</p>
@@ -168,7 +168,7 @@ export default function ETraining() {
                 <div className="text-lg">Educational Articles</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-blue-200 mb-2">150+</div>
+                <div className="text-4xl font-bold text-primary/80 mb-2">150+</div>
                 <div className="text-lg">Technical Guides</div>
               </div>
               <div className="text-center">

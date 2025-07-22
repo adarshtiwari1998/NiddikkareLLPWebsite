@@ -10,12 +10,12 @@ export default function NanocolorFinder() {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center">
-              <Droplet className="h-12 w-12 text-blue-500" />
+            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
+              <Droplet className="h-12 w-12 text-primary" />
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            <span className="text-blue-600">NANOCOLOR</span> Finder
+            <span className="text-primary">NANOCOLOR</span> Finder
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Colorimetric analysis tools for precise water and environmental testing. 
@@ -28,8 +28,8 @@ export default function NanocolorFinder() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Palette className="h-8 w-8 text-blue-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Palette className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Colorimetric Analysis</CardTitle>
                 <CardDescription>
@@ -40,8 +40,8 @@ export default function NanocolorFinder() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Search className="h-8 w-8 text-green-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Search className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Parameter Search</CardTitle>
                 <CardDescription>
@@ -52,8 +52,8 @@ export default function NanocolorFinder() {
             
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-8 w-8 text-purple-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Quick Results</CardTitle>
                 <CardDescription>
@@ -68,7 +68,7 @@ export default function NanocolorFinder() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Test <span className="text-blue-600">Categories</span>
+              Test <span className="text-primary">Categories</span>
             </h2>
           </div>
           
@@ -77,28 +77,28 @@ export default function NanocolorFinder() {
               <h3 className="text-2xl font-semibold mb-6">Water Quality Parameters</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Nutrients</h4>
                     <p className="text-gray-600">Nitrogen, phosphorus, and potassium testing</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Heavy Metals</h4>
                     <p className="text-gray-600">Lead, mercury, copper, and other metal detection</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Chemical Oxygen Demand</h4>
                     <p className="text-gray-600">COD and BOD testing for water treatment</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">pH and Alkalinity</h4>
                     <p className="text-gray-600">pH, alkalinity, and hardness measurements</p>
@@ -111,28 +111,28 @@ export default function NanocolorFinder() {
               <h3 className="text-2xl font-semibold mb-6">Application Areas</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Drinking Water</h4>
                     <p className="text-gray-600">Municipal and well water testing</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Wastewater</h4>
                     <p className="text-gray-600">Treatment plant monitoring and compliance</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Industrial Water</h4>
                     <p className="text-gray-600">Process water and cooling tower monitoring</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-3 text-green-500 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 mr-3 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-semibold">Environmental</h4>
                     <p className="text-gray-600">Surface water and groundwater analysis</p>
@@ -147,15 +147,15 @@ export default function NanocolorFinder() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Test <span className="text-blue-600">Features</span>
+              Test <span className="text-primary">Features</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-4 gap-6">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Droplet className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Droplet className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Ready-to-use</h3>
                 <p className="text-sm text-gray-600">Pre-measured reagents in convenient vials</p>
@@ -198,14 +198,14 @@ export default function NanocolorFinder() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              NANOCOLOR <span className="text-blue-600">Database</span>
+              NANOCOLOR <span className="text-primary">Database</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-blue-600 mb-2">100+</div>
+                <div className="text-4xl font-bold text-primary mb-2">100+</div>
                 <p className="text-gray-600">Test Parameters</p>
               </CardContent>
             </Card>
@@ -234,7 +234,7 @@ export default function NanocolorFinder() {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center bg-blue-50 rounded-2xl p-8">
+        <section className="text-center bg-primary/10 rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Find Your NANOCOLOR Test Today
           </h2>
@@ -242,7 +242,7 @@ export default function NanocolorFinder() {
             Discover the perfect colorimetric test for your water quality analysis needs with our comprehensive database.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
               Search Tests
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>

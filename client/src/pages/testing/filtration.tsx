@@ -11,12 +11,12 @@ export default function Filtration() {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center">
-              <Filter className="h-12 w-12 text-blue-500" />
+            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
+              <Filter className="h-12 w-12 text-primary" />
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            Advanced <span className="text-secondary">Filtration</span>
+            Advanced <span className="text-primary">Filtration</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Comprehensive filtration solutions for laboratory and industrial applications. 
@@ -29,8 +29,8 @@ export default function Filtration() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Droplets className="h-8 w-8 text-blue-500" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Droplets className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle>Precision Filtration</CardTitle>
                 <CardDescription>
@@ -69,7 +69,7 @@ export default function Filtration() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Filtration <span className="text-secondary">Solutions</span>
+              Filtration <span className="text-primary">Solutions</span>
             </h2>
           </div>
           
@@ -86,7 +86,7 @@ export default function Filtration() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <FlaskConical className="h-5 w-5 mr-2 text-blue-500" />
+                      <FlaskConical className="h-5 w-5 mr-2 text-primary" />
                       Ultrafiltration Systems
                     </CardTitle>
                   </CardHeader>
@@ -103,7 +103,7 @@ export default function Filtration() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Beaker className="h-5 w-5 mr-2 text-blue-500" />
+                      <Beaker className="h-5 w-5 mr-2 text-primary" />
                       Microfiltration Systems
                     </CardTitle>
                   </CardHeader>
@@ -200,7 +200,7 @@ export default function Filtration() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Activity className="h-5 w-5 mr-2 text-blue-500" />
+                      <Activity className="h-5 w-5 mr-2 text-primary" />
                       HEPA Filtration
                     </CardTitle>
                   </CardHeader>
@@ -217,7 +217,7 @@ export default function Filtration() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Shield className="h-5 w-5 mr-2 text-blue-500" />
+                      <Shield className="h-5 w-5 mr-2 text-primary" />
                       ULPA Filtration
                     </CardTitle>
                   </CardHeader>
@@ -239,7 +239,7 @@ export default function Filtration() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Technical <span className="text-secondary">Specifications</span>
+              Technical <span className="text-primary">Specifications</span>
             </h2>
           </div>
           

@@ -16,7 +16,7 @@ export default function Chromatography() {
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            Advanced <span className="text-secondary">Chromatography</span>
+            Advanced <span className="text-primary">Chromatography</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Comprehensive chromatographic analysis solutions for separation, identification, and quantification. 
@@ -69,7 +69,7 @@ export default function Chromatography() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Chromatography <span className="text-secondary">Techniques</span>
+              Chromatography <span className="text-primary">Techniques</span>
             </h2>
           </div>
           
@@ -124,7 +124,7 @@ export default function Chromatography() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <BarChart3 className="h-5 w-5 mr-2 text-blue-500" />
+                      <BarChart3 className="h-5 w-5 mr-2 text-primary" />
                       Gas Chromatography
                     </CardTitle>
                   </CardHeader>
@@ -141,7 +141,7 @@ export default function Chromatography() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Target className="h-5 w-5 mr-2 text-blue-500" />
+                      <Target className="h-5 w-5 mr-2 text-primary" />
                       GC-MS Systems
                     </CardTitle>
                   </CardHeader>
@@ -162,7 +162,7 @@ export default function Chromatography() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <TrendingUp className="h-5 w-5 mr-2 text-purple-500" />
+                      <TrendingUp className="h-5 w-5 mr-2 text-primary" />
                       Ion Chromatography
                     </CardTitle>
                   </CardHeader>
@@ -179,7 +179,7 @@ export default function Chromatography() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Shield className="h-5 w-5 mr-2 text-purple-500" />
+                      <Shield className="h-5 w-5 mr-2 text-primary" />
                       Applications
                     </CardTitle>
                   </CardHeader>
@@ -239,7 +239,7 @@ export default function Chromatography() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Industry <span className="text-secondary">Applications</span>
+              Industry <span className="text-primary">Applications</span>
             </h2>
           </div>
           
@@ -295,7 +295,7 @@ export default function Chromatography() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Technical <span className="text-secondary">Specifications</span>
+              Technical <span className="text-primary">Specifications</span>
             </h2>
           </div>
           

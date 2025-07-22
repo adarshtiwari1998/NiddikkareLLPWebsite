@@ -16,7 +16,7 @@ export default function RapidTests() {
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            Rapid <span className="text-secondary">Tests</span>
+            Rapid <span className="text-primary">Tests</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Fast, accurate, and reliable diagnostic testing solutions for immediate results. 
@@ -69,7 +69,7 @@ export default function RapidTests() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Rapid Testing <span className="text-secondary">Solutions</span>
+              Rapid Testing <span className="text-primary">Solutions</span>
             </h2>
           </div>
           
@@ -162,7 +162,7 @@ export default function RapidTests() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <Shield className="h-5 w-5 mr-2 text-purple-500" />
+                      <Shield className="h-5 w-5 mr-2 text-primary" />
                       Workplace Testing
                     </CardTitle>
                   </CardHeader>
@@ -179,7 +179,7 @@ export default function RapidTests() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center">
-                      <TestTube className="h-5 w-5 mr-2 text-purple-500" />
+                      <TestTube className="h-5 w-5 mr-2 text-primary" />
                       Therapeutic Monitoring
                     </CardTitle>
                   </CardHeader>
@@ -239,7 +239,7 @@ export default function RapidTests() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Advanced <span className="text-secondary">Technology</span>
+              Advanced <span className="text-primary">Technology</span>
             </h2>
           </div>
           
@@ -295,7 +295,7 @@ export default function RapidTests() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Performance <span className="text-secondary">Metrics</span>
+              Performance <span className="text-primary">Metrics</span>
             </h2>
           </div>
           
