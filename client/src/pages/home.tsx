@@ -110,28 +110,28 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <Card className="text-center glass-card border-0">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2 counter-animation">25+</div>
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">4+</div>
                 <p className="text-gray-600">Years of Excellence</p>
               </CardContent>
             </Card>
             
             <Card className="text-center glass-card border-0">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2 counter-animation">500+</div>
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">10+</div>
                 <p className="text-gray-600">Healthcare Partners</p>
               </CardContent>
             </Card>
             
             <Card className="text-center glass-card border-0">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2 counter-animation">50+</div>
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">5+</div>
                 <p className="text-gray-600">Countries Served</p>
               </CardContent>
             </Card>
             
             <Card className="text-center glass-card border-0">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2 counter-animation">1000+</div>
+                <div className="text-4xl font-bold text-primary mb-2 counter-animation">100+</div>
                 <p className="text-gray-600">Products & Solutions</p>
               </CardContent>
             </Card>
