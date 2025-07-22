@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -19,6 +19,7 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const submenuRef = useRef<HTMLDivElement>(null);
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -347,7 +348,17 @@ export default function Header() {
                   {/* Third-level submenu */}
                   {item.submenu && activeSubmenu === item.label.toLowerCase() && (
                     <div 
-                      className="absolute left-full top-0 ml-2 bg-white border border-gray-200 rounded-md shadow-lg w-[320px] max-w-[85vw] z-60"
+                      ref={submenuRef}
+                      className="absolute top-0 bg-white border border-gray-200 rounded-md shadow-lg z-60"
+                      style={{
+                        // Smart positioning: check if there's space on the right, otherwise position on the left
+                        right: menuKey === 'tools-testing' ? '100%' : 'auto',
+                        left: menuKey === 'tools-testing' ? 'auto' : '100%',
+                        marginRight: menuKey === 'tools-testing' ? '8px' : '0',
+                        marginLeft: menuKey === 'tools-testing' ? '0' : '8px',
+                        width: '300px',
+                        maxWidth: '85vw'
+                      }}
                       onMouseEnter={() => setActiveSubmenu(item.label.toLowerCase())}
                       onMouseLeave={() => setActiveSubmenu(null)}
                     >
