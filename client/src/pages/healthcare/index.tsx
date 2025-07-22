@@ -143,7 +143,7 @@ export default function Healthcare() {
                 <Card key={service.id} className="group overflow-hidden border-2 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
                   <div className="relative">
                     {/* Image Section */}
-                    <div className="aspect-[4/3] overflow-hidden">
+                    <div className="aspect-[3/2] overflow-hidden">
                       <img 
                         src={service.image} 
                         alt={service.title}
