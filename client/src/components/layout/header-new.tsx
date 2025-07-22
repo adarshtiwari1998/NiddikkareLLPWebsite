@@ -702,12 +702,12 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" className="lg:hidden flex flex-col items-center gap-1 px-2 py-2">
+              <Button variant="ghost" className="lg:hidden flex flex-col items-center gap-1 px-2 py-2 text-primary hover:text-primary hover:bg-primary/10">
                 <Menu className="h-8 w-8" />
                 <span className="text-xs">Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-white">
+            <SheetContent side="right" className="w-[280px] bg-white [&>button]:text-primary [&>button]:hover:text-primary [&>button]:hover:bg-primary/10">
               <div className="flex flex-col h-full">
                 {/* Mobile Header */}
                 <div className="flex items-center justify-center p-4 border-b border-gray-200">
