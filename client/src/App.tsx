@@ -20,6 +20,7 @@ import Bioanalysis from "@/pages/bioanalysis";
 import About from "@/pages/about";
 import News from "@/pages/news";
 import Contact from "@/pages/contact";
+import Tools from "@/pages/tools/tools";
 import ETraining from "@/pages/tools/e-training";
 import SampleRequest from "@/pages/tools/sample-request";
 import ApplicationDatabaseChromatography from "@/pages/tools/application-database-chromatography";
@@ -159,6 +160,7 @@ function Router() {
           <Route path="/contact" component={Contact} />
           
           {/* Tools Routes */}
+          <Route path="/tools" component={Tools} />
           <Route path="/tools/e-training" component={ETraining} />
           <Route path="/tools/sample-request" component={SampleRequest} />
           <Route path="/tools/application-database-chromatography" component={ApplicationDatabaseChromatography} />

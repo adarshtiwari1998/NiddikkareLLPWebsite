@@ -294,7 +294,7 @@ export default function Header() {
           icon: FlaskConical
         },
         {
-          href: "/tools/bioanalysis-kit-finder",
+          href: "/tools/bioanalysis-kitfinder",
           label: "Bioanalysis KitFinder",
           description: "Comprehensive bioanalysis kit selection tool",
           icon: Microscope
@@ -850,14 +850,15 @@ export default function Header() {
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('tools-testing')}
               >
-                <button 
+                <Link
+                  href="/tools"
                   className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
                     location.startsWith('/tools') || location.startsWith('/testing') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Tools & Testing
                   <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
+                </Link>
                 <DropdownMenu items={toolsTestingItems} isOpen={activeDropdown === 'tools-testing'} menuKey="tools-testing" />
               </li>
 
