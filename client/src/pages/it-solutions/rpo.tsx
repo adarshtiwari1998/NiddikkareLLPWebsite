@@ -106,6 +106,14 @@ export default function RPO() {
     { name: "Pharmaceuticals", description: "Drug development and regulatory experts", growth: "94%" }
   ];
 
+  const handleMouseOver = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.boxShadow = '0 0 30px rgba(34, 197, 94, 0.6)';
+  };
+
+  const handleMouseOut = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Hero Section */}
@@ -142,14 +150,33 @@ export default function RPO() {
               <div className="text-sm text-gray-600">Candidates Engaged</div>
             </div>
           </div>
-          <div className="flex justify-center">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90"
+          <div className="flex flex-col items-center">
+            <button 
+              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent mb-4"
+              style={{
+                background: 'linear-gradient(45deg, #22c55e, #16a34a, #15803d, #22c55e)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                border: '4px solid transparent',
+                backgroundClip: 'padding-box',
+                position: 'relative',
+              }}
               onClick={() => window.open('https://niddik.com', '_blank')}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
             >
-              Get Started
-            </Button>
+              <span className="relative z-10">Get Started with Our RPO Services</span>
+              <div 
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(45deg, #10b981, #059669, #047857, #10b981)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite reverse',
+                  opacity: '0.3',
+                }}
+              ></div>
+            </button>
+            <p className="text-sm text-gray-600">Check out Niddik.com for the services</p>
           </div>
         </div>
       </section>
@@ -199,9 +226,9 @@ export default function RPO() {
           </div>
           
           {/* Enhanced CTA Button */}
-          <div className="flex justify-center mt-16">
+          <div className="flex flex-col items-center mt-16">
             <button 
-              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent"
+              className="relative px-12 py-4 text-lg font-semibold text-white rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-4 border-transparent mb-4"
               style={{
                 background: 'linear-gradient(45deg, #22c55e, #16a34a, #15803d, #22c55e)',
                 backgroundSize: '300% 300%',
@@ -211,12 +238,8 @@ export default function RPO() {
                 position: 'relative',
               }}
               onClick={() => window.open('https://niddik.com', '_blank')}
-              onMouseOver={(e) => {
-                e.target.style.boxShadow = '0 0 30px rgba(34, 197, 94, 0.6)';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
-              }}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
             >
               <span className="relative z-10">Get Started with Our RPO Services</span>
               <div 
@@ -229,6 +252,7 @@ export default function RPO() {
                 }}
               ></div>
             </button>
+            <p className="text-sm text-gray-600">Check out Niddik.com for the services</p>
           </div>
         </div>
       </section>
@@ -383,16 +407,12 @@ export default function RPO() {
             <div className="space-y-2">
               <div className="flex items-center justify-center space-x-4 text-sm">
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-orange-300 rounded-full mr-2"></div>
-                  India (HQ)
+                  <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                  <span>Active Connections</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-red-300 rounded-full mr-2"></div>
-                  USA
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-300 rounded-full mr-2"></div>
-                  Canada
+                  <div className="w-3 h-3 bg-blue-400 rounded-full mr-2"></div>
+                  <span>Growing Network</span>
                 </div>
               </div>
             </div>
@@ -400,21 +420,16 @@ export default function RPO() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-primary text-white">
+      {/* Call to Action */}
+      <section className="py-16 px-4">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Recruitment?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Partner with us for faster, more efficient, and cost-effective hiring
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Partner with us to streamline your talent acquisition process and access top-tier candidates efficiently.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
-              Start RPO Partnership
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              Download Case Study
-            </Button>
-          </div>
+          <Button size="lg" className="bg-primary hover:bg-primary/90">
+            Schedule Consultation
+          </Button>
         </div>
       </section>
     </div>
