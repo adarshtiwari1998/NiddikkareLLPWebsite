@@ -312,7 +312,7 @@ export default function Header() {
         return `${baseClasses} right-0 w-[350px] max-w-[90vw]`;
       }
       
-      if (menuKey === 'tools-testing') {
+      if (menuKey === 'tools-testing' || menuKey === 'healthcare') {
         return `${baseClasses} right-0 max-w-[90vw]`;
       }
       
@@ -320,8 +320,8 @@ export default function Header() {
       return `${baseClasses} left-0 w-[400px] max-w-[85vw]`;
     };
 
-    // Special handling for Tools & Testing menu with third-level submenu
-    if (menuKey === 'tools-testing') {
+    // Special handling for Tools & Testing and Healthcare menus with third-level submenu
+    if (menuKey === 'tools-testing' || menuKey === 'healthcare') {
       return (
         <div 
           className={getDropdownClasses()}
@@ -452,33 +452,6 @@ export default function Header() {
                   </div>
                   {item.submenu && <ChevronRight className="h-4 w-4 text-gray-400" />}
                 </Link>
-                
-                {/* Render submenu items if they exist */}
-                {item.submenu && (
-                  <div className="ml-8 mt-2 space-y-1">
-                    {item.submenu.map((subItem) => {
-                      const SubIcon = subItem.icon;
-                      return (
-                        <Link
-                          key={subItem.href}
-                          href={subItem.href}
-                          className={`flex items-center space-x-2 p-2 rounded-md text-sm transition-colors ${
-                            location === subItem.href
-                              ? 'bg-primary/10 text-primary'
-                              : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
-                          }`}
-                          onClick={() => setActiveDropdown(null)}
-                        >
-                          <SubIcon className="h-4 w-4" />
-                          <div>
-                            <div className="font-medium">{subItem.label}</div>
-                            <div className="text-xs text-gray-500">{subItem.description}</div>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
               </div>
             );
           })}
