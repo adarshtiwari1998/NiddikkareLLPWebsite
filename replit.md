@@ -28,6 +28,7 @@ Preferred communication style: Simple, everyday language.
 - Fixed dropdown menu clickability issue: parent items with submenus (e.g., Medical Linens) are now clickable while still showing submenus on hover
 - Fixed duplicate close icons in mobile menu: Removed manual close button as SheetContent already provides built-in close functionality
 - Fixed mobile menu button and close button styling: Updated hamburger menu icon and close button to use primary brand color with proper hover states
+- Improved dropdown hover responsiveness: Fixed timing issues when rapidly switching between menu items, enhanced timeout handling and immediate dropdown switching for better user experience
 
 ## System Architecture
 

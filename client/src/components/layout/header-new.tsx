@@ -20,16 +20,20 @@ export default function Header() {
   const [leaveTimeout, setLeaveTimeout] = useState<NodeJS.Timeout | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [collapsedSections, setCollapsedSections] = useState<Set<string>>(new Set());
+  const [enterTimeout, setEnterTimeout] = useState<NodeJS.Timeout | null>(null);
   const submenuRef = useRef<HTMLDivElement>(null);
 
-  // Cleanup timeout on unmount
+  // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
       if (leaveTimeout) {
         clearTimeout(leaveTimeout);
       }
+      if (enterTimeout) {
+        clearTimeout(enterTimeout);
+      }
     };
-  }, [leaveTimeout]);
+  }, [leaveTimeout, enterTimeout]);
 
   const toggleSection = (sectionKey: string) => {
     const newCollapsed = new Set(collapsedSections);
@@ -279,31 +283,43 @@ export default function Header() {
   ];
 
   const handleMouseEnter = (menuKey: string) => {
-    // Always clear any existing timeout
+    // Clear all existing timeouts
     if (leaveTimeout) {
       clearTimeout(leaveTimeout);
       setLeaveTimeout(null);
     }
-    // Immediately set the new dropdown - this ensures instant switching
+    if (enterTimeout) {
+      clearTimeout(enterTimeout);
+      setEnterTimeout(null);
+    }
+    
+    // Immediate update for faster response
     setActiveDropdown(menuKey);
+    setActiveSubmenu(null); // Reset submenu when switching main dropdowns
   };
 
   const handleMouseLeave = () => {
-    // Only set timeout if there's no existing one
-    if (!leaveTimeout) {
-      const timeout = setTimeout(() => {
-        setActiveDropdown(null);
-        setActiveSubmenu(null);
-      }, 100); // Reduced from 200ms to 100ms for faster response
-      setLeaveTimeout(timeout);
-    }
-  };
-
-  const handleNonDropdownHover = () => {
-    // Clear any existing timeout
+    // Always clear existing timeout and set a new one
     if (leaveTimeout) {
       clearTimeout(leaveTimeout);
       setLeaveTimeout(null);
+    }
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+      setActiveSubmenu(null);
+    }, 150); // Slightly increased delay for better user experience
+    setLeaveTimeout(timeout);
+  };
+
+  const handleNonDropdownHover = () => {
+    // Clear all existing timeouts
+    if (leaveTimeout) {
+      clearTimeout(leaveTimeout);
+      setLeaveTimeout(null);
+    }
+    if (enterTimeout) {
+      clearTimeout(enterTimeout);
+      setEnterTimeout(null);
     }
     // Immediately close any open dropdown
     setActiveDropdown(null);
@@ -564,7 +580,21 @@ export default function Header() {
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex flex-shrink-0" onMouseLeave={handleMouseLeave}>
+          <nav 
+            className="hidden lg:flex flex-shrink-0" 
+            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => {
+              // Clear all existing timeouts when entering the navigation area
+              if (leaveTimeout) {
+                clearTimeout(leaveTimeout);
+                setLeaveTimeout(null);
+              }
+              if (enterTimeout) {
+                clearTimeout(enterTimeout);
+                setEnterTimeout(null);
+              }
+            }}
+          >
             <ul className="flex items-center space-x-1">
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
