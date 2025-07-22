@@ -133,7 +133,7 @@ export default function DnaRnaExtraction() {
                 
                 <div>
                   <img 
-                    src="attached_assets/image_1752676114030.png" 
+                    src="@assets/image_1753167745564.png" 
                     alt="Plant DNA extraction laboratory setup" 
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
@@ -253,7 +253,7 @@ export default function DnaRnaExtraction() {
                 
                 <div>
                   <img 
-                    src="https://images.unsplash.com/photo-1583912267550-a1d8b882eef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                    src="@assets/image_1753167765565.png" 
                     alt="Viral RNA extraction laboratory" 
                     className="rounded-xl shadow-lg w-full h-auto"
                   />
@@ -433,7 +433,7 @@ export default function DnaRnaExtraction() {
           </div>
         </section>
 
-        {/* Product Cards Section */}
+        {/* Extraction Kit Portfolio Section */}
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
@@ -442,6 +442,15 @@ export default function DnaRnaExtraction() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive DNA and RNA extraction solutions with professional-grade performance
             </p>
+          </div>
+          
+          {/* Full Portfolio Image */}
+          <div className="mb-12">
+            <img 
+              src="@assets/image_1753167797181.png" 
+              alt="Complete Extraction Kit Portfolio showing Plant DNA, Tissue DNA, Blood DNA, and Blood & Cell Culture DNA extraction kits" 
+              className="rounded-xl shadow-lg w-full h-auto mx-auto"
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
