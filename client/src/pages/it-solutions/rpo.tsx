@@ -138,12 +138,9 @@ export default function RPO() {
               <div className="text-sm text-gray-600">Client Partners</div>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               Get Started
-            </Button>
-            <Button size="lg" variant="outline">
-              View Case Studies
             </Button>
           </div>
         </div>
