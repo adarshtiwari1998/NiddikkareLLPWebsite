@@ -33,9 +33,9 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  123 Innovation Drive<br />
-                  Biotech Park<br />
-                  Science City, SC 12345
+                  C-11, Pocket-9A, Jasola<br />
+                  New Delhi-110025<br />
+                  INDIA
                 </p>
               </CardContent>
             </Card>
@@ -49,9 +49,9 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  +1 (555) 123-4567<br />
-                  +1 (555) 123-4568<br />
-                  Toll-free: 1-800-NIDDIK
+                  +91-90151 62449<br />
+                  +91-95603 34337<br />
+                  India
                 </p>
               </CardContent>
             </Card>
@@ -66,8 +66,8 @@ export default function Contact() {
               <CardContent>
                 <p className="text-gray-600 text-sm">
                   info@niddikkare.com<br />
-                  support@niddikkare.com<br />
-                  sales@niddikkare.com
+                  info@niddik.com<br />
+                  Contact us anytime
                 </p>
               </CardContent>
             </Card>
@@ -220,9 +220,9 @@ export default function Contact() {
                   <CardContent>
                     <p className="text-gray-600 mb-2">For product inquiries and sales support</p>
                     <div className="space-y-1 text-sm">
-                      <p>Email: sales@niddikkare.com</p>
-                      <p>Phone: +1 (555) 123-4567</p>
-                      <p>Direct: +1 (555) 123-4570</p>
+                      <p>Email: info@niddikkare.com</p>
+                      <p>Phone: +91-90151 62449</p>
+                      <p>Direct: +91-95603 34337</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -237,9 +237,9 @@ export default function Contact() {
                   <CardContent>
                     <p className="text-gray-600 mb-2">For technical assistance and product support</p>
                     <div className="space-y-1 text-sm">
-                      <p>Email: support@niddikkare.com</p>
-                      <p>Phone: +1 (555) 123-4568</p>
-                      <p>24/7 Emergency: +1 (555) 123-4569</p>
+                      <p>Email: info@niddik.com</p>
+                      <p>Phone: +91-95603 34337</p>
+                      <p>Support: +91-90151 62449</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -301,22 +301,22 @@ export default function Contact() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-lg">North America HQ</CardTitle>
-                <CardDescription>United States</CardDescription>
+                <CardTitle className="text-lg">India Headquarters</CardTitle>
+                <CardDescription>New Delhi</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-sm">
                   <p className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2 text-gray-400" />
-                    123 Innovation Drive, Science City, SC 12345
+                    C-11, Pocket-9A, Jasola, New Delhi-110025 INDIA
                   </p>
                   <p className="flex items-center">
                     <Phone className="h-4 w-4 mr-2 text-gray-400" />
-                    +1 (555) 123-4567
+                    +91-90151 62449 | +91-95603 34337
                   </p>
                   <p className="flex items-center">
                     <Mail className="h-4 w-4 mr-2 text-gray-400" />
-                    usa@niddikkare.com
+                    info@niddikkare.com
                   </p>
                 </div>
               </CardContent>

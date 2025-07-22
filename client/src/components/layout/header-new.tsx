@@ -250,7 +250,7 @@ export default function Header() {
             <div className="flex items-center space-x-4 text-gray-600">
               <span className="flex items-center">
                 <Phone className="h-3 w-3 mr-1" />
-                +1 (555) 123-4567
+                +91-90151 62449 | +91-95603 34337
               </span>
               <span className="flex items-center">
                 <Mail className="h-3 w-3 mr-1" />
