@@ -352,9 +352,21 @@ export default function Header() {
       setEnterTimeout(null);
     }
     
-    // Immediate update for faster response
-    setActiveDropdown(menuKey);
-    setActiveSubmenu(null); // Reset submenu when switching main dropdowns
+    // If switching between different dropdowns, close previous immediately
+    if (activeDropdown && activeDropdown !== menuKey) {
+      setActiveDropdown(null);
+      setActiveSubmenu(null);
+      // Use a minimal timeout to prevent flickering
+      const timeout = setTimeout(() => {
+        setActiveDropdown(menuKey);
+        setActiveSubmenu(null);
+      }, 25);
+      setEnterTimeout(timeout);
+    } else {
+      // Same dropdown or no active dropdown - immediate update
+      setActiveDropdown(menuKey);
+      setActiveSubmenu(null);
+    }
   };
 
   const handleMouseLeave = () => {
@@ -363,10 +375,14 @@ export default function Header() {
       clearTimeout(leaveTimeout);
       setLeaveTimeout(null);
     }
+    if (enterTimeout) {
+      clearTimeout(enterTimeout);
+      setEnterTimeout(null);
+    }
     const timeout = setTimeout(() => {
       setActiveDropdown(null);
       setActiveSubmenu(null);
-    }, 150); // Slightly increased delay for better user experience
+    }, 200); // Slightly increased delay for better user experience
     setLeaveTimeout(timeout);
   };
 
@@ -388,7 +404,7 @@ export default function Header() {
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => {
     // Calculate dynamic positioning and width
     const getDropdownClasses = () => {
-      const baseClasses = `absolute top-full bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-150 z-50 ${
+      const baseClasses = `absolute top-full bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-75 z-50 ${
         isOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
       }`;
       
