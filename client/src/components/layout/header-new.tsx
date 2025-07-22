@@ -430,7 +430,7 @@ export default function Header() {
                     <div
                       className={`flex items-center rounded-lg transition-all duration-200 ${
                         location.startsWith(item.href) || isSubmenuActive
-                          ? 'bg-primary/10 text-primary'
+                          ? 'bg-primary/10 text-primary border-l-4 border-primary'
                           : 'hover:bg-gray-50'
                       } ${
                         shouldShowCompact ? 'p-2 space-x-2' : 'p-3 space-x-2'
@@ -477,7 +477,7 @@ export default function Header() {
                       href={item.href}
                       className={`flex items-center rounded-lg transition-all duration-200 cursor-pointer ${
                         location.startsWith(item.href)
-                          ? 'bg-primary/10 text-primary'
+                          ? 'bg-primary/10 text-primary border-l-4 border-primary'
                           : 'hover:bg-gray-50'
                       } ${
                         shouldShowCompact ? 'p-2 space-x-2' : 'p-3 space-x-2'
