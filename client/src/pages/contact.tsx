@@ -231,7 +231,7 @@ export default function Contact() {
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center">
                       <Globe className="h-5 w-5 mr-2 text-accent" />
-                      Technical Support
+                      IT Support
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
