@@ -48,10 +48,12 @@ import WebAppSolutions from "@/pages/it-solutions/web-app-solutions";
 
 import Header from "@/components/layout/header-new";
 import Footer from "@/components/layout/footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function Router() {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollToTop />
       <Header />
       <main>
         <Switch>

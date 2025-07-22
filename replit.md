@@ -8,6 +8,16 @@ This is a full-stack web application built with a React frontend and Express bac
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+**January 22, 2025:**
+- Added ScrollToTop component to fix scroll position issue when navigating between pages
+- Updated header with social media icons (Instagram, Twitter, LinkedIn, YouTube)
+- Changed Request Quote button from orange to brand primary green color
+- Reorganized navigation: moved About and News under "Company" dropdown
+- Fixed header overflow issues and implemented dynamic dropdown positioning
+- Completed migration from Replit Agent to Replit environment
+
 ## System Architecture
 
 ### Frontend Architecture
