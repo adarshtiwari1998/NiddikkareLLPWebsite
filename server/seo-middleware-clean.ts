@@ -31,9 +31,22 @@ export function setupSEOMiddleware(app: Express) {
     // Load page-specific SEO data
     let pageSeoData: any = {};
     try {
-      // Import the actual SEO data from the client
-      const seoModule = await import("../client/src/data/seo-data.ts");
-      const allSeoData = seoModule.seoData || {};
+      // Import the actual SEO data from the client (works in both dev and production)
+      let seoModule;
+      if (process.env.NODE_ENV === 'production') {
+        // In production, try to load from built JavaScript first
+        try {
+          seoModule = await import("../client/src/data/seo-data.js");
+        } catch {
+          // Fallback to bundled data in production
+          seoModule = await import("./seo-data-bundled.ts");
+          console.log(`[SEO Middleware] Using bundled SEO data in production`);
+        }
+      } else {
+        // In development, load TypeScript directly
+        seoModule = await import("../client/src/data/seo-data.ts");
+      }
+      const allSeoData = (seoModule as any).seoData || (seoModule as any).seoDataBundled || {};
       
       // Get SEO data for the current path or fallback to home page
       pageSeoData = allSeoData[pathname] || allSeoData['/'] || {};
@@ -63,15 +76,14 @@ export function setupSEOMiddleware(app: Express) {
     (req as any).seoData = pageSeoData;
     (req as any).seoPath = pathname;
     
-    // Hook into response to inject SEO content
+    // Hook into response to inject SEO content (works for both dev and production)
     const originalSend = res.send;
-    const originalWrite = res.write;
     const originalEnd = res.end;
+    const originalSendFile = res.sendFile;
     
-    console.log(`[SEO Middleware] Setting up response hooks for ${pathname}`);
+    console.log(`[SEO Middleware] Setting up response hooks for ${pathname} (ENV: ${process.env.NODE_ENV})`);
     
     res.send = function(data: any) {
-      console.log(`[SEO Middleware] res.send called for ${pathname}, data type: ${typeof data}, hasHTML: ${typeof data === 'string' && data.includes('<html')}`);
       if (typeof data === 'string' && data.includes('<html')) {
         const seoData = (req as any).seoData;
         const seoPath = (req as any).seoPath;
@@ -181,6 +193,41 @@ export function setupSEOMiddleware(app: Express) {
       }
       
       return originalEnd.call(this, chunk, encoding);
+    };
+    
+    // Override res.sendFile to handle production static file serving
+    res.sendFile = function(path: string, options?: any, callback?: any) {
+      // Read the file and inject SEO data before sending
+      const fs = require('fs');
+      fs.readFile(path, 'utf8', (err: any, data: string) => {
+        if (err) {
+          return originalSendFile.call(this, path, options, callback);
+        }
+        
+        const seoData = (req as any).seoData;
+        if (seoData && seoData.pageTitle && data.includes('<!DOCTYPE html>')) {
+          let modifiedData = data;
+          
+          // Replace title
+          modifiedData = modifiedData.replace(
+            /<title[^>]*>.*?<\/title>/gi,
+            `<title>${seoData.pageTitle}</title>`
+          );
+          
+          // Replace meta description
+          if (seoData.metaDescription) {
+            modifiedData = modifiedData.replace(
+              /<meta\s+name=["']description["'][^>]*>/gi,
+              `<meta name="description" content="${seoData.metaDescription}" />`
+            );
+          }
+          
+          console.log(`[SEO Middleware] ✅ PRODUCTION SEO INJECTED via sendFile for ${pathname}: "${seoData.pageTitle}"`);
+          return res.send(modifiedData);
+        }
+        
+        return originalSendFile.call(this, path, options, callback);
+      });
     };
     
     next();

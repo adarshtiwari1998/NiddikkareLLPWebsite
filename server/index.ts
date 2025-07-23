@@ -61,7 +61,9 @@ app.use((req, res, next) => {
     app.use(express.static("public"));
     await setupVite(app, server);
   } else {
-    // In production, serve static build files first
+    // In production, setup SEO middleware before serving static files
+    setupSEOMiddleware(app);
+    // Serve static build files
     serveStatic(app);
   }
 
