@@ -4,7 +4,7 @@ import logoImage from "@/assets/niddikkare-logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 text-gray-900 py-16">
+    <footer className="bg-gray-50 text-gray-900 py-16 border-t border-gray-300">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
