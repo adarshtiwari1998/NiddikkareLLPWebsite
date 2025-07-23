@@ -270,16 +270,17 @@ export function setupSEOMiddleware(app: Express) {
                 );
               }
 
-              // ✅ SSR CONTENT INJECTION - Replace root div content with server-rendered HTML
+              // ✅ SEO-ONLY CONTENT INJECTION - Hidden container for search engines only
               try {
                 const { getSSRContent } = await import('./ssr-renderer');
                 const ssrContent = getSSRContent(seoPath);
                 
-                // Replace the React root div content with server-rendered HTML for SEO
+                // Inject SSR content in a hidden div that's only visible to search engines
                 if (ssrContent && modifiedChunk.includes('<div id="root">')) {
+                  // Add hidden SEO content after the root div (not inside it)
                   modifiedChunk = modifiedChunk.replace(
-                    /<div id="root"><\/div>/i,
-                    `<div id="root">${ssrContent}</div>`
+                    /(<div id="root"><\/div>)/i,
+                    `$1\n    <!-- SEO Content for Search Engines (Hidden from Users) -->\n    <div id="seo-content" style="display: none !important; visibility: hidden !important; position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important;" aria-hidden="true">${ssrContent}</div>`
                   );
                   console.log(`[SEO Middleware] ✅ Injected SSR content for ${seoPath}`);
                 }
@@ -331,16 +332,17 @@ export function setupSEOMiddleware(app: Express) {
               
               const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
               
-              // ✅ SSR CONTENT INJECTION - Replace root div content with server-rendered HTML
+              // ✅ SEO-ONLY CONTENT INJECTION - Hidden container for search engines only
               try {
                 const { getSSRContent } = await import('./ssr-renderer');
                 const ssrContent = getSSRContent(seoPath);
                 
-                // Replace the React root div content with server-rendered HTML for SEO
+                // Inject SSR content in a hidden div that's only visible to search engines
                 if (ssrContent && modifiedBody.includes('<div id="root">')) {
+                  // Add hidden SEO content after the root div (not inside it)
                   modifiedBody = modifiedBody.replace(
-                    /<div id="root"><\/div>/i,
-                    `<div id="root">${ssrContent}</div>`
+                    /(<div id="root"><\/div>)/i,
+                    `$1\n    <!-- SEO Content for Search Engines (Hidden from Users) -->\n    <div id="seo-content" style="display: none !important; visibility: hidden !important; position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important;" aria-hidden="true">${ssrContent}</div>`
                   );
                   console.log(`[SEO Middleware] ✅ Injected SSR content for ${seoPath} (res.send)`);
                 }
