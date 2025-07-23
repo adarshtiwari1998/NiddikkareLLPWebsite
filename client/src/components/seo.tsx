@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'wouter';
 import { seoData, type SEOData } from '@/data/seo-data';
@@ -10,18 +10,41 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
   const [location] = useLocation();
+  const [forceUpdate, setForceUpdate] = useState(0);
   
   // Use current path directly - no state needed
   const currentPath = pagePath || location;
 
-  // Debug: Log when path changes and when SEO updates
-  React.useEffect(() => {
+  // Force re-render when location changes
+  useEffect(() => {
     console.log(`[SEO Component] Route changed to: ${currentPath}`);
-    // Small delay to check if title actually changed in DOM
+    setForceUpdate(prev => prev + 1);
+    
+    // Force update React Helmet by manually triggering a re-render
+    setTimeout(() => {
+      // This forces React Helmet to process the new metadata
+      setForceUpdate(prev => prev + 1);
+      console.log(`[SEO Component] Forced Helmet update for: ${currentPath}`);
+    }, 50);
+    
+    // Check if title actually changed in DOM and fallback if needed
     setTimeout(() => {
       console.log(`[SEO Component] Current document title: "${document.title}"`);
-    }, 100);
-  }, [currentPath]);
+      
+      // Get the expected title for this path
+      const expectedSEO = {
+        ...(seoData[currentPath] || {}),
+        ...(customSEO || {})
+      };
+      
+      if (expectedSEO.pageTitle && document.title !== expectedSEO.pageTitle) {
+        console.log(`[SEO Component] Title mismatch! Expected: "${expectedSEO.pageTitle}", Got: "${document.title}"`);
+        // Direct DOM manipulation as fallback
+        document.title = expectedSEO.pageTitle;
+        console.log(`[SEO Component] Manually updated title to: "${expectedSEO.pageTitle}"`);
+      }
+    }, 300);
+  }, [currentPath, customSEO]);
 
   // Get SEO data for current path using useMemo to optimize performance
   const seo = useMemo(() => {
@@ -56,16 +79,16 @@ const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
     });
 
     return mergedSEO;
-  }, [currentPath, customSEO]);
+  }, [currentPath, customSEO, forceUpdate]);
 
   // Convert structured data to JSON string if it's an object
   const structuredDataJson = typeof seo.structuredData === 'object' 
     ? JSON.stringify(seo.structuredData)
     : seo.structuredData;
 
-  // Force React Helmet to re-render by using currentPath as key
+  // Force React Helmet to re-render by using currentPath and forceUpdate as key
   return (
-    <Helmet key={currentPath}>
+    <Helmet key={`${currentPath}-${forceUpdate}`}>
       {/* Basic Meta Tags */}
       <title>{seo.pageTitle}</title>
       <meta name="description" content={seo.metaDescription} />
