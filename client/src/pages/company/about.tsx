@@ -2,10 +2,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Users, Award, Globe, Target, Heart, Microscope, ArrowRight, Building } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function About() {
   return (
     <div className="py-20 bg-gray-50">
+      <SEO />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16 animate-fade-in">

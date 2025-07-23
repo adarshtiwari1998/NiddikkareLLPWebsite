@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import SEO from "@/components/seo";
 import { 
   Baby, 
   Microscope, 
@@ -23,6 +24,7 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <SEO />
       {/* Modern Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background with modern gradient */}

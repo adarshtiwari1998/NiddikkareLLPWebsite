@@ -5,10 +5,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Globe, MessageSquare, ArrowRight, QrCode, Microscope, Check } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function Contact() {
   return (
     <div className="py-20 bg-gray-50">
+      <SEO />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">

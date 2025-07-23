@@ -114,7 +114,6 @@ function Router() {
   return (
     <div className="min-h-screen bg-background">
       <ScrollToTop />
-      <SEO />
       <Header />
       
       {/* Breadcrumb Navigation */}

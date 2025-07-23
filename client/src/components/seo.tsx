@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'wouter';
 import { seoData, type SEOData } from '@/data/seo-data';
@@ -8,9 +8,14 @@ interface SEOProps {
   customSEO?: Partial<SEOData>;
 }
 
-export const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
+const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
   const [location] = useLocation();
-  const currentPath = pagePath || location;
+  const [currentPath, setCurrentPath] = useState(location);
+
+  // Update currentPath when location changes
+  useEffect(() => {
+    setCurrentPath(pagePath || location);
+  }, [location, pagePath]);
 
   // Get SEO data for current path or use default
   const defaultSEO: SEOData = {
