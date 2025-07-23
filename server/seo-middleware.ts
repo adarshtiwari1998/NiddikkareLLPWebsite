@@ -116,7 +116,7 @@ export function setupSEOMiddleware(app: Express) {
         const originalSendFile = res.sendFile;
         
         // Override multiple response methods to catch HTML
-        res.end = function(chunk: any, encoding?: any) {
+        res.end = async function(chunk: any, encoding?: any) {
           if (typeof chunk === 'string' && chunk.includes('<html')) {
             const seoData = (req as any).seoData;
             const seoPath = (req as any).seoPath;
@@ -270,6 +270,23 @@ export function setupSEOMiddleware(app: Express) {
                 );
               }
 
+              // ✅ SSR CONTENT INJECTION - Replace root div content with server-rendered HTML
+              try {
+                const { getSSRContent } = await import('./ssr-renderer');
+                const ssrContent = getSSRContent(seoPath);
+                
+                // Replace the React root div content with server-rendered HTML for SEO
+                if (ssrContent && modifiedChunk.includes('<div id="root">')) {
+                  modifiedChunk = modifiedChunk.replace(
+                    /<div id="root"><\/div>/i,
+                    `<div id="root">${ssrContent}</div>`
+                  );
+                  console.log(`[SEO Middleware] ✅ Injected SSR content for ${seoPath}`);
+                }
+              } catch (ssrError: any) {
+                console.log(`[SEO Middleware] SSR injection skipped for ${seoPath}:`, ssrError?.message || 'Unknown error');
+              }
+
               console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
               return originalEnd.call(this, modifiedChunk, encoding);
             }
@@ -278,7 +295,7 @@ export function setupSEOMiddleware(app: Express) {
         };
         
         // Override res.send to catch HTML responses
-        res.send = function(body: any) {
+        res.send = async function(body: any) {
           if (typeof body === 'string' && body.includes('<html')) {
             const seoData = (req as any).seoData;
             const seoPath = (req as any).seoPath;
@@ -313,6 +330,23 @@ export function setupSEOMiddleware(app: Express) {
               );
               
               const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
+              
+              // ✅ SSR CONTENT INJECTION - Replace root div content with server-rendered HTML
+              try {
+                const { getSSRContent } = await import('./ssr-renderer');
+                const ssrContent = getSSRContent(seoPath);
+                
+                // Replace the React root div content with server-rendered HTML for SEO
+                if (ssrContent && modifiedBody.includes('<div id="root">')) {
+                  modifiedBody = modifiedBody.replace(
+                    /<div id="root"><\/div>/i,
+                    `<div id="root">${ssrContent}</div>`
+                  );
+                  console.log(`[SEO Middleware] ✅ Injected SSR content for ${seoPath} (res.send)`);
+                }
+              } catch (ssrError: any) {
+                console.log(`[SEO Middleware] SSR injection skipped for ${seoPath}:`, ssrError?.message || 'Unknown error');
+              }
               modifiedBody = modifiedBody.replace(
                 /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
                 `<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`
@@ -363,7 +397,7 @@ export function setupSEOMiddleware(app: Express) {
         };
         
         // Override res.sendFile for production static files
-        res.sendFile = function(path: string, options?: any, callback?: any) {
+        res.sendFile = async function(path: string, options?: any, callback?: any) {
           if (path.endsWith('index.html')) {
             // For index.html files, read and modify them before sending
             const fs = require('fs');
