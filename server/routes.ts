@@ -2,12 +2,8 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { generateSitemap, generateRobotsTxt } from "./ssr.js";
-import { setupSSRRoutes } from "./ssr-handler.js";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Setup SSR routes for all pages
-  setupSSRRoutes(app);
-
   // SEO routes for sitemap.xml, robots.txt, and schema.json
   app.get("/sitemap.xml", (req, res) => {
     try {
