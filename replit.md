@@ -20,6 +20,8 @@ Preferred communication style: Simple, everyday language.
 - Added routing for all three policy pages in App.tsx with proper imports and navigation structure
 - Updated footer links to correctly point to new policy pages (/privacy-policy, /terms-of-service, /cookie-policy) instead of placeholder links
 - Enhanced footer responsiveness with mobile-friendly 5-column grid layout and proper spacing
+- Updated footer border styling to span full width with proper gray divider line matching design specifications
+- Updated policy page dates: Privacy Policy (July 21, 2025), Terms of Service (July 21, 2025 updated | July 23, 2025 effective), Cookie Policy (July 21, 2025)
 - Restructured company section with hierarchical navigation structure (/company, /company/about, /company/news, /company/leadership-team)
 - Created comprehensive Company Overview page at /company with brand color scheme using primary green hsl(134,37%,27%), secondary gold hsl(43,100%,45%), and accent blue hsl(188,78%,41%)
 - Moved about.tsx and news.tsx to company folder for proper organization 

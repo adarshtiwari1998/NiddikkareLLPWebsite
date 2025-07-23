@@ -86,15 +86,20 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-gray-200 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 text-sm">
-              © 2025 NIDDIKKARE LLP. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy-policy" className="text-gray-600 hover:text-primary transition-colors text-sm">Privacy Policy</Link>
-              <Link href="/terms-of-service" className="text-gray-600 hover:text-primary transition-colors text-sm">Terms of Service</Link>
-              <Link href="/cookie-policy" className="text-gray-600 hover:text-primary transition-colors text-sm">Cookie Policy</Link>
+        <div className="relative mt-12">
+          {/* Border line spanning full width */}
+          <div className="absolute inset-x-0 top-0 h-px bg-gray-300"></div>
+          
+          <div className="pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-600 text-sm">
+                © 2025 NIDDIKKARE LLP. All rights reserved.
+              </p>
+              <div className="flex space-x-6 mt-4 md:mt-0">
+                <Link href="/privacy-policy" className="text-gray-600 hover:text-primary transition-colors text-sm">Privacy Policy</Link>
+                <Link href="/terms-of-service" className="text-gray-600 hover:text-primary transition-colors text-sm">Terms of Service</Link>
+                <Link href="/cookie-policy" className="text-gray-600 hover:text-primary transition-colors text-sm">Cookie Policy</Link>
+              </div>
             </div>
           </div>
         </div>

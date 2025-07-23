@@ -36,7 +36,7 @@ export default function CookiePolicy() {
             <div className="flex items-center">
               <Clock className="h-6 w-6 text-blue-600 mr-3" />
               <p className="text-blue-800">
-                <strong>Last Updated:</strong> January 23, 2025
+                <strong>Last Updated:</strong> July 21, 2025
               </p>
             </div>
           </div>
