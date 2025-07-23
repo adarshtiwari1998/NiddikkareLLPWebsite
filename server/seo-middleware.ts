@@ -33,18 +33,65 @@ export function setupSEOMiddleware(app: Express) {
     // In production, ensure we handle all HTML requests for proper SEO
     const isProduction = process.env.NODE_ENV === 'production';
 
-    console.log(`[SEO Middleware] Processing: ${pathname}`);
+    console.log(`[SEO Middleware] Processing: ${pathname} (ENV: ${process.env.NODE_ENV})`);
 
     try {
-      // Import SEO data dynamically - handle both .js and .ts extensions
+      // Import SEO data dynamically - handle different environments
       let seoData;
       try {
-        const seoModule = await import("../client/src/data/seo-data.js");
-        seoData = seoModule.seoData;
-      } catch (error) {
-        // Fallback for TypeScript in development
-        const seoModule = await import("../client/src/data/seo-data.ts");
-        seoData = seoModule.seoData;
+        if (process.env.NODE_ENV === 'production') {
+          // In production, use bundled SEO data to avoid import issues
+          try {
+            const seoModule = await import("./seo-data-bundled.js");
+            seoData = seoModule.seoData;
+            console.log('[SEO Middleware] Using bundled SEO data for production');
+          } catch {
+            // Fallback to client source if bundled version fails
+            try {
+              const seoModule = await import("../client/src/data/seo-data.js");
+              seoData = seoModule.seoData;
+              console.log('[SEO Middleware] Using client source SEO data');
+            } catch {
+              const seoModule = await import("../client/src/data/seo-data.ts");
+              seoData = seoModule.seoData;
+              console.log('[SEO Middleware] Using client TypeScript SEO data');
+            }
+          }
+        } else {
+          // In development, use TypeScript source
+          try {
+            const seoModule = await import("../client/src/data/seo-data.ts");
+            seoData = seoModule.seoData;
+            console.log('[SEO Middleware] Using development TypeScript SEO data');
+          } catch {
+            // Fallback to JS if TypeScript import fails
+            const seoModule = await import("../client/src/data/seo-data.js");
+            seoData = seoModule.seoData;
+            console.log('[SEO Middleware] Using development JS SEO data');
+          }
+        }
+      } catch (importError) {
+        console.error('[SEO Middleware] Failed to import SEO data:', importError);
+        // Use minimal fallback data
+        seoData = {
+          '/': {
+            pageTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation',
+            metaDescription: 'NIDDIKKARE LLP specializes in healthcare and life sciences solutions.',
+            metaKeywords: 'NIDDIKKARE, healthcare, life sciences',
+            ogTitle: 'NIDDIKKARE LLP',
+            ogDescription: 'Healthcare and life sciences solutions provider.',
+            ogImage: 'https://niddikkare.com/assets/images/niddikkare-logo.png',
+            ogType: 'website',
+            canonicalUrl: 'https://niddikkare.com',
+            robotsDirective: 'index,follow',
+            structuredData: {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "NIDDIKKARE LLP"
+            }
+          }
+        };
+        console.log('[SEO Middleware] Using fallback SEO data');
       }
       
       // Get SEO data for the current path
@@ -71,42 +118,85 @@ export function setupSEOMiddleware(app: Express) {
             const seoPath = (req as any).seoPath;
             
             if (seoData) {
-              // Inject SEO metadata into HTML
-              const headContent = `
-    <meta name="description" content="${seoData.metaDescription}" />
-    <meta name="keywords" content="${seoData.metaKeywords}" />
-    <meta name="robots" content="${seoData.robotsDirective}" />
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="${seoData.ogTitle}" />
-    <meta property="og:description" content="${seoData.ogDescription}" />
-    <meta property="og:type" content="${seoData.ogType}" />
-    <meta property="og:url" content="${seoData.canonicalUrl}" />
-    <meta property="og:site_name" content="NIDDIKKARE LLP" />
-    <meta property="og:image" content="${seoData.ogImage}" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${seoData.ogTitle}" />
-    <meta name="twitter:description" content="${seoData.ogDescription}" />
-    <meta name="twitter:image" content="${seoData.ogImage}" />
-    <meta name="twitter:site" content="@niddikkare" />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="${seoData.canonicalUrl}" />
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">${JSON.stringify(seoData.structuredData, null, 2)}</script>`;
-
-              // Replace title and inject head content
-              let modifiedChunk = chunk.replace(
-                /<title>.*?<\/title>/,
+              let modifiedChunk = chunk;
+              
+              // Replace title - more aggressive pattern matching
+              modifiedChunk = modifiedChunk.replace(
+                /<title[^>]*>.*?<\/title>/gi,
                 `<title>${seoData.pageTitle}</title>`
               );
               
+              // Replace meta description - handle existing ones
               modifiedChunk = modifiedChunk.replace(
-                '</head>',
-                `${headContent}\n  </head>`
+                /<meta\s+name=["']description["'][^>]*>/gi,
+                `<meta name="description" content="${seoData.metaDescription}" />`
+              );
+              
+              // Replace meta keywords - handle existing ones
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+name=["']keywords["'][^>]*>/gi,
+                `<meta name="keywords" content="${seoData.metaKeywords}" />`
+              );
+              
+              // Replace robots meta
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+name=["']robots["'][^>]*>/gi,
+                `<meta name="robots" content="${seoData.robotsDirective}" />`
+              );
+              
+              // Replace Open Graph title
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+property=["']og:title["'][^>]*>/gi,
+                `<meta property="og:title" content="${seoData.ogTitle}" />`
+              );
+              
+              // Replace Open Graph description
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+property=["']og:description["'][^>]*>/gi,
+                `<meta property="og:description" content="${seoData.ogDescription}" />`
+              );
+              
+              // Replace Open Graph URL
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+property=["']og:url["'][^>]*>/gi,
+                `<meta property="og:url" content="${seoData.canonicalUrl}" />`
+              );
+              
+              // Replace Open Graph image
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+property=["']og:image["'][^>]*>/gi,
+                `<meta property="og:image" content="${seoData.ogImage}" />`
+              );
+              
+              // Replace Twitter title
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+name=["']twitter:title["'][^>]*>/gi,
+                `<meta name="twitter:title" content="${seoData.ogTitle}" />`
+              );
+              
+              // Replace Twitter description
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+name=["']twitter:description["'][^>]*>/gi,
+                `<meta name="twitter:description" content="${seoData.ogDescription}" />`
+              );
+              
+              // Replace Twitter image
+              modifiedChunk = modifiedChunk.replace(
+                /<meta\s+name=["']twitter:image["'][^>]*>/gi,
+                `<meta name="twitter:image" content="${seoData.ogImage}" />`
+              );
+              
+              // Replace canonical URL
+              modifiedChunk = modifiedChunk.replace(
+                /<link\s+rel=["']canonical["'][^>]*>/gi,
+                `<link rel="canonical" href="${seoData.canonicalUrl}" />`
+              );
+              
+              // Replace structured data - more robust pattern
+              const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
+              modifiedChunk = modifiedChunk.replace(
+                /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+                `<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`
               );
 
               console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
