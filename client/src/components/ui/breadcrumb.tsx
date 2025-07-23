@@ -62,6 +62,12 @@ const BreadcrumbLink = React.forwardRef<
 >(({ asChild, className, ...props }, ref) => {
   const Comp = asChild ? React.Fragment : "a"
 
+  if (asChild) {
+    // When using React.Fragment, only pass children and key props
+    const { children, key, ...otherProps } = props
+    return <React.Fragment key={key}>{children}</React.Fragment>
+  }
+
   return (
     <Comp
       ref={ref}
