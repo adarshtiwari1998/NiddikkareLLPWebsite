@@ -4,58 +4,100 @@ import path from "path";
 
 // Helper function to get production SEO data without dynamic imports
 function getProductionSEOData() {
-  return {
-    '/': {
-      pageTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation | Neonatal Care, Medical Linens, DNA/RNA Extraction',
-      metaDescription: 'Leading provider of healthcare and life sciences solutions including neonatal care, medical linens, DNA/RNA extraction, and molecular diagnostics.',
-      metaKeywords: 'healthcare, life sciences, NIDDIKKARE, neonatal care, medical linens, DNA extraction, RNA extraction, molecular diagnostics',
-      ogTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation',
-      ogDescription: 'Leading provider of healthcare and life sciences solutions',
-      ogImage: '/src/assets/niddikkare-logo.png',
-      ogType: 'website',
-      canonicalUrl: 'https://niddikkare.com',
-      robotsDirective: 'index,follow',
-      structuredData: {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "NIDDIKKARE LLP",
-        "description": "Healthcare and life sciences solutions provider"
+  try {
+    // Use comprehensive production SEO data
+    const { productionSeoData } = require('./seo-data-production');
+    console.log('[Production SEO] ✅ Using comprehensive production SEO data');
+    return productionSeoData;
+  } catch (error) {
+    console.log('[Production SEO] ⚠️ Production SEO data not found, using static fallback');
+    // Fallback static SEO data for critical pages including services
+    return {
+      '/': {
+        pageTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation | Neonatal Care, Medical Linens, DNA/RNA Extraction',
+        metaDescription: 'Leading provider of healthcare and life sciences solutions including neonatal care, medical linens, DNA/RNA extraction, and molecular diagnostics.',
+        metaKeywords: 'healthcare, life sciences, NIDDIKKARE, neonatal care, medical linens, DNA extraction, RNA extraction, molecular diagnostics',
+        ogTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation',
+        ogDescription: 'Leading provider of healthcare and life sciences solutions',
+        ogImage: '/src/assets/niddikkare-logo.png',
+        ogType: 'website',
+        canonicalUrl: 'https://niddikkare.com',
+        robotsDirective: 'index,follow',
+        structuredData: {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "NIDDIKKARE LLP",
+          "description": "Healthcare and life sciences solutions provider"
+        }
+      },
+      '/services/consultancy-ivd': {
+        pageTitle: 'Consultancy IVD | NIDDIKKARE LLP - In Vitro Diagnostics Consulting',
+        metaDescription: 'Expert in vitro diagnostics (IVD) consultancy services for medical device development, regulatory compliance, and market entry strategies.',
+        metaKeywords: 'IVD consultancy, in vitro diagnostics, medical device consulting, regulatory compliance',
+        ogTitle: 'IVD Consultancy - In Vitro Diagnostics Consulting | NIDDIKKARE LLP',
+        ogDescription: 'Expert consultancy services for in vitro diagnostics development and regulatory compliance.',
+        ogImage: '/src/assets/niddikkare-logo.png',
+        ogType: 'service',
+        canonicalUrl: 'https://niddikkare.com/services/consultancy-ivd',
+        robotsDirective: 'index,follow'
+      },
+      '/services/contract-research': {
+        pageTitle: 'Contract Research | NIDDIKKARE LLP - Professional Research Services',
+        metaDescription: 'Professional contract research services for healthcare and life sciences. Expert research solutions, clinical studies, and scientific consulting.',
+        metaKeywords: 'contract research, research services, clinical studies, scientific consulting',
+        ogTitle: 'Contract Research Services - Professional Research Solutions | NIDDIKKARE',
+        ogDescription: 'Expert contract research services for healthcare and life sciences applications.',
+        ogImage: '/src/assets/niddikkare-logo.png',
+        ogType: 'service',
+        canonicalUrl: 'https://niddikkare.com/services/contract-research',
+        robotsDirective: 'index,follow'
+      },
+      '/services/oem-products': {
+        pageTitle: 'OEM Products | NIDDIKKARE LLP - Original Equipment Manufacturing',
+        metaDescription: 'Original Equipment Manufacturing (OEM) services for healthcare and life sciences products. Custom manufacturing solutions for medical devices.',
+        metaKeywords: 'OEM products, original equipment manufacturing, custom manufacturing, medical device manufacturing',
+        ogTitle: 'OEM Products - Original Equipment Manufacturing | NIDDIKKARE',
+        ogDescription: 'Custom OEM manufacturing services for healthcare and life sciences products.',
+        ogImage: '/src/assets/niddikkare-logo.png',
+        ogType: 'service',
+        canonicalUrl: 'https://niddikkare.com/services/oem-products',
+        robotsDirective: 'index,follow'
+      },
+      '/products': {
+        pageTitle: 'Products - NIDDIKKARE LLP | Healthcare & Life Sciences Solutions',
+        metaDescription: 'Explore our comprehensive range of healthcare and life sciences products including neonatal care equipment and medical linens.',
+        metaKeywords: 'healthcare products, medical equipment, neonatal care, medical linens, NIDDIKKARE',
+        ogTitle: 'Products - NIDDIKKARE LLP',
+        ogDescription: 'Healthcare and life sciences products',
+        ogImage: '/src/assets/niddikkare-logo.png',
+        ogType: 'website',
+        canonicalUrl: 'https://niddikkare.com/products',
+        robotsDirective: 'index,follow'
+      },
+      '/services': {
+        pageTitle: 'Services - NIDDIKKARE LLP | Healthcare Consulting & Research',
+        metaDescription: 'Professional healthcare consulting, contract research, and OEM product development services for the life sciences industry.',
+        metaKeywords: 'healthcare consulting, contract research, OEM products, life sciences services, NIDDIKKARE',
+        ogTitle: 'Services - NIDDIKKARE LLP',
+        ogDescription: 'Healthcare consulting and research services',
+        ogImage: '/src/assets/niddikkare-logo.png',
+        ogType: 'website',
+        canonicalUrl: 'https://niddikkare.com/services',
+        robotsDirective: 'index,follow'
+      },
+      '/contact': {
+        pageTitle: 'Contact Us - NIDDIKKARE LLP | Get in Touch',
+        metaDescription: 'Contact NIDDIKKARE LLP for healthcare and life sciences solutions. Reach out to our expert team for consultations and partnerships.',
+        metaKeywords: 'contact NIDDIKKARE, healthcare contact, life sciences inquiry, consultation request',
+        ogTitle: 'Contact Us - NIDDIKKARE LLP',
+        ogDescription: 'Get in touch with our healthcare experts',
+        ogImage: '/src/assets/niddikkare-logo.png',
+        ogType: 'website',
+        canonicalUrl: 'https://niddikkare.com/contact',
+        robotsDirective: 'index,follow'
       }
-    },
-    '/products': {
-      pageTitle: 'Products - NIDDIKKARE LLP | Healthcare & Life Sciences Solutions',
-      metaDescription: 'Explore our comprehensive range of healthcare and life sciences products including neonatal care equipment and medical linens.',
-      metaKeywords: 'healthcare products, medical equipment, neonatal care, medical linens, NIDDIKKARE',
-      ogTitle: 'Products - NIDDIKKARE LLP',
-      ogDescription: 'Healthcare and life sciences products',
-      ogImage: '/src/assets/niddikkare-logo.png',
-      ogType: 'website',
-      canonicalUrl: 'https://niddikkare.com/products',
-      robotsDirective: 'index,follow'
-    },
-    '/services': {
-      pageTitle: 'Services - NIDDIKKARE LLP | Healthcare Consulting & Research',
-      metaDescription: 'Professional healthcare consulting, contract research, and OEM product development services for the life sciences industry.',
-      metaKeywords: 'healthcare consulting, contract research, OEM products, life sciences services, NIDDIKKARE',
-      ogTitle: 'Services - NIDDIKKARE LLP',
-      ogDescription: 'Healthcare consulting and research services',
-      ogImage: '/src/assets/niddikkare-logo.png',
-      ogType: 'website',
-      canonicalUrl: 'https://niddikkare.com/services',
-      robotsDirective: 'index,follow'
-    },
-    '/contact': {
-      pageTitle: 'Contact Us - NIDDIKKARE LLP | Get in Touch',
-      metaDescription: 'Contact NIDDIKKARE LLP for healthcare and life sciences solutions. Reach out to our expert team for consultations and partnerships.',
-      metaKeywords: 'contact NIDDIKKARE, healthcare contact, life sciences inquiry, consultation request',
-      ogTitle: 'Contact Us - NIDDIKKARE LLP',
-      ogDescription: 'Get in touch with our healthcare experts',
-      ogImage: '/src/assets/niddikkare-logo.png',
-      ogType: 'website',
-      canonicalUrl: 'https://niddikkare.com/contact',
-      robotsDirective: 'index,follow'
-    }
-  };
+    };
+  }
 }
 
 // Helper function to get default SEO data for any path
