@@ -437,7 +437,7 @@ ${JSON.stringify(seoData.structuredData, null, 2)}
       return originalEnd.call(this, chunk, encoding);
     };
     
-    // Override res.sendFile to handle production static file serving
+    // Override res.sendFile to handle production static file serving - COMPREHENSIVE REPLACEMENT
     res.sendFile = function(path: string, options?: any, callback?: any) {
       // Read the file and inject SEO data before sending
       fs.readFile(path, 'utf8', (err: any, data: string) => {
@@ -446,6 +446,7 @@ ${JSON.stringify(seoData.structuredData, null, 2)}
         }
         
         const seoData = (req as any).seoData;
+        const seoPath = (req as any).seoPath;
         if (seoData && seoData.pageTitle && data.includes('<!DOCTYPE html>')) {
           let modifiedData = data;
           
@@ -463,7 +464,72 @@ ${JSON.stringify(seoData.structuredData, null, 2)}
             );
           }
           
-          console.log(`[SEO Middleware] ✅ PRODUCTION SEO INJECTED via sendFile for ${pathname}: "${seoData.pageTitle}"`);
+          // Replace keywords
+          if (modifiedData.includes('name="keywords"')) {
+            modifiedData = modifiedData.replace(
+              /<meta\s+name=["']keywords["'][^>]*>/gi,
+              `<meta name="keywords" content="${seoData.metaKeywords}" />`
+            );
+          }
+          
+          // Replace Open Graph tags
+          const ogTags = [
+            { key: 'og:title', value: seoData.ogTitle },
+            { key: 'og:description', value: seoData.ogDescription },
+            { key: 'og:image', value: seoData.ogImage },
+            { key: 'og:type', value: seoData.ogType },
+            { key: 'og:url', value: seoData.canonicalUrl }
+          ];
+          
+          ogTags.forEach(({ key, value }) => {
+            const existingPattern = new RegExp(`<meta\\s+property=["']${key.replace(':', '\\:')}["'][^>]*>`, 'gi');
+            if (modifiedData.match(existingPattern)) {
+              console.log(`[Production SEO sendFile] Replacing ${key} with: ${value}`);
+              modifiedData = modifiedData.replace(
+                existingPattern,
+                `<meta property="${key}" content="${value}" />`
+              );
+            }
+          });
+          
+          // Replace Twitter Card tags
+          const twitterTags = [
+            { key: 'twitter:title', value: seoData.ogTitle },
+            { key: 'twitter:description', value: seoData.ogDescription },
+            { key: 'twitter:image', value: seoData.ogImage }
+          ];
+          
+          twitterTags.forEach(({ key, value }) => {
+            if (modifiedData.includes(`name="${key}"`)) {
+              modifiedData = modifiedData.replace(
+                new RegExp(`<meta\\s+name=["']${key}["'][^>]*>`, 'gi'),
+                `<meta name="${key}" content="${value}" />`
+              );
+            }
+          });
+          
+          // Replace canonical URL
+          if (modifiedData.includes('rel="canonical"')) {
+            console.log(`[Production SEO sendFile] Replacing canonical URL with: ${seoData.canonicalUrl}`);
+            modifiedData = modifiedData.replace(
+              /<link\s+rel=["']canonical["'][^>]*>/gi,
+              `<link rel="canonical" href="${seoData.canonicalUrl}" />`
+            );
+          }
+          
+          // Replace structured data
+          if (seoData.structuredData && modifiedData.includes('application/ld+json')) {
+            const structuredDataScript = `<script type="application/ld+json">
+${JSON.stringify(seoData.structuredData, null, 2)}
+</script>`;
+            console.log(`[Production SEO sendFile] Replacing structured data for ${seoPath}`);
+            modifiedData = modifiedData.replace(
+              /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+              structuredDataScript
+            );
+          }
+          
+          console.log(`[SEO Middleware] ✅ COMPREHENSIVE PRODUCTION SEO INJECTED via sendFile for ${pathname}: "${seoData.pageTitle}"`);
           return res.send(modifiedData);
         }
         
@@ -531,9 +597,11 @@ export function setupProductionSEOMiddleware(app: Express) {
   });
 }
 
-// Helper function to inject SEO data into HTML
+// Helper function to inject SEO data into HTML - COMPREHENSIVE REPLACEMENT FOR PRODUCTION
 function injectSEOData(html: string, seoData: any): string {
   let modifiedHtml = html;
+  
+  console.log(`[Production SEO injectSEOData] Processing SEO injection for: ${seoData.pageTitle}`);
   
   // Replace title
   modifiedHtml = modifiedHtml.replace(
@@ -541,7 +609,7 @@ function injectSEOData(html: string, seoData: any): string {
     `<title>${seoData.pageTitle}</title>`
   );
   
-  // Replace or add meta description
+  // Replace meta description
   if (modifiedHtml.includes('name="description"')) {
     modifiedHtml = modifiedHtml.replace(
       /<meta\s+name=["']description["'][^>]*>/gi,
@@ -554,49 +622,118 @@ function injectSEOData(html: string, seoData: any): string {
     );
   }
   
-  // Add other essential meta tags if not present
-  const metaTags = [
-    `<meta name="keywords" content="${seoData.metaKeywords}" />`,
-    `<meta property="og:title" content="${seoData.ogTitle}" />`,
-    `<meta property="og:description" content="${seoData.ogDescription}" />`,
-    `<meta property="og:image" content="${seoData.ogImage}" />`,
-    `<meta property="og:type" content="${seoData.ogType}" />`,
-    `<meta property="og:url" content="${seoData.canonicalUrl}" />`,
-    `<meta name="twitter:card" content="summary_large_image" />`,
-    `<meta name="twitter:title" content="${seoData.ogTitle}" />`,
-    `<meta name="twitter:description" content="${seoData.ogDescription}" />`,
-    `<meta name="twitter:image" content="${seoData.ogImage}" />`,
-    `<link rel="canonical" href="${seoData.canonicalUrl}" />`,
-    `<meta name="robots" content="${seoData.robotsDirective}" />`
-  ];
-  
-  // Add missing tags
-  let tagsToAdd: string[] = [];
-  metaTags.forEach(tag => {
-    const tagName = tag.match(/(?:name|property)=["']([^"']+)["']/)?.[1];
-    if (tagName && !modifiedHtml.includes(`="${tagName}"`)) {
-      tagsToAdd.push(tag);
-    }
-  });
-  
-  if (tagsToAdd.length > 0) {
+  // Replace keywords
+  if (modifiedHtml.includes('name="keywords"')) {
+    modifiedHtml = modifiedHtml.replace(
+      /<meta\s+name=["']keywords["'][^>]*>/gi,
+      `<meta name="keywords" content="${seoData.metaKeywords}" />`
+    );
+  } else {
     modifiedHtml = modifiedHtml.replace(
       /<head>/i,
-      `<head>\n    ${tagsToAdd.join('\n    ')}`
+      `<head>\n    <meta name="keywords" content="${seoData.metaKeywords}" />`
     );
   }
   
-  // Add structured data if not present
-  if (seoData.structuredData && !modifiedHtml.includes('application/ld+json')) {
-    const structuredDataScript = `
-    <script type="application/ld+json">
-    ${JSON.stringify(seoData.structuredData, null, 2)}
-    </script>`;
-    
+  // Replace Open Graph tags with aggressive pattern matching
+  const ogTags = [
+    { key: 'og:title', value: seoData.ogTitle },
+    { key: 'og:description', value: seoData.ogDescription },
+    { key: 'og:image', value: seoData.ogImage },
+    { key: 'og:type', value: seoData.ogType },
+    { key: 'og:url', value: seoData.canonicalUrl }
+  ];
+  
+  ogTags.forEach(({ key, value }) => {
+    const existingPattern = new RegExp(`<meta\\s+property=["']${key.replace(':', '\\:')}["'][^>]*>`, 'gi');
+    if (modifiedHtml.match(existingPattern)) {
+      console.log(`[Production SEO injectSEOData] Replacing ${key} with: ${value}`);
+      modifiedHtml = modifiedHtml.replace(
+        existingPattern,
+        `<meta property="${key}" content="${value}" />`
+      );
+    } else {
+      console.log(`[Production SEO injectSEOData] Adding new ${key} tag`);
+      modifiedHtml = modifiedHtml.replace(
+        /<head>/i,
+        `<head>\n    <meta property="${key}" content="${value}" />`
+      );
+    }
+  });
+  
+  // Replace Twitter Card tags
+  const twitterTags = [
+    { key: 'twitter:card', value: 'summary_large_image' },
+    { key: 'twitter:title', value: seoData.ogTitle },
+    { key: 'twitter:description', value: seoData.ogDescription },
+    { key: 'twitter:image', value: seoData.ogImage }
+  ];
+  
+  twitterTags.forEach(({ key, value }) => {
+    if (modifiedHtml.includes(`name="${key}"`)) {
+      modifiedHtml = modifiedHtml.replace(
+        new RegExp(`<meta\\s+name=["']${key}["'][^>]*>`, 'gi'),
+        `<meta name="${key}" content="${value}" />`
+      );
+    } else {
+      modifiedHtml = modifiedHtml.replace(
+        /<head>/i,
+        `<head>\n    <meta name="${key}" content="${value}" />`
+      );
+    }
+  });
+  
+  // Replace canonical URL
+  if (modifiedHtml.includes('rel="canonical"')) {
+    console.log(`[Production SEO injectSEOData] Replacing canonical URL with: ${seoData.canonicalUrl}`);
     modifiedHtml = modifiedHtml.replace(
-      /<\/head>/i,
-      `${structuredDataScript}\n</head>`
+      /<link\s+rel=["']canonical["'][^>]*>/gi,
+      `<link rel="canonical" href="${seoData.canonicalUrl}" />`
     );
+  } else {
+    console.log(`[Production SEO injectSEOData] Adding new canonical URL: ${seoData.canonicalUrl}`);
+    modifiedHtml = modifiedHtml.replace(
+      /<head>/i,
+      `<head>\n    <link rel="canonical" href="${seoData.canonicalUrl}" />`
+    );
+  }
+  
+  // Replace robots meta tag
+  if (modifiedHtml.includes('name="robots"')) {
+    modifiedHtml = modifiedHtml.replace(
+      /<meta\s+name=["']robots["'][^>]*>/gi,
+      `<meta name="robots" content="${seoData.robotsDirective}" />`
+    );
+  } else {
+    modifiedHtml = modifiedHtml.replace(
+      /<head>/i,
+      `<head>\n    <meta name="robots" content="${seoData.robotsDirective}" />`
+    );
+  }
+  
+  // Replace structured data with aggressive replacement logic
+  if (seoData.structuredData) {
+    if (modifiedHtml.includes('application/ld+json')) {
+      console.log(`[Production SEO injectSEOData] Replacing existing structured data`);
+      const structuredDataScript = `<script type="application/ld+json">
+${JSON.stringify(seoData.structuredData, null, 2)}
+</script>`;
+      modifiedHtml = modifiedHtml.replace(
+        /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+        structuredDataScript
+      );
+    } else {
+      console.log(`[Production SEO injectSEOData] Adding new structured data`);
+      const structuredDataScript = `
+    <script type="application/ld+json">
+${JSON.stringify(seoData.structuredData, null, 2)}
+    </script>`;
+      
+      modifiedHtml = modifiedHtml.replace(
+        /<\/head>/i,
+        `${structuredDataScript}\n</head>`
+      );
+    }
   }
   
   return modifiedHtml;
