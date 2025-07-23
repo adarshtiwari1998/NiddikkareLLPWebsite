@@ -137,16 +137,7 @@ export function setupSEOMiddleware(app: Express) {
             );
           }
           
-          // Add dynamic SSR content asynchronously (fire and forget)
-          setImmediate(async () => {
-            try {
-              const { scrapePageContent } = await import('./dynamic-ssr-scraper.js');
-              const ssrContent = await scrapePageContent(seoPath);
-              console.log(`[SEO Middleware] ✅ Generated dynamic SSR content for ${seoPath} (${ssrContent.length} chars)`);
-            } catch (ssrError: any) {
-              console.log(`[SEO Middleware] Dynamic SSR generation completed for ${seoPath}`);
-            }
-          });
+          // SEO meta tags are sufficient for search engines
           
           console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
           return originalSend.call(this, modifiedData);

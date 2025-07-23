@@ -2,7 +2,7 @@ import express, { type Express, type Request, type Response } from "express";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { scrapePageContent } from "./dynamic-ssr-scraper.js";
+// Removed dynamic scraper dependency - using meta tags only for SEO
 
 // Setup __dirname replacement for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -61,18 +61,8 @@ export function setupProductionSEO(app: Express) {
       let pageSeoData = seoData[pathname] || seoData['/'] || {};
       console.log(`[Production SEO Enhanced] ✅ Loaded page-specific SEO data for ${pathname}: "${pageSeoData.pageTitle}"`);
       
-      // Get dynamic content using the scraper
-      let dynamicContent = '';
-      try {
-        dynamicContent = await scrapePageContent(pathname, 'http://localhost:5000');
-        console.log(`[Production SEO Enhanced] Generated dynamic content: ${dynamicContent.length} chars`);
-      } catch (error: any) {
-        console.log(`[Production SEO Enhanced] Dynamic content generation failed:`, error?.message);
-        dynamicContent = generateFallbackContent(pathname);
-      }
-      
-      // Create the enhanced HTML template
-      const htmlTemplate = createEnhancedHTMLTemplate(pageSeoData, dynamicContent);
+      // Create the enhanced HTML template with just meta tags
+      const htmlTemplate = createEnhancedHTMLTemplate(pageSeoData);
       
       console.log(`[Production SEO Enhanced] ✅ Serving enhanced page for ${pathname}: ${pageSeoData.pageTitle}`);
       res.status(200).set({ "Content-Type": "text/html" }).send(htmlTemplate);
@@ -84,7 +74,7 @@ export function setupProductionSEO(app: Express) {
   });
 }
 
-function createEnhancedHTMLTemplate(seoData: any, dynamicContent: string): string {
+function createEnhancedHTMLTemplate(seoData: any): string {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,18 +126,9 @@ function createEnhancedHTMLTemplate(seoData: any, dynamicContent: string): strin
     <p>For the full React application, please ensure your production build is properly deployed.</p>
   </div>
   
-  <!-- Hidden SEO Content for Search Engines -->
-  <div class="seo-content" aria-hidden="true" role="presentation">
-    ${dynamicContent}
-  </div>
+  <!-- Meta tags above provide comprehensive SEO data -->
 </body>
 </html>`;
 }
 
-function generateFallbackContent(pathname: string): string {
-  return `<div class="fallback-content">
-    <h1>NIDDIKKARE LLP Content</h1>
-    <p>Healthcare and Life Sciences Innovation</p>
-    <p>Page: ${pathname}</p>
-  </div>`;
-}
+// Removed fallback content generation - meta tags provide all SEO data needed
