@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 'dr-samar-husain-naqvi',
     name: 'Dr. Samar Husain Naqvi',
-    title: 'Managing Director / CO-Founder',
+    title: 'Managing Director & Co-Founder',
     company: 'NIDDIKKARE LLP',
     experience: '20+ Years',
     shortBio: 'Dr. Samar Husain Naqvi is a dynamic and results-oriented professional in the Life Sciences and Molecular Diagnostics domain, bringing deep expertise in product development, business planning, B2B collaborations, and OEM product management. He has successfully led the complete lifecycle of in vitro diagnostic medical devices (IVD-MDs), encompassing design, research and development, and production. Dr. Naqvi is recognized for his commitment to customer-focused innovation and comprehensive understanding of the scientific and commercial forces shaping the healthcare industry.',
