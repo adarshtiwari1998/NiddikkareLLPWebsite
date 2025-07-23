@@ -32,7 +32,7 @@ export function setupSEOMiddleware(app: Express) {
     let pageSeoData: any = {};
     try {
       // Import the actual SEO data from the client
-      const seoModule = await import("../client/src/data/seo-data.js");
+      const seoModule = await import("../client/src/data/seo-data.ts");
       const allSeoData = seoModule.seoData || {};
       
       // Get SEO data for the current path or fallback to home page

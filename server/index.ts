@@ -55,11 +55,11 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    // Setup SEO middleware before Vite in development
-    setupSEOMiddleware(app);
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);
+    // Setup SEO middleware after Vite in development for server-side meta tags
+    setupSEOMiddleware(app);
   } else {
     // In production, serve static build files first
     serveStatic(app);
