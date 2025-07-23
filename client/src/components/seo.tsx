@@ -14,6 +14,15 @@ const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
   // Use current path directly - no state needed
   const currentPath = pagePath || location;
 
+  // Debug: Log when path changes and when SEO updates
+  React.useEffect(() => {
+    console.log(`[SEO Component] Route changed to: ${currentPath}`);
+    // Small delay to check if title actually changed in DOM
+    setTimeout(() => {
+      console.log(`[SEO Component] Current document title: "${document.title}"`);
+    }, 100);
+  }, [currentPath]);
+
   // Get SEO data for current path using useMemo to optimize performance
   const seo = useMemo(() => {
     const defaultSEO: SEOData = {
@@ -35,11 +44,18 @@ const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
     };
 
     // Merge page-specific SEO data with custom overrides
-    return {
+    const mergedSEO = {
       ...defaultSEO,
       ...(seoData[currentPath] || {}),
       ...(customSEO || {})
     };
+
+    console.log(`[SEO Component] SEO data for ${currentPath}:`, {
+      title: mergedSEO.pageTitle,
+      hasPageData: !!seoData[currentPath]
+    });
+
+    return mergedSEO;
   }, [currentPath, customSEO]);
 
   // Convert structured data to JSON string if it's an object
@@ -47,8 +63,9 @@ const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
     ? JSON.stringify(seo.structuredData)
     : seo.structuredData;
 
+  // Force React Helmet to re-render by using currentPath as key
   return (
-    <Helmet>
+    <Helmet key={currentPath}>
       {/* Basic Meta Tags */}
       <title>{seo.pageTitle}</title>
       <meta name="description" content={seo.metaDescription} />
