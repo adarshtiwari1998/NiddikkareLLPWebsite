@@ -10,6 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**January 23, 2025:**
+- Created comprehensive Leadership Team page at /company/leadership-team with responsive design and brand color scheme
+- Added Dr. Samar Husain Naqvi (Managing Director/CO-Founder, 25+ years experience) with expertise in Biotechnology, Life Sciences, Genomics, and Molecular Biology
+- Added Dr. Abhishek Chanchal (Director & Co-Founder, 15+ years experience) with expertise in Chemical Biology, Nanotechnology, Analytical Instrumentation, and IVD Medical Devices
+- Implemented interactive biography popup modals with full professional details and achievements
+- Added functional LinkedIn and email contact buttons for team member communication
+- Updated Company navigation menu to include Leadership Team link
+- Created team member image folder structure in public/assets/images/team-member/
+- Integrated professional team member photos with responsive image handling
+
 **January 22, 2025:**
 - Added clickable product card navigation to healthcare medical-linens page: All product cards on /healthcare/medical-linens now have proper Link components enabling navigation to individual product detail pages, matching the functionality of /products/medical-linens page
 - Fixed featured product navigation link: Updated featured "Baby's First Touch" product card to correctly link to /products/neonatal-care/baby-first-touch instead of medical-linens path, properly categorizing it under neonatal care products

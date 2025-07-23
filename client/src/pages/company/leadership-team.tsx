@@ -16,6 +16,8 @@ interface TeamMember {
   fullBio: string;
   expertise: string[];
   image: string;
+  linkedin?: string;
+  email?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -30,12 +32,14 @@ const teamMembers: TeamMember[] = [
 
 As a visionary leader, he has held pivotal roles in esteemed corporate organizations, where he has successfully spearheaded the design, development, and manufacturing of in vitro diagnostic medical devices. His expertise in navigating complex regulatory landscapes has ensured the seamless translation of research findings into clinically validated diagnostic tools, ultimately enhancing patient care and outcomes. His research has been instrumental in elucidating the molecular mechanisms underlying various diseases, shedding light on novel biomarkers, and informing the development of targeted therapeutic strategies. Through his mentorship and leadership, he has fostered a new generation of scientists and researchers, imbuing them with a passion for discovery and a commitment to excellence. As a testament to his dedication and expertise, Dr. Naqvi has garnered numerous accolades and recognition within the scientific community, solidifying his position as a luminary in the field of biotechnology and life sciences.`,
     expertise: ['Biotechnology', 'Life Sciences', 'Genomics', 'Molecular Biology'],
-    image: '/assets/images/team-member/dr-samar-husain-naqvi.png'
+    image: '/assets/images/team-member/dr-samar-husain-naqvi.png',
+    linkedin: '#',
+    email: 'samar@niddikkare.com'
   },
   {
     id: 'dr-abhishek-chanchal',
     name: 'Dr. Abhishek Chanchal',
-    title: 'Senior Research Scientist',
+    title: 'Director & Co-Founder',
     company: 'NIDDIKKARE LLP',
     experience: '15+ Years',
     shortBio: 'Dr. Abhishek Chanchal is a highly accomplished researcher with over 15 years of experience in Chemical Biology, Nanotechnology, Analytical Instrumentation and IVD-Medical Devices. He has actively contributed to numerous research projects and peer-reviewed international publications.',
@@ -43,7 +47,9 @@ As a visionary leader, he has held pivotal roles in esteemed corporate organizat
 
 Leveraging his profound expertise, Dr Chanchal made in-house nano & microparticle-based DNA/RNA extraction systems utilizing ferromagnet and silica. These cutting-edge technologies form the backbone of IVD medical devices essential for molecular diagnostics. Crucially, during the COVID-19 pandemic, these devices were instrumental in the rapid detection and differentiation of SARS-CoV-2 variants, playing a significant role in managing the pandemic health crisis.`,
     expertise: ['Chemical Biology', 'Nanotechnology', 'Analytical Instrumentation', 'IVD Medical Devices'],
-    image: '/assets/images/team-member/dr-abhishek-chanchal.png'
+    image: '/assets/images/team-member/dr-abhishek-chanchal.png',
+    linkedin: 'https://www.linkedin.com/in/dr-abhishek-chanchal-42007457/',
+    email: 'abhishek@niddikkare.com'
   }
 ];
 
@@ -109,11 +115,17 @@ const BiographyDialog = ({ member }: { member: TeamMember }) => {
           <Separator />
 
           <div className="flex justify-center space-x-4 pt-4">
-            <Button className="bg-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,35%)]">
+            <Button 
+              className="bg-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,35%)]"
+              onClick={() => window.open(`mailto:${member.email}`, '_blank')}
+            >
               <Mail className="w-4 h-4 mr-2" />
               Connect
             </Button>
-            <Button className="bg-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,22%)]">
+            <Button 
+              className="bg-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,22%)]"
+              onClick={() => window.open(member.linkedin, '_blank')}
+            >
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
             </Button>
@@ -193,6 +205,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
             <Button 
               variant="outline" 
               className="flex-1 border-[hsl(188,78%,41%)] text-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,41%)] hover:text-white"
+              onClick={() => window.open(`mailto:${member.email}`, '_blank')}
             >
               <Mail className="w-4 h-4 mr-2" />
               Connect
@@ -200,6 +213,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
             <Button 
               variant="outline" 
               className="flex-1 border-[hsl(134,37%,27%)] text-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,27%)] hover:text-white"
+              onClick={() => window.open(member.linkedin, '_blank')}
             >
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
