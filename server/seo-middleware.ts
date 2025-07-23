@@ -17,7 +17,7 @@ export function setupSEOMiddleware(app: Express) {
         pathname.startsWith('/assets/') ||
         pathname.startsWith('/@') || // Vite internal routes
         pathname.startsWith('/src/') || // Vite source files
-        pathname.match(/\.(png|jpg|jpeg|gif|svg|ico|css|js|woff|woff2|ttf|eot)$/)) {
+        pathname.match(/\.(png|jpg|jpeg|gif|svg|ico|css|js|woff|woff2|ttf|eot|map)$/)) {
       return next();
     }
 
@@ -112,6 +112,10 @@ export function setupSEOMiddleware(app: Express) {
         
         // Override res.end to inject SEO metadata
         const originalEnd = res.end;
+        const originalSend = res.send;
+        const originalSendFile = res.sendFile;
+        
+        // Override multiple response methods to catch HTML
         res.end = function(chunk: any, encoding?: any) {
           if (typeof chunk === 'string' && chunk.includes('<html')) {
             const seoData = (req as any).seoData;
@@ -204,6 +208,110 @@ export function setupSEOMiddleware(app: Express) {
             }
           }
           return originalEnd.call(this, chunk, encoding);
+        };
+        
+        // Override res.send to catch HTML responses
+        res.send = function(body: any) {
+          if (typeof body === 'string' && body.includes('<html')) {
+            const seoData = (req as any).seoData;
+            const seoPath = (req as any).seoPath;
+            
+            if (seoData) {
+              let modifiedBody = body;
+              
+              // Apply same SEO transformations
+              modifiedBody = modifiedBody.replace(
+                /<title[^>]*>.*?<\/title>/gi,
+                `<title>${seoData.pageTitle}</title>`
+              );
+              
+              modifiedBody = modifiedBody.replace(
+                /<meta\s+name=["']description["'][^>]*>/gi,
+                `<meta name="description" content="${seoData.metaDescription}" />`
+              );
+              
+              modifiedBody = modifiedBody.replace(
+                /<meta\s+name=["']keywords["'][^>]*>/gi,
+                `<meta name="keywords" content="${seoData.metaKeywords}" />`
+              );
+              
+              modifiedBody = modifiedBody.replace(
+                /<meta\s+property=["']og:title["'][^>]*>/gi,
+                `<meta property="og:title" content="${seoData.ogTitle}" />`
+              );
+              
+              modifiedBody = modifiedBody.replace(
+                /<meta\s+property=["']og:description["'][^>]*>/gi,
+                `<meta property="og:description" content="${seoData.ogDescription}" />`
+              );
+              
+              const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
+              modifiedBody = modifiedBody.replace(
+                /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+                `<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`
+              );
+              
+              console.log(`[SEO Middleware] ✅ Injected SEO via send() for ${seoPath}: ${seoData.pageTitle}`);
+              return originalSend.call(this, modifiedBody);
+            }
+          }
+          return originalSend.call(this, body);
+        };
+        
+        // Override res.sendFile for production static files
+        res.sendFile = function(path: string, options?: any, callback?: any) {
+          if (path.endsWith('index.html')) {
+            // For index.html files, read and modify them before sending
+            const fs = require('fs');
+            try {
+              const htmlContent = fs.readFileSync(path, 'utf-8');
+              const seoData = (req as any).seoData;
+              const seoPath = (req as any).seoPath;
+              
+              if (seoData && htmlContent.includes('<html')) {
+                let modifiedContent = htmlContent;
+                
+                // Apply SEO transformations
+                modifiedContent = modifiedContent.replace(
+                  /<title[^>]*>.*?<\/title>/gi,
+                  `<title>${seoData.pageTitle}</title>`
+                );
+                
+                modifiedContent = modifiedContent.replace(
+                  /<meta\s+name=["']description["'][^>]*>/gi,
+                  `<meta name="description" content="${seoData.metaDescription}" />`
+                );
+                
+                modifiedContent = modifiedContent.replace(
+                  /<meta\s+name=["']keywords["'][^>]*>/gi,
+                  `<meta name="keywords" content="${seoData.metaKeywords}" />`
+                );
+                
+                modifiedContent = modifiedContent.replace(
+                  /<meta\s+property=["']og:title["'][^>]*>/gi,
+                  `<meta property="og:title" content="${seoData.ogTitle}" />`
+                );
+                
+                modifiedContent = modifiedContent.replace(
+                  /<meta\s+property=["']og:description["'][^>]*>/gi,
+                  `<meta property="og:description" content="${seoData.ogDescription}" />`
+                );
+                
+                const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
+                modifiedContent = modifiedContent.replace(
+                  /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+                  `<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`
+                );
+                
+                console.log(`[SEO Middleware] ✅ Injected SEO via sendFile() for ${seoPath}: ${seoData.pageTitle}`);
+                res.status(200).set({ "Content-Type": "text/html" }).send(modifiedContent);
+                return;
+              }
+            } catch (error) {
+              console.error(`[SEO Middleware] Error reading/modifying ${path}:`, error);
+            }
+          }
+          return originalSendFile.call(this, path, options, callback);
         };
       }
     } catch (error) {
