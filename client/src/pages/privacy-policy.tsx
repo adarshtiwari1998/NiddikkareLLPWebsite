@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, Shield, Eye, Database, Clock, Mail, Phone } from "lucide-react";

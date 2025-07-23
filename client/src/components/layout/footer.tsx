@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "wouter";
 import { Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
 import logoImage from "@/assets/niddikkare-logo.png";
