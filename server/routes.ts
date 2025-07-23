@@ -18,7 +18,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     <loc>https://niddikkare.com/healthcare</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/healthcare/neonatal-care</loc>
@@ -33,10 +33,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://niddikkare.com/healthcare/medical-linens/woven</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/healthcare/medical-linens/non-woven</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/healthcare/medical-linens/blended</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://niddikkare.com/life-sciences</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/life-sciences/dna-rna-extraction</loc>
@@ -65,44 +83,176 @@ export async function registerRoutes(app: Express): Promise<Server> {
   <url>
     <loc>https://niddikkare.com/company/leadership-team</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/company/news</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/neonatal-care/baby-first-touch</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/baby-first-touch</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/maternity-gown</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/mackintosh-rubber-sheet</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/bedsheet-pillow-covers</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/surgical-drapes-towels</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/scrub-suit</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/patient-gown</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/surgical-ot-gown</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/products/medical-linens/surgical-cut-sheets</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/tools-testing</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/tools-testing/testing/filtration</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/tools-testing/testing/rapid-tests</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/tools-testing/testing/chromatography</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/tools-testing/testing/bioanalysis</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/tools-testing/testing/water-analysis</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/services/consultancy-ivd</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/services/contract-research</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/services/oem-products</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/it-solutions/rpo</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/it-solutions/contingent</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://niddikkare.com/it-solutions/web-app-solutions</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/contact</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/gut-care</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/privacy-policy</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/terms-of-service</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://niddikkare.com/cookie-policy</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>`;
       res.set('Content-Type', 'application/xml');
@@ -149,27 +299,94 @@ Allow: /gut-care
         "logo": "https://niddikkare.com/assets/images/niddikkare-logo.png",
         "description": "Leading healthcare and life sciences company specializing in neonatal care, medical linens, DNA/RNA extraction, and molecular diagnostics",
         "foundingDate": "2021",
-        "founders": [
+        "founder": [
           {
             "@type": "Person",
             "name": "Dr. Samar Husain Naqvi",
-            "jobTitle": "Managing Director & Co-Founder"
+            "jobTitle": "Managing Director & Co-Founder",
+            "description": "20+ years of experience in Life Sciences, Molecular Diagnostics, and IVD medical devices"
           },
           {
             "@type": "Person",
             "name": "Dr. Abhishek Chanchal",
-            "jobTitle": "Director & Co-Founder"
+            "jobTitle": "Director & Co-Founder",
+            "description": "15+ years of expertise in Chemical Biology, Nanotechnology, and Analytical Instrumentation"
           }
         ],
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "IN"
         },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "url": "https://niddikkare.com/contact"
+        },
         "sameAs": [
           "https://linkedin.com/company/niddikkare",
           "https://twitter.com/niddikkare",
           "https://instagram.com/niddikkare",
           "https://youtube.com/@niddikkare"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Healthcare & Life Sciences Products",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Neonatal Care Products",
+                "category": "Healthcare Equipment",
+                "description": "Specialized products for newborn and infant care"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Medical Linens",
+                "category": "Medical Textiles",
+                "description": "Premium quality medical textiles for healthcare facilities"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "DNA/RNA Extraction Kits",
+                "category": "Laboratory Equipment",
+                "description": "High-performance nucleic acid extraction solutions"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Molecular Diagnostics",
+                "category": "Diagnostic Equipment",
+                "description": "Advanced diagnostic solutions for precision disease detection"
+              }
+            }
+          ]
+        },
+        "knowsAbout": [
+          "Healthcare Innovation",
+          "Life Sciences",
+          "Neonatal Care",
+          "Medical Linens",
+          "DNA RNA Extraction",
+          "Molecular Diagnostics",
+          "Laboratory Equipment",
+          "Medical Devices",
+          "Biotechnology"
+        ],
+        "areaServed": "Worldwide",
+        "serviceType": [
+          "Healthcare Product Manufacturing",
+          "Life Sciences Solutions",
+          "Laboratory Equipment Supply",
+          "Medical Device Development"
         ]
       };
       
