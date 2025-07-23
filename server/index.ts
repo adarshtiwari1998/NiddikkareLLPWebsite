@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { setupSEOMiddleware } from "./seo-middleware";
+import { setupProductionSEO } from "./production-seo";
 
 const app = express();
 app.use(express.json());
@@ -60,10 +61,8 @@ app.use((req, res, next) => {
     app.use(express.static("public"));
     await setupVite(app, server);
   } else {
-    // In production, setup SEO middleware BEFORE static serving
-    setupSEOMiddleware(app);
-    // In production, serve static assets and setup production SEO injection
-    serveStatic(app);
+    // In production, use dedicated production SEO handler that bypasses vite.ts limitations
+    setupProductionSEO(app);
   }
 
   // ALWAYS serve the app on port 5000
