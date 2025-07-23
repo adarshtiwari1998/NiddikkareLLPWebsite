@@ -54,13 +54,13 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // Setup SSR routes BEFORE Vite for initial page loads only
+    console.log("🔧 Setting up SSR routes BEFORE Vite for initial page load SEO...");
+    setupSSRRoutes(app);
+    
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);
-    // Setup SSR routes after Vite middleware to avoid React transform conflicts
-    // SSR routes will only activate for non-Vite requests (curl, bots, etc.)
-    console.log("🔧 Setting up SSR routes AFTER Vite for development SEO testing...");
-    setupSSRRoutes(app);
   } else {
     // In production, serve static assets first, then SSR routes
     serveStatic(app);

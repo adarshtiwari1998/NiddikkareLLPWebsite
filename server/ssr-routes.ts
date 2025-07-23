@@ -81,21 +81,31 @@ export function setupSSRRoutes(app: Express) {
   
   routes.forEach(route => {
     app.get(route, (req: Request, res: Response, next) => {
-      // Skip if this is a request for static assets, API calls, or any browser navigation
+      // Skip if this is a request for static assets, API calls, or Vite internal routes
       if (req.path.startsWith('/assets/') || 
           req.path.startsWith('/api/') || 
+          req.path.startsWith('/@') ||  // Vite internal routes
+          req.path.startsWith('/src/') || // Vite source files
           req.path.includes('.') ||
-          req.headers.accept?.includes('application/json')) {
+          req.headers.accept?.includes('application/json') ||
+          req.headers.accept?.includes('text/css') ||
+          req.headers.accept?.includes('application/javascript')) {
         return next();
       }
       
-      // In development, only handle requests that are NOT from browsers (curl, bots, etc.)
-      // This prevents SSR from interfering with Vite's React transformation
-      const userAgent = req.headers['user-agent'] || '';
-      const isBrowserRequest = userAgent.includes('Mozilla') || userAgent.includes('Chrome') || userAgent.includes('Safari') || userAgent.includes('Firefox');
-      
-      if (process.env.NODE_ENV === 'development' && isBrowserRequest) {
-        return next(); // Let Vite handle browser requests in development
+      // In development, only handle non-browser requests to avoid Vite conflicts
+      if (process.env.NODE_ENV === 'development') {
+        const userAgent = req.headers['user-agent'] || '';
+        const acceptHeader = req.headers.accept || '';
+        
+        // Only process requests from search engines, bots, or curl (not browsers)
+        const isBrowser = userAgent.includes('Mozilla') || userAgent.includes('Chrome') || 
+                          userAgent.includes('Safari') || userAgent.includes('Firefox') ||
+                          userAgent.includes('Edge');
+        
+        if (isBrowser) {
+          return next(); // Let Vite handle all browser requests to avoid React transformation conflicts
+        }
       }
       
       console.log(`[SSR] Processing route: ${route} for request: ${req.path}`);
