@@ -33,6 +33,12 @@ export function setupSEOMiddleware(app: Express) {
     // In production, ensure we handle all HTML requests for proper SEO
     const isProduction = process.env.NODE_ENV === 'production';
 
+    // Skip SEO injection for scraper requests to avoid infinite loops
+    if ((req as any).headers['user-agent']?.includes('NIDDIKKARE-Internal-Scraper') || 
+        (req as any).query?.scraper === 'true') {
+      return next();
+    }
+
     console.log(`[SEO Middleware] Processing: ${pathname} (ENV: ${process.env.NODE_ENV})`);
 
     try {
@@ -196,7 +202,7 @@ export function setupSEOMiddleware(app: Express) {
                 `<link rel="canonical" href="${seoData.canonicalUrl}" />`
               );
               
-              // Replace structured data - more robust pattern
+              // Replace structured data - more robust pattern with proper escaping
               const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
               modifiedChunk = modifiedChunk.replace(
                 /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
@@ -270,29 +276,46 @@ export function setupSEOMiddleware(app: Express) {
                 );
               }
 
-              // ✅ COMPLETE SSR CONTENT INJECTION - Hidden for users, visible to search engines
+              // ✅ DYNAMIC SSR CONTENT INJECTION - Scrapes actual page content for SEO
               try {
-                const { getCompleteSSRContent } = await import('./complete-ssr-generator.js');
-                const ssrContent = getCompleteSSRContent(seoPath);
+                const { scrapePageContent } = await import('./dynamic-ssr-scraper.js');
+                const ssrContent = await scrapePageContent(seoPath);
                 
-                // Inject complete page content in a completely hidden container for SEO only
-                if (ssrContent && modifiedChunk.includes('<body>')) {
-                  // Add hidden comprehensive content right after body tag - invisible to users but crawlable
-                  modifiedChunk = modifiedChunk.replace(
-                    /<body>/i,
-                    `<body>
-    <!-- ========== SEO CONTENT FOR SEARCH ENGINES (COMPLETELY HIDDEN FROM USERS) ========== -->
-    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important;" aria-hidden="true" role="presentation">
+                // Inject dynamic page content BEFORE closing body tag - completely hidden from users
+                if (ssrContent) {
+                  const bodyCloseMatch = modifiedChunk.match(/(<\/body>)/i);
+                  if (bodyCloseMatch) {
+                    modifiedChunk = modifiedChunk.replace(
+                      /(<\/body>)/i,
+                      `
+    <!-- ========== DYNAMIC SEO CONTENT FOR SEARCH ENGINES (COMPLETELY HIDDEN FROM USERS) ========== -->
+    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important; font-size: 0px !important;" aria-hidden="true" role="presentation">
       ${ssrContent}
     </div>
-    <!-- ========== END SEO CONTENT ========== -->`
-                  );
-                  console.log(`[SEO Middleware] ✅ Injected complete SSR content for ${seoPath} (hidden from users)`);
+    <!-- ========== END DYNAMIC SEO CONTENT ========== -->
+$1`
+                    );
+                    console.log(`[SEO Middleware] ✅ Injected dynamic SSR content for ${seoPath} (scraped content - BEFORE </body>)`);
+                  } else if (modifiedChunk.includes('<body>')) {
+                    // Fallback: inject after opening body tag
+                    modifiedChunk = modifiedChunk.replace(
+                      /<body>/i,
+                      `<body>
+    <!-- ========== DYNAMIC SEO CONTENT FOR SEARCH ENGINES (COMPLETELY HIDDEN FROM USERS) ========== -->
+    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important; font-size: 0px !important;" aria-hidden="true" role="presentation">
+      ${ssrContent}
+    </div>
+    <!-- ========== END DYNAMIC SEO CONTENT ========== -->`
+                    );
+                    console.log(`[SEO Middleware] ✅ Injected dynamic SSR content for ${seoPath} (scraped content - AFTER <body>)`);
+                  } else {
+                    console.log(`[SEO Middleware] ⚠️ Could not inject SSR content for ${seoPath} - body tag not found`);
+                  }
                 } else {
-                  console.log(`[SEO Middleware] ⚠️ Could not inject SSR content for ${seoPath} - body tag not found`);
+                  console.log(`[SEO Middleware] ⚠️ No SSR content generated for ${seoPath}`);
                 }
               } catch (ssrError: any) {
-                console.log(`[SEO Middleware] SSR injection failed for ${seoPath}:`, ssrError?.message || 'Unknown error');
+                console.log(`[SEO Middleware] Dynamic SSR injection failed for ${seoPath}:`, ssrError?.message || 'Unknown error');
               }
               
 
@@ -340,29 +363,28 @@ export function setupSEOMiddleware(app: Express) {
               
               const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
               
-              // ✅ COMPLETE SSR CONTENT INJECTION - Hidden for users, visible to search engines
+              // ✅ DYNAMIC SSR CONTENT INJECTION - Scrapes actual page content for SEO
               try {
-                const { getCompleteSSRContent } = await import('./complete-ssr-generator.js');
-                const ssrContent = getCompleteSSRContent(seoPath);
+                const { scrapePageContent } = await import('./dynamic-ssr-scraper.js');
+                const ssrContent = await scrapePageContent(seoPath);
                 
-                // Inject complete page content in a completely hidden container for SEO only
+                // Inject dynamic page content right after body tag - completely hidden from users
                 if (ssrContent && modifiedBody.includes('<body>')) {
-                  // Add hidden comprehensive content right after body tag - invisible to users but crawlable
                   modifiedBody = modifiedBody.replace(
                     /<body>/i,
                     `<body>
-    <!-- ========== SEO CONTENT FOR SEARCH ENGINES (COMPLETELY HIDDEN FROM USERS) ========== -->
-    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important;" aria-hidden="true" role="presentation">
+    <!-- ========== DYNAMIC SEO CONTENT FOR SEARCH ENGINES (COMPLETELY HIDDEN FROM USERS) ========== -->
+    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important; font-size: 0px !important;" aria-hidden="true" role="presentation">
       ${ssrContent}
     </div>
-    <!-- ========== END SEO CONTENT ========== -->`
+    <!-- ========== END DYNAMIC SEO CONTENT ========== -->`
                   );
-                  console.log(`[SEO Middleware] ✅ Injected complete SSR content for ${seoPath} (hidden from users, res.send)`);
+                  console.log(`[SEO Middleware] ✅ Injected dynamic SSR content for ${seoPath} (scraped content, res.send)`);
                 } else {
                   console.log(`[SEO Middleware] ⚠️ Could not inject SSR content for ${seoPath} - body tag not found (res.send)`);
                 }
               } catch (ssrError: any) {
-                console.log(`[SEO Middleware] SSR injection failed for ${seoPath} (res.send):`, ssrError?.message || 'Unknown error');
+                console.log(`[SEO Middleware] Dynamic SSR injection failed for ${seoPath} (res.send):`, ssrError?.message || 'Unknown error');
               }
               
               modifiedBody = modifiedBody.replace(
