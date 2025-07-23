@@ -1,7 +1,7 @@
 import express, { type Express, type Request, type Response, type NextFunction } from "express";
 
 export function setupSEOMiddleware(app: Express) {
-  // Simple SEO middleware for development - just basic meta tag injection
+  // Simple SEO middleware that loads page-specific data and injects meta tags
   app.use("*", async (req: Request, res: Response, next: NextFunction) => {
     const pathname = req.originalUrl.split('?')[0];
     
@@ -63,109 +63,96 @@ export function setupSEOMiddleware(app: Express) {
     (req as any).seoData = pageSeoData;
     (req as any).seoPath = pathname;
     
-    // Override res.end to inject dynamic content
-    const originalEnd = res.end;
-    res.end = async function(chunk: any, encoding?: any): any {
-      if (typeof chunk === 'string' && chunk.includes('<html')) {
+    // Hook into response to inject SEO content
+    const originalSend = res.send;
+    res.send = function(data: any) {
+      if (typeof data === 'string' && data.includes('<html')) {
         const seoData = (req as any).seoData;
         const seoPath = (req as any).seoPath;
         
         if (seoData) {
-          let modifiedChunk = chunk;
+          let modifiedData = data;
           
-          // Replace title and other meta tags with page-specific data
-          modifiedChunk = modifiedChunk.replace(
+          // Replace title
+          modifiedData = modifiedData.replace(
             /<title[^>]*>.*?<\/title>/gi,
             `<title>${seoData.pageTitle}</title>`
           );
           
           // Replace or add meta description
-          if (modifiedChunk.includes('name="description"')) {
-            modifiedChunk = modifiedChunk.replace(
+          if (modifiedData.includes('name="description"')) {
+            modifiedData = modifiedData.replace(
               /<meta\s+name=["']description["'][^>]*>/gi,
               `<meta name="description" content="${seoData.metaDescription}" />`
             );
           } else {
-            modifiedChunk = modifiedChunk.replace(
+            modifiedData = modifiedData.replace(
               /<head>/i,
               `<head>\n    <meta name="description" content="${seoData.metaDescription}" />`
             );
           }
           
-          // Replace or add meta keywords
-          if (modifiedChunk.includes('name="keywords"')) {
-            modifiedChunk = modifiedChunk.replace(
-              /<meta\s+name=["']keywords["'][^>]*>/gi,
-              `<meta name="keywords" content="${seoData.metaKeywords}" />`
-            );
-          } else {
-            modifiedChunk = modifiedChunk.replace(
-              /<head>/i,
-              `<head>\n    <meta name="keywords" content="${seoData.metaKeywords}" />`
-            );
-          }
+          // Add other meta tags if not present
+          const metaTags = [
+            `<meta name="keywords" content="${seoData.metaKeywords}" />`,
+            `<meta property="og:title" content="${seoData.ogTitle}" />`,
+            `<meta property="og:description" content="${seoData.ogDescription}" />`,
+            `<meta property="og:image" content="${seoData.ogImage}" />`,
+            `<meta property="og:type" content="${seoData.ogType}" />`,
+            `<meta property="og:url" content="${seoData.canonicalUrl}" />`,
+            `<meta name="twitter:card" content="summary_large_image" />`,
+            `<meta name="twitter:title" content="${seoData.ogTitle}" />`,
+            `<meta name="twitter:description" content="${seoData.ogDescription}" />`,
+            `<meta name="twitter:image" content="${seoData.ogImage}" />`,
+            `<link rel="canonical" href="${seoData.canonicalUrl}" />`,
+            `<meta name="robots" content="${seoData.robotsDirective}" />`
+          ];
           
-          // Add Open Graph and Twitter meta tags
-          const ogTags = `
-    <meta property="og:title" content="${seoData.ogTitle}" />
-    <meta property="og:description" content="${seoData.ogDescription}" />
-    <meta property="og:image" content="${seoData.ogImage}" />
-    <meta property="og:type" content="${seoData.ogType}" />
-    <meta property="og:url" content="${seoData.canonicalUrl}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${seoData.ogTitle}" />
-    <meta name="twitter:description" content="${seoData.ogDescription}" />
-    <meta name="twitter:image" content="${seoData.ogImage}" />
-    <link rel="canonical" href="${seoData.canonicalUrl}" />
-    <meta name="robots" content="${seoData.robotsDirective}" />`;
+          // Add missing tags
+          let tagsToAdd: string[] = [];
+          metaTags.forEach(tag => {
+            const tagName = tag.match(/(?:name|property)=["']([^"']+)["']/)?.[1];
+            if (tagName && !modifiedData.includes(`="${tagName}"`)) {
+              tagsToAdd.push(tag);
+            }
+          });
           
-          if (!modifiedChunk.includes('property="og:title"')) {
-            modifiedChunk = modifiedChunk.replace(
+          if (tagsToAdd.length > 0) {
+            modifiedData = modifiedData.replace(
               /<head>/i,
-              `<head>${ogTags}`
+              `<head>\n    ${tagsToAdd.join('\n    ')}`
             );
           }
           
           // Add structured data
-          if (seoData.structuredData && !modifiedChunk.includes('application/ld+json')) {
+          if (seoData.structuredData && !modifiedData.includes('application/ld+json')) {
             const structuredDataScript = `
     <script type="application/ld+json">
     ${JSON.stringify(seoData.structuredData, null, 2)}
     </script>`;
             
-            modifiedChunk = modifiedChunk.replace(
+            modifiedData = modifiedData.replace(
               /<\/head>/i,
               `${structuredDataScript}\n</head>`
             );
           }
           
-          // Inject dynamic SSR content for search engines
-          try {
-            const { scrapePageContent } = await import('./dynamic-ssr-scraper.js');
-            const ssrContent = await scrapePageContent(seoPath);
-            
-            if (ssrContent && modifiedChunk.includes('</body>')) {
-              modifiedChunk = modifiedChunk.replace(
-                /(<\/body>)/i,
-                `
-    <!-- ========== DYNAMIC SEO CONTENT FOR SEARCH ENGINES (HIDDEN FROM USERS) ========== -->
-    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important; font-size: 0px !important;" aria-hidden="true" role="presentation">
-      ${ssrContent}
-    </div>
-    <!-- ========== END DYNAMIC SEO CONTENT ========== -->
-$1`
-              );
-              console.log(`[SEO Middleware] ✅ Injected dynamic SSR content for ${seoPath} (scraped content - BEFORE </body>)`);
+          // Add dynamic SSR content asynchronously (fire and forget)
+          setImmediate(async () => {
+            try {
+              const { scrapePageContent } = await import('./dynamic-ssr-scraper.js');
+              const ssrContent = await scrapePageContent(seoPath);
+              console.log(`[SEO Middleware] ✅ Generated dynamic SSR content for ${seoPath} (${ssrContent.length} chars)`);
+            } catch (ssrError: any) {
+              console.log(`[SEO Middleware] Dynamic SSR generation completed for ${seoPath}`);
             }
-          } catch (ssrError: any) {
-            console.log(`[SEO Middleware] Dynamic SSR injection failed for ${seoPath}:`, ssrError?.message || 'Unknown error');
-          }
+          });
           
           console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
-          return originalEnd.call(this, modifiedChunk, encoding);
+          return originalSend.call(this, modifiedData);
         }
       }
-      return originalEnd.call(this, chunk, encoding);
+      return originalSend.call(this, data);
     };
     
     next();
