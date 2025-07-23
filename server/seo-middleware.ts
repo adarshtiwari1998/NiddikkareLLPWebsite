@@ -202,6 +202,73 @@ export function setupSEOMiddleware(app: Express) {
                 /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
                 `<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`
               );
+              
+              // Add missing meta tags if they don't exist after replacement attempts
+              const missingTags = [];
+              
+              if (!modifiedChunk.includes('name="description"')) {
+                missingTags.push(`<meta name="description" content="${seoData.metaDescription}" />`);
+              }
+              
+              if (!modifiedChunk.includes('name="keywords"')) {
+                missingTags.push(`<meta name="keywords" content="${seoData.metaKeywords}" />`);
+              }
+              
+              if (!modifiedChunk.includes('name="robots"')) {
+                missingTags.push(`<meta name="robots" content="${seoData.robotsDirective}" />`);
+              }
+              
+              if (!modifiedChunk.includes('property="og:title"')) {
+                missingTags.push(`<meta property="og:title" content="${seoData.ogTitle}" />`);
+              }
+              
+              if (!modifiedChunk.includes('property="og:description"')) {
+                missingTags.push(`<meta property="og:description" content="${seoData.ogDescription}" />`);
+              }
+              
+              if (!modifiedChunk.includes('property="og:image"')) {
+                missingTags.push(`<meta property="og:image" content="${seoData.ogImage}" />`);
+              }
+              
+              if (!modifiedChunk.includes('property="og:type"')) {
+                missingTags.push(`<meta property="og:type" content="${seoData.ogType}" />`);
+              }
+              
+              if (!modifiedChunk.includes('property="og:url"')) {
+                missingTags.push(`<meta property="og:url" content="${seoData.canonicalUrl}" />`);
+              }
+              
+              if (!modifiedChunk.includes('name="twitter:card"')) {
+                missingTags.push(`<meta name="twitter:card" content="summary_large_image" />`);
+              }
+              
+              if (!modifiedChunk.includes('name="twitter:title"')) {
+                missingTags.push(`<meta name="twitter:title" content="${seoData.ogTitle}" />`);
+              }
+              
+              if (!modifiedChunk.includes('name="twitter:description"')) {
+                missingTags.push(`<meta name="twitter:description" content="${seoData.ogDescription}" />`);
+              }
+              
+              if (!modifiedChunk.includes('name="twitter:image"')) {
+                missingTags.push(`<meta name="twitter:image" content="${seoData.ogImage}" />`);
+              }
+              
+              if (!modifiedChunk.includes('rel="canonical"')) {
+                missingTags.push(`<link rel="canonical" href="${seoData.canonicalUrl}" />`);
+              }
+              
+              if (!modifiedChunk.includes('application/ld+json')) {
+                missingTags.push(`<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`);
+              }
+              
+              // Inject missing tags into head section
+              if (missingTags.length > 0) {
+                modifiedChunk = modifiedChunk.replace(
+                  /<head>/i,
+                  `<head>\n    ${missingTags.join('\n    ')}`
+                );
+              }
 
               console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
               return originalEnd.call(this, modifiedChunk, encoding);
@@ -250,6 +317,43 @@ export function setupSEOMiddleware(app: Express) {
                 /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
                 `<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`
               );
+              
+              // Add missing meta tags for send() method too
+              const missingTags = [];
+              if (!modifiedBody.includes('property="og:title"')) {
+                missingTags.push(`<meta property="og:title" content="${seoData.ogTitle}" />`);
+              }
+              if (!modifiedBody.includes('property="og:description"')) {
+                missingTags.push(`<meta property="og:description" content="${seoData.ogDescription}" />`);
+              }
+              if (!modifiedBody.includes('property="og:image"')) {
+                missingTags.push(`<meta property="og:image" content="${seoData.ogImage}" />`);
+              }
+              if (!modifiedBody.includes('property="og:type"')) {
+                missingTags.push(`<meta property="og:type" content="${seoData.ogType}" />`);
+              }
+              if (!modifiedBody.includes('property="og:url"')) {
+                missingTags.push(`<meta property="og:url" content="${seoData.canonicalUrl}" />`);
+              }
+              if (!modifiedBody.includes('name="twitter:card"')) {
+                missingTags.push(`<meta name="twitter:card" content="summary_large_image" />`);
+              }
+              if (!modifiedBody.includes('name="twitter:title"')) {
+                missingTags.push(`<meta name="twitter:title" content="${seoData.ogTitle}" />`);
+              }
+              if (!modifiedBody.includes('name="twitter:description"')) {
+                missingTags.push(`<meta name="twitter:description" content="${seoData.ogDescription}" />`);
+              }
+              if (!modifiedBody.includes('name="twitter:image"')) {
+                missingTags.push(`<meta name="twitter:image" content="${seoData.ogImage}" />`);
+              }
+              
+              if (missingTags.length > 0) {
+                modifiedBody = modifiedBody.replace(
+                  /<head>/i,
+                  `<head>\n    ${missingTags.join('\n    ')}`
+                );
+              }
               
               console.log(`[SEO Middleware] ✅ Injected SEO via send() for ${seoPath}: ${seoData.pageTitle}`);
               return originalSend.call(this, modifiedBody);
