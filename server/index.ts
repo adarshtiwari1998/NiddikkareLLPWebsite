@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import { setupSSRRoutes } from "./ssr-routes";
+// SSR routes removed to avoid Vite conflicts
 
 const app = express();
 app.use(express.json());
@@ -54,17 +54,12 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    // Setup SSR routes BEFORE Vite for initial page loads only
-    console.log("🔧 Setting up SSR routes BEFORE Vite for initial page load SEO...");
-    setupSSRRoutes(app);
-    
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);
   } else {
-    // In production, serve static assets first, then SSR routes
+    // In production, serve static assets only
     serveStatic(app);
-    setupSSRRoutes(app);
   }
 
   // ALWAYS serve the app on port 5000
