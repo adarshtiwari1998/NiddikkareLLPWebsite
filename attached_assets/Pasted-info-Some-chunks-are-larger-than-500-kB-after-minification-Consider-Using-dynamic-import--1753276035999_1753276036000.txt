@@ -1,0 +1,44 @@
+info
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 4.70s
+  dist/index.js  145.4kb
+⚡ Done in 6ms
+==> Uploading build...
+==> Uploaded in 8.3s. Compression took 3.4s
+==> Build successful 🎉
+==> Deploying...
+==> Running 'npm run start'
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.js
+1:01:13 PM [express] serving on port 5000
+[SEO Middleware] Processing: /services/consultancy-ivd (ENV: production)
+[SEO Middleware] Using bundled SEO data for production
+[SEO Middleware] Found SEO data for /services/consultancy-ivd: true
+==> Your service is live 🎉
+==> 
+==> ///////////////////////////////////////////////////////////
+==> 
+==> Available at your primary URL https://niddikkarellpwebsite-dev-env.onrender.com
+==> 
+==> ///////////////////////////////////////////////////////////
+[SEO Middleware] Processing: /services/consultancy-ivd (ENV: production)
+[SEO Middleware] Using bundled SEO data for production
+[SEO Middleware] Found SEO data for /services/consultancy-ivd: true
+[SEO Middleware] Processing: /services/consultancy-ivd (ENV: production)
+[SEO Middleware] Using bundled SEO data for production
+[SEO Middleware] Found SEO data for /services/consultancy-ivd: true
+[SEO Middleware] Processing: /services/consultancy-ivd (ENV: production)
+[SEO Middleware] Using bundled SEO data for production
+[SEO Middleware] Found SEO data for /services/consultancy-ivd: true
+[SEO Middleware] Processing: /services/consultancy-ivd (ENV: production)
+[SEO Middleware] Using bundled SEO data for production
+[SEO Middleware] Found SEO data for /services/consultancy-ivd: true
+[SEO Middleware] Processing: /services/consultancy-ivd (ENV: production)
+[SEO Middleware] Using bundled SEO data for production
+[SEO Middleware] Found SEO data for /services/consultancy-ivd: true
+[SEO Middleware] Processing: / (ENV: production)
+[SEO Middleware] Using bundled SEO data for production
+[SEO Middleware] Found SEO data for /: true
