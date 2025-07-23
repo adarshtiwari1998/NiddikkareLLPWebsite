@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, FileText, Scale, AlertTriangle, Clock, Mail, Phone } from "lucide-react";

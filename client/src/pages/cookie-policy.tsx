@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, Cookie, Settings, Database, Clock, Mail, Phone, Shield, Eye } from "lucide-react";
