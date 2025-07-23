@@ -54,11 +54,13 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // IMPORTANT: Setup SSR routes BEFORE Vite middleware so they take priority
+    console.log("🔧 Setting up SSR routes BEFORE Vite for development SEO testing...");
+    setupSSRRoutes(app);
+    
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);
-    // Setup SSR routes after Vite middleware in development to avoid bypassing React transform
-    // SSR is only needed for production SEO, in development Vite handles everything
   } else {
     // In production, serve static assets first, then SSR routes
     serveStatic(app);

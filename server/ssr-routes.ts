@@ -81,25 +81,36 @@ export function setupSSRRoutes(app: Express) {
   
   routes.forEach(route => {
     app.get(route, (req: Request, res: Response, next) => {
-      // Skip if this is a request for static assets
-      if (req.path.startsWith('/assets/') || req.path.includes('.')) {
+      // Skip if this is a request for static assets or API calls
+      if (req.path.startsWith('/assets/') || 
+          req.path.startsWith('/api/') || 
+          req.path.includes('.') ||
+          req.headers.accept?.includes('application/json')) {
         return next();
       }
       
+      console.log(`[SSR] Processing route: ${route} for request: ${req.path}`);
+      
       try {
-        // Generate page-specific HTML
+        // Generate page-specific HTML with SEO metadata
         const html = generatePageHTML(route);
         
-        // Send the HTML with proper content type
-        res.set('Content-Type', 'text/html');
+        console.log(`[SSR] Generated HTML for ${route} with title: ${seoData[route]?.pageTitle}`);
+        
+        // Send the HTML with proper content type and caching headers
+        res.set({
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': 'public, max-age=300', // 5 minutes cache
+          'X-SSR-Route': route
+        });
         res.send(html);
       } catch (error) {
-        console.error(`SSR Error for route ${route}:`, error);
+        console.error(`[SSR] Error for route ${route}:`, error);
         // Fall back to default Vite handling
         next();
       }
     });
   });
   
-  console.log(`[SSR-Routes] Created SSR routes for ${routes.length} pages`);
+  console.log(`[SSR-Routes] ✅ Created SSR routes for ${routes.length} pages with SEO metadata injection`);
 }
