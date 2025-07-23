@@ -1148,6 +1148,3 @@ export const getDefaultCompleteSEOData = (pathname: string): SEOData => {
     }
   };
 };
-
-// CommonJS export for production compatibility 
-module.exports = { completeSeoData, getDefaultCompleteSEOData };
