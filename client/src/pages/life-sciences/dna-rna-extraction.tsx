@@ -790,7 +790,7 @@ export default function DnaRnaExtraction() {
                 Request Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary">
                 Download Protocols
               </Button>
             </div>
