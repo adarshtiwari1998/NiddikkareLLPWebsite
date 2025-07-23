@@ -47,6 +47,51 @@ export function setupSEOMiddleware(app: Express) {
     };
     (req as any).seoPath = pathname;
     
+    // Override res.end to inject dynamic content
+    const originalEnd = res.end;
+    res.end = async function(chunk: any, encoding?: any): any {
+      if (typeof chunk === 'string' && chunk.includes('<html')) {
+        const seoData = (req as any).seoData;
+        const seoPath = (req as any).seoPath;
+        
+        if (seoData) {
+          let modifiedChunk = chunk;
+          
+          // Replace title
+          modifiedChunk = modifiedChunk.replace(
+            /<title[^>]*>.*?<\/title>/gi,
+            `<title>${seoData.pageTitle}</title>`
+          );
+          
+          // Inject dynamic SSR content for search engines
+          try {
+            const { scrapePageContent } = await import('./dynamic-ssr-scraper.js');
+            const ssrContent = await scrapePageContent(seoPath);
+            
+            if (ssrContent && modifiedChunk.includes('</body>')) {
+              modifiedChunk = modifiedChunk.replace(
+                /(<\/body>)/i,
+                `
+    <!-- ========== DYNAMIC SEO CONTENT FOR SEARCH ENGINES (HIDDEN FROM USERS) ========== -->
+    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important; font-size: 0px !important;" aria-hidden="true" role="presentation">
+      ${ssrContent}
+    </div>
+    <!-- ========== END DYNAMIC SEO CONTENT ========== -->
+$1`
+              );
+              console.log(`[SEO Middleware] ✅ Injected dynamic SSR content for ${seoPath} (scraped content - BEFORE </body>)`);
+            }
+          } catch (ssrError: any) {
+            console.log(`[SEO Middleware] Dynamic SSR injection failed for ${seoPath}:`, ssrError?.message || 'Unknown error');
+          }
+          
+          console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
+          return originalEnd.call(this, modifiedChunk, encoding);
+        }
+      }
+      return originalEnd.call(this, chunk, encoding);
+    };
+    
     next();
   });
 }

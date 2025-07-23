@@ -2,7 +2,7 @@ import express, { type Express, type Request, type Response } from "express";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-// Removed dependency on dynamic-ssr-scraper since it's not needed
+import { scrapePageContent } from "./dynamic-ssr-scraper.js";
 
 // Setup __dirname replacement for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -57,8 +57,15 @@ export function setupProductionSEO(app: Express) {
       // Get SEO data for current path
       let pageSeoData = seoData[pathname] || seoData['/'];
       
-      // Generate static content based on the page path
-      const dynamicContent = generateFallbackContent(pathname);
+      // Get dynamic content using the scraper
+      let dynamicContent = '';
+      try {
+        dynamicContent = await scrapePageContent(pathname, 'http://localhost:5000');
+        console.log(`[Production SEO Enhanced] Generated dynamic content: ${dynamicContent.length} chars`);
+      } catch (error: any) {
+        console.log(`[Production SEO Enhanced] Dynamic content generation failed:`, error?.message);
+        dynamicContent = generateFallbackContent(pathname);
+      }
       
       // Create the enhanced HTML template
       const htmlTemplate = createEnhancedHTMLTemplate(pageSeoData, dynamicContent);
