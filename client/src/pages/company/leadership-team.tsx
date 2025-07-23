@@ -31,6 +31,19 @@ const teamMembers: TeamMember[] = [
 As a visionary leader, he has held pivotal roles in esteemed corporate organizations, where he has successfully spearheaded the design, development, and manufacturing of in vitro diagnostic medical devices. His expertise in navigating complex regulatory landscapes has ensured the seamless translation of research findings into clinically validated diagnostic tools, ultimately enhancing patient care and outcomes. His research has been instrumental in elucidating the molecular mechanisms underlying various diseases, shedding light on novel biomarkers, and informing the development of targeted therapeutic strategies. Through his mentorship and leadership, he has fostered a new generation of scientists and researchers, imbuing them with a passion for discovery and a commitment to excellence. As a testament to his dedication and expertise, Dr. Naqvi has garnered numerous accolades and recognition within the scientific community, solidifying his position as a luminary in the field of biotechnology and life sciences.`,
     expertise: ['Biotechnology', 'Life Sciences', 'Genomics', 'Molecular Biology'],
     image: '/assets/images/team-member/dr-samar-husain-naqvi.png'
+  },
+  {
+    id: 'dr-abhishek-chanchal',
+    name: 'Dr. Abhishek Chanchal',
+    title: 'Senior Research Scientist',
+    company: 'NIDDIKKARE LLP',
+    experience: '15+ Years',
+    shortBio: 'Dr. Abhishek Chanchal is a highly accomplished researcher with over 15 years of experience in Chemical Biology, Nanotechnology, Analytical Instrumentation and IVD-Medical Devices. He has actively contributed to numerous research projects and peer-reviewed international publications.',
+    fullBio: `Dr. Abhishek Chanchal is a highly accomplished researcher with over 15 years of experience in Chemical Biology, Nanotechnology, Analytical Instrumentation and IVD-Medical Devices. He has actively contributed to numerous research projects and peer-reviewed international publications. His work is dedicated to harnessing the potential of nanotechnology and chemical biology to forge innovative solutions for earlier disease diagnosis and improve therapeutic effectiveness by using Novel Drug Delivery System (NDDS). He focuses on creating Targeted Nano-therapeutics and Point-of-Care Testing (POCT) based IVD medical devices, which carry profound implications for global healthcare, particularly in resource-constrained environments.
+
+Leveraging his profound expertise, Dr Chanchal made in-house nano & microparticle-based DNA/RNA extraction systems utilizing ferromagnet and silica. These cutting-edge technologies form the backbone of IVD medical devices essential for molecular diagnostics. Crucially, during the COVID-19 pandemic, these devices were instrumental in the rapid detection and differentiation of SARS-CoV-2 variants, playing a significant role in managing the pandemic health crisis.`,
+    expertise: ['Chemical Biology', 'Nanotechnology', 'Analytical Instrumentation', 'IVD Medical Devices'],
+    image: '/assets/images/team-member/dr-abhishek-chanchal.png'
   }
 ];
 
@@ -222,7 +235,7 @@ export default function LeadershipTeam() {
               </div>
               <div className="flex items-center">
                 <User className="w-5 h-5 mr-2" />
-                <span>25+ Years Experience</span>
+                <span>15+ Years Experience</span>
               </div>
             </div>
           </div>
