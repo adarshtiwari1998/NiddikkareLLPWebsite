@@ -1,5 +1,6 @@
 import express, { type Express, type Request, type Response, type NextFunction } from "express";
 import fs from "fs";
+import path from "path";
 
 // Helper function to get production SEO data without dynamic imports
 function getProductionSEOData() {
@@ -294,4 +295,131 @@ export function setupSEOMiddleware(app: Express) {
     
     next();
   });
+}
+
+// Production-specific SEO middleware that works with serveStatic
+export function setupProductionSEOMiddleware(app: Express) {
+  console.log('[Production SEO] Setting up production SEO middleware');
+  
+  // Override the static file serving to inject SEO data
+  const originalUse = app.use.bind(app);
+  
+  // Intercept all routes before they reach serveStatic
+  app.use("*", async (req: Request, res: Response, next: NextFunction) => {
+    const pathname = req.originalUrl.split('?')[0];
+    
+    // Skip API routes and actual static assets
+    if (pathname.startsWith('/api/') || 
+        pathname.startsWith('/assets/') ||
+        pathname.startsWith('/@') ||
+        pathname.startsWith('/src/') ||
+        pathname.match(/\.(png|jpg|jpeg|gif|svg|ico|css|js|woff|woff2|ttf|eot|map|json|txt|xml)$/)) {
+      return next();
+    }
+
+    // Only handle HTML requests
+    const acceptHeader = req.headers.accept || '';
+    if (!acceptHeader.includes('text/html') && !acceptHeader.includes('*/*')) {
+      return next();
+    }
+
+    console.log(`[Production SEO] Processing HTML request: ${pathname}`);
+    
+    try {
+      // Load page-specific SEO data using production fallback
+      const allSeoData = getProductionSEOData() as Record<string, any>;
+      const pageSeoData = allSeoData[pathname] || allSeoData['/'] || getDefaultSEOData(pathname);
+      
+      console.log(`[Production SEO] ✅ Loaded SEO data for ${pathname}: "${pageSeoData.pageTitle}"`);
+      
+      // Read the built index.html file and inject SEO data
+      const distPath = path.resolve(import.meta.dirname, "public");
+      const indexPath = path.resolve(distPath, "index.html");
+      
+      if (fs.existsSync(indexPath)) {
+        const htmlContent = fs.readFileSync(indexPath, 'utf8');
+        const modifiedHtml = injectSEOData(htmlContent, pageSeoData);
+        
+        console.log(`[Production SEO] ✅ Injected SEO data for ${pathname}`);
+        res.status(200).set({ "Content-Type": "text/html" }).send(modifiedHtml);
+        return;
+      }
+    } catch (error) {
+      console.error(`[Production SEO] Error processing ${pathname}:`, error);
+    }
+    
+    // Fall back to normal serving
+    next();
+  });
+}
+
+// Helper function to inject SEO data into HTML
+function injectSEOData(html: string, seoData: any): string {
+  let modifiedHtml = html;
+  
+  // Replace title
+  modifiedHtml = modifiedHtml.replace(
+    /<title[^>]*>.*?<\/title>/gi,
+    `<title>${seoData.pageTitle}</title>`
+  );
+  
+  // Replace or add meta description
+  if (modifiedHtml.includes('name="description"')) {
+    modifiedHtml = modifiedHtml.replace(
+      /<meta\s+name=["']description["'][^>]*>/gi,
+      `<meta name="description" content="${seoData.metaDescription}" />`
+    );
+  } else {
+    modifiedHtml = modifiedHtml.replace(
+      /<head>/i,
+      `<head>\n    <meta name="description" content="${seoData.metaDescription}" />`
+    );
+  }
+  
+  // Add other essential meta tags if not present
+  const metaTags = [
+    `<meta name="keywords" content="${seoData.metaKeywords}" />`,
+    `<meta property="og:title" content="${seoData.ogTitle}" />`,
+    `<meta property="og:description" content="${seoData.ogDescription}" />`,
+    `<meta property="og:image" content="${seoData.ogImage}" />`,
+    `<meta property="og:type" content="${seoData.ogType}" />`,
+    `<meta property="og:url" content="${seoData.canonicalUrl}" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="${seoData.ogTitle}" />`,
+    `<meta name="twitter:description" content="${seoData.ogDescription}" />`,
+    `<meta name="twitter:image" content="${seoData.ogImage}" />`,
+    `<link rel="canonical" href="${seoData.canonicalUrl}" />`,
+    `<meta name="robots" content="${seoData.robotsDirective}" />`
+  ];
+  
+  // Add missing tags
+  let tagsToAdd: string[] = [];
+  metaTags.forEach(tag => {
+    const tagName = tag.match(/(?:name|property)=["']([^"']+)["']/)?.[1];
+    if (tagName && !modifiedHtml.includes(`="${tagName}"`)) {
+      tagsToAdd.push(tag);
+    }
+  });
+  
+  if (tagsToAdd.length > 0) {
+    modifiedHtml = modifiedHtml.replace(
+      /<head>/i,
+      `<head>\n    ${tagsToAdd.join('\n    ')}`
+    );
+  }
+  
+  // Add structured data if not present
+  if (seoData.structuredData && !modifiedHtml.includes('application/ld+json')) {
+    const structuredDataScript = `
+    <script type="application/ld+json">
+    ${JSON.stringify(seoData.structuredData, null, 2)}
+    </script>`;
+    
+    modifiedHtml = modifiedHtml.replace(
+      /<\/head>/i,
+      `${structuredDataScript}\n</head>`
+    );
+  }
+  
+  return modifiedHtml;
 }

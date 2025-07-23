@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import { setupSEOMiddleware } from "./seo-middleware-clean";
+import { setupSEOMiddleware, setupProductionSEOMiddleware } from "./seo-middleware-clean";
 import { setupProductionSEO } from "./production-seo-enhanced";
 
 const app = express();
@@ -61,8 +61,9 @@ app.use((req, res, next) => {
     app.use(express.static("public"));
     await setupVite(app, server);
   } else {
-    // In production, setup SEO middleware before serving static files
-    setupSEOMiddleware(app);
+    // In production, we need to handle SEO injection differently
+    // because serveStatic will bypass our middleware
+    setupProductionSEOMiddleware(app);
     // Serve static build files
     serveStatic(app);
   }
