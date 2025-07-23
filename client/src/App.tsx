@@ -83,11 +83,13 @@ import LifeSciences from "@/pages/life-sciences/life-sciences";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
 import CookiePolicy from "@/pages/cookie-policy";
+import SEOManagement from "@/pages/seo-management";
 
 import Header from "@/components/layout/header-new";
 import Footer from "@/components/layout/footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { SmartBreadcrumb } from "@/components/ui/breadcrumb";
+import SEO from "@/components/seo";
 
 function BreadcrumbContainer() {
   const [location] = useLocation();
@@ -112,6 +114,7 @@ function Router() {
   return (
     <div className="min-h-screen bg-background">
       <ScrollToTop />
+      <SEO />
       <Header />
       
       {/* Breadcrumb Navigation */}
@@ -188,6 +191,9 @@ function Router() {
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
           <Route path="/cookie-policy" component={CookiePolicy} />
+          
+          {/* SEO Management Route (Internal Only) */}
+          <Route path="/seo-management" component={SEOManagement} />
           
           {/* Other Routes */}
           <Route path="/gut-care" component={GutCare} />
