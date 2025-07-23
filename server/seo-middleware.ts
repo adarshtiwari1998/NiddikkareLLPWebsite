@@ -30,11 +30,22 @@ export function setupSEOMiddleware(app: Express) {
       return next();
     }
 
+    // In production, ensure we handle all HTML requests for proper SEO
+    const isProduction = process.env.NODE_ENV === 'production';
+
     console.log(`[SEO Middleware] Processing: ${pathname}`);
 
     try {
-      // Import SEO data dynamically 
-      const { seoData } = await import("../client/src/data/seo-data.js");
+      // Import SEO data dynamically - handle both .js and .ts extensions
+      let seoData;
+      try {
+        const seoModule = await import("../client/src/data/seo-data.js");
+        seoData = seoModule.seoData;
+      } catch (error) {
+        // Fallback for TypeScript in development
+        const seoModule = await import("../client/src/data/seo-data.ts");
+        seoData = seoModule.seoData;
+      }
       
       // Get SEO data for the current path
       let pageSeoData = seoData[pathname];

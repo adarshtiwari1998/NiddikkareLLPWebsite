@@ -50,17 +50,18 @@ app.use((req, res, next) => {
     throw err;
   });
 
+  // Setup SEO middleware for BOTH development and production
+  setupSEOMiddleware(app);
+
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    // Setup SEO middleware before Vite to inject metadata
-    setupSEOMiddleware(app);
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);
   } else {
-    // In production, serve static assets only
+    // In production, serve static assets and setup production SEO injection
     serveStatic(app);
   }
 
