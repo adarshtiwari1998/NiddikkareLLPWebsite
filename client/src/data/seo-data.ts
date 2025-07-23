@@ -1217,6 +1217,48 @@ export const seoData: Record<string, SEOData> = {
       },
       "serviceType": "Bioanalytical Testing"
     }
+  },
+
+  // Tools section pages
+  "/tools-testing/tools": {
+    pageTitle: "Digital Tools | NIDDIKKARE LLP - Laboratory Management Solutions",
+    metaDescription: "Comprehensive digital tools for laboratory management including sample tracking, e-learning, database applications, and intelligent finder systems.",
+    metaKeywords: "digital tools, laboratory tools, lab management, sample tracking, e-learning, database tools, finder systems",
+    ogTitle: "Digital Tools - Laboratory Management Solutions | NIDDIKKARE",
+    ogDescription: "Advanced digital tools for efficient laboratory management and research workflows.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Digital Laboratory Tools",
+      "description": "Digital solutions for laboratory management and research workflows",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      },
+      "serviceType": "Software Solutions"
+    }
+  },
+
+  // SEO Management (noindex)
+  "/seo-management": {
+    pageTitle: "SEO Management Dashboard | NIDDIKKARE LLP - Internal",
+    metaDescription: "Internal SEO management dashboard for NIDDIKKARE LLP website administration.",
+    metaKeywords: "SEO management, internal dashboard, website administration",
+    ogTitle: "SEO Management Dashboard",
+    ogDescription: "Internal SEO management for website administration.",
+    ogImage: logoUrl,
+    ogType: "website",
+    canonicalUrl: `${baseUrl}/seo-management`,
+    robotsDirective: "noindex,nofollow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "SEO Management Dashboard"
+    }
   }
 };
 

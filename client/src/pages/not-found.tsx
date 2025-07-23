@@ -1,9 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
+      <SEO customSEO={{
+        pageTitle: "Page Not Found | NIDDIKKARE LLP",
+        metaDescription: "The page you're looking for couldn't be found. Return to NIDDIKKARE LLP homepage for healthcare and life sciences solutions.",
+        robotsDirective: "noindex,nofollow"
+      }} />
       <Card className="w-full max-w-md mx-4">
         <CardContent className="pt-6">
           <div className="flex mb-4 gap-2">
