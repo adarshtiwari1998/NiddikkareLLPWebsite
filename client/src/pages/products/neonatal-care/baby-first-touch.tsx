@@ -313,8 +313,8 @@ const BabyFirstTouchPage = () => {
             </div>
 
             {/* Features Section */}
-            <div className="bg-white rounded-3xl shadow-lg p-8">
-              <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Premium Features</h3>
+            <div className="bg-white rounded-3xl shadow-lg p-8 mt-16">
+              <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">Premium Features</h3>
               <div className="grid gap-6">
                 <div className="flex items-start space-x-4 p-6 bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl">
                   <div className="p-3 bg-pink-200 rounded-xl">
@@ -358,8 +358,8 @@ const BabyFirstTouchPage = () => {
             </div>
 
             {/* Specifications Section */}
-            <div className="bg-white rounded-3xl shadow-lg p-8">
-              <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Technical Specifications</h3>
+            <div className="bg-white rounded-3xl shadow-lg p-8 mt-16">
+              <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">Technical Specifications</h3>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div className="flex justify-between items-center py-3 border-b border-gray-200">
