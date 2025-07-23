@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Settings, CheckCircle, Users, FileText, Clock, Award, ArrowRight } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function ConsultancyIVD() {
   const services = [
@@ -40,6 +41,7 @@ export default function ConsultancyIVD() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <SEO pagePath="/services/consultancy-ivd" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">

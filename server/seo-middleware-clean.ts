@@ -153,32 +153,29 @@ export function setupSEOMiddleware(app: Express) {
       return originalSend.call(this, data);
     };
     
-    // Also hook into res.end for streaming responses
+    // Override res.end to catch Vite's HTML serving method
     res.end = function(chunk?: any, encoding?: any) {
-      console.log(`[SEO Middleware] res.end called for ${pathname}, chunk type: ${typeof chunk}, hasHTML: ${typeof chunk === 'string' && chunk.includes('<html')}`);
-      if (typeof chunk === 'string' && chunk.includes('<html')) {
+      if (typeof chunk === 'string' && chunk.includes('<!DOCTYPE html>')) {
         const seoData = (req as any).seoData;
-        const seoPath = (req as any).seoPath;
         
-        if (seoData) {
+        if (seoData && seoData.pageTitle) {
           let modifiedChunk = chunk;
           
-          // Replace title
+          // Replace title aggressively with multiple patterns
           modifiedChunk = modifiedChunk.replace(
             /<title[^>]*>.*?<\/title>/gi,
             `<title>${seoData.pageTitle}</title>`
           );
           
-          // Replace or add meta description
-          if (modifiedChunk.includes('name="description"')) {
+          // Replace meta description aggressively
+          if (seoData.metaDescription) {
             modifiedChunk = modifiedChunk.replace(
               /<meta\s+name=["']description["'][^>]*>/gi,
               `<meta name="description" content="${seoData.metaDescription}" />`
             );
           }
           
-          console.log(`[SEO Middleware] ✅ Injected SEO via res.end for ${seoPath}: ${seoData.pageTitle}`);
-          console.log(`[SEO Middleware] Title replacement in end: ${modifiedChunk.includes(seoData.pageTitle) ? 'SUCCESS' : 'FAILED'}`);
+          console.log(`[SEO Middleware] ✅ SERVER-SIDE SEO INJECTED for ${pathname}: "${seoData.pageTitle}"`);
           return originalEnd.call(this, modifiedChunk, encoding);
         }
       }

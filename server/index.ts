@@ -55,10 +55,8 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    // In development, disable server-side SEO middleware since Vite bypasses it
-    // The client-side SEO component (React Helmet) handles SEO updates
-    console.log("[SEO] Using client-side SEO in development mode");
-    
+    // Setup SEO middleware before Vite to intercept HTML responses
+    setupSEOMiddleware(app);
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);

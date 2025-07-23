@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ShoppingCart, Cog, Truck, Shield, CheckCircle, Factory, Users, Globe, Clock, DollarSign, TrendingUp } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function OEMProducts() {
   const productCategories = [
@@ -93,6 +94,7 @@ export default function OEMProducts() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-100">
+      <SEO pagePath="/services/oem-products" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">

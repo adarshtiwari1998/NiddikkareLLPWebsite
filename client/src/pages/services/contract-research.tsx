@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { FileText, Microscope, BarChart3, FlaskConical, Target, Calendar, Award, Users2 } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function ContractResearch() {
   const researchAreas = [
@@ -71,6 +72,7 @@ export default function ContractResearch() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+      <SEO pagePath="/services/contract-research" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
