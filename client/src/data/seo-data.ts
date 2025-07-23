@@ -1243,6 +1243,205 @@ export const seoData: Record<string, SEOData> = {
     }
   },
 
+  // Individual Tools Pages
+  "/tools-testing/tools/e-training": {
+    pageTitle: "E-Learning Resources | NIDDIKKARE LLP - Online Laboratory Training",
+    metaDescription: "Comprehensive educational materials and online training resources for laboratory professionals. 200+ educational articles, technical guides, and video tutorials available 24/7.",
+    metaKeywords: "e-learning, laboratory training, online education, technical guides, educational resources, training materials",
+    ogTitle: "E-Learning Resources - Online Laboratory Training | NIDDIKKARE",
+    ogDescription: "Professional development through comprehensive educational materials and training resources.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/e-training`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "E-Learning Resources",
+      "description": "Online training and educational materials for laboratory professionals",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/sample-request": {
+    pageTitle: "Sample Request System | NIDDIKKARE LLP - Laboratory Sample Management",
+    metaDescription: "Streamlined sample request and tracking system with real-time monitoring, analytics dashboard, and automated notifications for efficient laboratory workflows.",
+    metaKeywords: "sample request, laboratory management, sample tracking, real-time monitoring, analytics dashboard",
+    ogTitle: "Sample Request System - Laboratory Sample Management | NIDDIKKARE",
+    ogDescription: "Efficient sample request and tracking system for modern laboratory operations.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/sample-request`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Sample Request System",
+      "description": "Laboratory sample request and tracking management system",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/application-database-chromatography": {
+    pageTitle: "Chromatography Database | NIDDIKKARE LLP - Application Database",
+    metaDescription: "Comprehensive chromatography application database with advanced search, method optimization, validated methods, and performance data for analytical applications.",
+    metaKeywords: "chromatography database, analytical methods, method optimization, validated methods, performance data",
+    ogTitle: "Chromatography Database - Application Database | NIDDIKKARE",
+    ogDescription: "Comprehensive database for chromatography applications and analytical methods.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/application-database-chromatography`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "Chromatography Application Database",
+      "description": "Comprehensive database of chromatography methods and applications",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/filter-finder": {
+    pageTitle: "FilterFinder | NIDDIKKARE LLP - Advanced Filtration Solution Finder",
+    metaDescription: "Advanced filtration solution finder for laboratory applications with smart search, custom parameters, AI-powered recommendations, and quick results.",
+    metaKeywords: "filter finder, filtration solutions, laboratory filters, smart search, AI recommendations",
+    ogTitle: "FilterFinder - Advanced Filtration Solution Finder | NIDDIKKARE",
+    ogDescription: "Intelligent tool to find the perfect filtration solutions for laboratory applications.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/filter-finder`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "FilterFinder",
+      "description": "Advanced filtration solution finder for laboratory applications",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/strip-finder": {
+    pageTitle: "StripFinder | NIDDIKKARE LLP - Test Strip Selection Tool",
+    metaDescription: "Test strip selection and optimization tool for rapid diagnostics with intelligent search, precision matching, and comprehensive database of diagnostic strips.",
+    metaKeywords: "strip finder, test strips, rapid diagnostics, diagnostic strips, precision matching",
+    ogTitle: "StripFinder - Test Strip Selection Tool | NIDDIKKARE",
+    ogDescription: "Professional tool for selecting and optimizing test strips for rapid diagnostic applications.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/strip-finder`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "StripFinder",
+      "description": "Test strip selection and optimization tool for rapid diagnostics",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/nanocolor-finder": {
+    pageTitle: "NANOCOLOR Finder | NIDDIKKARE LLP - Colorimetric Analysis Tools",
+    metaDescription: "Colorimetric analysis tools for precise water and environmental testing with parameter search, quick results, and comprehensive water quality testing capabilities.",
+    metaKeywords: "nanocolor finder, colorimetric analysis, water testing, environmental testing, water quality",
+    ogTitle: "NANOCOLOR Finder - Colorimetric Analysis Tools | NIDDIKKARE",
+    ogDescription: "Advanced colorimetric analysis tools for precise water and environmental testing applications.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/nanocolor-finder`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NANOCOLOR Finder",
+      "description": "Colorimetric analysis tools for water and environmental testing",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/chromafil-finder": {
+    pageTitle: "CHROMAFIL Finder | NIDDIKKARE LLP - Chromatography Filtration Solutions",
+    metaDescription: "Chromatography filtration and sample preparation solutions with specialized search, method matching, and performance data for HPLC & GC applications.",
+    metaKeywords: "chromafil finder, chromatography filtration, sample preparation, HPLC, GC applications",
+    ogTitle: "CHROMAFIL Finder - Chromatography Filtration Solutions | NIDDIKKARE",
+    ogDescription: "Professional chromatography filtration and sample preparation solution finder.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/chromafil-finder`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CHROMAFIL Finder",
+      "description": "Chromatography filtration and sample preparation solutions",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/vial-finder": {
+    pageTitle: "VialFinder | NIDDIKKARE LLP - Laboratory Vial Selection Tool",
+    metaDescription: "Laboratory vial and container selection tool with compatibility checking, advanced search, quick selection, and comprehensive material options.",
+    metaKeywords: "vial finder, laboratory vials, container selection, compatibility check, material options",
+    ogTitle: "VialFinder - Laboratory Vial Selection Tool | NIDDIKKARE",
+    ogDescription: "Professional tool for selecting laboratory vials and containers with compatibility checking.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/vial-finder`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VialFinder",
+      "description": "Laboratory vial and container selection tool",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
+  "/tools-testing/tools/bioanalysis-kitfinder": {
+    pageTitle: "Bioanalysis KitFinder | NIDDIKKARE LLP - Bioanalysis Kit Selection Tool",
+    metaDescription: "Comprehensive bioanalysis kit selection and optimization tool with smart kit search, method optimization, performance data, and validation metrics.",
+    metaKeywords: "bioanalysis kitfinder, bioanalysis kits, kit selection, method optimization, validation metrics",
+    ogTitle: "Bioanalysis KitFinder - Bioanalysis Kit Selection Tool | NIDDIKKARE",
+    ogDescription: "Advanced tool for selecting and optimizing bioanalysis kits with comprehensive performance data.",
+    ogImage: logoUrl,
+    ogType: "service",
+    canonicalUrl: `${baseUrl}/tools-testing/tools/bioanalysis-kitfinder`,
+    robotsDirective: "index,follow",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bioanalysis KitFinder",
+      "description": "Comprehensive bioanalysis kit selection and optimization tool",
+      "provider": {
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP"
+      }
+    }
+  },
+
   // SEO Management (noindex)
   "/seo-management": {
     pageTitle: "SEO Management Dashboard | NIDDIKKARE LLP - Internal",

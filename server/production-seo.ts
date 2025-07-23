@@ -120,45 +120,33 @@ export function setupProductionSEO(app: Express) {
           );
         }
         
-        // Inject or replace Open Graph tags
-        const ogTags = [
-          `<meta property="og:title" content="${pageSeoData.ogTitle}" />`,
-          `<meta property="og:description" content="${pageSeoData.ogDescription}" />`,
-          `<meta property="og:image" content="${pageSeoData.ogImage}" />`,
-          `<meta property="og:type" content="${pageSeoData.ogType}" />`,
-          `<meta property="og:url" content="${pageSeoData.canonicalUrl}" />`
-        ];
-        
-        // Remove existing OG tags
+        // Remove existing OG and Twitter tags first
         modifiedTemplate = modifiedTemplate.replace(
           /<meta\s+property=["']og:[^"']*["'][^>]*>/gi,
           ''
         );
-        
-        // Inject new OG tags
         modifiedTemplate = modifiedTemplate.replace(
-          /<head>/i,
-          `<head>\n    ${ogTags.join('\n    ')}`
+          /<meta\s+name=["']twitter:[^"']*["'][^>]*>/gi,
+          ''
         );
         
-        // Inject or replace Twitter tags
-        const twitterTags = [
+        // Inject Open Graph and Twitter tags in proper order (after basic meta tags)
+        const socialMetaTags = [
+          `<meta property="og:title" content="${pageSeoData.ogTitle}" />`,
+          `<meta property="og:description" content="${pageSeoData.ogDescription}" />`,
+          `<meta property="og:image" content="${pageSeoData.ogImage}" />`,
+          `<meta property="og:type" content="${pageSeoData.ogType}" />`,
+          `<meta property="og:url" content="${pageSeoData.canonicalUrl}" />`,
           `<meta name="twitter:card" content="summary_large_image" />`,
           `<meta name="twitter:title" content="${pageSeoData.ogTitle}" />`,
           `<meta name="twitter:description" content="${pageSeoData.ogDescription}" />`,
           `<meta name="twitter:image" content="${pageSeoData.ogImage}" />`
         ];
         
-        // Remove existing Twitter tags
+        // Insert social meta tags after the robots meta tag for proper order
         modifiedTemplate = modifiedTemplate.replace(
-          /<meta\s+name=["']twitter:[^"']*["'][^>]*>/gi,
-          ''
-        );
-        
-        // Inject new Twitter tags
-        modifiedTemplate = modifiedTemplate.replace(
-          /<head>/i,
-          `<head>\n    ${twitterTags.join('\n    ')}`
+          /(<meta\s+name=["']robots["'][^>]*>\s*)/i,
+          `$1\n    ${socialMetaTags.join('\n    ')}\n    `
         );
         
         // Inject or replace canonical URL

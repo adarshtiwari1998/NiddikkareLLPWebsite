@@ -20,49 +20,74 @@ const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
     console.log(`[SEO Component] Route changed to: ${currentPath}`);
     setForceUpdate(prev => prev + 1);
     
-    // Force update React Helmet by manually triggering a re-render
+    // Get the expected SEO data for this path
+    const expectedSEO = {
+      ...(seoData[currentPath] || seoData['/'] || {}),
+      ...(customSEO || {})
+    };
+    
+    // Immediate DOM update for faster response
+    if (expectedSEO.pageTitle) {
+      document.title = expectedSEO.pageTitle;
+      console.log(`[SEO Component] Updated title immediately: "${expectedSEO.pageTitle}"`);
+    }
+    
+    // Update meta tags immediately
+    if (expectedSEO.metaDescription) {
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute('content', expectedSEO.metaDescription);
+    }
+    
+    // Update OG tags immediately
+    if (expectedSEO.ogTitle) {
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) {
+        ogTitle = document.createElement('meta');
+        ogTitle.setAttribute('property', 'og:title');
+        document.head.appendChild(ogTitle);
+      }
+      ogTitle.setAttribute('content', expectedSEO.ogTitle);
+    }
+    
+    if (expectedSEO.ogDescription) {
+      let ogDesc = document.querySelector('meta[property="og:description"]');
+      if (!ogDesc) {
+        ogDesc = document.createElement('meta');
+        ogDesc.setAttribute('property', 'og:description');
+        document.head.appendChild(ogDesc);
+      }
+      ogDesc.setAttribute('content', expectedSEO.ogDescription);
+    }
+    
+    if (expectedSEO.canonicalUrl) {
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', expectedSEO.canonicalUrl);
+    }
+    
+    // Force React Helmet to re-process after a small delay
     setTimeout(() => {
-      // This forces React Helmet to process the new metadata
       setForceUpdate(prev => prev + 1);
       console.log(`[SEO Component] Forced Helmet update for: ${currentPath}`);
-    }, 50);
+    }, 100);
     
-    // Check if title actually changed in DOM and fallback if needed
+    // Final verification after React Helmet processes
     setTimeout(() => {
-      console.log(`[SEO Component] Current document title: "${document.title}"`);
-      
-      // Get the expected title for this path
-      const expectedSEO = {
-        ...(seoData[currentPath] || {}),
-        ...(customSEO || {})
-      };
-      
+      console.log(`[SEO Component] Final document title: "${document.title}"`);
       if (expectedSEO.pageTitle && document.title !== expectedSEO.pageTitle) {
-        console.log(`[SEO Component] Title mismatch! Expected: "${expectedSEO.pageTitle}", Got: "${document.title}"`);
-        // Direct DOM manipulation as fallback
         document.title = expectedSEO.pageTitle;
-        
-        // Also update meta description manually
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc && expectedSEO.metaDescription) {
-          metaDesc.setAttribute('content', expectedSEO.metaDescription);
-        }
-        
-        // Update OG title
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle && expectedSEO.ogTitle) {
-          ogTitle.setAttribute('content', expectedSEO.ogTitle);
-        }
-        
-        // Update OG description
-        const ogDesc = document.querySelector('meta[property="og:description"]');
-        if (ogDesc && expectedSEO.ogDescription) {
-          ogDesc.setAttribute('content', expectedSEO.ogDescription);
-        }
-        
-        console.log(`[SEO Component] Manually updated all SEO tags for: "${expectedSEO.pageTitle}"`);
+        console.log(`[SEO Component] Final title correction applied`);
       }
-    }, 300);
+    }, 500);
   }, [currentPath, customSEO]);
 
   // Get SEO data for current path using useMemo to optimize performance
