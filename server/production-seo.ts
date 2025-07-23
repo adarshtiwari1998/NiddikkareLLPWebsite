@@ -8,24 +8,29 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export function setupProductionSEO(app: Express) {
-  const distPath = path.resolve(__dirname, "public");
+  // In production, the static files are in dist/public directory
+  const distPath = path.resolve(__dirname, "../dist/public");
+  
+  // If dist/public doesn't exist, try current directory public folder
+  const fallbackDistPath = path.resolve(__dirname, "public");
+  const actualDistPath = fs.existsSync(distPath) ? distPath : fallbackDistPath;
 
-  if (!fs.existsSync(distPath)) {
-    throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`,
-    );
+  if (!fs.existsSync(actualDistPath)) {
+    console.warn(`Build directory not found: ${distPath}, serving without static files in production mode`);
   }
 
-  // Serve static assets (but not index.html)
-  app.use(express.static(distPath, { 
-    index: false, // Don't serve index.html automatically
-    extensions: ['html'] 
-  }));
+  // Serve static assets (but not index.html) only if directory exists
+  if (fs.existsSync(actualDistPath)) {
+    app.use(express.static(actualDistPath, { 
+      index: false, // Don't serve index.html automatically
+      extensions: ['html'] 
+    }));
+  }
 
   // Handle all routes with SEO injection
   app.use("*", async (req: Request, res: Response) => {
     const pathname = req.originalUrl.split('?')[0];
-    const indexPath = path.resolve(distPath, "index.html");
+    const indexPath = path.resolve(actualDistPath, "index.html");
     
     console.log(`[Production SEO] Processing: ${pathname}`);
     
@@ -34,16 +39,21 @@ export function setupProductionSEO(app: Express) {
       let seoData;
       try {
         const seoModule = await import("./seo-data-bundled.js");
-        seoData = seoModule.seoData;
+        seoData = seoModule.seoDataBundled || seoModule.default || seoModule.seoData;
         console.log('[Production SEO] Using bundled SEO data');
       } catch {
         try {
           const seoModule = await import("../client/src/data/seo-data.js");
-          seoData = seoModule.seoData;
+          seoData = seoModule.default || seoModule.seoData;
           console.log('[Production SEO] Using client source SEO data');
         } catch {
-          console.error('[Production SEO] Failed to load SEO data, using fallback');
-          seoData = {
+          try {
+            const seoModule = await import("../client/src/data/seo-data.ts");
+            seoData = seoModule.default || seoModule.seoData;
+            console.log('[Production SEO] Using client TypeScript SEO data');
+          } catch {
+            console.error('[Production SEO] Failed to load SEO data, using fallback');
+            seoData = {
             '/': {
               pageTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation',
               metaDescription: 'NIDDIKKARE LLP specializes in healthcare and life sciences solutions.',
@@ -61,6 +71,7 @@ export function setupProductionSEO(app: Express) {
               }
             }
           };
+          }
         }
       }
       
