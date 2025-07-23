@@ -1,4 +1,3 @@
-/** @jsxImportSource react */
 import React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -125,4 +124,9 @@ export {
   ToastDescription,
   ToastClose,
   ToastAction,
+}
+
+// HMR boundary for React refresh with multiple components
+if (import.meta.hot) {
+  import.meta.hot.accept()
 }
