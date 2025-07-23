@@ -24,8 +24,9 @@ import WaterAnalysis from "@/pages/testing/water-analysis";
 
 // Tools & Testing combined page
 import ToolsTesting from "@/pages/tools-testing";
-import About from "@/pages/about";
-import News from "@/pages/news";
+import About from "@/pages/company/about";
+import News from "@/pages/company/news";
+import Company from "@/pages/company/company";
 import Contact from "@/pages/contact";
 import LeadershipTeam from "@/pages/company/leadership-team";
 import Tools from "@/pages/tools/tools";
@@ -168,11 +169,18 @@ function Router() {
           <Route path="/tools-testing/testing/chromatography" component={Chromatography} />
           <Route path="/tools-testing/testing/bioanalysis" component={Bioanalysis} />
           
+          {/* Company Routes */}
+          <Route path="/company" component={Company} />
+          <Route path="/company/about" component={About} />
+          <Route path="/company/leadership-team" component={LeadershipTeam} />
+          <Route path="/company/news" component={News} />
+          
+          {/* Legacy Routes for backwards compatibility */}
+          <Route path="/about" component={About} />
+          <Route path="/news" component={News} />
+          
           {/* Other Routes */}
           <Route path="/gut-care" component={GutCare} />
-          <Route path="/about" component={About} />
-          <Route path="/company/leadership-team" component={LeadershipTeam} />
-          <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />
           
           {/* Tools Routes - with parent slug */}

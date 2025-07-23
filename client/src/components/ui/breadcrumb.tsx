@@ -228,7 +228,8 @@ export function SmartBreadcrumb({ className }: SmartBreadcrumbProps) {
       
       // Other pages
       "gut-care": "Gut Care Products",
-      "about": "About Us",
+      "company": "Company",
+      "about": "About Us", 
       "news": "News & Updates",
       "contact": "Contact Us"
     };

@@ -232,7 +232,7 @@ export default function Header() {
 
   const companyItems: DropdownItem[] = [
     {
-      href: "/about",
+      href: "/company/about",
       label: "About",
       description: "Learn about our company and mission",
       icon: Building2
@@ -244,7 +244,7 @@ export default function Header() {
       icon: Users
     },
     {
-      href: "/news",
+      href: "/company/news",
       label: "News",
       description: "Latest updates and announcements",
       icon: Newspaper
@@ -906,14 +906,15 @@ export default function Header() {
               <li className="relative"
                 onMouseEnter={() => handleMouseEnter('company')}
               >
-                <button 
+                <Link 
+                  href="/company"
                   className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
-                    location.startsWith('/about') || location.startsWith('/news') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
+                    location.startsWith('/company') || location.startsWith('/about') || location.startsWith('/news') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Company
                   <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
+                </Link>
                 <DropdownMenu items={companyItems} isOpen={activeDropdown === 'company'} menuKey="company" />
               </li>
 
@@ -1269,9 +1270,20 @@ export default function Header() {
                       {collapsedSections.has('company') && (
                         <div className="ml-3 space-y-1">
                           <Link 
-                            href="/about" 
+                            href="/company" 
                             className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                              location === '/about' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                              location === '/company' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <Building2 className="h-4 w-4 mr-3 text-gray-400" />
+                            <span className="text-xs">Company Overview</span>
+                          </Link>
+                          
+                          <Link 
+                            href="/company/about" 
+                            className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                              location === '/company/about' || location === '/about' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                             }`}
                             onClick={() => setIsOpen(false)}
                           >
@@ -1280,9 +1292,20 @@ export default function Header() {
                           </Link>
                           
                           <Link 
-                            href="/news" 
+                            href="/company/leadership-team" 
                             className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                              location === '/news' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                              location === '/company/leadership-team' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <Users className="h-4 w-4 mr-3 text-gray-400" />
+                            <span className="text-xs">Leadership Team</span>
+                          </Link>
+                          
+                          <Link 
+                            href="/company/news" 
+                            className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                              location === '/company/news' || location === '/news' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
                             }`}
                             onClick={() => setIsOpen(false)}
                           >

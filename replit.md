@@ -11,6 +11,18 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 **January 23, 2025:**
+- Restructured company section with hierarchical navigation structure (/company, /company/about, /company/news, /company/leadership-team)
+- Created comprehensive Company Overview page at /company with brand color scheme using primary green hsl(134,37%,27%), secondary gold hsl(43,100%,45%), and accent blue hsl(188,78%,41%)
+- Moved about.tsx and news.tsx to company folder for proper organization 
+- Updated header navigation to make Company menu item clickable while maintaining dropdown functionality
+- Enhanced mobile navigation with complete company section including Company Overview, About, Leadership Team, and News
+- Updated breadcrumb navigation system to support new company structure
+- Maintained backwards compatibility with legacy /about and /news routes
+- Added company statistics dashboard with visual icons and brand color coordination
+- Implemented mission & vision section with branded card layouts
+- Created interactive company pages navigation with gradient effects and hover animations
+- Added quick access call-to-action section with links to leadership team and contact page
+- Updated LinkedIn buttons to use proper anchor tags with target="_blank" for external navigation
 - Created comprehensive Leadership Team page at /company/leadership-team with responsive design and brand color scheme
 - Added Dr. Samar Husain Naqvi (Managing Director/CO-Founder, 20+ years experience) with comprehensive biography covering Life Sciences, Molecular Diagnostics, IVD medical devices, and regulatory expertise
 - Added Dr. Abhishek Chanchal (Director & Co-Founder, 15+ years experience) with expertise in Chemical Biology, Nanotechnology, Analytical Instrumentation, and IVD Medical Devices
