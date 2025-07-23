@@ -15,7 +15,7 @@ export interface SEOData {
 }
 
 const baseUrl = "https://niddikkare.com";
-const logoUrl = `${baseUrl}/assets/images/niddikkare-logo.png`;
+const logoUrl = `${baseUrl}/src/assets/niddikkare-logo.png`;
 
 export const seoData: Record<string, SEOData> = {
   // Home Page
