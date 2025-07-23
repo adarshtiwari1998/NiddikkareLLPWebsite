@@ -1,0 +1,286 @@
+import { useState } from 'react';
+import { Link } from 'wouter';
+import { User, Briefcase, Calendar, Award, Linkedin, Mail, X, BookOpen } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+
+interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  company: string;
+  experience: string;
+  shortBio: string;
+  fullBio: string;
+  expertise: string[];
+  image: string;
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    id: 'dr-samar-husain-naqvi',
+    name: 'Dr. Samar Husain Naqvi',
+    title: 'Managing Director / CO-Founder',
+    company: 'NIDDIKKARE LLP',
+    experience: '25+ Years',
+    shortBio: 'A trailblazing expert in biotechnology and life sciences, renowned for his groundbreaking work in genomics, molecular biology, and microbiology. With a career spanning over 25 years, he has established himself as a leading authority in the development of innovative diagnostic solutions, leveraging cutting-edge technologies to drive medical advancements.',
+    fullBio: `A trailblazing expert in biotechnology and life sciences, renowned for his groundbreaking work in genomics, molecular biology, and microbiology. With a career spanning over 25 years, he has established himself as a leading authority in the development of innovative diagnostic solutions, leveraging cutting-edge technologies to drive medical advancements.
+
+As a visionary leader, he has held pivotal roles in esteemed corporate organizations, where he has successfully spearheaded the design, development, and manufacturing of in vitro diagnostic medical devices. His expertise in navigating complex regulatory landscapes has ensured the seamless translation of research findings into clinically validated diagnostic tools, ultimately enhancing patient care and outcomes. His research has been instrumental in elucidating the molecular mechanisms underlying various diseases, shedding light on novel biomarkers, and informing the development of targeted therapeutic strategies. Through his mentorship and leadership, he has fostered a new generation of scientists and researchers, imbuing them with a passion for discovery and a commitment to excellence. As a testament to his dedication and expertise, Dr. Naqvi has garnered numerous accolades and recognition within the scientific community, solidifying his position as a luminary in the field of biotechnology and life sciences.`,
+    expertise: ['Biotechnology', 'Life Sciences', 'Genomics', 'Molecular Biology'],
+    image: '/assets/images/team-member/dr-samar-husain-naqvi.png'
+  }
+];
+
+const BiographyDialog = ({ member }: { member: TeamMember }) => {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button 
+          variant="outline" 
+          className="bg-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,35%)] text-white border-[hsl(188,78%,41%)] hover:border-[hsl(188,78%,35%)]"
+        >
+          <BookOpen className="w-4 h-4 mr-2" />
+          Read Full Biography
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-4xl max-h-[85vh] overflow-hidden">
+        <div className="bg-gradient-to-r from-[hsl(188,78%,41%)] to-[hsl(134,37%,27%)] p-6 -m-6 mb-4">
+          <div className="flex items-center space-x-4">
+            <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <img 
+                src={member.image} 
+                alt={member.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-white">
+              <h2 className="text-2xl font-bold">{member.name}</h2>
+              <p className="text-xl opacity-90">{member.title}</p>
+              <p className="text-lg opacity-80">{member.company}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6 overflow-y-auto max-h-[calc(85vh-200px)]">
+          <div>
+            <h3 className="text-xl font-semibold mb-3 text-[hsl(134,37%,27%)]">Experience & Expertise</h3>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {member.expertise.map((skill, index) => (
+                <Badge key={index} className="bg-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,35%)]">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+            <p className="text-[hsl(134,37%,27%)] font-semibold">
+              <Calendar className="w-4 h-4 inline mr-2" />
+              {member.experience} of industry experience
+            </p>
+          </div>
+
+          <Separator />
+
+          <div>
+            <h3 className="text-xl font-semibold mb-3 text-[hsl(134,37%,27%)]">Biography</h3>
+            <div className="prose prose-gray max-w-none">
+              {member.fullBio.split('\n\n').map((paragraph, index) => (
+                <p key={index} className="mb-4 text-gray-700 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          <Separator />
+
+          <div className="flex justify-center space-x-4 pt-4">
+            <Button className="bg-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,35%)]">
+              <Mail className="w-4 h-4 mr-2" />
+              Connect
+            </Button>
+            <Button className="bg-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,22%)]">
+              <Linkedin className="w-4 h-4 mr-2" />
+              LinkedIn
+            </Button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+const TeamMemberCard = ({ member }: { member: TeamMember }) => {
+  return (
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+      {/* Header with gradient background */}
+      <div className="bg-gradient-to-r from-[hsl(188,78%,41%)] to-[hsl(134,37%,27%)] p-6 relative">
+        <div className="absolute top-4 right-4">
+          <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+            <User className="w-4 h-4 text-white" />
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          <div className="relative">
+            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <img 
+                src={member.image} 
+                alt={member.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/assets/images/placeholder-avatar.png';
+                }}
+              />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-[hsl(43,100%,45%)] rounded-full border-2 border-white flex items-center justify-center">
+              <Award className="w-4 h-4 text-white" />
+            </div>
+          </div>
+          <div className="text-white flex-1">
+            <h3 className="text-xl font-bold">{member.name}</h3>
+            <p className="text-[hsl(188,78%,85%)] text-sm font-medium">{member.title}</p>
+            <p className="text-[hsl(188,78%,75%)] text-sm">{member.company}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <div className="flex items-center space-x-4 mb-4">
+          <div className="flex items-center text-[hsl(134,37%,27%)]">
+            <Calendar className="w-4 h-4 mr-2" />
+            <span className="font-semibold">{member.experience}</span>
+          </div>
+        </div>
+
+        {/* Expertise badges */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {member.expertise.map((skill, index) => (
+            <Badge 
+              key={index} 
+              className="bg-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,35%)] text-white"
+            >
+              {skill}
+            </Badge>
+          ))}
+        </div>
+
+        {/* Short bio */}
+        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+          {member.shortBio}
+        </p>
+
+        {/* Action buttons */}
+        <div className="flex flex-col space-y-3">
+          <BiographyDialog member={member} />
+          
+          <div className="flex space-x-2">
+            <Button 
+              variant="outline" 
+              className="flex-1 border-[hsl(188,78%,41%)] text-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,41%)] hover:text-white"
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              Connect
+            </Button>
+            <Button 
+              variant="outline" 
+              className="flex-1 border-[hsl(134,37%,27%)] text-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,27%)] hover:text-white"
+            >
+              <Linkedin className="w-4 h-4 mr-2" />
+              LinkedIn
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default function LeadershipTeam() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-[hsl(134,37%,27%)] to-[hsl(188,78%,41%)] text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Leadership Team
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 mb-8">
+              Meet the visionary leaders driving innovation in biotechnology and healthcare
+            </p>
+            <div className="flex items-center justify-center space-x-6 text-sm">
+              <div className="flex items-center">
+                <Briefcase className="w-5 h-5 mr-2" />
+                <span>Expert Leadership</span>
+              </div>
+              <div className="flex items-center">
+                <Award className="w-5 h-5 mr-2" />
+                <span>Industry Recognition</span>
+              </div>
+              <div className="flex items-center">
+                <User className="w-5 h-5 mr-2" />
+                <span>25+ Years Experience</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
+          <div className="absolute top-1/2 -left-20 w-32 h-32 bg-white/10 rounded-full"></div>
+          <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-white/10 rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Team Members Grid */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(134,37%,27%)] mb-4">
+              Our Leadership
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our team combines decades of experience in biotechnology, life sciences, and healthcare innovation 
+              to deliver groundbreaking solutions that advance medical diagnostics and patient care.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Call to Action Section */}
+      <div className="bg-[hsl(134,37%,27%)] text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Join Our Mission</h2>
+          <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+            Ready to be part of a team that's revolutionizing healthcare through innovative biotechnology solutions?
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button className="bg-[hsl(188,78%,41%)] hover:bg-[hsl(188,78%,35%)] text-white px-8 py-3">
+                Contact Our Team
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button 
+                variant="outline" 
+                className="border-white text-white hover:bg-white hover:text-[hsl(134,37%,27%)] px-8 py-3"
+              >
+                Learn More About Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

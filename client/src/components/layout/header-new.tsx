@@ -238,6 +238,12 @@ export default function Header() {
       icon: Building2
     },
     {
+      href: "/company/leadership-team",
+      label: "Leadership Team",
+      description: "Meet our expert leadership team",
+      icon: Users
+    },
+    {
       href: "/news",
       label: "News",
       description: "Latest updates and announcements",

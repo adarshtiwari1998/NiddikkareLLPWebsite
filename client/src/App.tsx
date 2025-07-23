@@ -27,6 +27,7 @@ import ToolsTesting from "@/pages/tools-testing";
 import About from "@/pages/about";
 import News from "@/pages/news";
 import Contact from "@/pages/contact";
+import LeadershipTeam from "@/pages/company/leadership-team";
 import Tools from "@/pages/tools/tools";
 import ETraining from "@/pages/tools/e-training";
 import SampleRequest from "@/pages/tools/sample-request";
@@ -170,6 +171,7 @@ function Router() {
           {/* Other Routes */}
           <Route path="/gut-care" component={GutCare} />
           <Route path="/about" component={About} />
+          <Route path="/company/leadership-team" component={LeadershipTeam} />
           <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />
           
