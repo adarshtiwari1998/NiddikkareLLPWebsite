@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import SEO from "@/components/seo";
 import { 
   Settings, 
   Beaker, 
@@ -145,6 +146,7 @@ export default function ToolsTesting() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-emerald-100">
+      <SEO pagePath="/tools-testing" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">

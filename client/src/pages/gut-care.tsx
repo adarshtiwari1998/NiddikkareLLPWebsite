@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heart, Microscope, TestTube, Activity, Shield, Target, Check, ArrowRight, Brain } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function GutCare() {
   return (
     <div className="py-20 bg-gray-50">
+      <SEO pagePath="/gut-care" />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">

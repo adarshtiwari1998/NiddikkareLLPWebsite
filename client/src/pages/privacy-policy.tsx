@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, Shield, Eye, Database, Clock, Mail, Phone } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white">
+      <SEO pagePath="/privacy-policy" />
       {/* Header */}
       <div className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">

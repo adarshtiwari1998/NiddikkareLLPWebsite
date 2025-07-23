@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import SEO from '@/components/seo';
 
 interface TeamMember {
   id: string;
@@ -226,6 +227,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
 export default function LeadershipTeam() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <SEO pagePath="/company/leadership-team" />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[hsl(134,37%,27%)] to-[hsl(188,78%,41%)] text-white py-20">
         <div className="container mx-auto px-4">

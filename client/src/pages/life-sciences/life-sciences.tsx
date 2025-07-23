@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import SEO from "@/components/seo";
 import { 
   Dna, 
   Microscope, 
@@ -80,6 +81,7 @@ export default function LifeSciences() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-teal-50">
+      <SEO pagePath="/life-sciences" />
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-40 h-40 bg-purple-100/20 rounded-full"></div>

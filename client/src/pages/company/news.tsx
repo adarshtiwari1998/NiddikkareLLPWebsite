@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar, Search, Clock, ArrowRight, FileText, Video, Users } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function News() {
   const newsItems = [
@@ -77,6 +78,7 @@ export default function News() {
 
   return (
     <div className="py-20 bg-gray-50">
+      <SEO pagePath="/company/news" />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">

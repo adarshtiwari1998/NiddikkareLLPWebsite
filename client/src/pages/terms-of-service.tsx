@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, FileText, Scale, AlertTriangle, Clock, Mail, Phone } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-white">
+      <SEO pagePath="/terms-of-service" />
       {/* Header */}
       <div className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">

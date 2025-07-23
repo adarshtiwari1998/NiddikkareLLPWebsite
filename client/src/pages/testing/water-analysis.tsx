@@ -14,6 +14,7 @@ import {
   Clock,
   Settings
 } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function WaterAnalysis() {
   const analysisTypes = [
@@ -95,6 +96,7 @@ export default function WaterAnalysis() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-cyan-50 to-teal-100">
+      <SEO pagePath="/tools-testing/testing/water-analysis" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">

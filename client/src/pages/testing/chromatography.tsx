@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Activity, BarChart3, LineChart, TrendingUp, Shield, Target, Check, ArrowRight, FlaskConical } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function Chromatography() {
   return (
     <div className="py-20 bg-gray-50">
+      <SEO pagePath="/tools-testing/testing/chromatography" />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">
