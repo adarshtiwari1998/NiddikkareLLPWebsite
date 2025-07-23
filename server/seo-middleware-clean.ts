@@ -5,11 +5,18 @@ import path from "path";
 // Helper function to get production SEO data without dynamic imports
 function getProductionSEOData() {
   try {
-    // Use complete production SEO data with all 60+ pages
-    const { completeSeoData } = require('./seo-data-complete');
-    console.log('[Production SEO] ✅ Using complete production SEO data with all 60+ pages');
-    return completeSeoData;
-  } catch (error) {
+    // Try bundled JS data first (most reliable in production)
+    const { seoDataBundled } = require('./seo-data-bundled');
+    console.log('[Production SEO] ✅ Using bundled production SEO data with comprehensive pages');
+    return seoDataBundled;
+  } catch (bundledError) {
+    console.log('[Production SEO] Bundled data not found, trying complete data...');
+    try {
+      // Fallback to complete production SEO data
+      const { completeSeoData } = require('./seo-data-complete');
+      console.log('[Production SEO] ✅ Using complete production SEO data with all 60+ pages');
+      return completeSeoData;
+    } catch (error) {
     console.log('[Production SEO] ⚠️ Production SEO data not found, using static fallback');
     // Fallback static SEO data for critical pages including services
     return {
@@ -97,6 +104,7 @@ function getProductionSEOData() {
         robotsDirective: 'index,follow'
       }
     };
+    }
   }
 }
 

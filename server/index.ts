@@ -2,7 +2,6 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { setupSEOMiddleware, setupProductionSEOMiddleware } from "./seo-middleware-clean";
-import { setupProductionSEO } from "./production-seo-enhanced";
 
 const app = express();
 app.use(express.json());
