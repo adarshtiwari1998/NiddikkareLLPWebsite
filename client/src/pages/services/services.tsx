@@ -162,10 +162,10 @@ export default function Services() {
             From regulatory approval to market success, we're your trusted healthcare partner.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-white/80">IVD Consultancy</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-white/80">Contract Research</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-white/80">OEM Manufacturing</Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-white/80">Regulatory Affairs</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4 bg-primary text-white">IVD Consultancy</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4 bg-primary text-white">Contract Research</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4 bg-primary text-white">OEM Manufacturing</Badge>
+            <Badge variant="secondary" className="text-sm py-2 px-4 bg-primary text-white">Regulatory Affairs</Badge>
           </div>
         </div>
       </section>
