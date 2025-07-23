@@ -81,12 +81,21 @@ export function setupSSRRoutes(app: Express) {
   
   routes.forEach(route => {
     app.get(route, (req: Request, res: Response, next) => {
-      // Skip if this is a request for static assets or API calls
+      // Skip if this is a request for static assets, API calls, or any browser navigation
       if (req.path.startsWith('/assets/') || 
           req.path.startsWith('/api/') || 
           req.path.includes('.') ||
           req.headers.accept?.includes('application/json')) {
         return next();
+      }
+      
+      // In development, only handle requests that are NOT from browsers (curl, bots, etc.)
+      // This prevents SSR from interfering with Vite's React transformation
+      const userAgent = req.headers['user-agent'] || '';
+      const isBrowserRequest = userAgent.includes('Mozilla') || userAgent.includes('Chrome') || userAgent.includes('Safari') || userAgent.includes('Firefox');
+      
+      if (process.env.NODE_ENV === 'development' && isBrowserRequest) {
+        return next(); // Let Vite handle browser requests in development
       }
       
       console.log(`[SSR] Processing route: ${route} for request: ${req.path}`);
