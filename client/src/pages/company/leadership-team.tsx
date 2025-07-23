@@ -138,7 +138,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
       {/* Header with gradient background */}
-      <div className="bg-gradient-to-r from-[hsl(188,78%,41%)] to-[hsl(134,37%,27%)] p-6 relative">
+      <div className="bg-gradient-to-r from-[hsl(188,78%,41%)] to-[hsl(134,37%,27%)] p-6 relative min-h-[140px] flex items-center">
         <div className="absolute top-4 right-4">
           <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
             <User className="w-4 h-4 text-white" />
@@ -163,7 +163,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
           </div>
           <div className="text-white flex-1">
             <h3 className="text-xl font-bold">{member.name}</h3>
-            <p className="text-[hsl(188,78%,85%)] text-sm font-medium">{member.title}</p>
+            <p className="text-[hsl(188,78%,85%)] text-sm font-medium min-h-[2.5rem] flex items-center">{member.title}</p>
             <p className="text-[hsl(188,78%,75%)] text-sm">{member.company}</p>
           </div>
         </div>
