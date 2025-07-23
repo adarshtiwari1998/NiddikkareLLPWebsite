@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Bed, Shield, Droplets, CheckCircle, Star, Heart, Stethoscope, ArrowRight, Users, Baby } from "lucide-react";
 import { Link } from "wouter";
+import SEO from "@/components/seo";
 
 // Import medical linen images
 import maternityGownImg from "@/assets/medical-linens/maternity-gown-nkr-601.png";
@@ -108,6 +109,7 @@ export default function MedicalLinensProducts() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-green-50">
+      <SEO pagePath="/products/medical-linens" />
       
       {/* Hero Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white">

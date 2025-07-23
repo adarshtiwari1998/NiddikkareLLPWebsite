@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Baby, Heart, Shield, CheckCircle, Thermometer, Wind, Moon, ArrowRight, Clock, AlertTriangle, TrendingUp, Users, Activity, Zap, Target, Star } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function NeonatalCare() {
   return (
     <div className="py-20 bg-gray-50">
+      <SEO pagePath="/healthcare/neonatal-care" />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16 animate-fade-in">

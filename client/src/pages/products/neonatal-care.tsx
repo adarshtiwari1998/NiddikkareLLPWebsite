@@ -4,8 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Link } from "wouter";
 import { Baby, Heart, Thermometer, Activity, Shield, Star, Award, Users, Clock, Zap, Target, TrendingUp, AlertTriangle, CheckCircle } from "lucide-react";
+import SEO from "@/components/seo";
 
 export default function NeonatalCareProducts() {
+  return (
+    <div className="py-20 bg-gray-50">
+      <SEO pagePath="/products/neonatal-care" />
+      <div className="container mx-auto px-4">
+        {/* Component content starts here */}
+        <NeonatalCareContent />
+      </div>
+    </div>
+  );
+}
+
+function NeonatalCareContent() {
   const products = [
     {
       title: "Baby First Touch Receiving Blanket",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'wouter';
 import { seoData, type SEOData } from '@/data/seo-data';
@@ -10,38 +10,37 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
   const [location] = useLocation();
-  const [currentPath, setCurrentPath] = useState(location);
+  
+  // Use current path directly - no state needed
+  const currentPath = pagePath || location;
 
-  // Update currentPath when location changes
-  useEffect(() => {
-    setCurrentPath(pagePath || location);
-  }, [location, pagePath]);
+  // Get SEO data for current path using useMemo to optimize performance
+  const seo = useMemo(() => {
+    const defaultSEO: SEOData = {
+      pageTitle: "NIDDIKKARE LLP - Healthcare & Life Sciences Innovation",
+      metaDescription: "NIDDIKKARE LLP specializes in healthcare and life sciences solutions including neonatal care, medical linens, DNA/RNA extraction, and molecular diagnostics.",
+      metaKeywords: "NIDDIKKARE, healthcare, life sciences, neonatal care, medical linens, DNA RNA extraction, molecular diagnostics",
+      ogTitle: "NIDDIKKARE LLP - Healthcare & Life Sciences Innovation",
+      ogDescription: "Leading healthcare and life sciences solutions provider specializing in innovative products for medical facilities worldwide.",
+      ogImage: "https://niddikkare.com/assets/images/niddikkare-logo.png",
+      ogType: "website",
+      canonicalUrl: `https://niddikkare.com${currentPath}`,
+      robotsDirective: "index,follow",
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP",
+        "url": "https://niddikkare.com"
+      }
+    };
 
-  // Get SEO data for current path or use default
-  const defaultSEO: SEOData = {
-    pageTitle: "NIDDIKKARE LLP - Healthcare & Life Sciences Innovation",
-    metaDescription: "NIDDIKKARE LLP specializes in healthcare and life sciences solutions including neonatal care, medical linens, DNA/RNA extraction, and molecular diagnostics.",
-    metaKeywords: "NIDDIKKARE, healthcare, life sciences, neonatal care, medical linens, DNA RNA extraction, molecular diagnostics",
-    ogTitle: "NIDDIKKARE LLP - Healthcare & Life Sciences Innovation",
-    ogDescription: "Leading healthcare and life sciences solutions provider specializing in innovative products for medical facilities worldwide.",
-    ogImage: "https://niddikkare.com/assets/images/niddikkare-logo.png",
-    ogType: "website",
-    canonicalUrl: `https://niddikkare.com${currentPath}`,
-    robotsDirective: "index,follow",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "NIDDIKKARE LLP",
-      "url": "https://niddikkare.com"
-    }
-  };
-
-  // Merge page-specific SEO data with custom overrides
-  const seo = {
-    ...defaultSEO,
-    ...(seoData[currentPath] || {}),
-    ...(customSEO || {})
-  };
+    // Merge page-specific SEO data with custom overrides
+    return {
+      ...defaultSEO,
+      ...(seoData[currentPath] || {}),
+      ...(customSEO || {})
+    };
+  }, [currentPath, customSEO]);
 
   // Convert structured data to JSON string if it's an object
   const structuredDataJson = typeof seo.structuredData === 'object' 

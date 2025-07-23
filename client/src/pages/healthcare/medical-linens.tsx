@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Stethoscope, Shield, Bed, Users, CheckCircle, Droplet, Recycle, ArrowRight, Heart } from "lucide-react";
 import { Link } from "wouter";
+import SEO from "@/components/seo";
 
 // Import medical linen images
 import maternityGownImg from "@/assets/medical-linens/maternity-gown-nkr-601.png";
@@ -18,6 +19,7 @@ import receivingBlanketsImg from "@/assets/medical-linens/receiving-blankets-swa
 export default function MedicalLinens() {
   return (
     <div className="py-20 bg-gray-50">
+      <SEO pagePath="/healthcare/medical-linens" />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16 animate-fade-in">
