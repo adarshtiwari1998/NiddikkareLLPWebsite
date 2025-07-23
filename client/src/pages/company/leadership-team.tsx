@@ -27,11 +27,11 @@ const teamMembers: TeamMember[] = [
     title: 'Managing Director & Co-Founder',
     company: 'NIDDIKKARE LLP',
     experience: '20+ Years',
-    shortBio: 'Dr. Samar Husain Naqvi is a dynamic and results-oriented professional in the Life Sciences and Molecular Diagnostics domain, bringing deep expertise in product development, business planning, B2B collaborations, and OEM product management. He has successfully led the complete lifecycle of in vitro diagnostic medical devices (IVD-MDs), encompassing design, research and development, and production. Dr. Naqvi is recognized for his commitment to customer-focused innovation and comprehensive understanding of the scientific and commercial forces shaping the healthcare industry.',
+    shortBio: 'Dr. Samar Husain Naqvi is a dynamic and results-oriented professional in the Life Sciences and Molecular Diagnostics domain, bringing deep expertise in product development, business planning, B2B collaborations, and OEM product management. He has successfully led the complete lifecycle of in vitro diagnostic medical devices (IVD-MDs), encompassing design, research and development, and production. Dr. Naqvi is recognized for his commitment to customer-focused innovation and comprehensive understanding of the scientific and commercial forces shaping the healthcare industry...',
     fullBio: `Dr. Samar Husain Naqvi is a dynamic and results-oriented professional in the Life Sciences and Molecular Diagnostics domain, bringing deep expertise in product development, business planning, B2B collaborations, OEM product management. He has successfully led the complete lifecycle of in vitro diagnostic medical devices (IVD-MDs), encompassing design, research and development, and production. Dr. Naqvi is recognized for his commitment to customer-focused innovation and his comprehensive understanding of the scientific and commercial forces shaping the healthcare industry. He has over 20 years of leadership experience in the Molecular Diagnostics and Life Science industry. Demonstrated expertise in the end-to-end development, validation, and commercialization of IVD medical devices and molecular diagnostic kits, including Real-Time PCR assays for SARS-CoV-2, HIV, HCV, HBV, HPV, Monkeypox, and various infectious and non-infectious disease panels. Proven track record in securing regulatory approvals (ICMR, CDSCO Class C Medical Device licensing) and driving OEM operations, business strategy, and market expansion. Adept at cross-functional leadership across R&D, QA/QC, regulatory affairs, and business development, with a strong focus on innovation and compliance. Extensive experience in coordinating kit validations with government labs, designing nucleic acid-based extraction and amplification systems, and implementing quality management systems aligned with international standards. He is also an empanelled NABL assessor for molecular diagnostics (ISO 15189) and biological testing (ISO 17025), as well as a Technical Expert for ICMED 9000 and ICMED 13485 under the Indian Pharmacopoeia Commission's Materiovigilance Programme of India (IPC-MvPI).`,
     expertise: ['Biotechnology', 'Life Sciences', 'Genomics', 'Molecular Biology'],
     image: '/assets/images/team-member/dr-samar-husain-naqvi.png',
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/dr-samar-husain-naqvi-1b73a013/',
     email: 'samar@niddikkare.com'
   },
   {
@@ -120,13 +120,12 @@ const BiographyDialog = ({ member }: { member: TeamMember }) => {
               <Mail className="w-4 h-4 mr-2" />
               Connect
             </Button>
-            <Button 
-              className="bg-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,22%)]"
-              onClick={() => window.open(member.linkedin, '_blank')}
-            >
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </Button>
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,22%)]">
+                <Linkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </Button>
+            </a>
           </div>
         </div>
       </DialogContent>
@@ -208,14 +207,15 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
               <Mail className="w-4 h-4 mr-2" />
               Connect
             </Button>
-            <Button 
-              variant="outline" 
-              className="flex-1 border-[hsl(134,37%,27%)] text-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,27%)] hover:text-white"
-              onClick={() => window.open(member.linkedin, '_blank')}
-            >
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </Button>
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex-1">
+              <Button 
+                variant="outline" 
+                className="w-full border-[hsl(134,37%,27%)] text-[hsl(134,37%,27%)] hover:bg-[hsl(134,37%,27%)] hover:text-white"
+              >
+                <Linkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </Button>
+            </a>
           </div>
         </div>
       </div>
