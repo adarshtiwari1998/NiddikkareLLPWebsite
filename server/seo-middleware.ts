@@ -270,10 +270,30 @@ export function setupSEOMiddleware(app: Express) {
                 );
               }
 
-              // ✅ DISABLED SSR CONTENT INJECTION - Only meta tags for SEO, no visual content
-              // SSR content injection disabled to prevent flash of unstyled content (FOUC)
-              // Search engines will still get all necessary SEO metadata above
-              console.log(`[SEO Middleware] ✅ SSR content injection disabled (preventing FOUC) for ${seoPath}`);
+              // ✅ COMPLETE SSR CONTENT INJECTION - Hidden for users, visible to search engines
+              try {
+                const { getCompleteSSRContent } = await import('./complete-ssr-generator.js');
+                const ssrContent = getCompleteSSRContent(seoPath);
+                
+                // Inject complete page content in a completely hidden container for SEO only
+                if (ssrContent && modifiedChunk.includes('<body>')) {
+                  // Add hidden comprehensive content right after body tag - invisible to users but crawlable
+                  modifiedChunk = modifiedChunk.replace(
+                    /<body>/i,
+                    `<body>
+    <!-- ========== SEO CONTENT FOR SEARCH ENGINES (COMPLETELY HIDDEN FROM USERS) ========== -->
+    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important;" aria-hidden="true" role="presentation">
+      ${ssrContent}
+    </div>
+    <!-- ========== END SEO CONTENT ========== -->`
+                  );
+                  console.log(`[SEO Middleware] ✅ Injected complete SSR content for ${seoPath} (hidden from users)`);
+                } else {
+                  console.log(`[SEO Middleware] ⚠️ Could not inject SSR content for ${seoPath} - body tag not found`);
+                }
+              } catch (ssrError: any) {
+                console.log(`[SEO Middleware] SSR injection failed for ${seoPath}:`, ssrError?.message || 'Unknown error');
+              }
               
 
               console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
@@ -320,10 +340,30 @@ export function setupSEOMiddleware(app: Express) {
               
               const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
               
-              // ✅ DISABLED SSR CONTENT INJECTION - Only meta tags for SEO, no visual content  
-              // SSR content injection disabled to prevent flash of unstyled content (FOUC)
-              // Search engines will still get all necessary SEO metadata above
-              console.log(`[SEO Middleware] ✅ SSR content injection disabled (preventing FOUC) for ${seoPath} (res.send)`);
+              // ✅ COMPLETE SSR CONTENT INJECTION - Hidden for users, visible to search engines
+              try {
+                const { getCompleteSSRContent } = await import('./complete-ssr-generator.js');
+                const ssrContent = getCompleteSSRContent(seoPath);
+                
+                // Inject complete page content in a completely hidden container for SEO only
+                if (ssrContent && modifiedBody.includes('<body>')) {
+                  // Add hidden comprehensive content right after body tag - invisible to users but crawlable
+                  modifiedBody = modifiedBody.replace(
+                    /<body>/i,
+                    `<body>
+    <!-- ========== SEO CONTENT FOR SEARCH ENGINES (COMPLETELY HIDDEN FROM USERS) ========== -->
+    <div id="seo-crawler-content" style="position: absolute !important; left: -99999px !important; top: -99999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(1px, 1px, 1px, 1px) !important; white-space: nowrap !important; border: 0 !important; padding: 0 !important; margin: 0 !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: -9999 !important;" aria-hidden="true" role="presentation">
+      ${ssrContent}
+    </div>
+    <!-- ========== END SEO CONTENT ========== -->`
+                  );
+                  console.log(`[SEO Middleware] ✅ Injected complete SSR content for ${seoPath} (hidden from users, res.send)`);
+                } else {
+                  console.log(`[SEO Middleware] ⚠️ Could not inject SSR content for ${seoPath} - body tag not found (res.send)`);
+                }
+              } catch (ssrError: any) {
+                console.log(`[SEO Middleware] SSR injection failed for ${seoPath} (res.send):`, ssrError?.message || 'Unknown error');
+              }
               
               modifiedBody = modifiedBody.replace(
                 /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
