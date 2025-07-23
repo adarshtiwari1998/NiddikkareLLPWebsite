@@ -61,8 +61,8 @@ app.use((req, res, next) => {
     app.use(express.static("public"));
     await setupVite(app, server);
   } else {
-    // In production, use dedicated production SEO handler that bypasses vite.ts limitations
-    setupProductionSEO(app);
+    // In production, serve static build files first
+    serveStatic(app);
   }
 
   // ALWAYS serve the app on port 5000
