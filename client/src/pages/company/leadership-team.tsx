@@ -37,7 +37,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 'dr-abhishek-chanchal',
     name: 'Dr. Abhishek Chanchal',
-    title: 'Director & Co-Founder',
+    title: 'Executive Director & Co-Founder',
     company: 'NIDDIKKARE LLP',
     experience: '15+ Years',
     shortBio: 'Dr. Abhishek Chanchal is a highly accomplished researcher with over 15 years of experience in Chemical Biology, Nanotechnology, Analytical Instrumentation and IVD-Medical Devices. He has actively contributed to numerous research projects and peer-reviewed international publications. His work is dedicated to harnessing the potential of nanotechnology and chemical biology to forge innovative solutions for earlier disease diagnosis and improve therapeutic effectiveness through Novel Drug Delivery Systems.',
