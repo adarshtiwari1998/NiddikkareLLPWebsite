@@ -1,7 +1,7 @@
 import { Express, Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
-import { seoData } from '../client/src/data/seo-data.js';
+import { seoData } from '../client/src/data/seo-data.ts';
 
 // Generate page-specific HTML with proper SEO metadata
 function generatePageHTML(requestPath: string): string {
@@ -81,6 +81,11 @@ export function setupSSRRoutes(app: Express) {
   
   routes.forEach(route => {
     app.get(route, (req: Request, res: Response, next) => {
+      // Skip if this is a request for static assets
+      if (req.path.startsWith('/assets/') || req.path.includes('.')) {
+        return next();
+      }
+      
       try {
         // Generate page-specific HTML
         const html = generatePageHTML(route);

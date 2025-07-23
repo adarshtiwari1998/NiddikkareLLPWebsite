@@ -60,9 +60,9 @@ app.use((req, res, next) => {
     // Setup SSR routes after Vite middleware in development to avoid bypassing React transform
     // SSR is only needed for production SEO, in development Vite handles everything
   } else {
-    // Setup SSR routes only in production
-    setupSSRRoutes(app);
+    // In production, serve static assets first, then SSR routes
     serveStatic(app);
+    setupSSRRoutes(app);
   }
 
   // ALWAYS serve the app on port 5000
