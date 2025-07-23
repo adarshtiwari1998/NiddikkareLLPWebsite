@@ -41,7 +41,26 @@ const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
         console.log(`[SEO Component] Title mismatch! Expected: "${expectedSEO.pageTitle}", Got: "${document.title}"`);
         // Direct DOM manipulation as fallback
         document.title = expectedSEO.pageTitle;
-        console.log(`[SEO Component] Manually updated title to: "${expectedSEO.pageTitle}"`);
+        
+        // Also update meta description manually
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && expectedSEO.metaDescription) {
+          metaDesc.setAttribute('content', expectedSEO.metaDescription);
+        }
+        
+        // Update OG title
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle && expectedSEO.ogTitle) {
+          ogTitle.setAttribute('content', expectedSEO.ogTitle);
+        }
+        
+        // Update OG description
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc && expectedSEO.ogDescription) {
+          ogDesc.setAttribute('content', expectedSEO.ogDescription);
+        }
+        
+        console.log(`[SEO Component] Manually updated all SEO tags for: "${expectedSEO.pageTitle}"`);
       }
     }, 300);
   }, [currentPath, customSEO]);
@@ -94,6 +113,9 @@ const SEO: React.FC<SEOProps> = ({ pagePath, customSEO }) => {
       <meta name="description" content={seo.metaDescription} />
       <meta name="keywords" content={seo.metaKeywords} />
       <meta name="robots" content={seo.robotsDirective} />
+      
+      {/* Force removal of old tags and add new ones */}
+      <meta name="seo-version" content={forceUpdate.toString()} />
       
       {/* Canonical URL */}
       <link rel="canonical" href={seo.canonicalUrl} />

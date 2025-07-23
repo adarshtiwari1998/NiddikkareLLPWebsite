@@ -3,6 +3,10 @@
 # Build script for Render deployment
 echo "Building application for production..."
 
+# Copy SEO data before building
+echo "Copying SEO data for production build..."
+node scripts/copy-seo-data.js
+
 # Build frontend and backend
 npm run build
 
