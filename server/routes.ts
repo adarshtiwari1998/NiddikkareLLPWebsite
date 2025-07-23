@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { generateSitemap, generateRobotsTxt } from "./ssr.js";
+import { generateSitemap, generateRobotsTxt } from "./seo-utils.js";
 // import { setupCriticalSSRRoutes } from "./seo-routes.js";
 
 export async function registerRoutes(app: Express): Promise<Server> {
