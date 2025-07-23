@@ -5,10 +5,10 @@ import path from "path";
 // Helper function to get production SEO data without dynamic imports
 function getProductionSEOData() {
   try {
-    // Use comprehensive production SEO data
-    const { productionSeoData } = require('./seo-data-production');
-    console.log('[Production SEO] ✅ Using comprehensive production SEO data');
-    return productionSeoData;
+    // Use complete production SEO data with all 60+ pages
+    const { completeSeoData } = require('./seo-data-complete');
+    console.log('[Production SEO] ✅ Using complete production SEO data with all 60+ pages');
+    return completeSeoData;
   } catch (error) {
     console.log('[Production SEO] ⚠️ Production SEO data not found, using static fallback');
     // Fallback static SEO data for critical pages including services
