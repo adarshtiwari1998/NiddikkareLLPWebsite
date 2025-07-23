@@ -12,7 +12,7 @@ Preferred communication style: Simple, everyday language.
 
 **January 23, 2025:**
 - Created comprehensive Leadership Team page at /company/leadership-team with responsive design and brand color scheme
-- Added Dr. Samar Husain Naqvi (Managing Director/CO-Founder, 25+ years experience) with expertise in Biotechnology, Life Sciences, Genomics, and Molecular Biology
+- Added Dr. Samar Husain Naqvi (Managing Director/CO-Founder, 20+ years experience) with comprehensive biography covering Life Sciences, Molecular Diagnostics, IVD medical devices, and regulatory expertise
 - Added Dr. Abhishek Chanchal (Director & Co-Founder, 15+ years experience) with expertise in Chemical Biology, Nanotechnology, Analytical Instrumentation, and IVD Medical Devices
 - Implemented interactive biography popup modals with full professional details and achievements
 - Added functional LinkedIn and email contact buttons for team member communication
