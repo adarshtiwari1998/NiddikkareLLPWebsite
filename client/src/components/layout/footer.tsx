@@ -4,7 +4,7 @@ import logoImage from "@/assets/niddikkare-logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 text-gray-900 py-16 border-t border-gray-300">
+    <footer className="bg-gray-50 text-gray-900 py-16 border-t border-primary">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
@@ -88,7 +88,7 @@ export default function Footer() {
         
         <div className="relative mt-12">
           {/* Border line spanning full width */}
-          <div className="absolute inset-x-0 top-0 h-px bg-gray-300"></div>
+          <div className="absolute inset-x-0 top-0 h-px bg-primary"></div>
           
           <div className="pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
