@@ -65,7 +65,13 @@ export function setupSEOMiddleware(app: Express) {
     
     // Hook into response to inject SEO content
     const originalSend = res.send;
+    const originalWrite = res.write;
+    const originalEnd = res.end;
+    
+    console.log(`[SEO Middleware] Setting up response hooks for ${pathname}`);
+    
     res.send = function(data: any) {
+      console.log(`[SEO Middleware] res.send called for ${pathname}, data type: ${typeof data}, hasHTML: ${typeof data === 'string' && data.includes('<html')}`);
       if (typeof data === 'string' && data.includes('<html')) {
         const seoData = (req as any).seoData;
         const seoPath = (req as any).seoPath;
@@ -140,10 +146,44 @@ export function setupSEOMiddleware(app: Express) {
           // SEO meta tags are sufficient for search engines
           
           console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
+          console.log(`[SEO Middleware] Title replacement: ${modifiedData.includes(seoData.pageTitle) ? 'SUCCESS' : 'FAILED'}`);
           return originalSend.call(this, modifiedData);
         }
       }
       return originalSend.call(this, data);
+    };
+    
+    // Also hook into res.end for streaming responses
+    res.end = function(chunk?: any, encoding?: any) {
+      console.log(`[SEO Middleware] res.end called for ${pathname}, chunk type: ${typeof chunk}, hasHTML: ${typeof chunk === 'string' && chunk.includes('<html')}`);
+      if (typeof chunk === 'string' && chunk.includes('<html')) {
+        const seoData = (req as any).seoData;
+        const seoPath = (req as any).seoPath;
+        
+        if (seoData) {
+          let modifiedChunk = chunk;
+          
+          // Replace title
+          modifiedChunk = modifiedChunk.replace(
+            /<title[^>]*>.*?<\/title>/gi,
+            `<title>${seoData.pageTitle}</title>`
+          );
+          
+          // Replace or add meta description
+          if (modifiedChunk.includes('name="description"')) {
+            modifiedChunk = modifiedChunk.replace(
+              /<meta\s+name=["']description["'][^>]*>/gi,
+              `<meta name="description" content="${seoData.metaDescription}" />`
+            );
+          }
+          
+          console.log(`[SEO Middleware] ✅ Injected SEO via res.end for ${seoPath}: ${seoData.pageTitle}`);
+          console.log(`[SEO Middleware] Title replacement in end: ${modifiedChunk.includes(seoData.pageTitle) ? 'SUCCESS' : 'FAILED'}`);
+          return originalEnd.call(this, modifiedChunk, encoding);
+        }
+      }
+      
+      return originalEnd.call(this, chunk, encoding);
     };
     
     next();
