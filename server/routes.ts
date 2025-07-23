@@ -2,11 +2,11 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { generateSitemap, generateRobotsTxt } from "./ssr.js";
-import { setupCriticalSSRRoutes } from "./seo-routes.js";
+// import { setupCriticalSSRRoutes } from "./seo-routes.js";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Setup critical SSR routes for problematic pages
-  setupCriticalSSRRoutes(app);
+  // DISABLED: Setup critical SSR routes for problematic pages to prevent conflicts with Vite
+  // setupCriticalSSRRoutes(app);
 
   // SEO routes for sitemap.xml, robots.txt, and schema.json
   app.get("/sitemap.xml", (req, res) => {
