@@ -298,7 +298,7 @@ export default function LeadershipTeam() {
             <Link href="/about">
               <Button 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-[hsl(134,37%,27%)] px-8 py-3"
+                className="border-white text-primary hover:bg-white hover:text-[hsl(134,37%,27%)] px-8 py-3"
               >
                 Learn More About Us
               </Button>
