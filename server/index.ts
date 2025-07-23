@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-// SSR routes removed to avoid Vite conflicts
+import { setupSEOMiddleware } from "./seo-middleware";
 
 const app = express();
 app.use(express.json());
@@ -54,6 +54,8 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // Setup SEO middleware before Vite to inject metadata
+    setupSEOMiddleware(app);
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);
