@@ -270,23 +270,11 @@ export function setupSEOMiddleware(app: Express) {
                 );
               }
 
-              // ✅ SEO-ONLY CONTENT INJECTION - Hidden container for search engines only
-              try {
-                const { getSSRContent } = await import('./ssr-renderer');
-                const ssrContent = getSSRContent(seoPath);
-                
-                // Inject SSR content in a hidden div that's only visible to search engines
-                if (ssrContent && modifiedChunk.includes('<div id="root">')) {
-                  // Add hidden SEO content after the root div (not inside it)
-                  modifiedChunk = modifiedChunk.replace(
-                    /(<div id="root"><\/div>)/i,
-                    `$1\n    <!-- SEO Content for Search Engines (Hidden from Users) -->\n    <div id="seo-content" style="display: none !important; visibility: hidden !important; position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important;" aria-hidden="true">${ssrContent}</div>`
-                  );
-                  console.log(`[SEO Middleware] ✅ Injected SSR content for ${seoPath}`);
-                }
-              } catch (ssrError: any) {
-                console.log(`[SEO Middleware] SSR injection skipped for ${seoPath}:`, ssrError?.message || 'Unknown error');
-              }
+              // ✅ DISABLED SSR CONTENT INJECTION - Only meta tags for SEO, no visual content
+              // SSR content injection disabled to prevent flash of unstyled content (FOUC)
+              // Search engines will still get all necessary SEO metadata above
+              console.log(`[SEO Middleware] ✅ SSR content injection disabled (preventing FOUC) for ${seoPath}`);
+              
 
               console.log(`[SEO Middleware] ✅ Injected SEO for ${seoPath}: ${seoData.pageTitle}`);
               return originalEnd.call(this, modifiedChunk, encoding);
@@ -332,23 +320,11 @@ export function setupSEOMiddleware(app: Express) {
               
               const structuredDataJson = JSON.stringify(seoData.structuredData, null, 2);
               
-              // ✅ SEO-ONLY CONTENT INJECTION - Hidden container for search engines only
-              try {
-                const { getSSRContent } = await import('./ssr-renderer');
-                const ssrContent = getSSRContent(seoPath);
-                
-                // Inject SSR content in a hidden div that's only visible to search engines
-                if (ssrContent && modifiedBody.includes('<div id="root">')) {
-                  // Add hidden SEO content after the root div (not inside it)
-                  modifiedBody = modifiedBody.replace(
-                    /(<div id="root"><\/div>)/i,
-                    `$1\n    <!-- SEO Content for Search Engines (Hidden from Users) -->\n    <div id="seo-content" style="display: none !important; visibility: hidden !important; position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important;" aria-hidden="true">${ssrContent}</div>`
-                  );
-                  console.log(`[SEO Middleware] ✅ Injected SSR content for ${seoPath} (res.send)`);
-                }
-              } catch (ssrError: any) {
-                console.log(`[SEO Middleware] SSR injection skipped for ${seoPath}:`, ssrError?.message || 'Unknown error');
-              }
+              // ✅ DISABLED SSR CONTENT INJECTION - Only meta tags for SEO, no visual content  
+              // SSR content injection disabled to prevent flash of unstyled content (FOUC)
+              // Search engines will still get all necessary SEO metadata above
+              console.log(`[SEO Middleware] ✅ SSR content injection disabled (preventing FOUC) for ${seoPath} (res.send)`);
+              
               modifiedBody = modifiedBody.replace(
                 /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
                 `<script type="application/ld+json">\n    ${structuredDataJson}\n    </script>`
