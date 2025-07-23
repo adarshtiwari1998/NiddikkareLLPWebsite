@@ -216,49 +216,119 @@ export function setupSEOMiddleware(app: Express) {
             );
           }
           
-          // Add other meta tags if not present
-          const metaTags = [
-            `<meta name="keywords" content="${seoData.metaKeywords}" />`,
-            `<meta property="og:title" content="${seoData.ogTitle}" />`,
-            `<meta property="og:description" content="${seoData.ogDescription}" />`,
-            `<meta property="og:image" content="${seoData.ogImage}" />`,
-            `<meta property="og:type" content="${seoData.ogType}" />`,
-            `<meta property="og:url" content="${seoData.canonicalUrl}" />`,
-            `<meta name="twitter:card" content="summary_large_image" />`,
-            `<meta name="twitter:title" content="${seoData.ogTitle}" />`,
-            `<meta name="twitter:description" content="${seoData.ogDescription}" />`,
-            `<meta name="twitter:image" content="${seoData.ogImage}" />`,
-            `<link rel="canonical" href="${seoData.canonicalUrl}" />`,
-            `<meta name="robots" content="${seoData.robotsDirective}" />`
-          ];
+          // Replace existing meta tags aggressively and add missing ones
           
-          // Add missing tags
-          let tagsToAdd: string[] = [];
-          metaTags.forEach(tag => {
-            const tagName = tag.match(/(?:name|property)=["']([^"']+)["']/)?.[1];
-            if (tagName && !modifiedData.includes(`="${tagName}"`)) {
-              tagsToAdd.push(tag);
-            }
-          });
-          
-          if (tagsToAdd.length > 0) {
+          // Replace or add keywords
+          if (modifiedData.includes('name="keywords"')) {
+            modifiedData = modifiedData.replace(
+              /<meta\s+name=["']keywords["'][^>]*>/gi,
+              `<meta name="keywords" content="${seoData.metaKeywords}" />`
+            );
+          } else {
             modifiedData = modifiedData.replace(
               /<head>/i,
-              `<head>\n    ${tagsToAdd.join('\n    ')}`
+              `<head>\n    <meta name="keywords" content="${seoData.metaKeywords}" />`
             );
           }
           
-          // Add structured data
-          if (seoData.structuredData && !modifiedData.includes('application/ld+json')) {
-            const structuredDataScript = `
-    <script type="application/ld+json">
-    ${JSON.stringify(seoData.structuredData, null, 2)}
-    </script>`;
-            
+          // Replace or add Open Graph tags with more robust pattern matching
+          const ogTags = [
+            { key: 'og:title', value: seoData.ogTitle },
+            { key: 'og:description', value: seoData.ogDescription },
+            { key: 'og:image', value: seoData.ogImage },
+            { key: 'og:type', value: seoData.ogType },
+            { key: 'og:url', value: seoData.canonicalUrl }
+          ];
+          
+          ogTags.forEach(({ key, value }) => {
+            // More aggressive pattern to match existing OG tags
+            const existingPattern = new RegExp(`<meta\\s+property=["']${key.replace(':', '\\:')}["'][^>]*>`, 'gi');
+            if (modifiedData.match(existingPattern)) {
+              console.log(`[SEO Middleware] Replacing existing ${key} tag`);
+              modifiedData = modifiedData.replace(
+                existingPattern,
+                `<meta property="${key}" content="${value}" />`
+              );
+            } else {
+              console.log(`[SEO Middleware] Adding new ${key} tag`);
+              modifiedData = modifiedData.replace(
+                /<head>/i,
+                `<head>\n    <meta property="${key}" content="${value}" />`
+              );
+            }
+          });
+          
+          // Replace or add Twitter Card tags
+          const twitterTags = [
+            { key: 'twitter:card', value: 'summary_large_image' },
+            { key: 'twitter:title', value: seoData.ogTitle },
+            { key: 'twitter:description', value: seoData.ogDescription },
+            { key: 'twitter:image', value: seoData.ogImage }
+          ];
+          
+          twitterTags.forEach(({ key, value }) => {
+            if (modifiedData.includes(`name="${key}"`)) {
+              modifiedData = modifiedData.replace(
+                new RegExp(`<meta\\s+name=["']${key}["'][^>]*>`, 'gi'),
+                `<meta name="${key}" content="${value}" />`
+              );
+            } else {
+              modifiedData = modifiedData.replace(
+                /<head>/i,
+                `<head>\n    <meta name="${key}" content="${value}" />`
+              );
+            }
+          });
+          
+          // Replace or add canonical URL with better logging
+          if (modifiedData.includes('rel="canonical"')) {
+            console.log(`[SEO Middleware] Replacing existing canonical URL with: ${seoData.canonicalUrl}`);
             modifiedData = modifiedData.replace(
-              /<\/head>/i,
-              `${structuredDataScript}\n</head>`
+              /<link\s+rel=["']canonical["'][^>]*>/gi,
+              `<link rel="canonical" href="${seoData.canonicalUrl}" />`
             );
+          } else {
+            console.log(`[SEO Middleware] Adding new canonical URL: ${seoData.canonicalUrl}`);
+            modifiedData = modifiedData.replace(
+              /<head>/i,
+              `<head>\n    <link rel="canonical" href="${seoData.canonicalUrl}" />`
+            );
+          }
+          
+          // Replace or add robots directive
+          if (modifiedData.includes('name="robots"')) {
+            modifiedData = modifiedData.replace(
+              /<meta\s+name=["']robots["'][^>]*>/gi,
+              `<meta name="robots" content="${seoData.robotsDirective}" />`
+            );
+          } else {
+            modifiedData = modifiedData.replace(
+              /<head>/i,
+              `<head>\n    <meta name="robots" content="${seoData.robotsDirective}" />`
+            );
+          }
+          
+          // Replace or add structured data with better logging
+          if (seoData.structuredData) {
+            const structuredDataScript = `<script type="application/ld+json">
+${JSON.stringify(seoData.structuredData, null, 2)}
+</script>`;
+            
+            if (modifiedData.includes('application/ld+json')) {
+              console.log(`[SEO Middleware] Replacing existing structured data for ${pathname}`);
+              // Replace existing structured data - more robust pattern
+              modifiedData = modifiedData.replace(
+                /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+                structuredDataScript
+              );
+            } else {
+              console.log(`[SEO Middleware] Adding new structured data for ${pathname}`);
+              // Add new structured data
+              modifiedData = modifiedData.replace(
+                /<\/head>/i,
+                `    ${structuredDataScript}\n</head>`
+              );
+            }
           }
           
           // SEO meta tags are sufficient for search engines
@@ -271,21 +341,22 @@ export function setupSEOMiddleware(app: Express) {
       return originalSend.call(this, data);
     };
     
-    // Override res.end to catch Vite's HTML serving method
+    // Override res.end to catch Vite's HTML serving method - COMPREHENSIVE REPLACEMENT
     res.end = function(chunk?: any, encoding?: any) {
       if (typeof chunk === 'string' && chunk.includes('<!DOCTYPE html>')) {
         const seoData = (req as any).seoData;
+        const seoPath = (req as any).seoPath;
         
         if (seoData && seoData.pageTitle) {
           let modifiedChunk = chunk;
           
-          // Replace title aggressively with multiple patterns
+          // Replace title
           modifiedChunk = modifiedChunk.replace(
             /<title[^>]*>.*?<\/title>/gi,
             `<title>${seoData.pageTitle}</title>`
           );
           
-          // Replace meta description aggressively
+          // Replace meta description
           if (seoData.metaDescription) {
             modifiedChunk = modifiedChunk.replace(
               /<meta\s+name=["']description["'][^>]*>/gi,
@@ -293,7 +364,72 @@ export function setupSEOMiddleware(app: Express) {
             );
           }
           
-          console.log(`[SEO Middleware] ✅ SERVER-SIDE SEO INJECTED for ${pathname}: "${seoData.pageTitle}"`);
+          // Replace keywords
+          if (modifiedChunk.includes('name="keywords"')) {
+            modifiedChunk = modifiedChunk.replace(
+              /<meta\s+name=["']keywords["'][^>]*>/gi,
+              `<meta name="keywords" content="${seoData.metaKeywords}" />`
+            );
+          }
+          
+          // Replace Open Graph tags
+          const ogTags = [
+            { key: 'og:title', value: seoData.ogTitle },
+            { key: 'og:description', value: seoData.ogDescription },
+            { key: 'og:image', value: seoData.ogImage },
+            { key: 'og:type', value: seoData.ogType },
+            { key: 'og:url', value: seoData.canonicalUrl }
+          ];
+          
+          ogTags.forEach(({ key, value }) => {
+            const existingPattern = new RegExp(`<meta\\s+property=["']${key.replace(':', '\\:')}["'][^>]*>`, 'gi');
+            if (modifiedChunk.match(existingPattern)) {
+              console.log(`[SEO Middleware res.end] Replacing ${key} with: ${value}`);
+              modifiedChunk = modifiedChunk.replace(
+                existingPattern,
+                `<meta property="${key}" content="${value}" />`
+              );
+            }
+          });
+          
+          // Replace Twitter Card tags
+          const twitterTags = [
+            { key: 'twitter:title', value: seoData.ogTitle },
+            { key: 'twitter:description', value: seoData.ogDescription },
+            { key: 'twitter:image', value: seoData.ogImage }
+          ];
+          
+          twitterTags.forEach(({ key, value }) => {
+            if (modifiedChunk.includes(`name="${key}"`)) {
+              modifiedChunk = modifiedChunk.replace(
+                new RegExp(`<meta\\s+name=["']${key}["'][^>]*>`, 'gi'),
+                `<meta name="${key}" content="${value}" />`
+              );
+            }
+          });
+          
+          // Replace canonical URL
+          if (modifiedChunk.includes('rel="canonical"')) {
+            console.log(`[SEO Middleware res.end] Replacing canonical URL with: ${seoData.canonicalUrl}`);
+            modifiedChunk = modifiedChunk.replace(
+              /<link\s+rel=["']canonical["'][^>]*>/gi,
+              `<link rel="canonical" href="${seoData.canonicalUrl}" />`
+            );
+          }
+          
+          // Replace structured data
+          if (seoData.structuredData && modifiedChunk.includes('application/ld+json')) {
+            const structuredDataScript = `<script type="application/ld+json">
+${JSON.stringify(seoData.structuredData, null, 2)}
+</script>`;
+            console.log(`[SEO Middleware res.end] Replacing structured data for ${seoPath}`);
+            modifiedChunk = modifiedChunk.replace(
+              /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+              structuredDataScript
+            );
+          }
+          
+          console.log(`[SEO Middleware] ✅ COMPREHENSIVE SERVER-SIDE SEO INJECTED for ${pathname}: "${seoData.pageTitle}"`);
           return originalEnd.call(this, modifiedChunk, encoding);
         }
       }
