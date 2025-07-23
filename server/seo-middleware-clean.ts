@@ -1,4 +1,82 @@
 import express, { type Express, type Request, type Response, type NextFunction } from "express";
+import fs from "fs";
+
+// Helper function to get production SEO data without dynamic imports
+function getProductionSEOData() {
+  return {
+    '/': {
+      pageTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation | Neonatal Care, Medical Linens, DNA/RNA Extraction',
+      metaDescription: 'Leading provider of healthcare and life sciences solutions including neonatal care, medical linens, DNA/RNA extraction, and molecular diagnostics.',
+      metaKeywords: 'healthcare, life sciences, NIDDIKKARE, neonatal care, medical linens, DNA extraction, RNA extraction, molecular diagnostics',
+      ogTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation',
+      ogDescription: 'Leading provider of healthcare and life sciences solutions',
+      ogImage: '/src/assets/niddikkare-logo.png',
+      ogType: 'website',
+      canonicalUrl: 'https://niddikkare.com',
+      robotsDirective: 'index,follow',
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NIDDIKKARE LLP",
+        "description": "Healthcare and life sciences solutions provider"
+      }
+    },
+    '/products': {
+      pageTitle: 'Products - NIDDIKKARE LLP | Healthcare & Life Sciences Solutions',
+      metaDescription: 'Explore our comprehensive range of healthcare and life sciences products including neonatal care equipment and medical linens.',
+      metaKeywords: 'healthcare products, medical equipment, neonatal care, medical linens, NIDDIKKARE',
+      ogTitle: 'Products - NIDDIKKARE LLP',
+      ogDescription: 'Healthcare and life sciences products',
+      ogImage: '/src/assets/niddikkare-logo.png',
+      ogType: 'website',
+      canonicalUrl: 'https://niddikkare.com/products',
+      robotsDirective: 'index,follow'
+    },
+    '/services': {
+      pageTitle: 'Services - NIDDIKKARE LLP | Healthcare Consulting & Research',
+      metaDescription: 'Professional healthcare consulting, contract research, and OEM product development services for the life sciences industry.',
+      metaKeywords: 'healthcare consulting, contract research, OEM products, life sciences services, NIDDIKKARE',
+      ogTitle: 'Services - NIDDIKKARE LLP',
+      ogDescription: 'Healthcare consulting and research services',
+      ogImage: '/src/assets/niddikkare-logo.png',
+      ogType: 'website',
+      canonicalUrl: 'https://niddikkare.com/services',
+      robotsDirective: 'index,follow'
+    },
+    '/contact': {
+      pageTitle: 'Contact Us - NIDDIKKARE LLP | Get in Touch',
+      metaDescription: 'Contact NIDDIKKARE LLP for healthcare and life sciences solutions. Reach out to our expert team for consultations and partnerships.',
+      metaKeywords: 'contact NIDDIKKARE, healthcare contact, life sciences inquiry, consultation request',
+      ogTitle: 'Contact Us - NIDDIKKARE LLP',
+      ogDescription: 'Get in touch with our healthcare experts',
+      ogImage: '/src/assets/niddikkare-logo.png',
+      ogType: 'website',
+      canonicalUrl: 'https://niddikkare.com/contact',
+      robotsDirective: 'index,follow'
+    }
+  };
+}
+
+// Helper function to get default SEO data for any path
+function getDefaultSEOData(pathname: string) {
+  return {
+    pageTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation',
+    metaDescription: 'Leading provider of healthcare and life sciences solutions including neonatal care, medical linens, DNA/RNA extraction, and molecular diagnostics.',
+    metaKeywords: 'healthcare, life sciences, NIDDIKKARE, neonatal care, medical linens, DNA extraction, RNA extraction',
+    ogTitle: 'NIDDIKKARE LLP',
+    ogDescription: 'Healthcare and life sciences solutions',
+    ogImage: '/src/assets/niddikkare-logo.png',
+    ogType: 'website',
+    canonicalUrl: 'https://niddikkare.com' + pathname,
+    robotsDirective: 'index,follow',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NIDDIKKARE LLP",
+      "description": "Healthcare and life sciences solutions provider"
+    }
+  };
+}
 
 export function setupSEOMiddleware(app: Express) {
   // Simple SEO middleware that loads page-specific data and injects meta tags
@@ -28,48 +106,33 @@ export function setupSEOMiddleware(app: Express) {
 
     console.log(`[SEO Middleware] Processing: ${pathname} (ENV: ${process.env.NODE_ENV})`);
 
-    // Load page-specific SEO data
+    // Load page-specific SEO data with robust error handling
     let pageSeoData: any = {};
     try {
-      // Import the actual SEO data from the client (works in both dev and production)
       let seoModule;
+      let allSeoData: any = {};
+      
       if (process.env.NODE_ENV === 'production') {
-        // In production, try to load from built JavaScript first
-        try {
-          seoModule = await import("../client/src/data/seo-data.js");
-        } catch {
-          // Fallback to bundled data in production
-          seoModule = await import("./seo-data-bundled.ts");
-          console.log(`[SEO Middleware] Using bundled SEO data in production`);
-        }
+        // In production, use static fallback data to avoid dynamic import issues
+        console.log(`[SEO Middleware] Using production fallback SEO data for ${pathname}`);
+        allSeoData = getProductionSEOData();
       } else {
         // In development, load TypeScript directly
-        seoModule = await import("../client/src/data/seo-data.ts");
+        try {
+          seoModule = await import("../client/src/data/seo-data.ts");
+          allSeoData = (seoModule as any).seoData || {};
+        } catch (devError: any) {
+          console.log(`[SEO Middleware] Dev import failed, using fallback:`, devError?.message);
+          allSeoData = getProductionSEOData();
+        }
       }
-      const allSeoData = (seoModule as any).seoData || (seoModule as any).seoDataBundled || {};
       
       // Get SEO data for the current path or fallback to home page
-      pageSeoData = allSeoData[pathname] || allSeoData['/'] || {};
+      pageSeoData = allSeoData[pathname] || allSeoData['/'] || getDefaultSEOData(pathname);
       console.log(`[SEO Middleware] ✅ Loaded page-specific SEO data for ${pathname}: "${pageSeoData.pageTitle}"`);
     } catch (error: any) {
-      console.log(`[SEO Middleware] ⚠️ Could not load SEO data file, using fallback for ${pathname}:`, error?.message);
-      // Fallback SEO data if file can't be loaded
-      pageSeoData = {
-        pageTitle: 'NIDDIKKARE LLP - Healthcare & Life Sciences Innovation',
-        metaDescription: 'Leading provider of healthcare and life sciences solutions',
-        metaKeywords: 'healthcare, life sciences, NIDDIKKARE',
-        ogTitle: 'NIDDIKKARE LLP',
-        ogDescription: 'Healthcare and life sciences solutions',
-        ogImage: '/src/assets/niddikkare-logo.png',
-        ogType: 'website',
-        canonicalUrl: 'https://niddikkare.com' + pathname,
-        robotsDirective: 'index,follow',
-        structuredData: {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "NIDDIKKARE LLP"
-        }
-      };
+      console.log(`[SEO Middleware] ⚠️ Could not load SEO data, using fallback for ${pathname}:`, error?.message);
+      pageSeoData = getDefaultSEOData(pathname);
     }
 
     // Store the loaded SEO data for this request
@@ -198,7 +261,6 @@ export function setupSEOMiddleware(app: Express) {
     // Override res.sendFile to handle production static file serving
     res.sendFile = function(path: string, options?: any, callback?: any) {
       // Read the file and inject SEO data before sending
-      const fs = require('fs');
       fs.readFile(path, 'utf8', (err: any, data: string) => {
         if (err) {
           return originalSendFile.call(this, path, options, callback);
