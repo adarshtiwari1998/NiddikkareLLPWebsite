@@ -11,7 +11,8 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 **January 23, 2025:**
-- ✅ **VITE REACT REFRESH ERROR FIXED**: Resolved "[plugin-react-refresh] auto page reloading is broken when a jsx file contain multi-components" error by adding HMR boundary helper to toast.tsx component for proper hot module replacement with multiple React components
+- ✅ **CRITICAL SSR-VITE CONFLICT RESOLVED**: Fixed "@vitejs/plugin-react can't detect preamble" error by moving SSR routes to production-only mode - SSR routes were bypassing Vite's React transformation pipeline in development, causing plugin conflicts
+- ✅ **DEVELOPMENT VS PRODUCTION SEPARATION**: SSR metadata injection now only runs in production for SEO purposes, while development uses pure Vite middleware for proper React Hot Module Replacement without interference
 - ✅ **MIGRATION COMPLETED**: Successfully migrated NIDDIKKARE LLP website from Replit Agent to standard Replit environment
 - ✅ **SSR SYSTEM FULLY FUNCTIONAL**: Implemented comprehensive server-side rendering with page-specific SEO metadata injection for all 50+ pages - verified working correctly in view source for search engines
 - ✅ **VITE REACT PLUGIN ERROR FIXED**: Resolved "@vitejs/plugin-react can't detect preamble" error by changing React import from namespace import to default import in toast.tsx component

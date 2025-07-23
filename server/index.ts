@@ -7,8 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Setup server-side rendering routes for SEO
-setupSSRRoutes(app);
+// Note: SSR routes will be setup after Vite middleware in development
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -58,7 +57,11 @@ app.use((req, res, next) => {
     // Serve static files from public directory in development too
     app.use(express.static("public"));
     await setupVite(app, server);
+    // Setup SSR routes after Vite middleware in development to avoid bypassing React transform
+    // SSR is only needed for production SEO, in development Vite handles everything
   } else {
+    // Setup SSR routes only in production
+    setupSSRRoutes(app);
     serveStatic(app);
   }
 
