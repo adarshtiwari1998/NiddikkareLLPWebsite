@@ -423,23 +423,93 @@ export default function Header() {
   const DropdownMenu = ({ items, isOpen, menuKey }: { items: DropdownItem[], isOpen: boolean, menuKey: string }) => {
     // Calculate dynamic positioning and width
     const getDropdownClasses = () => {
-      const baseClasses = `absolute top-full bg-white border border-gray-200 rounded-md shadow-lg transition-all duration-75 z-[9999] ${
+      const baseClasses = `absolute top-full border border-gray-200 rounded-md shadow-lg transition-all duration-75 z-[9999] ${
         isOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
       }`;
+      
+      // Special styling for websites dropdown
+      if (menuKey === 'websites') {
+        return `${baseClasses} right-0 w-[320px] max-w-[90vw] bg-gradient-to-br from-white via-primary/5 to-blue-50 border-2 border-primary/30 shadow-2xl`;
+      }
       
       // For rightmost items (Company, Contact, Tools & Testing), position from right
       // Adjust width based on submenu state for Tools & Testing
       if (menuKey === 'company' || menuKey === 'life-sciences') {
-        return `${baseClasses} right-0 w-[350px] max-w-[90vw]`;
+        return `${baseClasses} bg-white right-0 w-[350px] max-w-[90vw]`;
       }
       
       if (menuKey === 'tools-testing' || menuKey === 'healthcare') {
-        return `${baseClasses} right-0 max-w-[90vw]`;
+        return `${baseClasses} bg-white right-0 max-w-[90vw]`;
       }
       
       // For other items, position from left with responsive width
-      return `${baseClasses} left-0 w-[400px] max-w-[85vw]`;
+      return `${baseClasses} bg-white left-0 w-[400px] max-w-[85vw]`;
     };
+
+    // Special handling for websites dropdown
+    if (menuKey === 'websites') {
+      return (
+        <div 
+          className={getDropdownClasses()}
+          style={{ marginTop: '8px' }}
+          onMouseEnter={() => handleMouseEnter(menuKey)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="p-4 space-y-2">
+            <div className="text-sm font-semibold text-primary mb-3 flex items-center">
+              <Globe className="h-4 w-4 mr-2" />
+              Choose Website
+            </div>
+            {items.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.href} className="group">
+                  {item.href.startsWith('http') ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 hover:bg-primary/10 hover:shadow-md border border-transparent hover:border-primary/20"
+                      onClick={() => {
+                        setActiveDropdown(null);
+                        setActiveSubmenu(null);
+                      }}
+                    >
+                      <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
+                        <div className="text-sm text-gray-600">{item.description}</div>
+                      </div>
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 hover:bg-primary/10 hover:shadow-md border border-transparent hover:border-primary/20 ${
+                        location === item.href ? 'bg-primary/15 border-primary/30' : ''
+                      }`}
+                      onClick={() => {
+                        setActiveDropdown(null);
+                        setActiveSubmenu(null);
+                      }}
+                    >
+                      <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
+                        <div className="text-sm text-gray-600">{item.description}</div>
+                      </div>
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
 
     // Special handling for Tools & Testing and Healthcare menus with third-level submenu
     if (menuKey === 'tools-testing' || menuKey === 'healthcare') {
@@ -953,18 +1023,6 @@ export default function Header() {
                 <DropdownMenu items={companyItems} isOpen={activeDropdown === 'company'} menuKey="company" />
               </li>
 
-              <li className="relative"
-                onMouseEnter={() => handleMouseEnter('websites')}
-              >
-                <button 
-                  className="flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm bg-gradient-to-r from-primary/20 to-blue-500/20 text-primary border border-primary/30 rounded-md hover:from-primary/30 hover:to-blue-500/30"
-                >
-                  Websites
-                  <ChevronDown className="h-3 w-3 ml-1" />
-                </button>
-                <DropdownMenu items={websiteItems} isOpen={activeDropdown === 'websites'} menuKey="websites" />
-              </li>
-
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/contact" 
@@ -974,6 +1032,18 @@ export default function Header() {
                 >
                   Contact
                 </Link>
+              </li>
+
+              <li className="relative"
+                onMouseEnter={() => handleMouseEnter('websites')}
+              >
+                <button 
+                  className="flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm bg-gradient-to-r from-primary/20 to-blue-500/20 text-primary border border-primary/30 rounded-md hover:from-primary/30 hover:to-blue-500/30"
+                >
+                  Other website
+                  <ChevronDown className="h-3 w-3 ml-1" />
+                </button>
+                <DropdownMenu items={websiteItems} isOpen={activeDropdown === 'websites'} menuKey="websites" />
               </li>
             </ul>
           </nav>
@@ -1363,12 +1433,22 @@ export default function Header() {
                       )}
                     </div>
                     
+                    <Link 
+                      href="/contact" 
+                      className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
+                        location === '/contact' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Contact
+                    </Link>
+                    
                     <div className="space-y-1">
                       <button
                         onClick={() => toggleSection('websites')}
                         className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-primary uppercase tracking-wider bg-gradient-to-r from-primary/20 to-blue-500/20 border border-primary/30 rounded-md transition-colors"
                       >
-                        <span>Websites</span>
+                        <span>Other website</span>
                         <ChevronRight 
                           className={`h-4 w-4 transition-transform ${
                             collapsedSections.has('websites') ? 'rotate-90' : ''
@@ -1406,16 +1486,6 @@ export default function Header() {
                         </div>
                       )}
                     </div>
-                    
-                    <Link 
-                      href="/contact" 
-                      className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                        location === '/contact' ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Contact
-                    </Link>
                   </nav>
                 </div>
                 
