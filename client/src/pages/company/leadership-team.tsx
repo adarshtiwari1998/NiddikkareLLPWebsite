@@ -64,10 +64,10 @@ const BiographyDialog = ({ member }: { member: TeamMember }) => {
           Read Full Biography
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[85vh] overflow-hidden">
+      <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden">
         <div className="bg-gradient-to-r from-[hsl(188,78%,41%)] to-[hsl(134,37%,27%)] p-6 -m-6 mb-4">
           <div className="flex items-center space-x-4">
-            <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
               <img 
                 src={member.image} 
                 alt={member.name}
@@ -140,13 +140,13 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
       {/* Header with gradient background */}
       <div className="bg-gradient-to-r from-[hsl(188,78%,41%)] to-[hsl(134,37%,27%)] p-6 relative min-h-[140px] flex items-center">
         <div className="absolute top-4 right-4">
-          <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-            <User className="w-4 h-4 text-white" />
+          <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+            <User className="w-4 h-4 text-[hsl(134,37%,27%)]" />
           </div>
         </div>
         <div className="flex items-center space-x-4">
           <div className="relative">
-            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
               <img 
                 src={member.image} 
                 alt={member.name}
@@ -257,9 +257,9 @@ export default function LeadershipTeam() {
         
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
-          <div className="absolute top-1/2 -left-20 w-32 h-32 bg-white/10 rounded-full"></div>
-          <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-white/10 rounded-full"></div>
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-white rounded-full opacity-20"></div>
+          <div className="absolute top-1/2 -left-20 w-32 h-32 bg-white rounded-full opacity-20"></div>
+          <div className="absolute bottom-10 right-1/4 w-24 h-24 bg-white rounded-full opacity-20"></div>
         </div>
       </div>
 
