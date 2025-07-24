@@ -876,6 +876,11 @@ export default function Header() {
               </span>
             </div>
             <div className="flex items-center space-x-4">
+              <img 
+                src="/assets/images/header/startup-india-badge.png" 
+                alt="Startup India" 
+                className="h-6 w-auto"
+              />
               <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
                 <Instagram className="h-4 w-4" />
               </Link>
@@ -894,6 +899,16 @@ export default function Header() {
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* CSSD Guidelines Marquee */}
+        <div className="bg-primary text-white py-2 overflow-hidden">
+          <div className="animate-marquee whitespace-nowrap">
+            <span className="text-sm mx-4">
+              We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the
+              use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for reducing the rate of Hospital Acquired Infection
+            </span>
           </div>
         </div>
 
@@ -1555,6 +1570,13 @@ export default function Header() {
                     </Button>
                     
                     <div className="space-y-2 text-xs text-gray-600">
+                      <div className="flex items-center justify-center">
+                        <img 
+                          src="/assets/images/header/startup-india-badge.png" 
+                          alt="Startup India" 
+                          className="h-5 w-auto"
+                        />
+                      </div>
                       <div className="flex items-center">
                         <Phone className="h-3 w-3 mr-2" />
                         <span>+91-90151 62449</span>
