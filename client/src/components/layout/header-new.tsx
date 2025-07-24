@@ -903,9 +903,9 @@ export default function Header() {
         </div>
 
         {/* CSSD Guidelines Marquee */}
-        <div className="bg-primary text-white py-2 overflow-hidden">
+        <div className="bg-gray-100 text-gray-800 py-1 overflow-hidden border-t border-b border-gray-200">
           <div className="animate-marquee whitespace-nowrap">
-            <span className="text-sm mx-4">
+            <span className="text-sm">
               We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the
               use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for reducing the rate of Hospital Acquired Infection
             </span>
