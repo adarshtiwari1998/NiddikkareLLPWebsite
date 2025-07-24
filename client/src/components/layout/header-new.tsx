@@ -862,51 +862,53 @@ export default function Header() {
       
       <header className="bg-white shadow-lg sticky top-0 z-50 w-full">
         <div className="container mx-auto px-4 max-w-full">
-        {/* Top Bar */}
-        <div className="border-b border-gray-200 py-2 hidden md:block">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-4 text-gray-600">
-              <a href="tel:+919015162449" className="flex items-center hover:text-primary transition-colors">
-                <Phone className="h-3 w-3 mr-1" />
-                +91-90151 62449
-              </a>
-              <span className="text-gray-400">|</span>
-              <a href="tel:+919560334337" className="flex items-center hover:text-primary transition-colors">
-                <Phone className="h-3 w-3 mr-1" />
-                +91-95603 34337
-              </a>
-              <a href="mailto:info@niddikkare.com" className="flex items-center hover:text-primary transition-colors">
-                <Mail className="h-3 w-3 mr-1" />
-                info@niddikkare.com
-              </a>
-            </div>
-            <div className="flex items-center space-x-4">
-              <img 
-                src="/assets/images/header/startup-india-badge.png" 
-                alt="Startup India" 
-                className="h-6 w-auto"
-              />
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                <Instagram className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                <Twitter className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                <Linkedin className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                <Youtube className="h-4 w-4" />
-              </Link>
-              <Link href="/contact">
-                <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Request Quote
-                </Button>
-              </Link>
+        {/* Top Bar with integrated CSSD marquee */}
+        <div className="bg-gray-100 border-b border-gray-200 hidden md:block">
+          <div className="py-2 border-b border-gray-200">
+            <div className="flex justify-between items-center text-sm">
+              <div className="flex items-center space-x-4 text-gray-600">
+                <a href="tel:+919015162449" className="flex items-center hover:text-primary transition-colors">
+                  <Phone className="h-3 w-3 mr-1" />
+                  +91-90151 62449
+                </a>
+                <span className="text-gray-400">|</span>
+                <a href="tel:+919560334337" className="flex items-center hover:text-primary transition-colors">
+                  <Phone className="h-3 w-3 mr-1" />
+                  +91-95603 34337
+                </a>
+                <a href="mailto:info@niddikkare.com" className="flex items-center hover:text-primary transition-colors">
+                  <Mail className="h-3 w-3 mr-1" />
+                  info@niddikkare.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-4">
+                <img 
+                  src="/assets/images/header/startup-india-badge.png" 
+                  alt="Startup India" 
+                  className="h-6 w-auto"
+                />
+                <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                  <Instagram className="h-4 w-4" />
+                </Link>
+                <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                  <Twitter className="h-4 w-4" />
+                </Link>
+                <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                  <Linkedin className="h-4 w-4" />
+                </Link>
+                <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                  <Youtube className="h-4 w-4" />
+                </Link>
+                <Link href="/contact">
+                  <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    Request Quote
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-          {/* CSSD Guidelines Marquee integrated in top bar */}
-          <div className="bg-gray-100 text-gray-800 py-1 overflow-hidden border-t border-gray-200 mt-2">
+          {/* CSSD Guidelines Marquee */}
+          <div className="text-gray-800 py-1 overflow-hidden">
             <div className="animate-marquee whitespace-nowrap">
               <span className="text-sm">
                 We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the
