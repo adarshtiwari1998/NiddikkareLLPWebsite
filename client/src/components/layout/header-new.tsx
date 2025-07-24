@@ -774,7 +774,7 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav 
-            className="hidden lg:flex flex-shrink-0" 
+            className="hidden xl:flex flex-shrink-0" 
             onMouseLeave={handleMouseLeave}
             onMouseEnter={() => {
               // Clear all existing timeouts when entering the navigation area
@@ -788,11 +788,11 @@ export default function Header() {
               }
             }}
           >
-            <ul className="flex items-center space-x-1">
+            <ul className="flex items-center space-x-0.5">
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/" 
-                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap ${
+                  className={`px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
                     location === '/' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -805,12 +805,12 @@ export default function Header() {
               >
                 <Link href="/services">
                   <button 
-                    className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                    className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                       location.startsWith('/services') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                     }`}
                   >
                     Services
-                    <ChevronDown className="h-4 w-4 ml-1" />
+                    <ChevronDown className="h-3 w-3 ml-1" />
                   </button>
                 </Link>
                 <DropdownMenu items={servicesItems} isOpen={activeDropdown === 'services'} menuKey="services" />
@@ -821,12 +821,12 @@ export default function Header() {
               >
                 <Link href="/products">
                   <button 
-                    className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                    className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                       location.startsWith('/products') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                     }`}
                   >
                     Products
-                    <ChevronDown className="h-4 w-4 ml-1" />
+                    <ChevronDown className="h-3 w-3 ml-1" />
                   </button>
                 </Link>
                 <DropdownMenu items={productsItems} isOpen={activeDropdown === 'products'} menuKey="products" />
@@ -837,12 +837,12 @@ export default function Header() {
               >
                 <Link
                   href="/it-solutions"
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/it-solutions') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   IT Solutions
-                  <ChevronDown className="h-4 w-4 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1" />
                 </Link>
                 <DropdownMenu items={itSolutionsItems} isOpen={activeDropdown === 'it-solutions'} menuKey="it-solutions" />
               </li>
@@ -852,12 +852,12 @@ export default function Header() {
               >
                 <Link 
                   href="/healthcare"
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/healthcare') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Healthcare
-                  <ChevronDown className="h-4 w-4 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1" />
                 </Link>
                 <DropdownMenu items={healthcareItems} isOpen={activeDropdown === 'healthcare'} menuKey="healthcare" />
               </li>
@@ -867,12 +867,12 @@ export default function Header() {
               >
                 <Link 
                   href="/life-sciences"
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/life-sciences') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Life Sciences
-                  <ChevronDown className="h-4 w-4 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1" />
                 </Link>
                 <DropdownMenu items={lifeSciencesItems} isOpen={activeDropdown === 'life-sciences'} menuKey="life-sciences" />
               </li>
@@ -882,12 +882,12 @@ export default function Header() {
               >
                 <Link
                   href="/tools-testing"
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/tools-testing') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Tools & Testing
-                  <ChevronDown className="h-4 w-4 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1" />
                 </Link>
                 <DropdownMenu items={toolsTestingItems} isOpen={activeDropdown === 'tools-testing'} menuKey="tools-testing" />
               </li>
@@ -895,7 +895,7 @@ export default function Header() {
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/gut-care" 
-                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap ${
+                  className={`px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
                     location === '/gut-care' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -908,20 +908,32 @@ export default function Header() {
               >
                 <Link 
                   href="/company"
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap ${
+                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/company') || location.startsWith('/about') || location.startsWith('/news') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Company
-                  <ChevronDown className="h-4 w-4 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1" />
                 </Link>
                 <DropdownMenu items={companyItems} isOpen={activeDropdown === 'company'} menuKey="company" />
               </li>
 
               <li onMouseEnter={handleNonDropdownHover}>
+                <a 
+                  href="https://niddik.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm text-primary hover:text-primary/80 bg-primary/10 rounded-md border border-primary/20"
+                >
+                  Niddik IT
+                  <Globe className="h-3 w-3 ml-1" />
+                </a>
+              </li>
+
+              <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/contact" 
-                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap ${
+                  className={`px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
                     location === '/contact' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -934,7 +946,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" className="lg:hidden flex flex-col items-center gap-1 px-2 py-2 text-primary hover:text-primary hover:bg-primary/10">
+              <Button variant="ghost" className="xl:hidden flex flex-col items-center gap-1 px-2 py-2 text-primary hover:text-primary hover:bg-primary/10">
                 <Menu className="h-8 w-8" />
                 <span className="text-xs">Menu</span>
               </Button>
@@ -1315,6 +1327,17 @@ export default function Header() {
                         </div>
                       )}
                     </div>
+                    
+                    <a 
+                      href="https://niddik.com" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors text-primary hover:text-primary/80 bg-primary/10 border border-primary/20"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Globe className="h-4 w-4 mr-3" />
+                      Niddik IT
+                    </a>
                     
                     <Link 
                       href="/contact" 
