@@ -866,14 +866,19 @@ export default function Header() {
         <div className="border-b border-gray-200 py-2 hidden md:block">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4 text-gray-600">
-              <span className="flex items-center">
+              <a href="tel:+919015162449" className="flex items-center hover:text-primary transition-colors">
                 <Phone className="h-3 w-3 mr-1" />
-                +91-90151 62449 | +91-95603 34337
-              </span>
-              <span className="flex items-center">
+                +91-90151 62449
+              </a>
+              <span className="text-gray-400">|</span>
+              <a href="tel:+919560334337" className="flex items-center hover:text-primary transition-colors">
+                <Phone className="h-3 w-3 mr-1" />
+                +91-95603 34337
+              </a>
+              <a href="mailto:info@niddikkare.com" className="flex items-center hover:text-primary transition-colors">
                 <Mail className="h-3 w-3 mr-1" />
                 info@niddikkare.com
-              </span>
+              </a>
             </div>
             <div className="flex items-center space-x-4">
               <img 
@@ -900,15 +905,14 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* CSSD Guidelines Marquee */}
-        <div className="bg-gray-100 text-gray-800 py-1 overflow-hidden border-t border-b border-gray-200">
-          <div className="animate-marquee whitespace-nowrap">
-            <span className="text-sm">
-              We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the
-              use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for reducing the rate of Hospital Acquired Infection
-            </span>
+          {/* CSSD Guidelines Marquee integrated in top bar */}
+          <div className="bg-gray-100 text-gray-800 py-1 overflow-hidden border-t border-gray-200 mt-2">
+            <div className="animate-marquee whitespace-nowrap">
+              <span className="text-sm">
+                We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the
+                use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for reducing the rate of Hospital Acquired Infection
+              </span>
+            </div>
           </div>
         </div>
 
@@ -1577,14 +1581,14 @@ export default function Header() {
                           className="h-5 w-auto"
                         />
                       </div>
-                      <div className="flex items-center">
+                      <a href="tel:+919015162449" className="flex items-center hover:text-primary transition-colors">
                         <Phone className="h-3 w-3 mr-2" />
                         <span>+91-90151 62449</span>
-                      </div>
-                      <div className="flex items-center">
+                      </a>
+                      <a href="mailto:info@niddikkare.com" className="flex items-center hover:text-primary transition-colors">
                         <Mail className="h-3 w-3 mr-2" />
                         <span>info@niddikkare.com</span>
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>
