@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 'dr-samar-husain-naqvi',
     name: 'Dr. Samar Husain Naqvi',
-    title: 'Managing Director & Co-Founder',
+    title: 'Managing Director',
     company: 'NIDDIKKARE LLP',
     experience: '20+ Years',
     shortBio: 'Dr. Samar Husain Naqvi is a dynamic and results-oriented professional in the Life Sciences and Molecular Diagnostics domain, bringing deep expertise in product development, business planning, B2B collaborations, and OEM product management. He has successfully led the complete lifecycle of in vitro diagnostic medical devices (IVD-MDs), encompassing design, research and development, and production. Dr. Naqvi is recognized for his commitment to customer-focused innovation and comprehensive understanding of the scientific and commercial forces shaping the healthcare industry...',
@@ -38,7 +38,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 'dr-abhishek-chanchal',
     name: 'Dr. Abhishek Chanchal',
-    title: 'Director & Co-Founder',
+    title: 'Director',
     company: 'NIDDIKKARE LLP',
     experience: '15+ Years',
     shortBio: 'Dr. Abhishek Chanchal is a highly accomplished researcher with over 15 years of experience in Chemical Biology, Nanotechnology, Analytical Instrumentation and IVD-Medical Devices. He has actively contributed to numerous research projects and peer-reviewed international publications. His work is dedicated to harnessing the potential of nanotechnology and chemical biology to forge innovative solutions for earlier disease diagnosis and improve therapeutic effectiveness. He focuses on creating Targeted Nano-therapeutics and Point-of-Care Testing (POCT) based IVD medical devices...',
