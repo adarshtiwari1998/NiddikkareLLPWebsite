@@ -251,6 +251,21 @@ export default function Header() {
     }
   ];
 
+  const websiteItems: DropdownItem[] = [
+    {
+      href: "/",
+      label: "Niddikkare",
+      description: "Healthcare and Life Sciences Solutions",
+      icon: HeartHandshake
+    },
+    {
+      href: "https://niddik.com",
+      label: "Niddik IT",
+      description: "IT services and job opportunities",
+      icon: Globe
+    }
+  ];
+
   const toolsTestingItems: DropdownItem[] = [
     {
       href: "/tools-testing/tools",
@@ -634,25 +649,45 @@ export default function Header() {
                   </div>
                 ) : (
                   // Regular item without submenu
-                  <Link
-                    href={item.href}
-                    className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
-                      location === item.href
-                        ? 'bg-primary/10 text-primary border-l-4 border-primary'
-                        : 'hover:bg-gray-50'
-                    }`}
-                    onMouseEnter={() => setActiveSubmenu(null)}
-                    onClick={() => {
-                      setActiveDropdown(null);
-                      setActiveSubmenu(null);
-                    }}
-                  >
-                    <Icon className="h-5 w-5 text-primary" />
-                    <div className="flex-1">
-                      <div className="font-medium">{item.label}</div>
-                      <div className="text-sm text-gray-600">{item.description}</div>
-                    </div>
-                  </Link>
+                  item.href.startsWith('http') ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 p-3 rounded-lg transition-colors hover:bg-gray-50"
+                      onMouseEnter={() => setActiveSubmenu(null)}
+                      onClick={() => {
+                        setActiveDropdown(null);
+                        setActiveSubmenu(null);
+                      }}
+                    >
+                      <Icon className="h-5 w-5 text-primary" />
+                      <div className="flex-1">
+                        <div className="font-medium">{item.label}</div>
+                        <div className="text-sm text-gray-600">{item.description}</div>
+                      </div>
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`flex items-center space-x-2 p-3 rounded-lg transition-colors ${
+                        location === item.href
+                          ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                          : 'hover:bg-gray-50'
+                      }`}
+                      onMouseEnter={() => setActiveSubmenu(null)}
+                      onClick={() => {
+                        setActiveDropdown(null);
+                        setActiveSubmenu(null);
+                      }}
+                    >
+                      <Icon className="h-5 w-5 text-primary" />
+                      <div className="flex-1">
+                        <div className="font-medium">{item.label}</div>
+                        <div className="text-sm text-gray-600">{item.description}</div>
+                      </div>
+                    </Link>
+                  )
                 )}
                 
                 {/* Submenu for any dropdown */}
@@ -788,11 +823,11 @@ export default function Header() {
               }
             }}
           >
-            <ul className="flex items-center space-x-0.5">
+            <ul className="flex items-center space-x-1">
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/" 
-                  className={`px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
+                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
                     location === '/' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -805,7 +840,7 @@ export default function Header() {
               >
                 <Link href="/services">
                   <button 
-                    className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                    className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                       location.startsWith('/services') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                     }`}
                   >
@@ -821,7 +856,7 @@ export default function Header() {
               >
                 <Link href="/products">
                   <button 
-                    className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                    className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                       location.startsWith('/products') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                     }`}
                   >
@@ -837,7 +872,7 @@ export default function Header() {
               >
                 <Link
                   href="/it-solutions"
-                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/it-solutions') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -852,7 +887,7 @@ export default function Header() {
               >
                 <Link 
                   href="/healthcare"
-                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/healthcare') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -867,7 +902,7 @@ export default function Header() {
               >
                 <Link 
                   href="/life-sciences"
-                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/life-sciences') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -882,7 +917,7 @@ export default function Header() {
               >
                 <Link
                   href="/tools-testing"
-                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/tools-testing') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -895,7 +930,7 @@ export default function Header() {
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/gut-care" 
-                  className={`px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
+                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
                     location === '/gut-care' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -908,7 +943,7 @@ export default function Header() {
               >
                 <Link 
                   href="/company"
-                  className={`flex items-center px-1.5 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/company') || location.startsWith('/about') || location.startsWith('/news') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -918,22 +953,22 @@ export default function Header() {
                 <DropdownMenu items={companyItems} isOpen={activeDropdown === 'company'} menuKey="company" />
               </li>
 
-              <li onMouseEnter={handleNonDropdownHover}>
-                <a 
-                  href="https://niddik.com" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm text-primary hover:text-primary/80 bg-primary/10 rounded-md border border-primary/20"
+              <li className="relative"
+                onMouseEnter={() => handleMouseEnter('websites')}
+              >
+                <button 
+                  className="flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm bg-gradient-to-r from-primary/20 to-blue-500/20 text-primary border border-primary/30 rounded-md hover:from-primary/30 hover:to-blue-500/30"
                 >
-                  Niddik IT
-                  <Globe className="h-3 w-3 ml-1" />
-                </a>
+                  Websites
+                  <ChevronDown className="h-3 w-3 ml-1" />
+                </button>
+                <DropdownMenu items={websiteItems} isOpen={activeDropdown === 'websites'} menuKey="websites" />
               </li>
 
               <li onMouseEnter={handleNonDropdownHover}>
                 <Link 
                   href="/contact" 
-                  className={`px-1.5 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
+                  className={`px-2 py-2 font-medium transition-colors flex items-center h-10 whitespace-nowrap text-sm ${
                     location === '/contact' ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
@@ -1328,16 +1363,49 @@ export default function Header() {
                       )}
                     </div>
                     
-                    <a 
-                      href="https://niddik.com" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors text-primary hover:text-primary/80 bg-primary/10 border border-primary/20"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <Globe className="h-4 w-4 mr-3" />
-                      Niddik IT
-                    </a>
+                    <div className="space-y-1">
+                      <button
+                        onClick={() => toggleSection('websites')}
+                        className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-primary uppercase tracking-wider bg-gradient-to-r from-primary/20 to-blue-500/20 border border-primary/30 rounded-md transition-colors"
+                      >
+                        <span>Websites</span>
+                        <ChevronRight 
+                          className={`h-4 w-4 transition-transform ${
+                            collapsedSections.has('websites') ? 'rotate-90' : ''
+                          }`}
+                        />
+                      </button>
+                      {collapsedSections.has('websites') && (
+                        <div className="ml-3 space-y-1">
+                          <Link 
+                            href="/" 
+                            className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                              location === '/' ? 'bg-primary/10 text-primary' : ''
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <HeartHandshake className="h-4 w-4 mr-3 text-gray-400" />
+                            <div>
+                              <div className="text-xs font-medium">Niddikkare</div>
+                              <div className="text-xs text-gray-500">Healthcare and Life Sciences Solutions</div>
+                            </div>
+                          </Link>
+                          <a 
+                            href="https://niddik.com" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <Globe className="h-4 w-4 mr-3 text-gray-400" />
+                            <div>
+                              <div className="text-xs font-medium">Niddik IT</div>
+                              <div className="text-xs text-gray-500">IT services and job opportunities</div>
+                            </div>
+                          </a>
+                        </div>
+                      )}
+                    </div>
                     
                     <Link 
                       href="/contact" 
