@@ -12,6 +12,7 @@ interface DropdownItem {
   description: string;
   icon: React.ElementType;
   submenu?: DropdownItem[];
+  badge?: string;
 }
 
 export default function Header() {
@@ -253,16 +254,18 @@ export default function Header() {
 
   const websiteItems: DropdownItem[] = [
     {
-      href: "/",
-      label: "Niddikkare",
-      description: "Healthcare and Life Sciences Solutions",
-      icon: HeartHandshake
-    },
-    {
       href: "https://niddik.com",
       label: "Niddik IT",
       description: "IT services and job opportunities",
-      icon: Globe
+      icon: Globe,
+      badge: "Explore"
+    },
+    {
+      href: "/",
+      label: "Niddikkare",
+      description: "Healthcare and Life Sciences Solutions",
+      icon: HeartHandshake,
+      badge: "Current"
     }
   ];
 
@@ -479,7 +482,21 @@ export default function Header() {
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
+                        <div className="flex items-center gap-2">
+                          <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
+                          {item.badge && (
+                            <Badge 
+                              variant={item.badge === "Current" ? "default" : "secondary"} 
+                              className={`text-xs px-2 py-0.5 ${
+                                item.badge === "Current" 
+                                  ? "bg-primary text-white" 
+                                  : "bg-blue-100 text-blue-700 border-blue-200"
+                              }`}
+                            >
+                              {item.badge}
+                            </Badge>
+                          )}
+                        </div>
                         <div className="text-sm text-gray-600">{item.description}</div>
                       </div>
                     </a>
@@ -498,7 +515,21 @@ export default function Header() {
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
+                        <div className="flex items-center gap-2">
+                          <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
+                          {item.badge && (
+                            <Badge 
+                              variant={item.badge === "Current" ? "default" : "secondary"} 
+                              className={`text-xs px-2 py-0.5 ${
+                                item.badge === "Current" 
+                                  ? "bg-primary text-white" 
+                                  : "bg-blue-100 text-blue-700 border-blue-200"
+                              }`}
+                            >
+                              {item.badge}
+                            </Badge>
+                          )}
+                        </div>
                         <div className="text-sm text-gray-600">{item.description}</div>
                       </div>
                     </Link>
@@ -1457,19 +1488,6 @@ export default function Header() {
                       </button>
                       {collapsedSections.has('websites') && (
                         <div className="ml-3 space-y-1">
-                          <Link 
-                            href="/" 
-                            className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
-                              location === '/' ? 'bg-primary/10 text-primary' : ''
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <HeartHandshake className="h-4 w-4 mr-3 text-gray-400" />
-                            <div>
-                              <div className="text-xs font-medium">Niddikkare</div>
-                              <div className="text-xs text-gray-500">Healthcare and Life Sciences Solutions</div>
-                            </div>
-                          </Link>
                           <a 
                             href="https://niddik.com" 
                             target="_blank"
@@ -1478,11 +1496,34 @@ export default function Header() {
                             onClick={() => setIsOpen(false)}
                           >
                             <Globe className="h-4 w-4 mr-3 text-gray-400" />
-                            <div>
-                              <div className="text-xs font-medium">Niddik IT</div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2">
+                                <div className="text-xs font-medium">Niddik IT</div>
+                                <Badge className="text-xs px-1.5 py-0.5 bg-blue-100 text-blue-700 border-blue-200">
+                                  Explore
+                                </Badge>
+                              </div>
                               <div className="text-xs text-gray-500">IT services and job opportunities</div>
                             </div>
                           </a>
+                          <Link 
+                            href="/" 
+                            className={`flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors ${
+                              location === '/' ? 'bg-primary/10 text-primary' : ''
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <HeartHandshake className="h-4 w-4 mr-3 text-gray-400" />
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2">
+                                <div className="text-xs font-medium">Niddikkare</div>
+                                <Badge className="text-xs px-1.5 py-0.5 bg-primary text-white">
+                                  Current
+                                </Badge>
+                              </div>
+                              <div className="text-xs text-gray-500">Healthcare and Life Sciences Solutions</div>
+                            </div>
+                          </Link>
                         </div>
                       )}
                     </div>
