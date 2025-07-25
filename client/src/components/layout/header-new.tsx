@@ -255,7 +255,7 @@ export default function Header() {
   const websiteItems: DropdownItem[] = [
     {
       href: "https://niddik.com",
-      label: "Launch",
+      label: "Niddik IT",
       description: "A Premium IT Consulting and Services Company",
       icon: Globe,
       badge: "Explore"
@@ -478,9 +478,9 @@ export default function Header() {
                         setActiveSubmenu(null);
                       }}
                     >
-                      <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                        <Icon className="h-5 w-5 text-primary" />
-                      </div>
+                      <div className={`w-3 h-3 rounded-full ${
+                        item.label === "Niddikkare" ? "bg-primary" : "bg-blue-500"
+                      }`}></div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
@@ -511,9 +511,9 @@ export default function Header() {
                         setActiveSubmenu(null);
                       }}
                     >
-                      <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                        <Icon className="h-5 w-5 text-primary" />
-                      </div>
+                      <div className={`w-3 h-3 rounded-full ${
+                        item.label === "Niddikkare" ? "bg-primary" : "bg-blue-500"
+                      }`}></div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <div className="font-medium text-gray-900 group-hover:text-primary">{item.label}</div>
@@ -1499,7 +1499,7 @@ export default function Header() {
                         onClick={() => toggleSection('websites')}
                         className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-primary uppercase tracking-wider bg-gradient-to-r from-primary/20 to-blue-500/20 border border-primary/30 rounded-md transition-colors"
                       >
-                        <span>Other website</span>
+                        <span>Launch</span>
                         <ChevronRight 
                           className={`h-4 w-4 transition-transform ${
                             collapsedSections.has('websites') ? 'rotate-90' : ''
@@ -1515,10 +1515,10 @@ export default function Header() {
                             className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
-                            <Globe className="h-4 w-4 mr-3 text-gray-400" />
+                            <div className="w-3 h-3 rounded-full bg-blue-500 mr-3"></div>
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
-                                <div className="text-xs font-medium">Launch</div>
+                                <div className="text-xs font-medium">Niddik IT</div>
                                 <Badge className="text-xs px-1.5 py-0.5 bg-blue-100 text-blue-700 border-blue-200">
                                   Explore
                                 </Badge>
@@ -1533,7 +1533,7 @@ export default function Header() {
                             }`}
                             onClick={() => setIsOpen(false)}
                           >
-                            <HeartHandshake className="h-4 w-4 mr-3 text-gray-400" />
+                            <div className="w-3 h-3 rounded-full bg-primary mr-3"></div>
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
                                 <div className="text-xs font-medium">Niddikkare</div>
