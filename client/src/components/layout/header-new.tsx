@@ -255,8 +255,8 @@ export default function Header() {
   const websiteItems: DropdownItem[] = [
     {
       href: "https://niddik.com",
-      label: "Niddik IT",
-      description: "IT services and job opportunities",
+      label: "Launch",
+      description: "A Premium IT Consulting and Services Company",
       icon: Globe,
       badge: "Explore"
     },
@@ -1518,12 +1518,12 @@ export default function Header() {
                             <Globe className="h-4 w-4 mr-3 text-gray-400" />
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
-                                <div className="text-xs font-medium">Niddik IT</div>
+                                <div className="text-xs font-medium">Launch</div>
                                 <Badge className="text-xs px-1.5 py-0.5 bg-blue-100 text-blue-700 border-blue-200">
                                   Explore
                                 </Badge>
                               </div>
-                              <div className="text-xs text-gray-500">IT services and job opportunities</div>
+                              <div className="text-xs text-gray-500">A Premium IT Consulting and Services Company</div>
                             </div>
                           </a>
                           <Link 
