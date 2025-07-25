@@ -972,7 +972,7 @@ export default function Header() {
                   >
                     Services
                     <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                    <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
+                    <div className={`absolute -top-3 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
                       activeDropdown === 'services' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
                     }`}>
                       <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
@@ -998,7 +998,7 @@ export default function Header() {
                   >
                     Products
                     <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                    <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
+                    <div className={`absolute -top-3 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
                       activeDropdown === 'products' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
                     }`}>
                       <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
@@ -1023,7 +1023,7 @@ export default function Header() {
                 >
                   IT Solutions
                   <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                  <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
+                  <div className={`absolute -top-3 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
                     activeDropdown === 'it-solutions' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
                   }`}>
                     <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
@@ -1047,7 +1047,7 @@ export default function Header() {
                 >
                   Healthcare
                   <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                  <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
+                  <div className={`absolute -top-3 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
                     activeDropdown === 'healthcare' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
                   }`}>
                     <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
@@ -1071,7 +1071,7 @@ export default function Header() {
                 >
                   Life Sciences
                   <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                  <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
+                  <div className={`absolute -top-3 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
                     activeDropdown === 'life-sciences' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
                   }`}>
                     <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
@@ -1095,7 +1095,7 @@ export default function Header() {
                 >
                   Tools & Testing
                   <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                  <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
+                  <div className={`absolute -top-3 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
                     activeDropdown === 'tools-testing' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
                   }`}>
                     <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
@@ -1130,7 +1130,7 @@ export default function Header() {
                 >
                   Company
                   <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                  <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
+                  <div className={`absolute -top-3 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
                     activeDropdown === 'company' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
                   }`}>
                     <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
@@ -1163,13 +1163,7 @@ export default function Header() {
                 >
                   Launch
                   <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
-                  <div className={`absolute -top-2 -right-2 transition-all duration-300 transform scale-75 group-hover:scale-100 z-50 ${
-                    activeDropdown === 'websites' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
-                  }`}>
-                    <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[9px] px-2 py-0.5 rounded-full font-medium shadow-lg border border-white/20 whitespace-nowrap">
-                      Click to explore
-                    </div>
-                  </div>
+                  {/* Badge hidden for Launch menu */}
                 </button>
                 <DropdownMenu items={websiteItems} isOpen={activeDropdown === 'websites'} menuKey="websites" />
               </li>
