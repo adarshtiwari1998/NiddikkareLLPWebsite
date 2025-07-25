@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 import logoImage from "@/assets/niddikkare-logo.png";
 
 export default function Footer() {
@@ -22,17 +22,11 @@ export default function Footer() {
               Empowering researchers and clinicians with advanced healthcare and life sciences solutions.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/niddikkare" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors">
-                <Youtube className="h-5 w-5" />
+              <a href="https://www.linkedin.com/company/niddikkare-llp/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
+                <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>

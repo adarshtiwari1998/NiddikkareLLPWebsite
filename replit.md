@@ -11,6 +11,9 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 **January 25, 2025:**
+- ✅ **SOCIAL MEDIA LINKS UPDATED**: Updated all social media links across header, footer, and contact page - added Instagram (https://www.instagram.com/niddikkare) and LinkedIn (https://www.linkedin.com/company/niddikkare-llp/), removed Twitter and YouTube for now as requested
+- ✅ **CLICK TO EXPLORE BADGES ENHANCED**: Implemented smart toggle badges with conditional visibility - badges appear on hover when dropdown is closed, disappear when dropdown is open, positioned higher above chevron arrows, hidden for Launch menu to maintain clean design
+- ✅ **NAVIGATION INTERACTION IMPROVED**: Main dropdown menus now use click-only behavior while nested submenus preserve hover interaction, creating intuitive user experience with modern guidance elements
 - ✅ **REPLIT MIGRATION FULLY COMPLETED**: Successfully completed migration from Replit Agent to standard Replit environment with proper client/server separation, enhanced security practices, and all systems functioning correctly
 - ✅ **HEADER NAVIGATION UPDATED**: Changed "Niddik IT" to "Launch" and updated description to "A Premium IT Consulting and Services Company" in both desktop and mobile navigation
 - ✅ **PROJECT IMPORT FINALIZED**: All migration checklist items completed - packages installed, workflow verified, project functioning correctly

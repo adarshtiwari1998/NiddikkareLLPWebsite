@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, Linkedin, Twitter, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Youtube, Building2, Newspaper, Wrench, TestTube, GraduationCap, Search, Database, Filter, Droplets, BarChart3, FlaskConical, Zap, HeartHandshake } from "lucide-react";
+import { Phone, Mail, Linkedin, Menu, Baby, Bed, Dna, Microscope, Heart, Shirt, Shield, Layers, ChevronRight, Settings, FileText, ShoppingCart, Code, Users, Globe, ChevronDown, X, Instagram, Building2, Newspaper, Wrench, TestTube, GraduationCap, Search, Database, Filter, Droplets, BarChart3, FlaskConical, Zap, HeartHandshake } from "lucide-react";
 import logoImage from "@/assets/niddikkare-logo.png";
 
 interface DropdownItem {
@@ -898,18 +898,12 @@ export default function Header() {
                 alt="Startup India" 
                 className="h-6 w-auto"
               />
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/niddikkare" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
                 <Instagram className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                <Twitter className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+              </a>
+              <a href="https://www.linkedin.com/company/niddikkare-llp/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
                 <Linkedin className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                <Youtube className="h-4 w-4" />
-              </Link>
+              </a>
               <Link href="/contact">
                 <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                   Request Quote
@@ -1626,18 +1620,12 @@ export default function Header() {
                   <div className="space-y-3">
                     {/* Mobile Social Media Icons */}
                     <div className="flex items-center justify-center space-x-4 py-2">
-                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                      <a href="https://www.instagram.com/niddikkare" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
                         <Instagram className="h-5 w-5" />
-                      </Link>
-                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                        <Twitter className="h-5 w-5" />
-                      </Link>
-                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
+                      </a>
+                      <a href="https://www.linkedin.com/company/niddikkare-llp/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary transition-colors">
                         <Linkedin className="h-5 w-5" />
-                      </Link>
-                      <Link href="#" className="text-gray-600 hover:text-primary transition-colors">
-                        <Youtube className="h-5 w-5" />
-                      </Link>
+                      </a>
                     </div>
                     
                     {/* Mobile Request Quote Button */}

@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, Globe, MessageSquare, ArrowRight, QrCode, Microscope, Check } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Globe, MessageSquare, ArrowRight, QrCode, Microscope, Check, Instagram, Linkedin } from "lucide-react";
 import SEO from "@/components/seo";
 
 export default function Contact() {
@@ -277,6 +277,39 @@ export default function Contact() {
                         Scan QR code to save our contact information to your phone
                       </p>
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Social Media Section */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center">
+                    <Globe className="h-5 w-5 mr-2 text-primary" />
+                    Follow Us
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4 text-sm">Connect with us on social media for latest updates</p>
+                  <div className="flex space-x-4">
+                    <a 
+                      href="https://www.instagram.com/niddikkare" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors bg-gray-50 hover:bg-primary/10 px-3 py-2 rounded-lg"
+                    >
+                      <Instagram className="h-4 w-4" />
+                      <span className="text-sm font-medium">Instagram</span>
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/company/niddikkare-llp/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors bg-gray-50 hover:bg-primary/10 px-3 py-2 rounded-lg"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      <span className="text-sm font-medium">LinkedIn</span>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
