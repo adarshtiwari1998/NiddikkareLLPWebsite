@@ -1091,7 +1091,7 @@ export default function Header() {
                 <button 
                   className="flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm bg-gradient-to-r from-primary/20 to-blue-500/20 text-primary border border-primary/30 rounded-md hover:from-primary/30 hover:to-blue-500/30"
                 >
-                  Other website
+                  Launch
                   <ChevronDown className="h-3 w-3 ml-1" />
                 </button>
                 <DropdownMenu items={websiteItems} isOpen={activeDropdown === 'websites'} menuKey="websites" />
