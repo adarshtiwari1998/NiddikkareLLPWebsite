@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, Globe, MessageSquare, ArrowRight, QrCode, Microscope, Check, Instagram, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Globe, MessageSquare, ArrowRight, Microscope, Check, Instagram, Linkedin } from "lucide-react";
 import SEO from "@/components/seo";
 
 export default function Contact() {
@@ -259,27 +259,7 @@ export default function Contact() {
 
               </div>
               
-              {/* QR Code */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg flex items-center">
-                    <QrCode className="h-5 w-5 mr-2 text-primary" />
-                    Quick Contact
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center">
-                      <QrCode className="h-8 w-8 text-gray-600" />
-                    </div>
-                    <div>
-                      <p className="text-gray-600 text-sm">
-                        Scan QR code to save our contact information to your phone
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+
               
               {/* Social Media Section */}
               <Card>
