@@ -966,18 +966,23 @@ export default function Header() {
                       setActiveDropdown(activeDropdown === 'services' ? null : 'services');
                       setActiveSubmenu(null);
                     }}
-                    className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                    className={`relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm ${
                       location.startsWith('/services') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                     }`}
                   >
                     Services
-                    <ChevronDown className="h-3 w-3 ml-1" />
+                    <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                    <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                      <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                        Click
+                      </div>
+                    </div>
                   </button>
                 </Link>
                 <DropdownMenu items={servicesItems} isOpen={activeDropdown === 'services'} menuKey="services" />
               </li>
 
-              <li className="relative">
+              <li className="relative group">
                 <Link href="/products">
                   <button 
                     onClick={(e) => {
@@ -985,81 +990,106 @@ export default function Header() {
                       setActiveDropdown(activeDropdown === 'products' ? null : 'products');
                       setActiveSubmenu(null);
                     }}
-                    className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                    className={`relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm ${
                       location.startsWith('/products') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                     }`}
                   >
                     Products
-                    <ChevronDown className="h-3 w-3 ml-1" />
+                    <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                    <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                      <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                        Click
+                      </div>
+                    </div>
                   </button>
                 </Link>
                 <DropdownMenu items={productsItems} isOpen={activeDropdown === 'products'} menuKey="products" />
               </li>
 
-              <li className="relative">
+              <li className="relative group">
                 <button
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(activeDropdown === 'it-solutions' ? null : 'it-solutions');
                     setActiveSubmenu(null);
                   }}
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/it-solutions') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   IT Solutions
-                  <ChevronDown className="h-3 w-3 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                  <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                    <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                      Click
+                    </div>
+                  </div>
                 </button>
                 <DropdownMenu items={itSolutionsItems} isOpen={activeDropdown === 'it-solutions'} menuKey="it-solutions" />
               </li>
 
-              <li className="relative">
+              <li className="relative group">
                 <button 
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(activeDropdown === 'healthcare' ? null : 'healthcare');
                     setActiveSubmenu(null);
                   }}
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/healthcare') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Healthcare
-                  <ChevronDown className="h-3 w-3 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                  <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                    <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                      Click
+                    </div>
+                  </div>
                 </button>
                 <DropdownMenu items={healthcareItems} isOpen={activeDropdown === 'healthcare'} menuKey="healthcare" />
               </li>
 
-              <li className="relative">
+              <li className="relative group">
                 <button 
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(activeDropdown === 'life-sciences' ? null : 'life-sciences');
                     setActiveSubmenu(null);
                   }}
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/life-sciences') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Life Sciences
-                  <ChevronDown className="h-3 w-3 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                  <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                    <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                      Click
+                    </div>
+                  </div>
                 </button>
                 <DropdownMenu items={lifeSciencesItems} isOpen={activeDropdown === 'life-sciences'} menuKey="life-sciences" />
               </li>
 
-              <li className="relative">
+              <li className="relative group">
                 <button
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(activeDropdown === 'tools-testing' ? null : 'tools-testing');
                     setActiveSubmenu(null);
                   }}
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/tools-testing') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Tools & Testing
-                  <ChevronDown className="h-3 w-3 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                  <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                    <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                      Click
+                    </div>
+                  </div>
                 </button>
                 <DropdownMenu items={toolsTestingItems} isOpen={activeDropdown === 'tools-testing'} menuKey="tools-testing" />
               </li>
@@ -1075,19 +1105,24 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li className="relative">
+              <li className="relative group">
                 <button 
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(activeDropdown === 'company' ? null : 'company');
                     setActiveSubmenu(null);
                   }}
-                  className={`flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm ${
+                  className={`relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm ${
                     location.startsWith('/company') || location.startsWith('/about') || location.startsWith('/news') ? 'text-primary bg-primary/20 rounded-md border-b-2 border-primary' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   Company
-                  <ChevronDown className="h-3 w-3 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                  <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                    <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                      Click
+                    </div>
+                  </div>
                 </button>
                 <DropdownMenu items={companyItems} isOpen={activeDropdown === 'company'} menuKey="company" />
               </li>
@@ -1103,17 +1138,22 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li className="relative">
+              <li className="relative group">
                 <button 
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveDropdown(activeDropdown === 'websites' ? null : 'websites');
                     setActiveSubmenu(null);
                   }}
-                  className="flex items-center px-2 py-2 font-medium transition-colors h-10 whitespace-nowrap text-sm bg-gradient-to-r from-primary/20 to-blue-500/20 text-primary border border-primary/30 rounded-md hover:from-primary/30 hover:to-blue-500/30"
+                  className="relative flex items-center px-2 py-2 font-medium transition-all duration-300 h-10 whitespace-nowrap text-sm bg-gradient-to-r from-primary/20 to-blue-500/20 text-primary border border-primary/30 rounded-md hover:from-primary/30 hover:to-blue-500/30"
                 >
                   Launch
-                  <ChevronDown className="h-3 w-3 ml-1" />
+                  <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
+                  <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                    <div className="bg-gradient-to-r from-primary to-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-medium shadow-lg border border-white/20">
+                      Click
+                    </div>
+                  </div>
                 </button>
                 <DropdownMenu items={websiteItems} isOpen={activeDropdown === 'websites'} menuKey="websites" />
               </li>
