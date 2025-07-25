@@ -882,11 +882,13 @@ export default function Header() {
             </div>
             
             {/* CSSD Guidelines Marquee in middle area */}
-            <div className="flex-1 mx-8 overflow-hidden">
-              <div className="animate-marquee whitespace-nowrap">
-                <span className="text-xs text-gray-600">
-                  We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for reducing the rate of Hospital Acquired Infection
-                </span>
+            <div className="flex-1 mx-8 overflow-hidden relative">
+              <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-full py-1.5 px-4 border border-primary/20">
+                <div className="animate-marquee whitespace-nowrap">
+                  <span className="text-xs text-primary font-medium">
+                    ✓ We strictly follow GUIDELINES FOR CENTRAL STERILE SUPPLY DEPARTMENT (CSSD), MHFW (GoI), for the use of linen in hospital. Our efforts for sterilized hospital linen is one step towards the goal of CSSD for reducing the rate of Hospital Acquired Infection
+                  </span>
+                </div>
               </div>
             </div>
 
